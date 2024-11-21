@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="loginAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.LoginPageController">
+   <children>
+      <ImageView fitHeight="319.0" fitWidth="329.0" layoutX="779.0" layoutY="-80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/ExceloneLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="838.0" fitWidth="589.0" layoutX="-49.0" layoutY="-49.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/Excelone%20Login.png" />
+         </image>
+      </ImageView>
+      <Text fill="DARKBLUE" layoutX="583.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login to your " wrappingWidth="126.70001220703125">
+         <font>
+            <Font name="Inter Regular" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="DARKBLUE" layoutX="699.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="account" wrappingWidth="74.70001220703125">
+         <font>
+            <Font name="Inter 18pt SemiBold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="583.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello!" wrappingWidth="149.10003662109375">
+         <font>
+            <Font name="Inter Regular" size="48.0" />
+         </font>
+      </Text>
+      <Text fill="DODGERBLUE" layoutX="583.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welcome!" wrappingWidth="231.50006103515625">
+         <font>
+            <Font name="Inter 28pt ExtraBold" size="48.0" />
+         </font>
+      </Text>
+      <Button fx:id="loginLearnerBtn" layoutX="583.0" layoutY="278.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #1E90FF;" text="Learner" textFill="WHITE">
+         <font>
+            <Font name="Inter 24pt Black" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="loginInstructorBtn" layoutX="829.0" layoutY="278.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #1E90FF;" text="Instructor" textFill="WHITE">
+         <font>
+            <Font name="Inter 24pt Black" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Text layoutX="583.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address" wrappingWidth="126.70001220703114">
+         <font>
+            <Font name="Inter Regular" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="emailTF" layoutX="583.0" layoutY="378.0" prefHeight="40.0" prefWidth="465.0" style="-fx-border-color: black;" />
+      <Text layoutX="582.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="126.70001220703114">
+         <font>
+            <Font name="Inter Regular" size="18.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="passwordTF" layoutX="582.0" layoutY="460.0" prefHeight="40.0" prefWidth="465.0" style="-fx-border-color: black;" />
+      <Text layoutX="872.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password?" wrappingWidth="167.20000000000005">
+         <font>
+            <Font name="Inter Regular" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="loginBtn" layoutX="852.0" layoutY="546.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="194.0" style="-fx-background-color: #095197;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Inter 24pt Black" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Text fill="DARKBLUE" layoutX="696.0" layoutY="643.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an" wrappingWidth="126.70001220703125">
+         <font>
+            <Font name="Inter Regular" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="DARKBLUE" layoutX="819.0" layoutY="643.0" strokeType="OUTSIDE" strokeWidth="0.0" text="account" wrappingWidth="74.70001220703125">
+         <font>
+            <Font name="Inter 18pt SemiBold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="DARKBLUE" layoutX="894.0" layoutY="643.0" strokeType="OUTSIDE" strokeWidth="0.0" text="yet?" wrappingWidth="39.5">
+         <font>
+            <Font name="Inter Regular" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="signUpBtn" onAction="#onSignUpButtonClick" layoutX="717.0" layoutY="653.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="194.0" style="-fx-background-color: #1E90FF;" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="Inter 24pt Black" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

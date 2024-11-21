@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="signUpPageStackPane" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.SignUpPageController">
+   <children>
+      <AnchorPane fx:id="signUpPageOnePane" prefHeight="720.0" prefWidth="1080.0" visible="false">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/Register%20Page.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="245.0" fitWidth="342.0" layoutX="-12.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/ExceloneLogo.png" />
+               </image>
+            </ImageView>
+            <Line endX="1372.166748046875" layoutX="-965.0" layoutY="105.0" startX="1486.666748046875" strokeWidth="2.0" />
+            <Line endX="1372.166748046875" layoutX="-810.0" layoutY="105.0" startX="1486.666748046875" strokeWidth="2.0" />
+            <Text fill="#373643" layoutX="409.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Text>
+            <Text fill="DODGERBLUE" layoutX="540.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Text>
+            <Circle fill="DODGERBLUE" layoutX="387.0" layoutY="105.0" radius="20.0" stroke="#1d00ff" strokeType="INSIDE" strokeWidth="2.0" />
+            <Circle fill="WHITE" layoutX="542.0" layoutY="105.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+            <Circle fill="WHITE" layoutX="697.0" layoutY="106.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+            <Text fill="WHITE" layoutX="382.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="DODGERBLUE" layoutX="537.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="DODGERBLUE" layoutX="692.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <AnchorPane id="formContainerRegisterOne" fx:id="as" layoutX="292.0" layoutY="140.0" prefHeight="520.0" prefWidth="500.0" stylesheets="@styles.css">
+               <children>
+                  <Button fx:id="proceedBtn" layoutX="273.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="161.0" style="-fx-background-color: #007bff;" text="Proceed" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField id="emailtf" fx:id="emailTF" layoutX="35.0" layoutY="168.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter email address" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL ADDRESS" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField id="emailtf" fx:id="passwordTF" layoutX="35.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter password" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIRM PASSWORD" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField id="emailtf" fx:id="confirmPasswordTF" layoutX="35.0" layoutY="319.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter confirm password" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="learnerBtn" layoutX="39.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="LEARNER" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Line endX="1372.166748046875" layoutX="-1335.0" layoutY="111.0" startX="1788.5333251953125" strokeWidth="3.0" />
+                  <Button fx:id="instructorBtn" layoutX="272.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="INSTRUCTOR" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="accountTypeWarningLabel" alignment="CENTER" layoutX="113.0" layoutY="121.0" prefHeight="18.0" prefWidth="263.0" textFill="#d70606" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signUpStudentPane" prefHeight="720.0" prefWidth="1080.0" visible="false">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/Register%20Page.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="245.0" fitWidth="342.0" layoutX="-12.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/ExceloneLogo.png" />
+               </image>
+            </ImageView>
+            <Line endX="1372.166748046875" layoutX="-965.0" layoutY="105.0" startX="1486.666748046875" stroke="DODGERBLUE" strokeWidth="2.0" />
+            <Line endX="1372.166748046875" layoutX="-810.0" layoutY="105.0" startX="1486.666748046875" strokeWidth="2.0" />
+            <Text fill="#373643" layoutX="409.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Text>
+            <Text fill="DODGERBLUE" layoutX="540.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Text>
+            <Circle fill="DODGERBLUE" layoutX="387.0" layoutY="105.0" radius="20.0" stroke="#1d00ff" strokeType="INSIDE" strokeWidth="2.0" />
+            <Circle fill="DODGERBLUE" layoutX="542.0" layoutY="105.0" radius="20.0" stroke="#1d00ff" strokeType="INSIDE" strokeWidth="2.0" />
+            <Circle fill="WHITE" layoutX="697.0" layoutY="106.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+            <Text fill="WHITE" layoutX="382.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="537.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="DODGERBLUE" layoutX="692.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <AnchorPane id="formContainerRegisterOne" fx:id="as1" layoutX="292.0" layoutY="140.0" prefHeight="520.0" prefWidth="500.0" stylesheets="@styles.css">
+               <children>
+                  <Button id="proceedbtn" fx:id="proceedBtnStudent" layoutX="273.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="Proceed" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Line endX="1372.166748046875" layoutX="-1336.0" layoutY="72.0" startX="1788.5333251953125" strokeWidth="3.0" />
+                  <Text boundsType="VISUAL" layoutX="34.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I AM A LEARNER" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIRST NAME" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField id="emailtf" fx:id="studentFirstNameTF" layoutX="35.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter First Name e.g. John" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST NAME" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField id="emailtf" fx:id="studentMiddleNameTF" layoutX="35.0" layoutY="185.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter Middle Name e.g. Fernandez" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MIDDLE NAME" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField id="emailtf" fx:id="studentLastNameTF" layoutX="35.0" layoutY="260.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter Last Name e.g. Doe" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UNIVERSITY" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Button id="proceedbtn" fx:id="backBtnStudent" layoutX="35.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="Back" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TextField id="emailtf" fx:id="studentUniversityTF" layoutX="35.0" layoutY="336.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter University e.g. Cebu Institute of Technology-University" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signUpInstructorPane" layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="1080.0">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/Register%20Page.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="245.0" fitWidth="342.0" layoutX="-12.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/ExceloneLogo.png" />
+               </image>
+            </ImageView>
+            <Line endX="1372.166748046875" layoutX="-965.0" layoutY="105.0" startX="1486.666748046875" stroke="DODGERBLUE" strokeWidth="2.0" />
+            <Line endX="1372.166748046875" layoutX="-810.0" layoutY="105.0" startX="1486.666748046875" strokeWidth="2.0" />
+            <Text fill="#373643" layoutX="409.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Text>
+            <Text fill="DODGERBLUE" layoutX="540.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Text>
+            <Circle fill="DODGERBLUE" layoutX="387.0" layoutY="105.0" radius="20.0" stroke="#1d00ff" strokeType="INSIDE" strokeWidth="2.0" />
+            <Circle fill="DODGERBLUE" layoutX="542.0" layoutY="105.0" radius="20.0" stroke="#1d00ff" strokeType="INSIDE" strokeWidth="2.0" />
+            <Circle fill="WHITE" layoutX="697.0" layoutY="106.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+            <Text fill="WHITE" layoutX="382.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="537.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="DODGERBLUE" layoutX="692.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <AnchorPane id="formContainerRegisterOne" fx:id="as11" layoutX="292.0" layoutY="140.0" prefHeight="520.0" prefWidth="500.0" stylesheets="@styles.css">
+               <children>
+                  <Button id="proceedbtn" fx:id="proceedBtnInstructor" layoutX="273.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="Proceed" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Line endX="1372.166748046875" layoutX="-1336.0" layoutY="72.0" startX="1788.5333251953125" strokeWidth="3.0" />
+                  <Text boundsType="VISUAL" layoutX="34.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I AM AN INSTRUCTOR" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIRST NAME" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField id="emailtf" fx:id="instructorFIrstNameTF" layoutX="35.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter First Name e.g. John" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST NAME" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField id="emailtf" fx:id="instructorMiddleNameTF" layoutX="35.0" layoutY="185.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter Middle Name e.g. Fernandez" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MIDDLE NAME" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField id="emailtf" fx:id="instructorLastNameTF" layoutX="35.0" layoutY="260.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter Last Name e.g. Doe" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UNIVERSITY" textOrigin="CENTER">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField id="emailtf" fx:id="instructorUniversityTF" layoutX="35.0" layoutY="336.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter University e.g. Cebu Institute of Technology-University" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button id="proceedbtn" fx:id="backBtnInstructor" layoutX="35.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="Back" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

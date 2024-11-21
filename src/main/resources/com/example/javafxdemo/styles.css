@@ -1,0 +1,31 @@
+#mainScene {
+    -fx-background-image: url("file:///C:/Users/Josh/IdeaProjects/JavaFXDemo/src/main/resources/images/registerbg.png");
+    -fx-background-size: auto; /* Cover the entire area */
+    -fx-background-position: center center; /* Center the image */
+    -fx-background-repeat: no-repeat; /* Prevent image from repeating */
+}
+#registerLogoPane{
+    -fx-background-image: url("file:///C:/Users/Josh/IdeaProjects/JavaFXDemo/src/main/resources/images/logowhitenotext.png");
+    -fx-background-size: 100% 100%; /* Cover the entire area */
+    -fx-background-position: center center; /* Center the image */
+    -fx-background-repeat: no-repeat; /* Prevent image from repeating */
+}
+#formContainerRegisterOne{
+    -fx-background-color: rgba(255, 255, 255, 0.54); /* Semi-transparent white background */
+    -fx-border-color: rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+    -fx-border-width: 1px; /* Border width */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 30, 0.0, 0.0, 4.0);
+}
+
+.button{
+    -fx-background-color: #77FFDF;
+}
+#proceedbtn{
+    -fx-background-color: #03cfc9
+}
+.clicked-button {
+    -fx-background-color: #1E90FF;
+    -fx-text-fill: white;
+}
+
+
