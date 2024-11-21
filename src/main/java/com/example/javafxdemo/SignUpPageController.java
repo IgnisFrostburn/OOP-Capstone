@@ -1,14 +1,21 @@
 package com.example.javafxdemo;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.PauseTransition;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import javafx.util.Duration;
 
-import java.util.InputMismatchException;
+import java.util.concurrent.atomic.AtomicReference;
 
 
 public class SignUpPageController {
@@ -16,6 +23,8 @@ public class SignUpPageController {
     private StackPane signUpPageStackPane;
     @FXML
     private AnchorPane signUpPageOnePane;
+    @FXML
+    private AnchorPane verifyEmailPane;
     @FXML
     private Button learnerBtn;
     @FXML
@@ -30,20 +39,24 @@ public class SignUpPageController {
     private TextField confirmPasswordTF;
     @FXML
     private Button proceedBtn;
-
     @FXML
     private AnchorPane signUpStudentPane;
     @FXML
     private Button backBtnStudent;
     @FXML
     private Button proceedBtnStudent;
-
     @FXML
     private AnchorPane signUpInstructorPane;
     @FXML
     private Button backBtnInstructor;
     @FXML
     private Button proceedBtnInstructor;
+    @FXML
+    private TextField otptextfield;
+    @FXML
+    private Button submitbtn;
+    @FXML
+    private Button generateOTP;
 
     Stage stage;
     private boolean isLearner = false;
@@ -60,10 +73,6 @@ public class SignUpPageController {
 
     private String getConfirmPassword() {
         return confirmPasswordTF.getText();
-    }
-
-    public boolean containsNumbers(String str) {
-        return str.matches(".*\\d.*");
     }
 
     protected boolean checkEmailValidity(String email) {
@@ -128,28 +137,76 @@ public class SignUpPageController {
         });
     }
 
+    public String getOTP(){
+        return otptextfield.getText();
+    }
+
+    public boolean containsLetters(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isLetter(str.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void delayGenerate(){
+        int cooldown = 15;
+        int[] timeRemaining = {cooldown};
+        PauseTransition pause = new PauseTransition(Duration.seconds(cooldown));
+        generateOTP.setDisable(true);
+        Timeline countdown = new Timeline(new KeyFrame(Duration.seconds(1), actionEvent -> {
+            generateOTP.setText(timeRemaining[0] + "s");
+            timeRemaining[0]--;
+        }));
+        countdown.setCycleCount(cooldown);
+        countdown.setOnFinished(actionEvent -> {
+            generateOTP.setDisable(false);
+            generateOTP.setText("Generate OTP");
+        });
+        pause.play();
+        countdown.play();
+    }
+
+    public void showInvalid() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/javafxdemo/popUp.fxml"));
+            Parent root = loader.load();
+            Stage popupStage = new Stage();
+            popupStage.setScene(new Scene(root));
+            popupStage.setTitle("Invalid Input");
+            popupStage.show();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     public void initialize() {
         signUpPageOnePane.setVisible(true);
         signUpStudentPane.setVisible(false);
         signUpInstructorPane.setVisible(false);
+        verifyEmailPane.setVisible(false);
         onMouseEntered(learnerBtn);
         onMouseEntered(instructorBtn);
         onMouseExit(learnerBtn);
         onMouseExit(instructorBtn);
+        submitbtn.setDisable(true);
+        AtomicReference<String> OTP = new AtomicReference<>();
+        AtomicReference<String> emailAdd = new AtomicReference<>();
 
         learnerBtn.setOnAction(e -> {
             isLearner = true;
             isInstructor = false;
-            learnerBtn.setStyle("-fx-background-color: #77FFDF; -fx-text-fill: white; -fx-border-color: black;");
+            learnerBtn.setStyle("-fx-background-color: #77FFDF; -fx-text-fill: white;");
             instructorBtn.setStyle("-fx-background-color: #007bff; -fx-text-fill: white;");
         });
-
 
         instructorBtn.setOnAction(e -> {
             isInstructor = true;
             isLearner = false;
-            instructorBtn.setStyle("-fx-background-color: #77FFDF; -fx-text-fill: white; -fx-border-color: black;");
+            instructorBtn.setStyle("-fx-background-color: #77FFDF; -fx-text-fill: white;");
             learnerBtn.setStyle("-fx-background-color: #007bff; -fx-text-fill: white;");
         });
 
@@ -184,6 +241,7 @@ public class SignUpPageController {
                 }if (!isLearner && !isInstructor) {
                     accountTypeWarningLabel.setText("Please choose an account type");
                 } else {
+                    emailAdd.set(getEmail());
                     accountTypeWarningLabel.setText("");
                     signUpPageOnePane.setVisible(false);
                     if(isLearner) {
@@ -201,11 +259,42 @@ public class SignUpPageController {
         backBtnInstructor.setOnAction(actionEvent -> onBackButtonClick(backBtnInstructor));
 
         proceedBtnStudent.setOnAction(actionEvent -> {
-
+            verifyEmailPane.setVisible(true);
+            signUpStudentPane.setVisible(false);
         });
 
         proceedBtnInstructor.setOnAction(actionEvent -> {
+            verifyEmailPane.setVisible(true);
+            signUpStudentPane.setVisible(false);
+        });
 
+        generateOTP.setOnAction(actionEvent -> {
+            delayGenerate();
+            try{
+                Email mail = new Email();
+                mail.setupServer();
+                mail.draftEmail(String.valueOf(emailAdd));
+                mail.sendEmail();
+                OTP.set(mail.getOTP());
+                System.out.println("OTP sent successfully!");
+                submitbtn.setDisable(false);
+            } catch (Exception e) {
+                System.out.println("Error in generating OTP");
+            }
+        });
+
+        submitbtn.setOnAction(actionEvent -> {
+            try{
+                String userOTP = getOTP();
+                if(userOTP.matches(String.valueOf(OTP))){
+                    System.out.println("Correct");
+                }else{
+                    throw new RuntimeException("Invalid OTP");
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                showInvalid();
+            }
         });
     }
 }
