@@ -1,0 +1,100 @@
+Index: JavaFXDemo/src/main/java/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module com.example.javafxdemo {\r\n    requires javafx.controls;\r\n    requires javafx.fxml;\r\n\r\n    requires com.dlsc.formsfx;\r\n\r\n    opens com.example.javafxdemo to javafx.fxml;\r\n    exports com.example.javafxdemo;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/JavaFXDemo/src/main/java/module-info.java b/JavaFXDemo/src/main/java/module-info.java
+--- a/JavaFXDemo/src/main/java/module-info.java	
++++ b/JavaFXDemo/src/main/java/module-info.java	
+@@ -3,6 +3,7 @@
+     requires javafx.fxml;
+ 
+     requires com.dlsc.formsfx;
++    requires java.mail;
+ 
+     opens com.example.javafxdemo to javafx.fxml;
+     exports com.example.javafxdemo;
+Index: JavaFXDemo/src/main/java/com/example/javafxdemo/Mail.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/JavaFXDemo/src/main/java/com/example/javafxdemo/Mail.java b/JavaFXDemo/src/main/java/com/example/javafxdemo/Mail.java
+new file mode 100644
+--- /dev/null	
++++ b/JavaFXDemo/src/main/java/com/example/javafxdemo/Mail.java	
+@@ -0,0 +1,56 @@
++package com.example.javafxdemo;
++
++import javax.mail.*;
++import javax.mail.internet.*;
++import java.util.Properties;
++
++public class Mail {
++    Session newSession = null;
++    MimeMessage mimeMessage = null;
++    public static void main(String[] args) throws MessagingException {
++        Mail mail = new Mail();
++        mail.setupServer();
++        mail.draft();
++        mail.send();
++    }
++    public void setupServer(){
++        Properties properties = System.getProperties();
++        properties.put("mail.smtp.port", "587");
++        properties.put("mail.smtp.auth", "true");
++        properties.put("mail.smtp.starttls.enable", "true");
++        newSession = Session.getDefaultInstance(properties,null);
++    }
++
++    public MimeMessage draft() throws MessagingException {
++        String[] emailRecipient = new String[]{"bebedorkarolvincent@gmail.com", "valencia.judemikaell@gmail.com", "noehboiser221@gmail.com"};
++        String emailBody = "Your OTP is 123 ayaw kalimti";
++        String emailSubject = "bahogoten si christian";
++        mimeMessage = new MimeMessage(newSession);
++
++        for(String r : emailRecipient){
++            mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(r));
++        }
++
++        //mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(emailRecipient[0]));
++        mimeMessage.setSubject(emailSubject);
++
++        MimeBodyPart mimeBodyPart = new MimeBodyPart();
++        mimeBodyPart.setContent(emailBody, "html/text");
++        MimeMultipart multipart = new MimeMultipart();
++        multipart.addBodyPart(mimeBodyPart);
++        mimeMessage.setContent(multipart);
++        return mimeMessage;
++    }
++
++    public void send() throws MessagingException {
++        String fromUser = "exceloneinfo@gmail.com";
++
++        String fromUserPassword = "upcw teeu ahih xmrv";
++        String emailHost = "smtp.gmail.com";
++        Transport transport = newSession.getTransport("smtp");
++        transport.connect(emailHost, fromUser, fromUserPassword);
++        transport.sendMessage(mimeMessage, null);
++        transport.close();
++        System.out.println("sent success");
++    }
++}
+Index: JavaFXDemo/src/main/resources/com/example/javafxdemo/StudentLoginPage.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.Cursor?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n\r\n<AnchorPane prefHeight=\"720.0\" prefWidth=\"1080.0\" xmlns=\"http://javafx.com/javafx/23.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.example.javafxdemo.StudentLoginPage\">\r\n   <children>\r\n      <Label alignment=\"CENTER\" layoutX=\"442.0\" layoutY=\"132.0\" prefHeight=\"72.0\" prefWidth=\"233.0\" text=\"LOGIN\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"75.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField layoutX=\"392.0\" layoutY=\"349.0\" prefHeight=\"35.0\" prefWidth=\"355.0\" />\r\n      <TextField layoutX=\"391.0\" layoutY=\"453.0\" prefHeight=\"35.0\" prefWidth=\"355.0\" />\r\n      <Label alignment=\"CENTER_RIGHT\" layoutX=\"121.0\" layoutY=\"325.0\" prefHeight=\"72.0\" prefWidth=\"253.0\" text=\"ID:\" textAlignment=\"JUSTIFY\">\r\n         <font>\r\n            <Font size=\"32.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label alignment=\"CENTER_RIGHT\" layoutX=\"121.0\" layoutY=\"433.0\" prefHeight=\"72.0\" prefWidth=\"253.0\" text=\"Password:\" textAlignment=\"JUSTIFY\">\r\n         <font>\r\n            <Font size=\"32.0\" />\r\n         </font>\r\n      </Label>\r\n      <Button layoutX=\"472.0\" layoutY=\"591.0\" mnemonicParsing=\"false\" prefHeight=\"55.0\" prefWidth=\"160.0\" text=\"Log In\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"20.0\" />\r\n         </font>\r\n         <cursor>\r\n            <Cursor fx:constant=\"HAND\" />\r\n         </cursor>\r\n      </Button>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/JavaFXDemo/src/main/resources/com/example/javafxdemo/StudentLoginPage.fxml b/JavaFXDemo/src/main/resources/com/example/javafxdemo/StudentLoginPage.fxml
+--- a/JavaFXDemo/src/main/resources/com/example/javafxdemo/StudentLoginPage.fxml	
++++ b/JavaFXDemo/src/main/resources/com/example/javafxdemo/StudentLoginPage.fxml	
+@@ -1,4 +1,4 @@
+-<?xml version="1.0" encoding="UTF-8"?>
++0<?xml version="1.0" encoding="UTF-8"?>
+ 
+ <?import javafx.scene.Cursor?>
+ <?import javafx.scene.control.Button?>

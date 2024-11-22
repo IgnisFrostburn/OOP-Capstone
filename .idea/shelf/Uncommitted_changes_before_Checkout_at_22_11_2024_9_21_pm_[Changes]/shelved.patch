@@ -1,0 +1,17 @@
+Index: JavaFXDemo/src/main/java/Classes/Account.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Classes;\r\n\r\npublic class Account {\r\n    private String firstName;\r\n    private String lastName;\r\n    int age;\r\n\r\n    public Account(String firstName, String lastName, int age) {\r\n        this.firstName = firstName;\r\n        this.lastName = lastName;\r\n        this.age = age;\r\n    }\r\n\r\n    public String getFirstName() {\r\n        return firstName;\r\n    }\r\n\r\n    public void setFirstName(String firstName) {\r\n        this.firstName = firstName;\r\n    }\r\n\r\n        public String getLastName() {\r\n        return lastName;\r\n    }\r\n\r\n    public void setLastName(String lastName) {\r\n        this.lastName = lastName;\r\n    }\r\n\r\n    public int getAge() {\r\n        return age;\r\n    }\r\n\r\n    public void setAge(int age) {\r\n        this.age = age;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/JavaFXDemo/src/main/java/Classes/Account.java b/JavaFXDemo/src/main/java/Classes/Account.java
+--- a/JavaFXDemo/src/main/java/Classes/Account.java	
++++ b/JavaFXDemo/src/main/java/Classes/Account.java	
+@@ -9,7 +9,7 @@
+         this.firstName = firstName;
+         this.lastName = lastName;
+         this.age = age;
+-    }
++    }   
+ 
+     public String getFirstName() {
+         return firstName;

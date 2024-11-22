@@ -3,6 +3,7 @@ module com.example.javafxdemo {
     requires javafx.fxml;
 
     requires com.dlsc.formsfx;
+    requires java.mail;
 
     opens com.example.javafxdemo to javafx.fxml;
     exports com.example.javafxdemo;
