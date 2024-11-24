@@ -28,4 +28,9 @@
     -fx-text-fill: white;
 }
 
+#sidePane{
+     -fx-background-color: skyblue; /* Set background to sky blue */
+}
+
+
 
