@@ -28,7 +28,7 @@
     -fx-text-fill: white;
 }
 #mainScene {
-    -fx-background-image: url("file:///C:/Users/Mcxine%20and%20Mckyla/IdeaProjects/Lessonn/img/registerbg.png");
+    -fx-background-image: url("/img/registerbg.png");
     -fx-background-size: auto; /* Cover the entire area */
     -fx-background-position: center center; /* Center the image */
     -fx-background-repeat: no-repeat; /* Prevent image from repeating */

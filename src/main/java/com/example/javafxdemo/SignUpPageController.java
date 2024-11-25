@@ -265,7 +265,7 @@ public class SignUpPageController {
 
         proceedBtnInstructor.setOnAction(actionEvent -> {
             verifyEmailPane.setVisible(true);
-            signUpStudentPane.setVisible(false);
+            signUpInstructorPane.setVisible(false);
         });
 
         generateOTP.setOnAction(actionEvent -> {
@@ -279,6 +279,8 @@ public class SignUpPageController {
                 System.out.println("OTP sent successfully!");
                 submitbtn.setDisable(false);
             } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println(e.getMessage());
                 System.out.println("Error in generating OTP");
             }
         });
