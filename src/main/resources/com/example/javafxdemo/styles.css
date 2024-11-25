@@ -29,7 +29,13 @@
 }
 
 #sidePane{
-     -fx-background-color: skyblue; /* Set background to sky blue */
+        -fx-background-color: skyblue; /* Set background to sky blue */
+          -fx-padding: 10; /* Add somse padding inside the pane */
+            -fx-border-color: lightgray; /* Optional: Add a border for better visibility */
+            -fx-border-width: 2; /* Border thickness */
+            -fx-border-radius: 5; /* Optional: Rounded corners */
+            -fx-background-radius: 5; /* Matches the border radius */
+
 }
 
 

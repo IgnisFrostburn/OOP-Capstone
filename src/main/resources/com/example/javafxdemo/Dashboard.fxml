@@ -8,11 +8,11 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.Dashboard">
    <children>
-      <Pane id="sidePane" layoutY="-7.0" prefHeight="740.0" prefWidth="200.0">
+      <Pane id="sidePane" layoutY="-1.0" prefHeight="720.0" prefWidth="250.0">
          <children>
-            <ImageView fitHeight="740.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="720.0" fitWidth="287.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../images/sidePanel.png" />
+                  <Image url="@../../../images/sideTo.png" />
                </image>
             </ImageView>
             <ImageView id="DashboardIcon" fitHeight="25.0" fitWidth="25.0" layoutX="20.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
@@ -41,6 +41,6 @@
             <Button layoutX="55.0" layoutY="235.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Student" />
          </children>
       </Pane>
-      <Pane id="mainBody" layoutX="207.0" layoutY="-27.0" prefHeight="759.0" prefWidth="880.0" />
+      <Pane id="mainBody" layoutX="247.0" layoutY="-27.0" prefHeight="759.0" prefWidth="840.0" />
    </children>
 </AnchorPane>
