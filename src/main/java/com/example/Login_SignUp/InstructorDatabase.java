@@ -44,13 +44,13 @@ public class InstructorDatabase extends DatabaseConnection{
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
 
                 while (resultSet.next()) {
-                    if(resultSet.getString("Email").equals(email)) return false;
+                    if(resultSet.getString("Email").equals(email)) return true;
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return true;
+        return false;
     }
 
     @Override

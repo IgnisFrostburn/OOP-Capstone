@@ -318,7 +318,7 @@ public class SignUpPageController {
                 if(getEmail().isBlank() || !checkEmailValidity(getEmail())) {
                     setBorderColor(emailTF, "red");
                     ctr++;
-                } else if(emailIsAvailable(getEmail())) {
+                } else if(!emailIsAvailable(getEmail())) {
                     emailAddressWarning.setText("Email is already used");
                     setBorderColor(emailTF, "red");
                     ctr++;
