@@ -1,4 +1,4 @@
-package com.example.javafxdemo;
+package com.example.Login_SignUp;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -76,6 +77,8 @@ public class SignUpPageController {
     private TextField instructorLastNameTF;
     @FXML
     private TextField instructorUniversityTF;
+    @FXML
+    private Button backLogin;
 
 
     Stage stage;
@@ -198,7 +201,7 @@ public class SignUpPageController {
 
     public void showInvalid() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/javafxdemo/popUp.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Login_SignUp/popUp.fxml"));
             Parent root = loader.load();
             Stage popupStage = new Stage();
             popupStage.setScene(new Scene(root));
@@ -235,6 +238,13 @@ public class SignUpPageController {
                 String userOTP = getOTP();
                 if(userOTP.matches(String.valueOf(OTP))){
                     System.out.println("Correct");
+                    if(isLearner) {
+                        LearnerDatabase learnerDatabase = new LearnerDatabase(studentLastNameTF.getText(), studentFirstNameTF.getText(), studentMiddleNameTF.getText(), studentUniversityTF.getText(), getEmail(), getPassword());
+                        learnerDatabase.insertData();
+                    } else if(isInstructor) {
+                        InstructorDatabase instructorDatabase = new InstructorDatabase(instructorLastNameTF.getText(), instructorFirstNameTF.getText(), instructorMiddleNameTF.getText(), instructorUniversityTF.getText(), getEmail(), getPassword());
+                        instructorDatabase.insertData();
+                    }
                 }else{
                     throw new RuntimeException("Invalid OTP");
                 }
@@ -351,8 +361,6 @@ public class SignUpPageController {
                     ctr = 0;
                     throw new RuntimeException("Check Textfields");
                 } else {
-                    LearnerDatabase learnerDatabase = new LearnerDatabase(studentLastNameTF.getText(), studentFirstNameTF.getText(), studentMiddleNameTF.getText(), studentUniversityTF.getText(), getEmail(), getPassword());
-                    learnerDatabase.insertData();
                     verifyEmailPane.setVisible(true);
                     signUpStudentPane.setVisible(false);
                 }
@@ -372,14 +380,24 @@ public class SignUpPageController {
                     ctr = 0;
                     throw new RuntimeException("Check Textfields");
                 } else {
-                    InstructorDatabase instructorDatabase = new InstructorDatabase(instructorLastNameTF.getText(), instructorFirstNameTF.getText(), instructorMiddleNameTF.getText(), instructorUniversityTF.getText(), getEmail(), getPassword());
-                    instructorDatabase.insertData();
                     verifyEmailPane.setVisible(true);
                     signUpInstructorPane.setVisible(false);
                 }
             } catch (RuntimeException e) {
                 System.out.println(e.getMessage());
             }
+        });
+
+        backLogin.setOnAction(actionEvent -> {
+            Stage loginStage = new Stage();
+            LoginPageApplication loginPageApplication = new LoginPageApplication();
+            try {
+                loginPageApplication.start(loginStage);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            stage = (Stage) signUpPageStackPane.getScene().getWindow();
+            stage.close();
         });
 
         generateOTP(OTP, emailAdd);

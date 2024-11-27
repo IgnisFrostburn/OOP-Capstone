@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: dodgerblue;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.PopUp">
+<AnchorPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: dodgerblue;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Login_SignUp.PopUp">
     <children>
         <Text fill="WHITE" layoutX="34.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INCORRECT">
             <font>

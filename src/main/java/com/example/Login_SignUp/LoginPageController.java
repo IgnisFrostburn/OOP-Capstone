@@ -1,13 +1,8 @@
-package com.example.javafxdemo;
+package com.example.Login_SignUp;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,6 +23,6 @@ public class LoginPageController {
             throw new RuntimeException(e);
         }
         stage = (Stage) loginAnchorPane.getScene().getWindow();
-        stage.hide();
+        stage.close();
     }
 }

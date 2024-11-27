@@ -4,8 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bc4bd21-e2bf-499e-a356-7195176f21f6" name="Changes" comment="">
+    <list default="true" id="8bc4bd21-e2bf-499e-a356-7195176f21f6" name="Changes" comment="&quot;Database&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafxdemo/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafxdemo/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafxdemo/InstructorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/InstructorDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafxdemo/LearnerDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LearnerDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafxdemo/LoginPageApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafxdemo/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafxdemo/PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/PopUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafxdemo/SignUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/SignUpPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafxdemo/SignUpPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/SignUpPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafxdemo/LoginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/LoginPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafxdemo/SignUpPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafxdemo/popUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/popUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafxdemo/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,13 +32,24 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "karol"
+    "Application.LoginPageApplication.executor": "Run",
+    "git-widget-placeholder": "master"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="LoginPageApplication" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.LoginPageApplication" />
+      <module name="JavaFXDemo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="TaskManager">
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="&quot;Database&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Database&quot;" />
   </component>
 </project>

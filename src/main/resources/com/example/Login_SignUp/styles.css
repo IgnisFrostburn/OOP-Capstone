@@ -28,13 +28,13 @@
     -fx-text-fill: white;
 }
 #mainScene {
-    -fx-background-image: url("/img/registerbg.png");
+    -fx-background-image: url("file:///C:\Users\Josh\IdeaProjects\OOP-Capstone\src\main\resources\images\registerbg.png");
     -fx-background-size: auto; /* Cover the entire area */
     -fx-background-position: center center; /* Center the image */
     -fx-background-repeat: no-repeat; /* Prevent image from repeating */
 }
 #registerLogoPane{
-    -fx-background-image: url("file:///C:/Users/Mcxine%20and%20Mckyla/IdeaProjects/Lessonn/img/logowhitenotext.png");
+    -fx-background-image: url("file:///C:\Users\Josh\IdeaProjects\OOP-Capstone\src\main\resources\images\logowhitenotext.png");
     -fx-background-size: 100% 100%; /* Cover the entire area */
     -fx-background-position: center center; /* Center the image */
     -fx-background-repeat: no-repeat; /* Prevent image from repeating */

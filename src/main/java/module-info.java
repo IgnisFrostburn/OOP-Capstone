@@ -1,4 +1,4 @@
-module com.example.javafxdemo {
+module com.example.Login_SignUp {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -7,6 +7,6 @@ module com.example.javafxdemo {
     requires java.mail;
     requires java.sql;
 
-    opens com.example.javafxdemo to javafx.fxml;
-    exports com.example.javafxdemo;
+    opens com.example.Login_SignUp to javafx.fxml;
+    exports com.example.Login_SignUp;
 }

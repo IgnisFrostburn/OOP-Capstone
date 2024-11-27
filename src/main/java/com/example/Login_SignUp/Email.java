@@ -1,4 +1,4 @@
-package com.example.javafxdemo;
+package com.example.Login_SignUp;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
