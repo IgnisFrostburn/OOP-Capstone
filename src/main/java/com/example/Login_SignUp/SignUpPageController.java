@@ -218,8 +218,7 @@ public class SignUpPageController {
             try{
                 Email mail = new Email();
                 mail.setupServer();
-//                mail.draftEmail(String.valueOf(emailAdd));
-//                mail.draftEmail("jimboy081904@gmail.com");
+                mail.draftEmail(getEmail());
                 mail.sendEmail();
                 OTP.set(mail.getOTP());
                 System.out.println("OTP sent successfully!");
