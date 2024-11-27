@@ -67,6 +67,7 @@ public class LoginPageController {
         textField.setStyle("-fx-border-color: " + color + "; -fx-border-width: 2px;");
     }
 
+
     @FXML
     protected void onSignUpButtonClick(ActionEvent event) {
         Stage signUpStage = new Stage();
@@ -89,6 +90,8 @@ public class LoginPageController {
         } else setBorderColor(textField, "green");
         return false;
     }
+
+
 
     @FXML
     protected void textFieldChecker(TextField textField) {
