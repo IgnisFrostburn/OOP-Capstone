@@ -17,8 +17,8 @@ public class Email {
     }
 
     public void sendEmail() throws MessagingException {
-        String fromUser = "exceloneinfo@gmail.com";
-        String fromUserPassword = "acte mwad aqco hifd";
+        String fromUser = "exceloneotp@gmail.com";
+        String fromUserPassword = "qkgm elma bfep hhnw";
         String emailHost = "smtp.gmail.com";
         Transport transport = newSession.getTransport("smtp");
         transport.connect(emailHost,fromUser, fromUserPassword);
