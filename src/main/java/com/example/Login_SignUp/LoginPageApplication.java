@@ -12,7 +12,7 @@ public class LoginPageApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginPageApplication.class.getResource("LoginPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
-        stage.setTitle("Demo");
+        stage.setTitle("ExcelOne");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
