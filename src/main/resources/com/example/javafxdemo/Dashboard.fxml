@@ -2,13 +2,21 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.Dashboard">
    <children>
+      <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bg.png" />
+         </image>
+      </ImageView>
       <Pane id="sidePane" layoutY="-1.0" prefHeight="720.0" prefWidth="250.0">
          <children>
             <ImageView fitHeight="720.0" fitWidth="287.0" pickOnBounds="true" preserveRatio="true">
@@ -31,14 +39,74 @@
                   <Image url="@../../../images/2.png" />
                </image>
             </ImageView>
-            <Button layoutX="70.0" layoutY="140.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Dashboard" />
-            <Button layoutX="70.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Teacher" />
-            <Button layoutX="70.0" layoutY="241.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Student" />
+            <Button id="dashboardBtn" layoutX="70.0" layoutY="140.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Dashboard" />
+            <Button id="teacherBtn" layoutX="70.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Teacher" />
+            <Button id="studentBtn" layoutX="70.0" layoutY="241.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Student" />
          </children>
       </Pane>
-      <Pane id="mainBody" layoutX="247.0" layoutY="-27.0" prefHeight="759.0" prefWidth="840.0">
+      <Pane id="mainBody" layoutX="250.0" layoutY="-37.0" prefHeight="759.0" prefWidth="840.0">
          <children>
-            <Label layoutX="187.0" layoutY="328.0" prefHeight="81.0" prefWidth="188.0" text="Hello, Administrator" />
+            <Pane id="teacherBox" layoutX="38.0" layoutY="186.0" prefHeight="150.0" prefWidth="225.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="20.0" text="Total Registered" textFill="WHITE" />
+                  <Label id="labelTeacher" layoutX="15.0" layoutY="40.0" text="TEACHERS" textFill="WHITE">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="15.0" layoutY="100.0" mnemonicParsing="false" text="View">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children></Pane>
+            <Label layoutX="64.0" layoutY="125.0" prefHeight="58.0" prefWidth="352.0" text="Hello, administrator">
+               <font>
+                  <Font size="26.0" />
+               </font></Label>
+            <Label layoutX="64.0" layoutY="100.0" text="Dashboard">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Pane id="studentBox" layoutX="314.0" layoutY="186.0" prefHeight="150.0" prefWidth="225.0">
+               <children>
+                  <Label id="labelTeacher" layoutX="15.0" layoutY="40.0" text="Students" textFill="WHITE">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="20.0" text="Total Registered" textFill="WHITE" />
+                  <Button layoutX="15.0" layoutY="100.0" mnemonicParsing="false" text="View">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children></Pane>
+            <Pane id="otherBox" layoutX="591.0" layoutY="186.0" prefHeight="150.0" prefWidth="225.0">
+               <children>
+                  <Label id="labelTeacher" layoutX="15.0" layoutY="40.0" text="Courses" textFill="WHITE">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="20.0" text="Total Registered" textFill="WHITE" />
+                  <Button layoutX="15.0" layoutY="100.0" mnemonicParsing="false" text="View">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children></Pane>
+            <Pane id="bodyBox" layoutX="40.0" layoutY="400.0" prefHeight="300.0" prefWidth="770.0">
+               <children>
+                  <TableView layoutX="83.0" layoutY="46.0" prefHeight="200.0" prefWidth="600.0">
+                    <columns>
+                      <TableColumn prefWidth="200.0" text="Registered " />
+                      <TableColumn prefWidth="200.0" text="Type" />
+                        <TableColumn prefWidth="200.0" text="Status" />
+                    </columns>
+                  </TableView>
+               </children></Pane>
          </children></Pane>
    </children>
 </AnchorPane>
