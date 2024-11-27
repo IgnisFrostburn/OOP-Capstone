@@ -1,5 +1,6 @@
 package com.example.Login_SignUp;
 
+import com.example.MainUserInterface.MainStudentInterface;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
@@ -79,7 +80,6 @@ public class SignUpPageController {
     private TextField instructorUniversityTF;
     @FXML
     private Button backLogin;
-
 
     Stage stage;
     private boolean isLearner = false;
@@ -258,7 +258,17 @@ public class SignUpPageController {
     protected boolean emailIsAvailable(String email) throws SQLException {
         LearnerDatabase learnerDatabase = new LearnerDatabase();
         InstructorDatabase instructorDatabase = new InstructorDatabase();
-        return (learnerDatabase.checkEmail(email) && instructorDatabase.checkEmail(email));
+        return (!learnerDatabase.checkEmail(email) && !instructorDatabase.checkEmail(email));
+    }
+
+
+
+
+    protected void textMask(TextField textField) {
+        textField.textProperty().addListener((observable, oldValue, newValue) -> {
+            textField.setText("•".repeat(newValue.length()));
+            textField.positionCaret(newValue.length());
+        });
     }
 
     @FXML
@@ -274,6 +284,8 @@ public class SignUpPageController {
         submitbtn.setDisable(true);
         AtomicReference<String> OTP = new AtomicReference<>();
         AtomicReference<String> emailAdd = new AtomicReference<>();
+        textMask(passwordTF);
+        textMask(confirmPasswordTF);
 
         learnerBtn.setOnAction(e -> {
             isLearner = true;
@@ -399,6 +411,7 @@ public class SignUpPageController {
             stage = (Stage) signUpPageStackPane.getScene().getWindow();
             stage.close();
         });
+
 
         generateOTP(OTP, emailAdd);
         submitButtonClicked(OTP);

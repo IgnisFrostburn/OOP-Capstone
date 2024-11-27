@@ -2,6 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -63,13 +64,13 @@
             <Font name="Inter Regular" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="emailTF" layoutX="583.0" layoutY="378.0" prefHeight="40.0" prefWidth="465.0" style="-fx-border-color: black;" />
+      <TextField fx:id="loginEmailTF" layoutX="583.0" layoutY="378.0" prefHeight="40.0" prefWidth="465.0" style="-fx-border-color: black;" />
       <Text layoutX="582.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="126.70001220703114">
          <font>
             <Font name="Inter Regular" size="18.0" />
          </font>
       </Text>
-      <PasswordField fx:id="passwordTF" layoutX="582.0" layoutY="460.0" prefHeight="40.0" prefWidth="465.0" style="-fx-border-color: black;" />
+      <PasswordField fx:id="loginPasswordTF" layoutX="582.0" layoutY="460.0" prefHeight="40.0" prefWidth="465.0" style="-fx-border-color: black;" />
       <Text layoutX="872.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password?" wrappingWidth="167.20000000000005">
          <font>
             <Font name="Inter Regular" size="18.0" />
@@ -98,7 +99,7 @@
             <Font name="Inter Regular" size="18.0" />
          </font>
       </Text>
-      <Button fx:id="signUpBtn" onAction="#onSignUpButtonClick" layoutX="717.0" layoutY="653.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="194.0" style="-fx-background-color: #1E90FF;" text="Sign Up" textFill="WHITE">
+      <Button fx:id="signUpBtn" layoutX="717.0" layoutY="653.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="50.0" prefWidth="194.0" style="-fx-background-color: #1E90FF;" text="Sign Up" textFill="WHITE">
          <font>
             <Font name="Inter 24pt Black" size="24.0" />
          </font>
@@ -106,5 +107,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="loginAccountTypeWarning" alignment="CENTER" layoutX="832.0" layoutY="334.0" prefHeight="18.0" prefWidth="217.0" textFill="RED">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -9,4 +9,5 @@ module com.example.Login_SignUp {
 
     opens com.example.Login_SignUp to javafx.fxml;
     exports com.example.Login_SignUp;
+    exports com.example.MainUserInterface;
 }

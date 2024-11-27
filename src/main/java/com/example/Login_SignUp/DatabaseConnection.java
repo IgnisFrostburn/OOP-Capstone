@@ -7,6 +7,7 @@ public abstract class DatabaseConnection {
     private String middleName;
     private String university;
     private String email;
+    private String pass;
 
     public String getPass() {
         return pass;
@@ -31,8 +32,6 @@ public abstract class DatabaseConnection {
     public String getLastName() {
         return lastName;
     }
-
-    private String pass;
 
     public DatabaseConnection() {
         this.lastName = null;
@@ -71,4 +70,5 @@ public abstract class DatabaseConnection {
 //    }
 
     public abstract boolean checkEmail(String email) throws SQLException;
+    public abstract boolean checkPassword(String userPassword) throws SQLException;
 }

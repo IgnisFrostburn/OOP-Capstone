@@ -16,7 +16,7 @@
 
 <StackPane fx:id="signUpPageStackPane" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Login_SignUp.SignUpPageController">
    <children>
-      <AnchorPane fx:id="signUpPageOnePane" prefHeight="720.0" prefWidth="1080.0" visible="false">
+      <AnchorPane fx:id="signUpPageOnePane" prefHeight="720.0" prefWidth="1080.0">
          <children>
             <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -348,7 +348,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane id="mainScene" fx:id="verifyEmailPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css">
+      <AnchorPane id="mainScene" fx:id="verifyEmailPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css" visible="false">
          <children>
             <AnchorPane id="formContainer" fx:id="as2" layoutX="282.0" layoutY="130.0" prefHeight="520.0" prefWidth="500.0" stylesheets="@styles.css" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="298.0">
                <children>
