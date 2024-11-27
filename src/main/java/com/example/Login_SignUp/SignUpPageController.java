@@ -1,6 +1,5 @@
 package com.example.Login_SignUp;
 
-import com.example.MainUserInterface.MainStudentInterface;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
@@ -80,6 +79,8 @@ public class SignUpPageController {
     private TextField instructorUniversityTF;
     @FXML
     private Button backLogin;
+    @FXML
+    private Button backToLoginBtn;
 
     Stage stage;
     private boolean isLearner = false;
@@ -240,15 +241,6 @@ public class SignUpPageController {
                     if(isLearner) {
                         LearnerDatabase learnerDatabase = new LearnerDatabase(studentLastNameTF.getText(), studentFirstNameTF.getText(), studentMiddleNameTF.getText(), studentUniversityTF.getText(), getEmail(), getPassword());
                         learnerDatabase.insertData();
-                        Stage mainStudentUIStage = new Stage();
-                        MainStudentInterface mainStudentInterface = new MainStudentInterface();
-                        try {
-                            mainStudentInterface.start(mainStudentUIStage);
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                        stage = (Stage) signUpPageStackPane.getScene().getWindow();
-                        stage.close();
                     } else if(isInstructor) {
                         InstructorDatabase instructorDatabase = new InstructorDatabase(instructorLastNameTF.getText(), instructorFirstNameTF.getText(), instructorMiddleNameTF.getText(), instructorUniversityTF.getText(), getEmail(), getPassword());
                         instructorDatabase.insertData();
@@ -417,6 +409,17 @@ public class SignUpPageController {
             stage.close();
         });
 
+        backToLoginBtn.setOnAction(actionEvent -> {
+            Stage loginStage = new Stage();
+            LoginPageApplication loginPageApplication = new LoginPageApplication();
+            try {
+                loginPageApplication.start(loginStage);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            stage = (Stage) signUpPageStackPane.getScene().getWindow();
+            stage.close();
+        });
 
         generateOTP(OTP, emailAdd);
         submitButtonClicked(OTP);

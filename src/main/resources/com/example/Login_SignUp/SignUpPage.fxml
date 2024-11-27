@@ -60,7 +60,7 @@
             </Text>
             <AnchorPane id="formContainerRegisterOne" fx:id="as" layoutX="292.0" layoutY="140.0" prefHeight="520.0" prefWidth="500.0" stylesheets="@styles.css">
                <children>
-                  <Button fx:id="proceedBtn" layoutX="273.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="161.0" style="-fx-background-color: #007bff;" text="Proceed" textFill="WHITE">
+                  <Button fx:id="proceedBtn" layoutX="272.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="Proceed" textFill="WHITE">
                      <font>
                         <Font name="Inter 24pt ExtraBold" size="22.0" />
                      </font>
@@ -124,6 +124,14 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
+                  <Button fx:id="backToLoginBtn" layoutX="39.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="Back to Login" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </AnchorPane>
          </children>

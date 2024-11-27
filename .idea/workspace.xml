@@ -7,7 +7,13 @@
     <list default="true" id="8bc4bd21-e2bf-499e-a356-7195176f21f6" name="Changes" comment="&quot;Sign Up to Main UI&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/InstructorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/InstructorDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LearnerDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LearnerDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/SignUpPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/SignUpPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/MainUserInterface/MainStudentInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/MainUserInterface/MainStudentInterface.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -37,12 +43,15 @@
     &quot;accountId&quot;: &quot;cd5c9167-9ff1-4512-98d0-d2ff5300d41a&quot;
   }
 }</component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.LoginPageApplication.executor": "Run",
+    "Application.MainStudentInterface.executor": "Run",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Josh/IdeaProjects/OOP-Capstone/src/main/resources/images/MainUI.png",
+    "two.files.diff.last.used.file": "C:/Users/Josh/IdeaProjects/OOP-Capstone/src/main/resources/images/MainUI.png"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="LoginPageApplication" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.LoginPageApplication" />
@@ -93,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732691823705</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="&quot;Sign Up to Main UI&quot;">
+      <option name="closed" value="true" />
+      <created>1732697077260</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732697077260</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

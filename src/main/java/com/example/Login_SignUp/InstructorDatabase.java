@@ -3,7 +3,7 @@ package com.example.Login_SignUp;
 import java.sql.*;
 
 public class InstructorDatabase extends DatabaseConnection{
-    String url = "jdbc:mysql://localhost:3306/excelone";
+    String url = "jdbc:mysql://192.168.1.8:3306/excelone";
     String username = "excelOneAdmin";
     String password = "secure123";
     public InstructorDatabase() {

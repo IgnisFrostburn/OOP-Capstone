@@ -1,6 +1,5 @@
 package com.example.Login_SignUp;
 
-import com.example.MainUserInterface.MainStudentInterface;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -120,15 +119,7 @@ public class LoginPageController {
                 loginAccountTypeWarning.setText("");
                 try {
                     if(checkEmail(getLoginEmail()) && checkPassword(getLoginPassword())) {
-                        Stage mainStudentUIStage = new Stage();
-                        MainStudentInterface mainStudentInterface = new MainStudentInterface();
-                        try {
-                            mainStudentInterface.start(mainStudentUIStage);
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                        stage = (Stage) loginAnchorPane.getScene().getWindow();
-                        stage.close();
+
                     } else {
                         if(!checkEmail(getLoginEmail())) setBorderColor(loginEmailTF, "red");
                         else setBorderColor(loginEmailTF, "green");
