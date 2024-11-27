@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
 
+import java.sql.SQLException;
 import java.util.concurrent.atomic.AtomicReference;
 
 
@@ -40,6 +41,8 @@ public class SignUpPageController {
     @FXML
     private Button proceedBtn;
     @FXML
+    private Label emailAddressWarning;
+    @FXML
     private AnchorPane signUpStudentPane;
     @FXML
     private Button backBtnStudent;
@@ -57,6 +60,23 @@ public class SignUpPageController {
     private Button submitbtn;
     @FXML
     private Button generateOTP;
+    @FXML
+    private TextField studentFirstNameTF;
+    @FXML
+    private TextField studentMiddleNameTF;
+    @FXML
+    private TextField studentLastNameTF;
+    @FXML
+    private TextField studentUniversityTF;
+    @FXML
+    private TextField instructorFirstNameTF;
+    @FXML
+    private TextField instructorMiddleNameTF;
+    @FXML
+    private TextField instructorLastNameTF;
+    @FXML
+    private TextField instructorUniversityTF;
+
 
     Stage stage;
     private boolean isLearner = false;
@@ -137,6 +157,14 @@ public class SignUpPageController {
         });
     }
 
+    protected int isBlankTF(TextField textField) {
+        if(textField.getText().isBlank()) {
+            setBorderColor(textField, "red");
+            return 1;
+        } else setBorderColor(textField, "green");
+        return 0;
+    }
+
     public String getOTP(){
         return otptextfield.getText();
     }
@@ -178,8 +206,49 @@ public class SignUpPageController {
             popupStage.show();
         } catch (Exception e) {
             System.err.println(e.getMessage());
-            e.printStackTrace();
         }
+    }
+
+    public void generateOTP(AtomicReference<String> OTP, AtomicReference<String> emailAdd) {
+        generateOTP.setOnAction(actionEvent -> {
+            delayGenerate();
+            try{
+                Email mail = new Email();
+                mail.setupServer();
+//                mail.draftEmail(String.valueOf(emailAdd));
+//                mail.draftEmail("jimboy081904@gmail.com");
+                mail.sendEmail();
+                OTP.set(mail.getOTP());
+                System.out.println("OTP sent successfully!");
+                submitbtn.setDisable(false);
+            } catch (Exception e) {
+//                e.printStackTrace();
+                System.out.println(e.getMessage());
+                System.out.println("Error in generating OTP");
+            }
+        });
+    }
+
+    public void submitButtonClicked(AtomicReference<String> OTP) {
+        submitbtn.setOnAction(actionEvent -> {
+            try{
+                String userOTP = getOTP();
+                if(userOTP.matches(String.valueOf(OTP))){
+                    System.out.println("Correct");
+                }else{
+                    throw new RuntimeException("Invalid OTP");
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                showInvalid();
+            }
+        });
+    }
+
+    protected boolean emailIsAvailable(String email) throws SQLException {
+        LearnerDatabase learnerDatabase = new LearnerDatabase();
+        InstructorDatabase instructorDatabase = new InstructorDatabase();
+        return (learnerDatabase.checkEmail(email) && instructorDatabase.checkEmail(email));
     }
 
     @FXML
@@ -218,16 +287,23 @@ public class SignUpPageController {
         proceedBtn.setOnMouseExited(e -> proceedBtn.setStyle("-fx-background-color: #007bff; -fx-text-fill: white;"));
 
         proceedBtn.setOnAction(actionEvent -> {
-            if(getEmail().isBlank() || !checkEmailValidity(getEmail())) {
-                setBorderColor(emailTF, "red");
-                ctr++;
-            } else setBorderColor(emailTF, "green");
+            try {
+                if(getEmail().isBlank() || !checkEmailValidity(getEmail())) {
+                    setBorderColor(emailTF, "red");
+                    ctr++;
+                } else if(!emailIsAvailable(getEmail())) {
+                    emailAddressWarning.setText("Email is already used");
+                    setBorderColor(emailTF, "red");
+                    ctr++;
+                } else {
+                    emailAddressWarning.setText("");
+                    setBorderColor(emailTF, "green");
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
 
-            if(getPassword().isBlank()) {
-                setBorderColor(passwordTF, "red");
-                ctr++;
-            } else setBorderColor(passwordTF, "green");
-
+            ctr += isBlankTF(passwordTF);
             if(getConfirmPassword().isBlank() || !getConfirmPassword().equals(getPassword()))  {
                 setBorderColor(confirmPasswordTF, "red");
                 ctr++;
@@ -238,7 +314,8 @@ public class SignUpPageController {
                 if (ctr > 0) {
                     ctr = 0;
                     throw new RuntimeException("Check Textfields");
-                }if (!isLearner && !isInstructor) {
+                }
+                if (!isLearner && !isInstructor) {
                     accountTypeWarningLabel.setText("Please choose an account type");
                 } else {
                     emailAdd.set(getEmail());
@@ -255,47 +332,58 @@ public class SignUpPageController {
             }
         });
 
+        textFieldChecker(studentFirstNameTF);
+        textFieldChecker(studentLastNameTF);
+        textFieldChecker(studentMiddleNameTF);
+        textFieldChecker(studentUniversityTF);
+
         backBtnStudent.setOnAction(actionEvent -> onBackButtonClick(backBtnStudent));
         backBtnInstructor.setOnAction(actionEvent -> onBackButtonClick(backBtnInstructor));
 
         proceedBtnStudent.setOnAction(actionEvent -> {
-            verifyEmailPane.setVisible(true);
-            signUpStudentPane.setVisible(false);
+            ctr = 0;
+            try {
+                ctr += isBlankTF(studentFirstNameTF);
+                ctr += isBlankTF(studentMiddleNameTF);
+                ctr += isBlankTF(studentLastNameTF);
+                ctr += isBlankTF(studentUniversityTF);
+                if (ctr > 0) {
+                    ctr = 0;
+                    throw new RuntimeException("Check Textfields");
+                } else {
+                    LearnerDatabase learnerDatabase = new LearnerDatabase(studentLastNameTF.getText(), studentFirstNameTF.getText(), studentMiddleNameTF.getText(), studentUniversityTF.getText(), getEmail(), getPassword());
+                    learnerDatabase.insertData();
+                    verifyEmailPane.setVisible(true);
+                    signUpStudentPane.setVisible(false);
+                }
+            } catch (RuntimeException e) {
+                System.out.println(e.getMessage());
+            }
         });
 
         proceedBtnInstructor.setOnAction(actionEvent -> {
-            verifyEmailPane.setVisible(true);
-            signUpStudentPane.setVisible(false);
-        });
-
-        generateOTP.setOnAction(actionEvent -> {
-            delayGenerate();
-            try{
-                Email mail = new Email();
-                mail.setupServer();
-                mail.draftEmail(String.valueOf(emailAdd));
-                mail.sendEmail();
-                OTP.set(mail.getOTP());
-                System.out.println("OTP sent successfully!");
-                submitbtn.setDisable(false);
-            } catch (Exception e) {
-                System.out.println("Error in generating OTP");
-            }
-        });
-
-        submitbtn.setOnAction(actionEvent -> {
-            try{
-                String userOTP = getOTP();
-                if(userOTP.matches(String.valueOf(OTP))){
-                    System.out.println("Correct");
-                }else{
-                    throw new RuntimeException("Invalid OTP");
+            ctr = 0;
+            try {
+                ctr += isBlankTF(instructorLastNameTF);
+                ctr += isBlankTF(instructorFirstNameTF);
+                ctr += isBlankTF(instructorMiddleNameTF);
+                ctr += isBlankTF(instructorUniversityTF);
+                if (ctr > 0) {
+                    ctr = 0;
+                    throw new RuntimeException("Check Textfields");
+                } else {
+                    InstructorDatabase instructorDatabase = new InstructorDatabase(instructorLastNameTF.getText(), instructorFirstNameTF.getText(), instructorMiddleNameTF.getText(), instructorUniversityTF.getText(), getEmail(), getPassword());
+                    instructorDatabase.insertData();
+                    verifyEmailPane.setVisible(true);
+                    signUpInstructorPane.setVisible(false);
                 }
-            } catch (Exception e) {
+            } catch (RuntimeException e) {
                 System.out.println(e.getMessage());
-                showInvalid();
             }
         });
+
+        generateOTP(OTP, emailAdd);
+        submitButtonClicked(OTP);
     }
 }
 

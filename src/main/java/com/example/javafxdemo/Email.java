@@ -26,8 +26,7 @@ public class Email {
         transport.close();
         System.out.println("Email sent successfully!");
     }
-    public MimeMessage draftEmail(String e) throws MessagingException {
-        String emailRecipient = e;
+    public MimeMessage draftEmail(String emailRecipient) throws MessagingException {
         String emailSubject = "ExcelOne OTP";
         OTP = generateOTP();
         String emailBody = "<b>ExcelOne Authorization</b> <br><br>Thank you for signing up with us! Your One-Time Password is <b>" + OTP + "</b>.";
@@ -46,6 +45,7 @@ public class Email {
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
+//        properties.setProperty("javax.net.debug", "ssl,handshake");
         newSession = Session.getDefaultInstance(properties,null);
     }
     public String generateOTP(){

@@ -68,7 +68,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD" textOrigin="CENTER">
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD" textOrigin="CENTER">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
@@ -83,17 +83,17 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <TextField id="emailtf" fx:id="passwordTF" layoutX="35.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter password" style="-fx-border-color: black;">
+                  <TextField id="emailtf" fx:id="passwordTF" layoutX="35.0" layoutY="248.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter password" style="-fx-border-color: black;">
                      <font>
                         <Font name="Inter 18pt Regular" size="14.0" />
                      </font>
                   </TextField>
-                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIRM PASSWORD" textOrigin="CENTER">
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIRM PASSWORD" textOrigin="CENTER">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <TextField id="emailtf" fx:id="confirmPasswordTF" layoutX="35.0" layoutY="319.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter confirm password" style="-fx-border-color: black;">
+                  <TextField id="emailtf" fx:id="confirmPasswordTF" layoutX="35.0" layoutY="324.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter confirm password" style="-fx-border-color: black;">
                      <font>
                         <Font name="Inter 18pt Regular" size="14.0" />
                      </font>
@@ -115,7 +115,15 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label fx:id="accountTypeWarningLabel" alignment="CENTER" layoutX="113.0" layoutY="121.0" prefHeight="18.0" prefWidth="263.0" textFill="#d70606" />
+                  <Label fx:id="accountTypeWarningLabel" alignment="CENTER" layoutX="113.0" layoutY="121.0" prefHeight="18.0" prefWidth="263.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="emailAddressWarning" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="208.0" prefHeight="18.0" prefWidth="263.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
@@ -293,7 +301,7 @@
                         <Font name="Inter 24pt ExtraBold" size="20.0" />
                      </font>
                   </Text>
-                  <TextField id="emailtf" fx:id="instructorFIrstNameTF" layoutX="35.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter First Name e.g. John" style="-fx-border-color: black;">
+                  <TextField id="emailtf" fx:id="instructorFirstNameTF" layoutX="35.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter First Name e.g. John" style="-fx-border-color: black;">
                      <font>
                         <Font name="Inter 18pt Regular" size="14.0" />
                      </font>
