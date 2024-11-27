@@ -240,6 +240,15 @@ public class SignUpPageController {
                     if(isLearner) {
                         LearnerDatabase learnerDatabase = new LearnerDatabase(studentLastNameTF.getText(), studentFirstNameTF.getText(), studentMiddleNameTF.getText(), studentUniversityTF.getText(), getEmail(), getPassword());
                         learnerDatabase.insertData();
+                        Stage mainStudentUIStage = new Stage();
+                        MainStudentInterface mainStudentInterface = new MainStudentInterface();
+                        try {
+                            mainStudentInterface.start(mainStudentUIStage);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        stage = (Stage) signUpPageStackPane.getScene().getWindow();
+                        stage.close();
                     } else if(isInstructor) {
                         InstructorDatabase instructorDatabase = new InstructorDatabase(instructorLastNameTF.getText(), instructorFirstNameTF.getText(), instructorMiddleNameTF.getText(), instructorUniversityTF.getText(), getEmail(), getPassword());
                         instructorDatabase.insertData();
@@ -259,9 +268,6 @@ public class SignUpPageController {
         InstructorDatabase instructorDatabase = new InstructorDatabase();
         return (!learnerDatabase.checkEmail(email) && !instructorDatabase.checkEmail(email));
     }
-
-
-
 
     protected void textMask(TextField textField) {
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -312,7 +318,7 @@ public class SignUpPageController {
                 if(getEmail().isBlank() || !checkEmailValidity(getEmail())) {
                     setBorderColor(emailTF, "red");
                     ctr++;
-                } else if(!emailIsAvailable(getEmail())) {
+                } else if(emailIsAvailable(getEmail())) {
                     emailAddressWarning.setText("Email is already used");
                     setBorderColor(emailTF, "red");
                     ctr++;

@@ -3,6 +3,9 @@ package com.example.Login_SignUp;
 import java.sql.*;
 
 public class InstructorDatabase extends DatabaseConnection{
+    String url = "jdbc:mysql://localhost:3306/excelone";
+    String username = "excelOneAdmin";
+    String password = "secure123";
     public InstructorDatabase() {
         super();
     }
@@ -13,9 +16,6 @@ public class InstructorDatabase extends DatabaseConnection{
 
     @Override
     public void insertData() {
-        String url = "jdbc:mysql://localhost:3306/excelone";
-        String username = "root";
-        String password = "";
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Connected to the database!");
@@ -37,9 +37,6 @@ public class InstructorDatabase extends DatabaseConnection{
 
     @Override
     public boolean checkEmail(String email) throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/excelone";
-        String username = "root";
-        String password = "";
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             String selectQuery = "SELECT LastName, FirstName, MiddleName, University, Email, Password FROM instructors";
@@ -58,9 +55,6 @@ public class InstructorDatabase extends DatabaseConnection{
 
     @Override
     public boolean checkPassword(String userPassword) throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/excelone";
-        String username = "root";
-        String password = "";
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             String selectQuery = "SELECT LastName, FirstName, MiddleName, University, Email, Password FROM instructors";
