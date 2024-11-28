@@ -3,7 +3,7 @@ package com.example.Login_SignUp;
 import java.sql.*;
 
 public class LearnerDatabase extends DatabaseConnection {
-    String url = "jdbc:mysql://localhost:3306/excelone";
+    String url = "jdbc:mysql://192.168.1.8/excelone";
     String username = "excelOneAdmin";
     String password = "secure123";
 
@@ -32,6 +32,21 @@ public class LearnerDatabase extends DatabaseConnection {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+//TIWASA NI
+    public void getUserData(){
+        try(Connection connection = DriverManager.getConnection(url, username, password)){
+            String query = "SELECT * FROM learners WHERE email = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, "bebedorkarolvincent@gmail.com");
+            ResultSet resultSet = statement.executeQuery();
+
+//            while(resultSet.next()){
+//                String name = resultSet.getString(name);
+//            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
         }
     }
 
