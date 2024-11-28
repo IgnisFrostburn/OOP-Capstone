@@ -6,23 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="&quot;Browse Courses Update 1&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/LearnerDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/LearnerDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/AddCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/AddCourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/AddCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/AddCredentialsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentialsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/SignUpPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/SignUpPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/StudentDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/TeacherDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/TeacherDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCourse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCourse.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCredentials.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCredentials.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/StudentDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/StudentDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoggedInUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoggedInUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,17 +23,24 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AddCourse.executor": "Run",
-    "Application.AddCredentials.executor": "Run",
-    "Application.LoginPageApplication.executor": "Run",
-    "Application.SignUpPage.executor": "Run",
-    "Application.StudentDashboard.executor": "Run",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AddCourse.executor&quot;: &quot;Run&quot;,
+    &quot;Application.AddCredentials.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SignUpPage.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.LoginPageApplication">
+    <configuration type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.SignUpPage" />
+      <module name="JavaFXDemo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginPageApplication" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.LoginPageApplication" />
       <module name="JavaFXDemo" />
@@ -53,6 +48,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application." />
+      <item itemvalue="Application.LoginPageApplication" />
+    </list>
   </component>
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="&quot;Browse Courses&quot;">

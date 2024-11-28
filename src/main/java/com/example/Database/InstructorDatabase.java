@@ -1,5 +1,7 @@
 package com.example.Database;
 
+import com.example.Login_SignUp.LoggedInUser;
+
 import java.sql.*;
 
 public class InstructorDatabase extends DatabaseConnection{
@@ -34,42 +36,78 @@ public class InstructorDatabase extends DatabaseConnection{
             e.printStackTrace();
         }
     }
-
-    @Override
     public boolean checkEmail(String email) throws SQLException {
+        String selectQuery = "SELECT Email FROM instructors WHERE Email = ?";
 
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT Email FROM instructors";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
+        try (Connection connection = DriverManager.getConnection(url, username, password);
+             PreparedStatement ps = connection.prepareStatement(selectQuery)) {
 
-                while (resultSet.next()) {
-                    if(resultSet.getString("Email").equals(email)) return true;
+            ps.setString(1, email);
+
+            try (ResultSet resultSet = ps.executeQuery()) {
+                if (resultSet.next()) {
+                    return true;
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return false;
     }
 
     @Override
-    public boolean checkPassword(String userPassword) throws SQLException {
 
+    public LoggedInUser getUserData(String email) {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT Password FROM instructors";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
+            String query = "SELECT * FROM instructors WHERE Email = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, email);
+            ResultSet resultSet = statement.executeQuery();
 
-                while (resultSet.next()) {
-                    if(resultSet.getString("Password").equals(userPassword)) return false;
+            if (resultSet.next()) {
+                LoggedInUser loggedInUser = LoggedInUser.getInstance();
+                loggedInUser.setEmail(resultSet.getString("Email"));
+                loggedInUser.setFirstName(resultSet.getString("FirstName"));
+                loggedInUser.setLastName(resultSet.getString("LastName"));
+                loggedInUser.setUniversity(resultSet.getString("University"));
+                loggedInUser.setRole("Learner");
+                return loggedInUser; // Return the singleton instance
+            } else {
+                throw new RuntimeException("No user found");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+
+    @Override
+    public boolean checkPassword(String userPassword, String email) throws SQLException {
+        String selectQuery = "SELECT Password FROM instructors WHERE Email = ?";
+
+        try (Connection connection = DriverManager.getConnection(url, username, password);
+             PreparedStatement ps = connection.prepareStatement(selectQuery)) {
+
+            ps.setString(1, email);
+
+            try (ResultSet resultSet = ps.executeQuery()) {
+                if (resultSet.next()) {
+                    String storedPassword = resultSet.getString("Password");
+                    if (storedPassword.equals(userPassword)) {
+                        return true;
+                    }
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return true;
+
+        return false;
     }
+
 
     public int numberOfInstructors() throws SQLException {
         int ctr = 0;
