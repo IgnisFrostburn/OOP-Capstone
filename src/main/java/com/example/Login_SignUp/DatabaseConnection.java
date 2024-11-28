@@ -53,22 +53,6 @@ public abstract class DatabaseConnection {
 
     public abstract void insertData();
 
-//    private void selectData(Connection connection) throws SQLException {
-//        String selectQuery = "SELECT LastName, FirstName, MiddleName, University, Email, Password FROM learners";
-//        try (Statement selectStmt = connection.createStatement();
-//             ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-//
-//            while (resultSet.next()) {
-//                System.out.println("LastName: " + resultSet.getString("LastName"));
-//                System.out.println("FirstName: " + resultSet.getString("FirstName"));
-//                System.out.println("University: " + resultSet.getString("University"));
-//                System.out.println("Email: " + resultSet.getString("Email"));
-//                System.out.println("Password: " + resultSet.getString("Password"));
-//                System.out.println("-------------");
-//            }
-//        }
-//    }
-
     public abstract boolean checkEmail(String email) throws SQLException;
     public abstract boolean checkPassword(String userPassword) throws SQLException;
 }
