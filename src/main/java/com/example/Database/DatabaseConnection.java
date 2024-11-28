@@ -1,4 +1,6 @@
 package com.example.Database;
+import com.example.Login_SignUp.LoggedInUser;
+
 import java.sql.*;
 
 public abstract class DatabaseConnection {
@@ -52,7 +54,8 @@ public abstract class DatabaseConnection {
     }
 
     public abstract void insertData();
+    public abstract LoggedInUser getUserData(String email);
 
     public abstract boolean checkEmail(String email) throws SQLException;
-    public abstract boolean checkPassword(String userPassword) throws SQLException;
+    public abstract boolean checkPassword(String userPassword, String email) throws SQLException;
 }
