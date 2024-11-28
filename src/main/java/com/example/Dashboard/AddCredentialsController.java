@@ -1,5 +1,6 @@
 package com.example.Dashboard;
 
+import com.example.Database.InstructorsInfoDatabase;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -25,7 +26,27 @@ public class AddCredentialsController {
     @FXML
     private Button addCredentialsBtn;
 
-
+    public String getTeachingExperienceField1() {
+        return teachingExperienceField1.getText();
+    }
+    public String getTeachingExperienceField2() {
+        return teachingExperienceField2.getText();
+    }
+    public String getTeachingExperienceField3() {
+        return teachingExperienceField3.getText();
+    }
+    public String getTeachingExpertiseField1() {
+        return teachingExpertiseField1.getText();
+    }
+    public String getTeachingExpertiseField2() {
+        return teachingExpertiseField2.getText();
+    }
+    public String getTeachingExpertiseField3() {
+        return teachingExpertiseField3.getText();
+    }
+    public String getLinkedInUrlField() {
+        return linkedInUrlField.getText();
+    }
 
     @FXML
     private void handleAddCredentials() {
@@ -62,15 +83,15 @@ public class AddCredentialsController {
         alert.showAndWait();
     }
 
-    protected void onMouseEntered(Button btn) {
-        btn.setOnMouseEntered(e -> {
-            btn.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
-        });
-    }
-
     public void initialize() {
+        addCredentialsBtn.setOnMouseEntered(e -> addCredentialsBtn.setStyle("-fx-background-color: #11eece; -fx-text-fill: white;"));
+        addCredentialsBtn.setOnMouseExited(e -> addCredentialsBtn.setStyle("-fx-background-color: #77FFDF; -fx-text-fill: white;"));
+        addCredentialsBtn.setOnMousePressed(e -> addCredentialsBtn.setStyle("-fx-background-color: #0ebba2; -fx-text-fill: white;"));
+        addCredentialsBtn.setOnMouseReleased(e -> addCredentialsBtn.setStyle("-fx-background-color: #77FFDF; -fx-text-fill: white;"));
+
         addCredentialsBtn.setOnAction(actionEvent -> {
-            addCredentialsBtn.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
+            InstructorsInfoDatabase instructorsInfoDatabase = new InstructorsInfoDatabase(getTeachingExperienceField1(), getTeachingExperienceField2(), getTeachingExperienceField3(), getTeachingExpertiseField1(), getTeachingExpertiseField2(), getTeachingExpertiseField3(), getLinkedInUrlField());
+            instructorsInfoDatabase.insertData();
         });
     }
 }

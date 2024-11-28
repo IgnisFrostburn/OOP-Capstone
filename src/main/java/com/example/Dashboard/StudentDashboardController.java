@@ -49,8 +49,7 @@ public class StudentDashboardController {
     private static final double innerPaneSize = 50.0;
 
     public void initialize() throws SQLException {
-        InstructorsInfoDatabase instructorsInfoDatabase = new InstructorsInfoDatabase();
-        coursesCtr = instructorsInfoDatabase.numberOfCourses();
+        coursesCtr = InstructorsInfoDatabase.numberOfCourses();
         LearnerDatabase learnerDB = new LearnerDatabase();
         coursesEnrolledCTR.setText("1");
         for(int i = 0; i < coursesCtr; i++) {

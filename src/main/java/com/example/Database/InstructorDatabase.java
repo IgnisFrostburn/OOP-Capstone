@@ -87,4 +87,23 @@ public class InstructorDatabase extends DatabaseConnection{
         }
         return ctr;
     }
+
+    //gets the id of the instructor using their last name
+    public int getInstructorID(String instructorName) throws SQLException {
+        int ctr = 1;
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            String selectQuery = "SELECT LastName FROM instructors";
+            try (Statement selectStmt = connection.createStatement();
+                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
+
+                while (resultSet.next()) {
+                    if(resultSet.getString("LastName").equals(instructorName)) return ctr;
+                    ctr++;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ctr;
+    }
 }
