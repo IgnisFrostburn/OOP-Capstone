@@ -1,0 +1,205 @@
+Index: src/main/java/com/example/javafxdemo/CoursesController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.javafxdemo;\r\n\r\npublic class CoursesController {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/javafxdemo/CoursesController.java b/src/main/java/com/example/javafxdemo/CoursesController.java
+--- a/src/main/java/com/example/javafxdemo/CoursesController.java	(revision 62c5fa5fd73204a9eaba79bde21b61e683a242a6)
++++ b/src/main/java/com/example/javafxdemo/CoursesController.java	(date 1732754380485)
+@@ -1,4 +1,80 @@
+ package com.example.javafxdemo;
+ 
++import javafx.fxml.FXML;
++import javafx.scene.control.Label;
++import javafx.scene.control.ProgressBar;
++import javafx.scene.control.TextField;
++import javafx.scene.layout.AnchorPane;
++import javafx.scene.layout.GridPane;
++import javafx.scene.layout.Pane;
++import javafx.scene.layout.StackPane;
++import javafx.stage.Stage;
++import javafx.scene.control.Button;
++
++import java.awt.event.MouseEvent;
++import java.util.InputMismatchException;
++
+ public class CoursesController {
++
++    @FXML
++    private Button addCourseButton;  // Button that adds new course box
++
++    @FXML
++    private GridPane gridPane;  // Button that adds new course box
++
++    private int currentRow = 0; // Start from row 0
++    private int currentColumn = 0; // Start from column 0
++
++
++
++    public void addCourse(){
++
++        addCourseButton.setOnAction(e -> {
++            Pane coursePane = createCoursePane();
++
++            // Add the pane to the grid at the current position
++            gridPane.add(coursePane, currentColumn, currentRow);
++
++            // Move to the next cell
++            currentColumn++;
++            if (currentColumn > 1) { // If two columns are filled, move to the next row
++                currentColumn = 0;
++                currentRow++;
++            }
++        });
++    }
++
++
++    private Pane createCoursePane() {
++        Pane pane = new Pane();
++        pane.setId("otherBox");
++        pane.setPrefSize(225, 150); // Match the size in the FXML
++        //pane.setStyle("-fx-border-color: black; -fx-background-color: lightblue;");
++
++        // Create and configure the ProgressBar
++        ProgressBar progressBar = new ProgressBar(0.0); // Default progress to 0.0
++        progressBar.setLayoutX(25.0);
++        progressBar.setLayoutY(100.0);
++        progressBar.setPrefSize(175, 18);
++
++        // Create and configure the Label
++        Label label = new Label("Description");
++        label.setLayoutX(25.0);
++        label.setLayoutY(67.0);
++
++        // Create and configure the Button
++        Button button = new Button("Course name");
++        button.setLayoutX(25.0);
++        button.setLayoutY(25.0);
++        button.setMnemonicParsing(false);
++
++        // Add all elements to the Pane
++        pane.getChildren().addAll(progressBar, label, button);
++
++        return pane;
++    }
++
++
++
++
+ }
+Index: src/main/resources/com/example/javafxdemo/Courses.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.ListView?>\r\n<?import javafx.scene.control.ProgressBar?>\r\n<?import javafx.scene.control.TableColumn?>\r\n<?import javafx.scene.control.TableView?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane prefHeight=\"720.0\" prefWidth=\"1080.0\" stylesheets=\"@styles.css\" xmlns=\"http://javafx.com/javafx/23.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.example.javafxdemo.CoursesController\">\r\n    <children>\r\n        <ImageView fitHeight=\"720.0\" fitWidth=\"1080.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n            <image>\r\n                <Image url=\"@../../../images/bg.png\" />\r\n            </image>\r\n        </ImageView>\r\n        <Pane id=\"sidePane\" layoutY=\"-1.0\" prefHeight=\"720.0\" prefWidth=\"250.0\">\r\n            <children>\r\n                <ImageView fitHeight=\"720.0\" fitWidth=\"287.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                    <image>\r\n                        <Image url=\"@../../../images/sideTo.png\" />\r\n                    </image>\r\n                </ImageView>\r\n                <ImageView id=\"DashboardIcon\" fitHeight=\"40.0\" fitWidth=\"40.0\" layoutX=\"20.0\" layoutY=\"135.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                    <image>\r\n                        <Image url=\"@../../../images/1.png\" />\r\n                    </image>\r\n                </ImageView>\r\n                <ImageView fitHeight=\"40.0\" fitWidth=\"40.0\" layoutX=\"20.0\" layoutY=\"185.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                    <image>\r\n                        <Image url=\"@../../../images/courses.png\" />\r\n                    </image>\r\n                </ImageView>\r\n                <ImageView fitHeight=\"40.0\" fitWidth=\"40.0\" layoutX=\"20.0\" layoutY=\"235.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                    <image>\r\n                        <Image url=\"@../../../images/meet.png\" />\r\n                    </image>\r\n                </ImageView>\r\n                <Button layoutX=\"70.0\" layoutY=\"140.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"140.0\" text=\"Dashboard\" />\r\n                <Button layoutX=\"70.0\" layoutY=\"192.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"140.0\" text=\"Courses\" />\r\n                <Button layoutX=\"70.0\" layoutY=\"241.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"140.0\" text=\"Appointments\" />\r\n                <ImageView fitHeight=\"40.0\" fitWidth=\"40.0\" layoutX=\"25.0\" layoutY=\"287.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                    <image>\r\n                        <Image url=\"@../../../images/assignment.png\" />\r\n                    </image>\r\n                </ImageView>\r\n                <Button layoutX=\"70.0\" layoutY=\"289.0\" mnemonicParsing=\"false\" prefWidth=\"140.0\" text=\"Assignment\" />\r\n            </children>\r\n        </Pane>\r\n        <Pane id=\"mainBody\" layoutX=\"244.0\" layoutY=\"-23.0\" prefHeight=\"759.0\" prefWidth=\"840.0\">\r\n            <children>\r\n                <Pane id=\"teacherBox\" layoutX=\"38.0\" layoutY=\"189.0\" prefHeight=\"150.0\" prefWidth=\"225.0\">\r\n                    <children>\r\n                        <ProgressBar layoutX=\"25.0\" layoutY=\"100.0\" prefHeight=\"18.0\" prefWidth=\"175.0\" progress=\"0.0\" />\r\n                        <Button layoutX=\"25.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" text=\"Course name\" />\r\n                        <Label layoutX=\"25.0\" layoutY=\"67.0\" text=\"Description\" />\r\n                    </children></Pane>\r\n                <Label layoutX=\"64.0\" layoutY=\"125.0\" prefHeight=\"58.0\" prefWidth=\"352.0\" text=\"Progress\">\r\n                    <font>\r\n                        <Font size=\"26.0\" />\r\n                    </font></Label>\r\n                <Label layoutX=\"64.0\" layoutY=\"100.0\" text=\"Dashboard\">\r\n                    <font>\r\n                        <Font size=\"16.0\" />\r\n                    </font>\r\n                </Label>\r\n                <Pane id=\"studentBox\" layoutX=\"304.0\" layoutY=\"189.0\" prefHeight=\"150.0\" prefWidth=\"225.0\">\r\n                    <children>\r\n                        <ProgressBar layoutX=\"25.0\" layoutY=\"100.0\" prefHeight=\"18.0\" prefWidth=\"175.0\" progress=\"0.0\" />\r\n                        <Label layoutX=\"25.0\" layoutY=\"67.0\" text=\"Description\" />\r\n                        <Button layoutX=\"25.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" text=\"Course name\" />\r\n                    </children></Pane>\r\n                <Pane id=\"otherBox\" layoutX=\"572.0\" layoutY=\"189.0\" prefHeight=\"150.0\" prefWidth=\"225.0\">\r\n                    <children>\r\n                        <ProgressBar layoutX=\"25.0\" layoutY=\"100.0\" prefHeight=\"18.0\" prefWidth=\"175.0\" progress=\"0.0\" />\r\n                        <Label layoutX=\"25.0\" layoutY=\"67.0\" text=\"Description\" />\r\n                        <Button layoutX=\"25.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" text=\"Course name\" />\r\n                    </children></Pane>\r\n                <Label layoutX=\"64.0\" layoutY=\"380.0\" prefHeight=\"58.0\" prefWidth=\"352.0\" text=\"Scheduled appointment\">\r\n                    <font>\r\n                        <Font size=\"26.0\" />\r\n                    </font>\r\n                </Label>\r\n                <TableView layoutX=\"38.0\" layoutY=\"430.0\" prefHeight=\"200.0\" prefWidth=\"361.0\">\r\n                    <columns>\r\n                        <TableColumn prefWidth=\"141.66665649414062\" text=\"Date\" />\r\n                        <TableColumn prefWidth=\"139.33334350585938\" text=\"Detail\" />\r\n                    </columns>\r\n                </TableView>\r\n                <Label layoutX=\"450.0\" layoutY=\"380.0\" prefHeight=\"58.0\" prefWidth=\"352.0\" text=\"Assignements\">\r\n                    <font>\r\n                        <Font size=\"26.0\" />\r\n                    </font>\r\n                </Label>\r\n                <ListView layoutX=\"445.0\" layoutY=\"430.0\" prefHeight=\"200.0\" prefWidth=\"344.0\" />\r\n            </children></Pane>\r\n    </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/javafxdemo/Courses.fxml b/src/main/resources/com/example/javafxdemo/Courses.fxml
+--- a/src/main/resources/com/example/javafxdemo/Courses.fxml	(revision 62c5fa5fd73204a9eaba79bde21b61e683a242a6)
++++ b/src/main/resources/com/example/javafxdemo/Courses.fxml	(date 1732754683200)
+@@ -2,14 +2,14 @@
+ 
+ <?import javafx.scene.control.Button?>
+ <?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.ListView?>
+-<?import javafx.scene.control.ProgressBar?>
+-<?import javafx.scene.control.TableColumn?>
+-<?import javafx.scene.control.TableView?>
++<?import javafx.scene.control.ScrollPane?>
+ <?import javafx.scene.image.Image?>
+ <?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.layout.ColumnConstraints?>
++<?import javafx.scene.layout.GridPane?>
+ <?import javafx.scene.layout.Pane?>
++<?import javafx.scene.layout.RowConstraints?>
+ <?import javafx.scene.text.Font?>
+ 
+ <AnchorPane prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.CoursesController">
+@@ -19,6 +19,21 @@
+                 <Image url="@../../../images/bg.png" />
+             </image>
+         </ImageView>
++      <ScrollPane fx:id="scrolling" fitToWidth="true" layoutX="300.0" layoutY="150.0" prefHeight="436.0" prefWidth="525.0">
++         <content>
++            <GridPane fx:id="gridPane" hgap="20.0" vgap="20.0">
++              <columnConstraints>
++                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
++                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
++              </columnConstraints>
++              <rowConstraints>
++                <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="128.0" vgrow="SOMETIMES" />
++                <RowConstraints maxHeight="140.0" minHeight="0.0" prefHeight="129.0" vgrow="SOMETIMES" />
++                <RowConstraints maxHeight="268.0" minHeight="10.0" prefHeight="134.0" vgrow="SOMETIMES" />
++              </rowConstraints>
++            </GridPane>
++         </content>
++      </ScrollPane>
+         <Pane id="sidePane" layoutY="-1.0" prefHeight="720.0" prefWidth="250.0">
+             <children>
+                 <ImageView fitHeight="720.0" fitWidth="287.0" pickOnBounds="true" preserveRatio="true">
+@@ -52,52 +67,15 @@
+                 <Button layoutX="70.0" layoutY="289.0" mnemonicParsing="false" prefWidth="140.0" text="Assignment" />
+             </children>
+         </Pane>
+-        <Pane id="mainBody" layoutX="244.0" layoutY="-23.0" prefHeight="759.0" prefWidth="840.0">
+-            <children>
+-                <Pane id="teacherBox" layoutX="38.0" layoutY="189.0" prefHeight="150.0" prefWidth="225.0">
+-                    <children>
+-                        <ProgressBar layoutX="25.0" layoutY="100.0" prefHeight="18.0" prefWidth="175.0" progress="0.0" />
+-                        <Button layoutX="25.0" layoutY="25.0" mnemonicParsing="false" text="Course name" />
+-                        <Label layoutX="25.0" layoutY="67.0" text="Description" />
+-                    </children></Pane>
+-                <Label layoutX="64.0" layoutY="125.0" prefHeight="58.0" prefWidth="352.0" text="Progress">
+-                    <font>
+-                        <Font size="26.0" />
+-                    </font></Label>
+-                <Label layoutX="64.0" layoutY="100.0" text="Dashboard">
+-                    <font>
+-                        <Font size="16.0" />
+-                    </font>
+-                </Label>
+-                <Pane id="studentBox" layoutX="304.0" layoutY="189.0" prefHeight="150.0" prefWidth="225.0">
+-                    <children>
+-                        <ProgressBar layoutX="25.0" layoutY="100.0" prefHeight="18.0" prefWidth="175.0" progress="0.0" />
+-                        <Label layoutX="25.0" layoutY="67.0" text="Description" />
+-                        <Button layoutX="25.0" layoutY="25.0" mnemonicParsing="false" text="Course name" />
+-                    </children></Pane>
+-                <Pane id="otherBox" layoutX="572.0" layoutY="189.0" prefHeight="150.0" prefWidth="225.0">
+-                    <children>
+-                        <ProgressBar layoutX="25.0" layoutY="100.0" prefHeight="18.0" prefWidth="175.0" progress="0.0" />
+-                        <Label layoutX="25.0" layoutY="67.0" text="Description" />
+-                        <Button layoutX="25.0" layoutY="25.0" mnemonicParsing="false" text="Course name" />
+-                    </children></Pane>
+-                <Label layoutX="64.0" layoutY="380.0" prefHeight="58.0" prefWidth="352.0" text="Scheduled appointment">
+-                    <font>
+-                        <Font size="26.0" />
+-                    </font>
+-                </Label>
+-                <TableView layoutX="38.0" layoutY="430.0" prefHeight="200.0" prefWidth="361.0">
+-                    <columns>
+-                        <TableColumn prefWidth="141.66665649414062" text="Date" />
+-                        <TableColumn prefWidth="139.33334350585938" text="Detail" />
+-                    </columns>
+-                </TableView>
+-                <Label layoutX="450.0" layoutY="380.0" prefHeight="58.0" prefWidth="352.0" text="Assignements">
+-                    <font>
+-                        <Font size="26.0" />
+-                    </font>
+-                </Label>
+-                <ListView layoutX="445.0" layoutY="430.0" prefHeight="200.0" prefWidth="344.0" />
+-            </children></Pane>
++          <Label layoutX="300.0" layoutY="41.0" prefHeight="58.0" prefWidth="352.0" text="Courses">
++              <font>
++                  <Font size="26.0" />
++              </font>
++      </Label>
++      <Button fx:id="addCourseButton" layoutX="300.0" layoutY="105.0" mnemonicParsing="false" onMouseClicked="#addCourse" text="Add course">
++         <font>
++            <Font size="18.0" />
++         </font>
++      </Button>
+     </children>
+ </AnchorPane>

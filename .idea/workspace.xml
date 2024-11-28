@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bc4bd21-e2bf-499e-a356-7195176f21f6" name="Changes" comment="added student dashboard" />
+    <list default="true" id="8bc4bd21-e2bf-499e-a356-7195176f21f6" name="Changes" comment="added student dashboard">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_45_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_45_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +21,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,11 +40,15 @@
     &quot;accountId&quot;: &quot;cd5c9167-9ff1-4512-98d0-d2ff5300d41a&quot;
   }
 }</component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.LoginPageApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Mcxine and Mckyla/IdeaProjects/MASTEROOP/src/main/resources/images"
+    "git-widget-placeholder": "Dashboard",
+    "last_opened_file_path": "C:/Users/Mcxine and Mckyla/IdeaProjects/MASTEROOP/src/main/resources/images",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -143,6 +154,7 @@
     <MESSAGE value="&quot;Login to Main UI&quot;" />
     <MESSAGE value="&quot;Sign Up to Main UI&quot;" />
     <MESSAGE value="added student dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="added student dashboard" />
+    <MESSAGE value="dashboard admin and student" />
+    <option name="LAST_COMMIT_MESSAGE" value="dashboard admin and student" />
   </component>
 </project>
