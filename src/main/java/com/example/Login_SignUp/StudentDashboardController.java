@@ -13,21 +13,26 @@ import java.sql.SQLException;
 public class StudentDashboardController {
     @FXML
     private StackPane studentDashBoardStackPane;
+    @FXML
     private Text coursesEnrolledCTR;
 
     @FXML
     private ScrollPane browseScrollPane;
+    @FXML
     private Button dashboardBtn;
 
     @FXML
     private Pane browseCourseWrapperPane;
+    @FXML
     private Text dashboardEmail;
     @FXML
     private GridPane browseCourseGridPane;
+    @FXML
     private Text dashboardName;
     @FXML
     private Pane browseCourseInnerGridPane;
 
+    @FXML
     private Text dashboardUniversity;
 
     @FXML
