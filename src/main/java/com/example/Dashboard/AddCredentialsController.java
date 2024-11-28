@@ -1,6 +1,7 @@
 package com.example.Dashboard;
 
 import com.example.Database.InstructorsInfoDatabase;
+import com.example.Login_SignUp.LoggedInUser;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -91,7 +92,7 @@ public class AddCredentialsController {
 
         addCredentialsBtn.setOnAction(actionEvent -> {
             InstructorsInfoDatabase instructorsInfoDatabase = new InstructorsInfoDatabase(getTeachingExperienceField1(), getTeachingExperienceField2(), getTeachingExperienceField3(), getTeachingExpertiseField1(), getTeachingExpertiseField2(), getTeachingExpertiseField3(), getLinkedInUrlField());
-            instructorsInfoDatabase.insertData();
+            instructorsInfoDatabase.insertData(LoggedInUser.getInstance().getEmail());
         });
     }
 }

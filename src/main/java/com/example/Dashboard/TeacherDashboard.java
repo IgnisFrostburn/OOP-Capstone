@@ -9,7 +9,7 @@ import java.io.IOException;
 public class TeacherDashboard extends Application{
 
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(TeacherDashboard.class.getResource("TeacherDashboard.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(TeacherDashboard.class.getResource("/com/example/Login_SignUp/TeacherDashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
         stage.setTitle("ExcelOne");
         stage.setFullScreen(false);

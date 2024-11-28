@@ -1,6 +1,7 @@
 package com.example.Login_SignUp;
 
 import com.example.Dashboard.StudentDashboard;
+import com.example.Dashboard.TeacherDashboard;
 import com.example.Database.InstructorDatabase;
 import com.example.Database.LearnerDatabase;
 import javafx.event.ActionEvent;
@@ -165,6 +166,16 @@ public class LoginPageController {
                         } else {
                             throw new RuntimeException("NO USER FOUND");
                         }
+
+                        Stage studentStage = new Stage();
+                        StudentDashboard studentDashboard = new StudentDashboard();
+                        try {
+                            studentDashboard.start(studentStage);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        stage = (Stage) loginAnchorPane.getScene().getWindow();
+                        stage.close();
                     } else {
                         if (!validEmail) setBorderColor(loginEmailTF, "red");
                         else setBorderColor(loginEmailTF, "green");
@@ -190,6 +201,16 @@ public class LoginPageController {
                             instance.setUniversity(loggedInUser.getUniversity());
                             instance.setRole("Instructor");
                         }
+
+                        Stage teacherStage = new Stage();
+                        TeacherDashboard teacherDashboard = new TeacherDashboard();
+                        try {
+                            teacherDashboard.start(teacherStage);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        stage = (Stage) loginAnchorPane.getScene().getWindow();
+                        stage.close();
                     } else {
                         if (validEmail) setBorderColor(loginEmailTF, "red");
                         else setBorderColor(loginEmailTF, "green");

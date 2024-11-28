@@ -46,13 +46,13 @@ public class InstructorsInfoDatabase {
         this.linkedInURL = linkedInURL;
     }
 
-    public void insertData() {
+    public void insertData(String id) {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Connected to the database!");
             String insertQuery = "INSERT INTO instructor_info (instructorID, teaching_experience1, teaching_experience2, teaching_experience3, teaching_expertise1, teaching_expertise2, teaching_expertise3, linkedIn_url) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {
-                //to do: change the temporary "1" with the id of the current instructor
-                insertStmt.setString(1, "1");
+                //to do: take the email parameter and insert to the instructor ID
+                insertStmt.setString(1, id);
                 insertStmt.setString(2, getTeachingExperience_1());
                 insertStmt.setString(3, getTeachingExperience_2());
                 insertStmt.setString(4, getTeachingExperience_3());

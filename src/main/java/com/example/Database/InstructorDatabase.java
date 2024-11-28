@@ -126,16 +126,16 @@ public class InstructorDatabase extends DatabaseConnection{
         return ctr;
     }
 
-    //gets the id of the instructor using their last name
-    public int getInstructorID(String instructorName) throws SQLException {
+    //gets the id of the instructor using their email
+    public int getInstructorID(String email) throws SQLException {
         int ctr = 1;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT LastName FROM instructors";
+            String selectQuery = "SELECT Email FROM instructors";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
 
                 while (resultSet.next()) {
-                    if(resultSet.getString("LastName").equals(instructorName)) return ctr;
+                    if(resultSet.getString("Email").equals(email)) return ctr;
                     ctr++;
                 }
             }
