@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -13,9 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="signUpPageStackPane" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.SignUpPageController">
+<StackPane fx:id="signUpPageStackPane" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Login_SignUp.SignUpPageController">
    <children>
-      <AnchorPane fx:id="signUpPageOnePane" prefHeight="720.0" prefWidth="1080.0" visible="false">
+      <AnchorPane fx:id="signUpPageOnePane" prefHeight="720.0" prefWidth="1080.0">
          <children>
             <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -59,7 +60,7 @@
             </Text>
             <AnchorPane id="formContainerRegisterOne" fx:id="as" layoutX="292.0" layoutY="140.0" prefHeight="520.0" prefWidth="500.0" stylesheets="@styles.css">
                <children>
-                  <Button fx:id="proceedBtn" layoutX="273.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="161.0" style="-fx-background-color: #007bff;" text="Proceed" textFill="WHITE">
+                  <Button fx:id="proceedBtn" layoutX="272.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="Proceed" textFill="WHITE">
                      <font>
                         <Font name="Inter 24pt ExtraBold" size="22.0" />
                      </font>
@@ -67,9 +68,9 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD" textOrigin="CENTER">
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD" textOrigin="CENTER">
                      <font>
-                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                        <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
                   <TextField id="emailtf" fx:id="emailTF" layoutX="35.0" layoutY="168.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter email address" style="-fx-border-color: black;">
@@ -79,25 +80,25 @@
                   </TextField>
                   <Text boundsType="VISUAL" layoutX="35.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL ADDRESS" textOrigin="CENTER">
                      <font>
-                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                        <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <TextField id="emailtf" fx:id="passwordTF" layoutX="35.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter password" style="-fx-border-color: black;">
+                  <TextField id="emailtf" fx:id="passwordTF" layoutX="35.0" layoutY="248.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter password" style="-fx-border-color: black;">
                      <font>
                         <Font name="Inter 18pt Regular" size="14.0" />
                      </font>
                   </TextField>
-                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIRM PASSWORD" textOrigin="CENTER">
+                  <Text boundsType="VISUAL" layoutX="35.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIRM PASSWORD" textOrigin="CENTER">
                      <font>
-                        <Font name="Inter 24pt ExtraBold" size="20.0" />
+                        <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <TextField id="emailtf" fx:id="confirmPasswordTF" layoutX="35.0" layoutY="319.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter confirm password" style="-fx-border-color: black;">
+                  <TextField id="emailtf" fx:id="confirmPasswordTF" layoutX="35.0" layoutY="324.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter confirm password" style="-fx-border-color: black;">
                      <font>
                         <Font name="Inter 18pt Regular" size="14.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="learnerBtn" layoutX="39.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="LEARNER" textFill="WHITE">
+                  <Button fx:id="learnerBtn" layoutX="39.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff; -fx-font-style: bold;" text="LEARNER" textFill="WHITE">
                      <font>
                         <Font name="Inter 24pt ExtraBold" size="22.0" />
                      </font>
@@ -114,7 +115,23 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label fx:id="accountTypeWarningLabel" alignment="CENTER" layoutX="113.0" layoutY="121.0" prefHeight="18.0" prefWidth="263.0" textFill="#d70606" />
+                  <Label fx:id="accountTypeWarningLabel" alignment="CENTER" layoutX="113.0" layoutY="121.0" prefHeight="18.0" prefWidth="263.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="emailAddressWarning" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="208.0" prefHeight="18.0" prefWidth="263.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="backToLoginBtn" layoutX="39.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="Back to Login" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </AnchorPane>
          </children>
@@ -229,7 +246,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="signUpInstructorPane" layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="1080.0">
+      <AnchorPane fx:id="signUpInstructorPane" layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="1080.0" visible="false">
          <children>
             <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -292,7 +309,7 @@
                         <Font name="Inter 24pt ExtraBold" size="20.0" />
                      </font>
                   </Text>
-                  <TextField id="emailtf" fx:id="instructorFIrstNameTF" layoutX="35.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter First Name e.g. John" style="-fx-border-color: black;">
+                  <TextField id="emailtf" fx:id="instructorFirstNameTF" layoutX="35.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter First Name e.g. John" style="-fx-border-color: black;">
                      <font>
                         <Font name="Inter 18pt Regular" size="14.0" />
                      </font>
@@ -337,6 +354,117 @@
                   </Button>
                </children>
             </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="mainScene" fx:id="verifyEmailPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css" visible="false">
+         <children>
+            <AnchorPane id="formContainer" fx:id="as2" layoutX="282.0" layoutY="130.0" prefHeight="520.0" prefWidth="500.0" stylesheets="@styles.css" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="298.0">
+               <children>
+                  <Button id="proceedbtn" fx:id="submitbtn" layoutX="272.0" layoutY="320.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Submit" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Text fill="#373643" layoutX="126.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VERIFY">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Text>
+                  <Text fill="DODGERBLUE" layoutX="265.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Text>
+                  <Line endX="1372.166748046875" layoutX="-1309.0" layoutY="106.0" startX="1746.666748046875" stroke="DODGERBLUE" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="62.5" />
+                  <Text layoutX="110.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We've initiated the OTP Proces. Kindly navigate ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="153.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to your email inbox to retrieve the  ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="183.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="unique verification code">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#373643" layoutX="66.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the OTP">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <TextField id="otptextfield" fx:id="otptextfield" layoutX="65.0" layoutY="253.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="380.0" promptText="Enter 6-digit code">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Text layoutX="140.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You must complete the verification in">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="162.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="order to register your account">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="generateOTP" layoutX="87.0" layoutY="320.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Generate OTP" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </AnchorPane>
+            <Text fill="#373643" layoutX="399.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Text>
+            <Text fill="DODGERBLUE" layoutX="530.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Text>
+            <Circle fill="DODGERBLUE" layoutX="377.0" layoutY="95.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="DODGERBLUE" layoutX="532.0" layoutY="95.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="DODGERBLUE" layoutX="687.0" layoutY="96.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Text fill="WHITE" layoutX="372.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="527.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="682.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Line endX="1372.166748046875" layoutX="-820.0" layoutY="95.0" startX="1486.666748046875" stroke="DODGERBLUE" />
+            <Line endX="1372.166748046875" layoutX="-975.0" layoutY="95.0" startX="1486.666748046875" stroke="DODGERBLUE" />
+            <Button fx:id="backLogin" layoutX="620.0" layoutY="665.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="162.0" text="Back to Login Page" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
    </children>
