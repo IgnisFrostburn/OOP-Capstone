@@ -1,17 +1,18 @@
-package com.example.Login_SignUp;
+package com.example.Dashboard;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import java.io.IOException;
 
-public class AddCredentials extends Application {
+public class AddCourse extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws IOException {
         primaryStage.setTitle("ExcelOne");
-        FXMLLoader loader = new FXMLLoader(AddCredentials.class.getResource("AddCredentials.fxml"));
+        FXMLLoader loader = new FXMLLoader(AddCourse.class.getResource("AddCourse.fxml"));
         StackPane root = loader.load();
         Scene scene = new Scene(root, 1080, 720);
         primaryStage.setScene(scene);

@@ -35,25 +35,25 @@ public class LearnerDatabase extends DatabaseConnection {
         }
     }
 //TIWASA NI
-    public void getUserData(){
-        try(Connection connection = DriverManager.getConnection(url, username, password)){
-            String query = "SELECT * FROM learners WHERE email = ?";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, "bebedorkarolvincent@gmail.com");
-            ResultSet resultSet = statement.executeQuery();
-
-//            while(resultSet.next()){
-//                String name = resultSet.getString(name);
-//            }
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
+//    public void getUserData(){
+//        try(Connection connection = DriverManager.getConnection(url, username, password)){
+//            String query = "SELECT * FROM learners WHERE email = ?";
+//            PreparedStatement statement = connection.prepareStatement(query);
+//            statement.setString(1, "bebedorkarolvincent@gmail.com");
+//            ResultSet resultSet = statement.executeQuery();
+//
+////            while(resultSet.next()){
+////                String name = resultSet.getString(name);
+////            }
+//        }catch (Exception e){
+//            System.out.println(e.getMessage());
+//        }
+//    }
 
     @Override
     public boolean checkEmail(String email) throws SQLException {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT LastName, FirstName, MiddleName, University, Email, Password FROM learners";
+            String selectQuery = "SELECT Email FROM learners";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
 
@@ -70,7 +70,7 @@ public class LearnerDatabase extends DatabaseConnection {
     @Override
     public boolean checkPassword(String userPassword) throws SQLException {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT LastName, FirstName, MiddleName, University, Email, Password FROM learners";
+            String selectQuery = "SELECT Password FROM learners";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
 

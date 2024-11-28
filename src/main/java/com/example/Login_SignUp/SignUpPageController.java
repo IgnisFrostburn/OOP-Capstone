@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -38,9 +39,9 @@ public class SignUpPageController {
     @FXML
     private TextField emailTF;
     @FXML
-    private TextField passwordTF;
+    private PasswordField passwordPF;
     @FXML
-    private TextField confirmPasswordTF;
+    private PasswordField confirmPasswordPF;
     @FXML
     private Button proceedBtn;
     @FXML
@@ -94,11 +95,11 @@ public class SignUpPageController {
     }
 
     private String getPassword() {
-        return passwordTF.getText();
+        return passwordPF.getText();
     }
 
     private String getConfirmPassword() {
-        return confirmPasswordTF.getText();
+        return confirmPasswordPF.getText();
     }
 
     protected boolean checkEmailValidity(String email) {
@@ -150,11 +151,10 @@ public class SignUpPageController {
                 if (textField.getText().isBlank()) {
                     setBorderColor(textField, "red");
                     ctr++;
+                } else if(textField == confirmPasswordPF && !getPassword().equals(getConfirmPassword())) {
+                    setBorderColor(textField, "red");
                 } else if(textField == emailTF) {
                     if(!checkEmailValidity(textField.getText())) setBorderColor(textField, "red");
-                    else setBorderColor(textField, "green");
-                } else if(textField == confirmPasswordTF) {
-                    if(!textField.getText().equals(getPassword())) setBorderColor(textField, "red");
                     else setBorderColor(textField, "green");
                 } else {
                     setBorderColor(textField, "green");
@@ -263,13 +263,6 @@ public class SignUpPageController {
         return (!learnerDatabase.checkEmail(email) && !instructorDatabase.checkEmail(email));
     }
 
-    protected void textMask(TextField textField) {
-        textField.textProperty().addListener((observable, oldValue, newValue) -> {
-            textField.setText("•".repeat(newValue.length()));
-            textField.positionCaret(newValue.length());
-        });
-    }
-
     @FXML
     public void initialize() {
         signUpPageOnePane.setVisible(true);
@@ -283,8 +276,6 @@ public class SignUpPageController {
         submitbtn.setDisable(true);
         AtomicReference<String> OTP = new AtomicReference<>();
         AtomicReference<String> emailAdd = new AtomicReference<>();
-        textMask(passwordTF);
-        textMask(confirmPasswordTF);
 
         learnerBtn.setOnAction(e -> {
             isLearner = true;
@@ -301,21 +292,24 @@ public class SignUpPageController {
         });
 
         textFieldChecker(emailTF);
-        textFieldChecker(passwordTF);
-        textFieldChecker(confirmPasswordTF);
+        textFieldChecker(passwordPF);
+        textFieldChecker(confirmPasswordPF);
 
         proceedBtn.setOnMouseEntered(e -> proceedBtn.setStyle("-fx-background-color: #0056b3; -fx-text-fill: white;"));
         proceedBtn.setOnMouseExited(e -> proceedBtn.setStyle("-fx-background-color: #007bff; -fx-text-fill: white;"));
 
         proceedBtn.setOnAction(actionEvent -> {
             try {
+                //email is blank or not valid
                 if(getEmail().isBlank() || !checkEmailValidity(getEmail())) {
                     setBorderColor(emailTF, "red");
                     ctr++;
+                //email is already used
                 } else if(!emailIsAvailable(getEmail())) {
                     emailAddressWarning.setText("Email is already used");
                     setBorderColor(emailTF, "red");
                     ctr++;
+                //email is valid and available
                 } else {
                     emailAddressWarning.setText("");
                     setBorderColor(emailTF, "green");
@@ -324,11 +318,11 @@ public class SignUpPageController {
                 throw new RuntimeException(e);
             }
 
-            ctr += isBlankTF(passwordTF);
+            ctr += isBlankTF(passwordPF);
             if(getConfirmPassword().isBlank() || !getConfirmPassword().equals(getPassword()))  {
-                setBorderColor(confirmPasswordTF, "red");
+                setBorderColor(confirmPasswordPF, "red");
                 ctr++;
-            } else setBorderColor(confirmPasswordTF, "green");
+            } else setBorderColor(confirmPasswordPF, "green");
 
             try {
                 System.out.println(ctr);

@@ -1,4 +1,4 @@
-package com.example.Login_SignUp;
+package com.example.Dashboard;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

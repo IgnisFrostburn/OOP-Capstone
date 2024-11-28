@@ -1,8 +1,9 @@
-package com.example.Login_SignUp;
+package com.example.Dashboard;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class AddCredentialsController {
@@ -21,6 +22,8 @@ public class AddCredentialsController {
     private TextField teachingExpertiseField3;
     @FXML
     private TextField linkedInUrlField;
+    @FXML
+    private Button addCredentialsBtn;
 
 
 
@@ -57,5 +60,17 @@ public class AddCredentialsController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    protected void onMouseEntered(Button btn) {
+        btn.setOnMouseEntered(e -> {
+            btn.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
+        });
+    }
+
+    public void initialize() {
+        addCredentialsBtn.setOnAction(actionEvent -> {
+            addCredentialsBtn.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
+        });
     }
 }

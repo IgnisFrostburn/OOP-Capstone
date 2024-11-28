@@ -1,6 +1,5 @@
-package com.example.Login_SignUp;
+package com.example.Dashboard;
 
-import com.example.Database.InstructorDatabase;
 import com.example.Database.InstructorsInfoDatabase;
 import com.example.Database.LearnerDatabase;
 import javafx.fxml.FXML;

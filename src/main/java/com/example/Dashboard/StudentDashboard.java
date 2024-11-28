@@ -1,4 +1,4 @@
-package com.example.Login_SignUp;
+package com.example.Dashboard;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,7 +15,6 @@ public class StudentDashboard extends Application {
         stage.setFullScreen(false);
         stage.setResizable(false);
         stage.setScene(scene);
-
         stage.show();
     }
 

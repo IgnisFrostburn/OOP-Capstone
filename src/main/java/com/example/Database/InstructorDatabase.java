@@ -39,7 +39,7 @@ public class InstructorDatabase extends DatabaseConnection{
     public boolean checkEmail(String email) throws SQLException {
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT LastName, FirstName, MiddleName, University, Email, Password FROM instructors";
+            String selectQuery = "SELECT Email FROM instructors";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
 
@@ -57,7 +57,7 @@ public class InstructorDatabase extends DatabaseConnection{
     public boolean checkPassword(String userPassword) throws SQLException {
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT LastName, FirstName, MiddleName, University, Email, Password FROM instructors";
+            String selectQuery = "SELECT Password FROM instructors";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
 
