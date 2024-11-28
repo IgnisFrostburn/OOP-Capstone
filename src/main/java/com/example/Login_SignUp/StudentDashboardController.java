@@ -22,13 +22,16 @@ public class StudentDashboardController {
     @FXML
     private Pane browseCourseWrapperPane;
     private Text dashboardEmail;
-
     @FXML
     private GridPane browseCourseGridPane;
     private Text dashboardName;
-
     @FXML
     private Pane browseCourseInnerGridPane;
+
+    private Text dashboardUniversity;
+
+    @FXML
+    private Text meetingsTodayCTR;
 
     private int instructorCtr = 0;
     private int gridCtr = 0;
@@ -40,6 +43,8 @@ public class StudentDashboardController {
     public void initialize() throws SQLException {
         InstructorDatabase instructorDatabase = new InstructorDatabase();
         instructorCtr = instructorDatabase.numberOfInstructors();
+        LearnerDatabase learnerDB = new LearnerDatabase();
+        coursesEnrolledCTR.setText("1");
         for(int i = 0; i < instructorCtr; i++) {
             System.out.println("addRow pressed and row is " + row);
             Pane outerPane = new Pane();
@@ -72,17 +77,10 @@ public class StudentDashboardController {
             rowConstraints.setMinHeight(220.0);
             rowConstraints.setPrefHeight(220.0);
             rowConstraints.setVgrow(javafx.scene.layout.Priority.NEVER);
-    private Text dashboardUniversity;
 
-    @FXML
-    private Text meetingsTodayCTR;
             double newHeight = (row + 1) * rowHeight;
             browseCourseWrapperPane.setPrefHeight(newHeight);
 
-    public void initialize(){
-        LearnerDatabase learnerDB = new LearnerDatabase();
-        coursesEnrolledCTR.setText("1");
-    }
             browseCourseGridPane.getRowConstraints().add(rowConstraints);
             if (gridCtr == 2) {
                 gridCtr = 0;
@@ -96,5 +94,3 @@ public class StudentDashboardController {
 
 
 
-
-}
