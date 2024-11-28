@@ -1,6 +1,8 @@
 package com.example.Login_SignUp;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -11,12 +13,20 @@ import java.sql.SQLException;
 public class StudentDashboardController {
     @FXML
     private StackPane studentDashBoardStackPane;
+    private Text coursesEnrolledCTR;
+
     @FXML
     private ScrollPane browseScrollPane;
+    private Button dashboardBtn;
+
     @FXML
     private Pane browseCourseWrapperPane;
+    private Text dashboardEmail;
+
     @FXML
     private GridPane browseCourseGridPane;
+    private Text dashboardName;
+
     @FXML
     private Pane browseCourseInnerGridPane;
 
@@ -62,10 +72,17 @@ public class StudentDashboardController {
             rowConstraints.setMinHeight(220.0);
             rowConstraints.setPrefHeight(220.0);
             rowConstraints.setVgrow(javafx.scene.layout.Priority.NEVER);
+    private Text dashboardUniversity;
 
+    @FXML
+    private Text meetingsTodayCTR;
             double newHeight = (row + 1) * rowHeight;
             browseCourseWrapperPane.setPrefHeight(newHeight);
 
+    public void initialize(){
+        LearnerDatabase learnerDB = new LearnerDatabase();
+        coursesEnrolledCTR.setText("1");
+    }
             browseCourseGridPane.getRowConstraints().add(rowConstraints);
             if (gridCtr == 2) {
                 gridCtr = 0;
@@ -80,3 +97,4 @@ public class StudentDashboardController {
 
 
 
+}

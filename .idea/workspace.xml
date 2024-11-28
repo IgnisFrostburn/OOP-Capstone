@@ -4,6 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="8bc4bd21-e2bf-499e-a356-7195176f21f6" name="Changes" comment="fixed student dashboard">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoggedInUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/StudentDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LearnerDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LearnerDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/StudentDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/StudentDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/MainInterface/StudentDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/MainInterface/StudentDashboard.fxml" afterDir="false" />
+    </list>
     <list default="true" id="8bc4bd21-e2bf-499e-a356-7195176f21f6" name="Changes" comment="&quot;Added back to Login in Sign Up Page&quot;">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/StudentDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -35,17 +43,31 @@
     &quot;assignee&quot;: &quot;IgnisFrostburn&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/IgnisFrostburn/OOP-Capstone.git&quot;,
-    &quot;accountId&quot;: &quot;cd5c9167-9ff1-4512-98d0-d2ff5300d41a&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/IgnisFrostburn/OOP-Capstone.git",
+    "accountId": "0d04d356-f879-440a-9c2b-b4a203bebd0f"
   }
-}</component>
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2pSLJJlkdlccTJHnYtwFVLf60Tv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.LoginPageApplication.executor": "Run",
     "Application.StudentDashboard.executor": "Run",
+    "Application.SignUpPage.executor": "Run",
+    "Application.StudentDashboard.executor": "Run",
+    "Application.StudentDashboardApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Mcxine and Mckyla/IdeaProjects/MASTEROOP/src/main/resources/images"
   }
 }]]></component>
@@ -63,6 +85,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="&quot;Updated Database&quot;">
       <option name="closed" value="true" />
@@ -112,6 +135,30 @@
       <option name="project" value="LOCAL" />
       <updated>1732722578747</updated>
     </task>
+    <task id="LOCAL-00007" summary="added student dashboard">
+      <option name="closed" value="true" />
+      <created>1732723173083</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732723173083</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixed student dashboard">
+      <option name="closed" value="true" />
+      <created>1732723686205</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732723686205</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bc4bd21-e2bf-499e-a356-7195176f21f6" name="Changes" comment="fixed student dashboard" />
+      <created>1732754461587</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732754461587</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <option name="localTasksCounter" value="7" />
     <servers />
   </component>
@@ -145,5 +192,8 @@
     <MESSAGE value="&quot;Sign Up to Main UI&quot;" />
     <MESSAGE value="&quot;Added back to Login in Sign Up Page&quot;" />
     <option name="LAST_COMMIT_MESSAGE" value="&quot;Added back to Login in Sign Up Page&quot;" />
+    <MESSAGE value="added student dashboard" />
+    <MESSAGE value="fixed student dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed student dashboard" />
   </component>
 </project>
