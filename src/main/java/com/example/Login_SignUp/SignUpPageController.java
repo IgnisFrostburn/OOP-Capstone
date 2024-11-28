@@ -1,5 +1,7 @@
 package com.example.Login_SignUp;
 
+import com.example.Database.InstructorDatabase;
+import com.example.Database.LearnerDatabase;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;

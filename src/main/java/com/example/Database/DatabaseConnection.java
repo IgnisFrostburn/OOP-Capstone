@@ -1,4 +1,4 @@
-package com.example.Login_SignUp;
+package com.example.Database;
 import java.sql.*;
 
 public abstract class DatabaseConnection {

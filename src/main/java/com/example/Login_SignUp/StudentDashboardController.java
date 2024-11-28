@@ -1,6 +1,10 @@
 package com.example.Login_SignUp;
 
+import com.example.Database.InstructorDatabase;
+import com.example.Database.InstructorsInfoDatabase;
+import com.example.Database.LearnerDatabase;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.geometry.Pos;
@@ -38,7 +42,7 @@ public class StudentDashboardController {
     @FXML
     private Text meetingsTodayCTR;
 
-    private int instructorCtr = 0;
+    private int coursesCtr = 0;
     private int gridCtr = 0;
     private int row = 0;
     private final double rowHeight = 220.0;
@@ -46,11 +50,11 @@ public class StudentDashboardController {
     private static final double innerPaneSize = 50.0;
 
     public void initialize() throws SQLException {
-        InstructorDatabase instructorDatabase = new InstructorDatabase();
-        instructorCtr = instructorDatabase.numberOfInstructors();
+        InstructorsInfoDatabase instructorsInfoDatabase = new InstructorsInfoDatabase();
+        coursesCtr = instructorsInfoDatabase.numberOfCourses();
         LearnerDatabase learnerDB = new LearnerDatabase();
         coursesEnrolledCTR.setText("1");
-        for(int i = 0; i < instructorCtr; i++) {
+        for(int i = 0; i < coursesCtr; i++) {
             System.out.println("addRow pressed and row is " + row);
             Pane outerPane = new Pane();
             outerPane.setPrefSize(columnWidth, rowHeight);
@@ -60,6 +64,7 @@ public class StudentDashboardController {
             innerPane.setStyle("-fx-background-radius: 10; -fx-background-color: blue;");
             innerPane.layoutXProperty().bind(outerPane.widthProperty().subtract(innerPane.prefWidthProperty()).divide(2));
             innerPane.layoutYProperty().bind(outerPane.heightProperty().subtract(innerPane.prefHeightProperty()).divide(2));
+            innerPane.setCursor(Cursor.HAND);
             outerPane.getChildren().add(innerPane);
 
             Pane innerDesignPane = new Pane();
