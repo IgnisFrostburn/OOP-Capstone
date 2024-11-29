@@ -1,5 +1,8 @@
 package com.example.Database;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.*;
 
 public class InstructorsInfoDatabase {
@@ -46,10 +49,10 @@ public class InstructorsInfoDatabase {
         this.linkedInURL = linkedInURL;
     }
 
-    public void insertData(String id) {
+    public void insertData(String id, File pfp) {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Connected to the database!");
-            String insertQuery = "INSERT INTO instructor_info (instructorID, teaching_experience1, teaching_experience2, teaching_experience3, teaching_expertise1, teaching_expertise2, teaching_expertise3, linkedIn_url) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO instructor_info (instructor_ID, teaching_experience1, teaching_experience2, teaching_experience3, teaching_expertise1, teaching_expertise2, teaching_expertise3, linkedIn_url, teacher_pfp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {
                 //to do: take the email parameter and insert to the instructor ID
                 insertStmt.setString(1, id);
@@ -60,8 +63,12 @@ public class InstructorsInfoDatabase {
                 insertStmt.setString(6, getTeachingExpertise_2());
                 insertStmt.setString(7, getTeachingExpertise_3());
                 insertStmt.setString(8, getLinkedInURL());
+                FileInputStream fileInputStream = new FileInputStream(pfp);
+                insertStmt.setBinaryStream(9, fileInputStream, (int)pfp.length());
                 insertStmt.executeUpdate();
                 System.out.println("Instructor info data inserted successfully!");
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -85,4 +92,53 @@ public class InstructorsInfoDatabase {
         return ctr;
     }
 
+    //checks if data exists
+    public static boolean dataExists(String id) throws SQLException {
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            String selectQuery = "SELECT instructor_id FROM instructor_info";
+            try (Statement selectStmt = connection.createStatement();
+                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
+
+                while (resultSet.next()) {
+                    if(resultSet.getString("instructor_id").equals(id)) return true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    //finds the instructors credentials
+    //if it exists, it edits that row, if it doesn't, it creates a new one
+    public void editInfo(String id, File pfp) {
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            if(dataExists(id)) {
+                String updateQuery = "UPDATE instructor_info SET teaching_experience1 = ?, teaching_experience2 = ?, teaching_experience3 = ?, teaching_expertise1 = ?, teaching_expertise2 = ?, teaching_expertise3 = ?, linkedIn_url = ?, teacher_pfp = ? WHERE instructor_id = ?";
+                try(PreparedStatement updateStmt = connection.prepareStatement(updateQuery)) {
+                    updateStmt.setString(1, getTeachingExperience_1());
+                    updateStmt.setString(2, getTeachingExperience_2());
+                    updateStmt.setString(3, getTeachingExperience_3());
+                    updateStmt.setString(4, getTeachingExpertise_1());
+                    updateStmt.setString(5, getTeachingExpertise_2());
+                    updateStmt.setString(6, getTeachingExpertise_3());
+                    updateStmt.setString(7, getLinkedInURL());
+                    FileInputStream fileInputStream = new FileInputStream(pfp);
+                    updateStmt.setBinaryStream(8, fileInputStream, (int)pfp.length());
+                    updateStmt.setString(9, id);
+                    updateStmt.executeUpdate();
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+            } else insertData(id, pfp);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+
+
+
+
+

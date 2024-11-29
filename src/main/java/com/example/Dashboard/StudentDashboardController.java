@@ -48,10 +48,7 @@ public class StudentDashboardController {
     private final double columnWidth = 390.0;
     private static final double innerPaneSize = 50.0;
 
-    public void initialize() throws SQLException {
-        coursesCtr = InstructorsInfoDatabase.numberOfCourses();
-        LearnerDatabase learnerDB = new LearnerDatabase();
-        coursesEnrolledCTR.setText("1");
+    private void createBrowseCourses(int coursesCtr) {
         for(int i = 0; i < coursesCtr; i++) {
             System.out.println("addRow pressed and row is " + row);
             Pane outerPane = new Pane();
@@ -95,6 +92,13 @@ public class StudentDashboardController {
                 row++;
             }
         }
+    }
+
+    public void initialize() throws SQLException {
+        coursesCtr = InstructorsInfoDatabase.numberOfCourses();
+        LearnerDatabase learnerDB = new LearnerDatabase();
+        coursesEnrolledCTR.setText("1");
+        createBrowseCourses(coursesCtr);
     }
 }
 

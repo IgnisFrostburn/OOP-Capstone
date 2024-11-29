@@ -126,7 +126,7 @@ public class InstructorDatabase extends DatabaseConnection{
         return ctr;
     }
 
-    //gets the id of the instructor using their email
+
     public int getInstructorID(String email) throws SQLException {
         int ctr = 1;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {

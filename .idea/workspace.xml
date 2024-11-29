@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="&quot;Revised &quot;">
+    <list default="true" id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="&quot;Connected login to dashboard&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentialsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentialsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCredentials.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCredentials.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,24 +25,18 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AddCourse.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AddCredentials.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SignUpPage.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AddCourse.executor": "Run",
+    "Application.AddCredentials.executor": "Run",
+    "Application.LoginPageApplication.executor": "Run",
+    "Application.SignUpPage.executor": "Run",
+    "Application.StudentDashboard.executor": "Run",
+    "Application.TeacherDashboard.executor": "Run",
+    "git-widget-placeholder": "master"
   }
-}</component>
-  <component name="RunManager" selected="Application.LoginPageApplication">
-    <configuration type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.SignUpPage" />
-      <module name="JavaFXDemo" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}]]></component>
+  <component name="RunManager">
     <configuration name="LoginPageApplication" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.LoginPageApplication" />
       <module name="JavaFXDemo" />
@@ -48,9 +44,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.LoginPageApplication" />
-    </list>
   </component>
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="&quot;Browse Courses&quot;">
@@ -77,13 +70,22 @@
       <option name="project" value="LOCAL" />
       <updated>1732807488442</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="&quot;Connected login to dashboard&quot;">
+      <option name="closed" value="true" />
+      <created>1732808778849</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732808778849</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Browse Courses&quot;" />
     <MESSAGE value="&quot;Browse Courses Update 1&quot;" />
     <MESSAGE value="&quot;Revised &quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Revised &quot;" />
+    <MESSAGE value="&quot;Connected login to dashboard&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Connected login to dashboard&quot;" />
   </component>
 </project>
