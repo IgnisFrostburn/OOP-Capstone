@@ -103,10 +103,6 @@ public class AddCredentialsController {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image Files", "*  .jpg", "*.png", "*.jpeg"));
         selectedFile = fileChooser.showOpenDialog(uploadBtn.getScene().getWindow());
-//        if(selectedFile != null) {
-//            Image image = new Image(selectedFile.toURI().toString());
-//            pfp.setImage(image);
-//        }
     }
 
     public void initialize() throws SQLException {
