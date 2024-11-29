@@ -37,7 +37,6 @@ public class TeacherDashboardController {
     public void initialize() {
         coursesOfferedCTR.setText("2"); // Example: Set to the count of courses offered
         addCredentialsBtn.setOnAction(actionEvent -> {
-            System.out.println("clicked");
             Stage addCredentialsStage = new Stage();
             AddCredentials addCredentials = new AddCredentials();
             try {

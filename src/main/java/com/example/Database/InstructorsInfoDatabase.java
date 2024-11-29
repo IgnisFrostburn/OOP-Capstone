@@ -135,6 +135,40 @@ public class InstructorsInfoDatabase {
             e.printStackTrace();
         }
     }
+
+    public static InstructorsInfoDatabase instructorDetails(String id) {
+        InstructorsInfoDatabase instructorsInfoDatabase = null;
+        String query = "SELECT teaching_experience1, teaching_experience2, teaching_experience3, teaching_expertise1, teaching_expertise2, teaching_expertise3, linkedIn_url FROM instructor_info WHERE instructor_ID = ?";
+        try (Connection connection = DriverManager.getConnection(url, username, password);
+             PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, id);
+
+            try (ResultSet resultSet = stmt.executeQuery()) {
+                if (resultSet.next()) {
+                    String teachingExperience1 = resultSet.getString("teaching_experience1");
+                    String teachingExperience2 = resultSet.getString("teaching_experience2");
+                    String teachingExperience3 = resultSet.getString("teaching_experience3");
+                    String teachingExpertise1 = resultSet.getString("teaching_expertise1");
+                    String teachingExpertise2 = resultSet.getString("teaching_expertise2");
+                    String teachingExpertise3 = resultSet.getString("teaching_expertise3");
+                    String linkedInURL = resultSet.getString("linkedIn_url");
+
+                    instructorsInfoDatabase = new InstructorsInfoDatabase(
+                            teachingExperience1,
+                            teachingExperience2,
+                            teachingExperience3,
+                            teachingExpertise1,
+                            teachingExpertise2,
+                            teachingExpertise3,
+                            linkedInURL
+                    );
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return instructorsInfoDatabase;
+    }
 }
 
 

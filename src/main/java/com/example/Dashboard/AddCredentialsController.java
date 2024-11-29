@@ -8,15 +8,16 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
+import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
-import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.sql.SQLException;
 
 public class AddCredentialsController {
-
+    @FXML
+    private StackPane addCredentialsStackPane;
     @FXML
     private TextField teachingExperienceField1;
     @FXML
@@ -35,6 +36,8 @@ public class AddCredentialsController {
     private Button addCredentialsBtn;
     @FXML
     private Button uploadBtn;
+    @FXML
+    private Button backBtn;
 
     private File selectedFile;
     private int id;
@@ -114,7 +117,14 @@ public class AddCredentialsController {
 
         id = new InstructorDatabase().getInstructorID(LoggedInUser.getInstance().getEmail());
         if(InstructorsInfoDatabase.dataExists(Integer.toString(id))) {
-            System.out.println("exists");
+            InstructorsInfoDatabase instructorDetails = InstructorsInfoDatabase.instructorDetails(Integer.toString(id));
+            teachingExperienceField1.setText(instructorDetails.getTeachingExperience_1());
+            teachingExperienceField2.setText(instructorDetails.getTeachingExperience_2());
+            teachingExperienceField3.setText(instructorDetails.getTeachingExperience_3());
+            teachingExpertiseField1.setText(instructorDetails.getTeachingExpertise_1());
+            teachingExpertiseField2.setText(instructorDetails.getTeachingExpertise_2());
+            teachingExpertiseField3.setText(instructorDetails.getTeachingExpertise_3());
+            linkedInUrlField.setText(instructorDetails.getLinkedInURL());
         }
 
         addCredentialsBtn.setOnAction(actionEvent -> {
@@ -123,5 +133,16 @@ public class AddCredentialsController {
         });
 
         uploadBtn.setOnAction(e -> uploadImage());
+        backBtn.setOnAction(actionEvent -> {
+            Stage teacherDashboardStage = new Stage();
+            TeacherDashboard teacherDashboard = new TeacherDashboard();
+            try {
+                teacherDashboard.start(teacherDashboardStage);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            teacherDashboardStage = (Stage) addCredentialsStackPane.getScene().getWindow();
+            teacherDashboardStage.close();
+        });
     }
 }

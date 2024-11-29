@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="&quot;Connected login to dashboard&quot;">
+    <list default="true" id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="&quot;Add credential update - database connection and update&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentialsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentialsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCredentials.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCredentials.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732808778849</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="&quot;Add credential update - database connection and update&quot;">
+      <option name="closed" value="true" />
+      <created>1732882608400</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732882608400</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -86,6 +91,7 @@
     <MESSAGE value="&quot;Browse Courses Update 1&quot;" />
     <MESSAGE value="&quot;Revised &quot;" />
     <MESSAGE value="&quot;Connected login to dashboard&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Connected login to dashboard&quot;" />
+    <MESSAGE value="&quot;Add credential update - database connection and update&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Add credential update - database connection and update&quot;" />
   </component>
 </project>
