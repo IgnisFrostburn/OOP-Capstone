@@ -1,6 +1,9 @@
-package com.example.Login_SignUp;
+package com.example.Dashboard;
 
+import com.example.Database.InstructorsInfoDatabase;
+import com.example.Database.LearnerDatabase;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.geometry.Pos;
@@ -38,19 +41,15 @@ public class StudentDashboardController {
     @FXML
     private Text meetingsTodayCTR;
 
-    private int instructorCtr = 0;
+    private int coursesCtr = 0;
     private int gridCtr = 0;
     private int row = 0;
     private final double rowHeight = 220.0;
     private final double columnWidth = 390.0;
     private static final double innerPaneSize = 50.0;
 
-    public void initialize() throws SQLException {
-        InstructorDatabase instructorDatabase = new InstructorDatabase();
-        instructorCtr = instructorDatabase.numberOfInstructors();
-        LearnerDatabase learnerDB = new LearnerDatabase();
-        coursesEnrolledCTR.setText("1");
-        for(int i = 0; i < instructorCtr; i++) {
+    private void createBrowseCourses(int coursesCtr) {
+        for(int i = 0; i < coursesCtr; i++) {
             System.out.println("addRow pressed and row is " + row);
             Pane outerPane = new Pane();
             outerPane.setPrefSize(columnWidth, rowHeight);
@@ -60,6 +59,7 @@ public class StudentDashboardController {
             innerPane.setStyle("-fx-background-radius: 10; -fx-background-color: blue;");
             innerPane.layoutXProperty().bind(outerPane.widthProperty().subtract(innerPane.prefWidthProperty()).divide(2));
             innerPane.layoutYProperty().bind(outerPane.heightProperty().subtract(innerPane.prefHeightProperty()).divide(2));
+            innerPane.setCursor(Cursor.HAND);
             outerPane.getChildren().add(innerPane);
 
             Pane innerDesignPane = new Pane();
@@ -92,6 +92,13 @@ public class StudentDashboardController {
                 row++;
             }
         }
+    }
+
+    public void initialize() throws SQLException {
+        coursesCtr = InstructorsInfoDatabase.numberOfCourses();
+        LearnerDatabase learnerDB = new LearnerDatabase();
+        coursesEnrolledCTR.setText("1");
+        createBrowseCourses(coursesCtr);
     }
 }
 

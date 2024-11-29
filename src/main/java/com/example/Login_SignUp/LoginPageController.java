@@ -1,5 +1,9 @@
 package com.example.Login_SignUp;
 
+import com.example.Dashboard.StudentDashboard;
+import com.example.Dashboard.TeacherDashboard;
+import com.example.Database.InstructorDatabase;
+import com.example.Database.LearnerDatabase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,7 +13,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLOutput;
+
 
 public class LoginPageController {
     @FXML
@@ -39,26 +46,27 @@ public class LoginPageController {
         return loginPasswordTF.getText();
     }
 
-    //returns true if email matches with email database
     protected boolean checkEmail(String email) throws SQLException {
-        if(isLearner) {
+        if (isLearner) {
             LearnerDatabase learnerDatabase = new LearnerDatabase();
+            System.out.println("EMAIL IS TRUE");
             return (learnerDatabase.checkEmail(email)) && !isBlankTF(loginEmailTF);
-        } else if(isInstructor) {
+        } else if (isInstructor) {
             InstructorDatabase instructorDatabase = new InstructorDatabase();
             return (instructorDatabase.checkEmail(email) && !isBlankTF(loginEmailTF));
         }
+
         return false;
     }
 
-    //returns true if password matches with password database
-    protected boolean checkPassword(String password) throws SQLException {
-        if(isLearner) {
+    protected boolean checkPassword(String password, String email) throws SQLException {
+        if (isLearner) {
             LearnerDatabase learnerDatabase = new LearnerDatabase();
-            return learnerDatabase.checkPassword(password);
-        } else if(isInstructor) {
+            System.out.println("PASSWORD IS TRUE");
+            return learnerDatabase.checkPassword(password, email);
+        } else if (isInstructor) {
             InstructorDatabase instructorDatabase = new InstructorDatabase();
-            return instructorDatabase.checkPassword(password);
+            return instructorDatabase.checkPassword(password, email);
         }
         return false;
     }
@@ -66,7 +74,6 @@ public class LoginPageController {
     protected void setBorderColor(TextField textField, String color) {
         textField.setStyle("-fx-border-color: " + color + "; -fx-border-width: 2px;");
     }
-
 
     @FXML
     protected void onSignUpButtonClick(ActionEvent event) {
@@ -83,7 +90,7 @@ public class LoginPageController {
 
     @FXML
     protected boolean isBlankTF(TextField textField) {
-        if(textField.getText().isBlank()) {
+        if (textField.getText().isBlank()) {
             System.out.println("red");
             setBorderColor(textField, "red");
             return true;
@@ -91,12 +98,25 @@ public class LoginPageController {
         return false;
     }
 
-
+    protected void goToStudentDash() {
+        Stage studentDashboardStage = new Stage();
+        StudentDashboard studentDashboard = new StudentDashboard();
+        try {
+            studentDashboard.start(studentDashboardStage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage = (Stage) loginAnchorPane.getScene().getWindow();
+        stage.close();
+    }
 
     @FXML
     protected void textFieldChecker(TextField textField) {
-        if (textField.getText().isBlank()) {setBorderColor(textField, "red");}
-        else {setBorderColor(textField, "green");}
+        if (textField.getText().isBlank()) {
+            setBorderColor(textField, "red");
+        } else {
+            setBorderColor(textField, "green");
+        }
     }
 
     @FXML
@@ -116,28 +136,94 @@ public class LoginPageController {
         });
 
         loginBtn.setOnAction(actionEvent -> {
+            boolean validEmail = false;
+            boolean validPassword = false;
+            try {
+                validEmail = checkEmail(getLoginEmail());
+                validPassword = checkPassword(getLoginPassword(), getLoginEmail());
+            } catch (SQLException e) {
+                System.out.println("Invalid Email");
+            }
+
             textFieldChecker(loginEmailTF);
             textFieldChecker(loginPasswordTF);
-            if(isLearner) {
+
+            if (isLearner) {
                 loginAccountTypeWarning.setText("");
                 try {
-                    if(checkEmail(getLoginEmail()) && checkPassword(getLoginPassword())) {
+                    if (validEmail && validPassword) {
+                        LearnerDatabase learnerDatabase = new LearnerDatabase();
+                        LoggedInUser loggedInUser = learnerDatabase.getUserData(getLoginEmail());
 
+                        if (loggedInUser != null) {
+                            System.out.println(loggedInUser.getFirstName());
+                            LoggedInUser instance = LoggedInUser.getInstance();
+                            instance.setEmail(loggedInUser.getEmail());
+                            instance.setFirstName(loggedInUser.getFirstName());
+                            instance.setLastName(loggedInUser.getLastName());
+                            instance.setUniversity(loggedInUser.getUniversity());
+                            instance.setRole("Learner");
+                        } else {
+                            throw new RuntimeException("NO USER FOUND");
+                        }
+
+                        Stage studentStage = new Stage();
+                        StudentDashboard studentDashboard = new StudentDashboard();
+                        try {
+                            studentDashboard.start(studentStage);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        stage = (Stage) loginAnchorPane.getScene().getWindow();
+                        stage.close();
                     } else {
-                        if(!checkEmail(getLoginEmail())) setBorderColor(loginEmailTF, "red");
+                        if (!validEmail) setBorderColor(loginEmailTF, "red");
                         else setBorderColor(loginEmailTF, "green");
-                        if(!checkPassword(getLoginPassword())) setBorderColor(loginPasswordTF, "red");
+                        if (!validPassword) setBorderColor(loginPasswordTF, "blue");
                         else setBorderColor(loginPasswordTF, "green");
                     }
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
+                } catch (RuntimeException e) {
+                    System.out.println(e.getMessage());
                 }
-            } else if(isInstructor) {
+            } else if (isInstructor) {
                 loginAccountTypeWarning.setText("");
+                try {
+                    if (validEmail && validPassword) {
+                        InstructorDatabase instructorDatabase = new InstructorDatabase();
+                        LoggedInUser loggedInUser = instructorDatabase.getUserData(getLoginEmail());
 
+                        if (loggedInUser != null) {
+                            System.out.println(loggedInUser.getFirstName());
+                            LoggedInUser instance = LoggedInUser.getInstance();
+                            instance.setEmail(loggedInUser.getEmail());
+                            instance.setFirstName(loggedInUser.getFirstName());
+                            instance.setLastName(loggedInUser.getLastName());
+                            instance.setUniversity(loggedInUser.getUniversity());
+                            instance.setRole("Instructor");
+                        }
+
+                        Stage teacherStage = new Stage();
+                        TeacherDashboard teacherDashboard = new TeacherDashboard();
+                        try {
+                            teacherDashboard.start(teacherStage);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        stage = (Stage) loginAnchorPane.getScene().getWindow();
+                        stage.close();
+                    } else {
+                        if (validEmail) setBorderColor(loginEmailTF, "red");
+                        else setBorderColor(loginEmailTF, "green");
+                        if (validPassword) setBorderColor(loginPasswordTF, "red");
+                        else setBorderColor(loginPasswordTF, "green");
+                    }
+                } catch (RuntimeException e) {
+                    System.out.println(e.getMessage());
+                }
             } else {
                 loginAccountTypeWarning.setText("Please choose an account type");
             }
         });
+
     }
 }

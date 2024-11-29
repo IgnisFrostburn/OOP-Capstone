@@ -4,6 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -83,21 +84,11 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <TextField id="emailtf" fx:id="passwordTF" layoutX="35.0" layoutY="248.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter password" style="-fx-border-color: black;">
-                     <font>
-                        <Font name="Inter 18pt Regular" size="14.0" />
-                     </font>
-                  </TextField>
                   <Text boundsType="VISUAL" layoutX="35.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIRM PASSWORD" textOrigin="CENTER">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <TextField id="emailtf" fx:id="confirmPasswordTF" layoutX="35.0" layoutY="324.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter confirm password" style="-fx-border-color: black;">
-                     <font>
-                        <Font name="Inter 18pt Regular" size="14.0" />
-                     </font>
-                  </TextField>
                   <Button fx:id="learnerBtn" layoutX="39.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff; -fx-font-style: bold;" text="LEARNER" textFill="WHITE">
                      <font>
                         <Font name="Inter 24pt ExtraBold" size="22.0" />
@@ -132,6 +123,16 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
+                  <PasswordField fx:id="passwordPF" layoutX="35.0" layoutY="248.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter password" style="-fx-border-color: black;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </PasswordField>
+                  <PasswordField fx:id="confirmPasswordPF" layoutX="35.0" layoutY="324.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="420.0" promptText="Enter password" style="-fx-border-color: black;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </PasswordField>
                </children>
             </AnchorPane>
          </children>
