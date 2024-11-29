@@ -14,4 +14,6 @@ module com.example.Login_SignUp {
     exports com.example.Dashboard;
     opens com.example.Dashboard to javafx.fxml;
 //    exports com.example.MainUserInterface;
+    opens com.example.Course_content to javafx.fxml;
+    exports com.example.Course_content;
 }

@@ -1,4 +1,4 @@
-package Course_content;
+package com.example.Course_content;
 
 public class CourseContentController {
 }
