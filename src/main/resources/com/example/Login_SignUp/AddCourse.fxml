@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
@@ -12,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Dashboard.AddCourseController">
+<StackPane fx:id="addCourseStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Dashboard.AddCourseController">
     <children>
         <Pane layoutX="280.0" layoutY="77.0" prefHeight="523.0" prefWidth="782.0" />
         <AnchorPane prefHeight="720.0" prefWidth="1080.0">
@@ -26,86 +29,79 @@
                     <effect>
                         <Blend />
                     </effect>
-                    <children>
-                        <ImageView fitHeight="720.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../images/navigationpanel.png" />
-                            </image>
-                            <effect>
-                                <Blend />
-                            </effect>
-                        </ImageView>
-                        <Button fx:id="dashboardBtn" layoutX="17.0" layoutY="140.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="226.0" style="-fx-background-color: #8FC7FF;" text="        Add Credentials" textFill="WHITE" AnchorPane.bottomAnchor="531.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="140.0">
-                            <font>
-                                <Font size="20.0" />
-                            </font>
-                        </Button>
-                        <Button layoutX="15.0" layoutY="223.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="226.0" style="-fx-background-color: #8FC7FF;" text="          Add Courses" textFill="WHITE">
-                            <font>
-                                <Font size="20.0" />
-                            </font>
-                        </Button>
-                        <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="40.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../images/1.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="40.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../images/courses.png" />
-                            </image>
-                        </ImageView>
-                    </children>
                 </AnchorPane>
-                <Text layoutX="558.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add">
+                <Text layoutX="432.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add">
                     <font>
                         <Font name="System Bold" size="47.0" />
                     </font>
                 </Text>
-                <Text fill="DODGERBLUE" layoutX="650.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course">
+                <Text fill="DODGERBLUE" layoutX="528.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course">
                     <font>
                         <Font name="System Bold" size="47.0" />
                     </font>
                 </Text>
-                <AnchorPane id="bg" layoutX="281.0" layoutY="77.0" prefHeight="515.0" prefWidth="760.0" style="-fx-background-color: DODGERBLUE; -fx-opacity: 1;">
+                <AnchorPane id="bg" layoutX="108.0" layoutY="93.0" prefHeight="560.0" prefWidth="900.0" style="-fx-background-color: D1F2FF; -fx-opacity: 1; -fx-background-radius: 10; -fx-border-color: blue; -fx-border-radius: 10;">
                     <children>
-                        <TextField fx:id="courseTitleField" layoutX="15.0" layoutY="41.0" prefHeight="50.0" prefWidth="739.0" />
-                        <Text fill="BLACK" layoutX="16.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Title">
+                        <TextField fx:id="courseTitleField" layoutX="24.0" layoutY="64.0" prefHeight="50.0" prefWidth="850.0" style="-fx-border-color: black; -fx-border-width: 2;">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                        <Text layoutX="23.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Title">
                             <font>
                                 <Font name="System Bold" size="31.0" />
                             </font>
                         </Text>
-                        <Text fill="BLACK" layoutX="14.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category">
+                        <Text layoutX="21.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category">
                             <font>
                                 <Font name="System Bold" size="31.0" />
                             </font>
                         </Text>
-                        <Text fill="BLACK" layoutX="16.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Description">
+                        <Text layoutX="23.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Description">
                             <font>
                                 <Font name="System Bold" size="31.0" />
                             </font>
                         </Text>
-                        <TextArea fx:id="courseDescriptionArea" layoutX="16.0" layoutY="204.0" prefHeight="118.0" prefWidth="739.0" text="&#10;" />
-                        <Button fx:id="addButton" layoutX="601.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleAddButtonAction" prefHeight="50.0" prefWidth="151.0" text="Add Course" textFill="DODGERBLUE">
-                            <font>
-                                <Font size="20.0" />
-                            </font>
-                        </Button>
-                        <TextField fx:id="categoryField1" layoutX="16.0" layoutY="136.0" prefHeight="26.0" prefWidth="226.0" />
-                        <TextField fx:id="categoryField2" layoutX="269.0" layoutY="136.0" prefHeight="26.0" prefWidth="238.0" />
-                        <TextField fx:id="categoryField3" layoutX="524.0" layoutY="136.0" prefHeight="26.0" prefWidth="226.0" />
-                        <Text layoutX="16.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration">
-                            <font>
-                                <Font name="System Bold" size="31.0" />
-                            </font>
-                        </Text>
-                        <TextField fx:id="durationField" layoutX="16.0" layoutY="368.0" prefHeight="26.0" prefWidth="275.0" />
-                        <Text layoutX="14.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule">
-                            <font>
-                                <Font name="System Bold" size="31.0" />
-                            </font>
-                        </Text>
-                        <TextField fx:id="scheduleField" layoutX="16.0" layoutY="440.0" prefHeight="26.0" prefWidth="275.0" />
+                        <TextArea fx:id="courseDescriptionArea" layoutX="25.0" layoutY="286.0" prefHeight="118.0" prefWidth="850.0" style="-fx-border-color: black; -fx-border-width: 2;" text="&#10;" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextArea>
+                  <Button fx:id="addCourseBtn" layoutX="680.0" layoutY="488.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #1E90FF;" text="Add course" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="cancelBtn" layoutX="28.0" layoutY="488.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #1E90FF;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ComboBox fx:id="categoryComboBox1" layoutX="23.0" layoutY="179.0" prefHeight="50.0" prefWidth="255.0" promptText="Select a category" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" />
+                  <ComboBox fx:id="categoryComboBox2" layoutX="319.0" layoutY="179.0" prefHeight="50.0" prefWidth="255.0" promptText="Select a category" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" />
+                  <ComboBox fx:id="categoryComboBox3" layoutX="617.0" layoutY="179.0" prefHeight="50.0" prefWidth="255.0" promptText="Select a category" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" />
+                  <Label fx:id="courseDescriptionWarningLabel" alignment="CENTER" layoutX="188.0" layoutY="419.0" prefHeight="22.0" prefWidth="526.0" textFill="RED">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="uploadBtn" layoutX="301.0" layoutY="459.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #1E90FF;" text="Upload Course Image" textFill="WHITE">
+                     <font>
+                        <Font name="Inter 24pt ExtraBold" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="imageWarningLabel" alignment="CENTER" layoutX="203.0" layoutY="506.0" prefHeight="22.0" prefWidth="526.0" textFill="RED">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
                     </children>
                 </AnchorPane>
             </children>
