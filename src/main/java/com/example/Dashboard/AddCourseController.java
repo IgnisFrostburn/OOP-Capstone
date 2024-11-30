@@ -84,6 +84,13 @@
             selectedFile = fileChooser.showOpenDialog(uploadBtn.getScene().getWindow());
         }
 
+        public void buttonEffects(Button button) {
+            button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #096ff6; -fx-text-fill: white;"));
+            button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #1E90FF; -fx-text-fill: white;"));
+            button.setOnMousePressed(e -> button.setStyle("-fx-background-color: #0d2fc7; -fx-text-fill: white;"));
+            button.setOnMouseReleased(e -> button.setStyle("-fx-background-color: #096ff6; -fx-text-fill: white;"));
+        }
+
 
         @FXML
         public void initialize() {
@@ -91,6 +98,10 @@
             categoryComboBox1.setItems(categoryObservableList);
             categoryComboBox2.setItems(categoryObservableList);
             categoryComboBox3.setItems(categoryObservableList);
+            buttonEffects(addCourseBtn);
+            buttonEffects(uploadBtn);
+            buttonEffects(cancelBtn);
+
 
 
             addCourseBtn.setOnAction(actionEvent -> {

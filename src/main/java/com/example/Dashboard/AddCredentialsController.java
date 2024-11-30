@@ -105,11 +105,17 @@ public class AddCredentialsController {
         selectedFile = fileChooser.showOpenDialog(uploadBtn.getScene().getWindow());
     }
 
+    public void buttonEffects(Button button) {
+        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #096ff6; -fx-text-fill: white;"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #1E90FF; -fx-text-fill: white;"));
+        button.setOnMousePressed(e -> button.setStyle("-fx-background-color: #0d2fc7; -fx-text-fill: white;"));
+        button.setOnMouseReleased(e -> button.setStyle("-fx-background-color: #096ff6; -fx-text-fill: white;"));
+    }
+
     public void initialize() throws SQLException {
-        addCredentialsBtn.setOnMouseEntered(e -> addCredentialsBtn.setStyle("-fx-background-color: #11eece; -fx-text-fill: white;"));
-        addCredentialsBtn.setOnMouseExited(e -> addCredentialsBtn.setStyle("-fx-background-color: #77FFDF; -fx-text-fill: white;"));
-        addCredentialsBtn.setOnMousePressed(e -> addCredentialsBtn.setStyle("-fx-background-color: #0ebba2; -fx-text-fill: white;"));
-        addCredentialsBtn.setOnMouseReleased(e -> addCredentialsBtn.setStyle("-fx-background-color: #77FFDF; -fx-text-fill: white;"));
+        buttonEffects(addCredentialsBtn);
+        buttonEffects(uploadBtn);
+        buttonEffects(backBtn);
 
         id = new InstructorDatabase().getInstructorID(LoggedInUser.getInstance().getEmail());
         if(InstructorsInfoDatabase.dataExists(Integer.toString(id))) {

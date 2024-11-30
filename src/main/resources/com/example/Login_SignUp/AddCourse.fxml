@@ -40,23 +40,23 @@
                         <Font name="System Bold" size="47.0" />
                     </font>
                 </Text>
-                <AnchorPane id="bg" layoutX="108.0" layoutY="93.0" prefHeight="560.0" prefWidth="900.0" style="-fx-background-color: DODGERBLUE; -fx-opacity: 1; -fx-background-radius: 10;">
+                <AnchorPane id="bg" layoutX="108.0" layoutY="93.0" prefHeight="560.0" prefWidth="900.0" style="-fx-background-color: D1F2FF; -fx-opacity: 1; -fx-background-radius: 10; -fx-border-color: blue; -fx-border-radius: 10;">
                     <children>
                         <TextField fx:id="courseTitleField" layoutX="24.0" layoutY="64.0" prefHeight="50.0" prefWidth="850.0" style="-fx-border-color: black; -fx-border-width: 2;">
                      <font>
                         <Font size="14.0" />
                      </font></TextField>
-                        <Text fill="WHITE" layoutX="23.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Title">
+                        <Text layoutX="23.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Title">
                             <font>
                                 <Font name="System Bold" size="31.0" />
                             </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="21.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category">
+                        <Text layoutX="21.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category">
                             <font>
                                 <Font name="System Bold" size="31.0" />
                             </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="23.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Description">
+                        <Text layoutX="23.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Description">
                             <font>
                                 <Font name="System Bold" size="31.0" />
                             </font>
@@ -65,7 +65,7 @@
                      <font>
                         <Font size="14.0" />
                      </font></TextArea>
-                  <Button fx:id="addCourseBtn" layoutX="680.0" layoutY="488.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #77FFDF;" text="Add course" textFill="WHITE">
+                  <Button fx:id="addCourseBtn" layoutX="680.0" layoutY="488.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #1E90FF;" text="Add course" textFill="WHITE">
                      <font>
                         <Font name="Inter 24pt ExtraBold" size="22.0" />
                      </font>
@@ -73,7 +73,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="cancelBtn" layoutX="28.0" layoutY="488.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #77FFDF;" text="Cancel" textFill="WHITE">
+                  <Button fx:id="cancelBtn" layoutX="28.0" layoutY="488.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #1E90FF;" text="Cancel" textFill="WHITE">
                      <font>
                         <Font name="Inter 24pt ExtraBold" size="22.0" />
                      </font>
@@ -89,7 +89,7 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Button fx:id="uploadBtn" layoutX="301.0" layoutY="459.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #77FFDF;" text="Upload Course Image" textFill="WHITE">
+                  <Button fx:id="uploadBtn" layoutX="301.0" layoutY="459.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #1E90FF;" text="Upload Course Image" textFill="WHITE">
                      <font>
                         <Font name="Inter 24pt ExtraBold" size="22.0" />
                      </font>
