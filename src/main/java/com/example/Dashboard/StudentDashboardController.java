@@ -2,6 +2,9 @@ package com.example.Dashboard;
 
 import com.example.Database.EnrollmentDatabase;
 import com.example.Database.InstructorsInfoDatabase;
+import com.example.Course_content.Course_Info;
+import com.example.Course_content.Course_Info_Controller;
+import com.example.Database.CoursesDatabase;
 import com.example.Database.LearnerDatabase;
 import com.example.Login_SignUp.LoggedInUser;
 import javafx.fxml.FXML;
@@ -11,6 +14,7 @@ import javafx.scene.text.Text;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
@@ -45,6 +49,7 @@ public class StudentDashboardController {
     @FXML
     private Text meetingsTodayCTR;
 
+    private int coursesCtr = 0;
     private int gridCtr = 0;
     private int row = 0;
     private final double rowHeight = 220.0;
@@ -66,6 +71,7 @@ public class StudentDashboardController {
             outerPane.getChildren().add(innerPane);
 
             Pane innerDesignPane = new Pane();
+            innerPane.setId("innerPane"+i);
             innerDesignPane.setPrefSize(370, 73);
             innerDesignPane.setStyle("-fx-background-radius: 0 0 10 10; -fx-background-color: white;");
             innerDesignPane.layoutYProperty().bind(innerPane.heightProperty().subtract(innerDesignPane.prefHeightProperty()));
@@ -75,8 +81,9 @@ public class StudentDashboardController {
             courseTitle.setPrefSize(345, 58);
             courseTitle.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.prefWidthProperty()).divide(2));
             courseTitle.layoutYProperty().bind(innerDesignPane.heightProperty().subtract(courseTitle.prefHeightProperty()).divide(2));
-            courseTitle.setText("Course Title");
+            courseTitle.setText(CoursesDatabase.getCourseTitle(i));
             courseTitle.setAlignment(Pos.CENTER);
+            courseTitle.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
             innerDesignPane.getChildren().add(courseTitle);
 
             browseCourseGridPane.add(outerPane, gridCtr++, row);
@@ -88,6 +95,22 @@ public class StudentDashboardController {
 
             double newHeight = (row + 1) * rowHeight;
             browseCourseWrapperPane.setPrefHeight(newHeight);
+
+            int finalI = i;
+            innerPane.setOnMouseClicked(event -> {
+                System.out.println(finalI+1);
+                String[] strArr = CoursesDatabase.getCourseTitle(finalI).split(" - ");
+                Course_Info_Controller.setNameAndTitle(strArr[0], strArr[1]);
+                Stage courseInfoStage = new Stage();
+                Course_Info courseInfo = new Course_Info();
+                try {
+                    courseInfo.start(courseInfoStage);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+                courseInfoStage = (Stage) studentDashBoardStackPane.getScene().getWindow();
+                courseInfoStage.close();
+            });
 
             browseCourseGridPane.getRowConstraints().add(rowConstraints);
             if (gridCtr == 2) {

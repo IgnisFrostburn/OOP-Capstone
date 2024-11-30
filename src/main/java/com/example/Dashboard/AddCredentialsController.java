@@ -13,7 +13,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AddCredentialsController {
@@ -41,7 +40,7 @@ public class AddCredentialsController {
     private Button backBtn;
 
     private File selectedFile;
-    private int id;
+    private String id;
 
     public String getTeachingExperienceField1() {
         return teachingExperienceField1.getText();
@@ -119,22 +118,21 @@ public class AddCredentialsController {
         buttonEffects(backBtn);
 
         id = new InstructorDatabase().getInstructorID(LoggedInUser.getInstance().getEmail());
-        if(InstructorsInfoDatabase.dataExists(Integer.toString(id))) {
-            InstructorsInfoDatabase instructorsInfoDatabase = InstructorsInfoDatabase.instructorDetails(Integer.toString(id));
-
-                teachingExperienceField1.setText(instructorsInfoDatabase.getTeachingExperience_1());
-                teachingExperienceField2.setText(instructorsInfoDatabase.getTeachingExperience_2());
-                teachingExperienceField3.setText(instructorsInfoDatabase.getTeachingExperience_3());
-                teachingExpertiseField1.setText(instructorsInfoDatabase.getTeachingExpertise_1());
-                teachingExpertiseField2.setText(instructorsInfoDatabase.getTeachingExpertise_2());
-                teachingExpertiseField3.setText(instructorsInfoDatabase.getTeachingExperience_3());
-                linkedInUrlField.setText(instructorsInfoDatabase.getLinkedInURL());
-
+        if(InstructorsInfoDatabase.dataExists(id)) {
+            InstructorsInfoDatabase instructorDetails = InstructorsInfoDatabase.instructorDetails(id);
+            teachingExperienceField1.setText(instructorDetails.getTeachingExperience_1());
+            teachingExperienceField2.setText(instructorDetails.getTeachingExperience_2());
+            teachingExperienceField3.setText(instructorDetails.getTeachingExperience_3());
+            teachingExpertiseField1.setText(instructorDetails.getTeachingExpertise_1());
+            teachingExpertiseField2.setText(instructorDetails.getTeachingExpertise_2());
+            teachingExpertiseField3.setText(instructorDetails.getTeachingExpertise_3());
+            linkedInUrlField.setText(instructorDetails.getLinkedInURL());
         }
 
         addCredentialsBtn.setOnAction(actionEvent -> {
             InstructorsInfoDatabase instructorsInfoDatabase = new InstructorsInfoDatabase(getTeachingExperienceField1(), getTeachingExperienceField2(), getTeachingExperienceField3(), getTeachingExpertiseField1(), getTeachingExpertiseField2(), getTeachingExpertiseField3(), getLinkedInUrlField());
-            instructorsInfoDatabase.editInfo(Integer.toString(id), selectedFile);
+            System.out.println("id is " + id);
+            instructorsInfoDatabase.editInfo(id, selectedFile);
         });
 
         uploadBtn.setOnAction(e -> uploadImage());

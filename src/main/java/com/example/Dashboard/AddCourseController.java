@@ -5,7 +5,6 @@
     import com.example.Login_SignUp.LoggedInUser;
     import javafx.collections.FXCollections;
     import javafx.collections.ObservableList;
-    import javafx.collections.transformation.FilteredList;
     import javafx.fxml.FXML;
     import javafx.scene.control.*;
     import javafx.scene.control.Alert.AlertType;
@@ -15,9 +14,6 @@
 
     import java.io.File;
     import java.sql.SQLException;
-    import java.util.ArrayList;
-    import java.util.HashSet;
-    import java.util.Set;
 
     public class AddCourseController {
         @FXML
@@ -44,7 +40,7 @@
         private Button uploadBtn;
 
         private File selectedFile;
-        private int id;
+        private String id;
 
 
         private ObservableList<String> categoryObservableList;
@@ -137,7 +133,7 @@
                     try {
                         id = instructorDatabase.getInstructorID(LoggedInUser.getInstance().getEmail());
                         CoursesDatabase coursesDatabase = new CoursesDatabase(courseTitleField.getText(), categoryComboBox1.getValue(), categoryComboBox2.getValue(), categoryComboBox3.getValue(), courseDescriptionArea.getText());
-                        if(!CoursesDatabase.maxCoursesReached(Integer.toString(id))) coursesDatabase.insertData(Integer.toString(id), selectedFile);
+                        if(!CoursesDatabase.maxCoursesReached(id)) coursesDatabase.insertData(id, selectedFile);
                         else {
                             System.out.println("max courses reached");
                             addCourseBtn.setDisable(true);

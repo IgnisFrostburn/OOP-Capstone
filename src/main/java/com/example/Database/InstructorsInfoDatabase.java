@@ -105,6 +105,7 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
                 }
             }
         } catch (SQLException e) {
+            System.out.println("data exist exception");
             e.printStackTrace();
         }
         return false;
@@ -134,6 +135,7 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
                 }
             } else insertData(id, pfp);
         } catch (SQLException e) {
+            System.out.println("edit data exception");
             e.printStackTrace();
         }
     }

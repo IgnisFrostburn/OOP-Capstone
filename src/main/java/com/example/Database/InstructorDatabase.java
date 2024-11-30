@@ -97,42 +97,19 @@ public class InstructorDatabase extends UserDatabase{
         return false;
     }
 
-
-    public int numberOfInstructors() throws SQLException {
-        int ctr = 0;
-        try {
-            if(connection == null)throw new SQLException("Error with getting instructor ID");
-            String selectQuery = "SELECT LastName FROM instructors";
-            try (Statement selectStmt = connection.createStatement();
-                    ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-
-                    while (resultSet.next()) {
-                        ctr++;
-                    }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return ctr;
-    }
-
-
-    public int getInstructorID(String email) throws SQLException {
-        int ctr = 1;
-        try {
-            if(connection == null)throw new SQLException("Error with getting instructor ID");
-            String selectQuery = "SELECT Email FROM instructors";
+    public String getInstructorID(String email) throws SQLException {
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            String selectQuery = "SELECT ID, Email FROM instructors";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
 
                 while (resultSet.next()) {
-                    if(resultSet.getString("Email").equals(email)) return ctr;
-                    ctr++;
+                    if(resultSet.getString("Email").equals(email)) return resultSet.getString("ID");
                 }
             }
         } catch (SQLException e) {
             e.getMessage();
         }
-        return ctr;
+        return "1";
     }
 }
