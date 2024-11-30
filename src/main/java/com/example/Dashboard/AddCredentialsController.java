@@ -13,6 +13,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AddCredentialsController {
@@ -117,14 +118,16 @@ public class AddCredentialsController {
 
         id = new InstructorDatabase().getInstructorID(LoggedInUser.getInstance().getEmail());
         if(InstructorsInfoDatabase.dataExists(Integer.toString(id))) {
-            InstructorsInfoDatabase instructorDetails = InstructorsInfoDatabase.instructorDetails(Integer.toString(id));
-            teachingExperienceField1.setText(instructorDetails.getTeachingExperience_1());
-            teachingExperienceField2.setText(instructorDetails.getTeachingExperience_2());
-            teachingExperienceField3.setText(instructorDetails.getTeachingExperience_3());
-            teachingExpertiseField1.setText(instructorDetails.getTeachingExpertise_1());
-            teachingExpertiseField2.setText(instructorDetails.getTeachingExpertise_2());
-            teachingExpertiseField3.setText(instructorDetails.getTeachingExpertise_3());
-            linkedInUrlField.setText(instructorDetails.getLinkedInURL());
+            ResultSet rs = InstructorsInfoDatabase.instructorDetails(Integer.toString(id));
+            if(rs!=null) {
+                teachingExperienceField1.setText(rs.getString("teaching_experience1"));
+                teachingExperienceField2.setText(rs.getString("teaching_experience2"));
+                teachingExperienceField3.setText(rs.getString("teaching_experience3"));
+                teachingExpertiseField1.setText(rs.getString("teaching_expertise1"));
+                teachingExpertiseField2.setText(rs.getString("teaching_expertise1"));
+                teachingExpertiseField3.setText(rs.getString("teaching_expertise1"));
+                linkedInUrlField.setText(rs.getString("linkedIN_url"));
+            }
         }
 
         addCredentialsBtn.setOnAction(actionEvent -> {

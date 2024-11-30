@@ -6,6 +6,7 @@ module com.example.Login_SignUp {
     requires java.desktop;
     requires java.mail;
     requires java.sql;
+    requires transitive mysql.connector.j;
 
     opens com.example.Login_SignUp to javafx.fxml;
     exports com.example.Login_SignUp;

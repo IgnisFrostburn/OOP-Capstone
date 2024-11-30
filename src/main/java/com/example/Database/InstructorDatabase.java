@@ -4,31 +4,23 @@ import com.example.Login_SignUp.LoggedInUser;
 
 import java.sql.*;
 
-public class InstructorDatabase extends DatabaseConnection{
-    String url = "jdbc:mysql://192.168.1.8:3306/excelone";
-    String username = "excelOneAdmin";
-    String password = "secure123";
+public class InstructorDatabase extends UserDatabase{
     public InstructorDatabase() {
         super();
     }
 
-    public InstructorDatabase(String lastName, String firstName, String middleName, String university, String email, String password) {
-        super(lastName, firstName, middleName, university, email, password);
-    }
-
     @Override
-    public void insertData() {
-
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Connected to the database!");
+    public void insertData(String lastName, String firstName, String middleName,String university, String email, String password) {
+        try{
+            if(connection != null) System.out.println("Connected to the database!");
             String insertQuery = "INSERT INTO instructors (LastName, FirstName, MiddleName, University, Email, Password) VALUES (?, ?, ?, ?, ?, ?)";
             try (PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {
-                insertStmt.setString(1, getLastName());
-                insertStmt.setString(2, getFirstName());
-                insertStmt.setString(3, getMiddleName());
-                insertStmt.setString(4, getUniversity());
-                insertStmt.setString(5, getEmail());
-                insertStmt.setString(6, getPass());
+                insertStmt.setString(1, lastName);
+                insertStmt.setString(2, firstName);
+                insertStmt.setString(3, middleName);
+                insertStmt.setString(4, university);
+                insertStmt.setString(5, email);
+                insertStmt.setString(6, password);
                 insertStmt.executeUpdate();
                 System.out.println("Instructor data inserted successfully!");
             }
@@ -39,8 +31,7 @@ public class InstructorDatabase extends DatabaseConnection{
     public boolean checkEmail(String email) throws SQLException {
         String selectQuery = "SELECT Email FROM instructors WHERE Email = ?";
 
-        try (Connection connection = DriverManager.getConnection(url, username, password);
-             PreparedStatement ps = connection.prepareStatement(selectQuery)) {
+        try (PreparedStatement ps = connection.prepareStatement(selectQuery)) {
 
             ps.setString(1, email);
 
@@ -58,8 +49,9 @@ public class InstructorDatabase extends DatabaseConnection{
 
     @Override
 
-    public LoggedInUser getUserData(String email) {
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+    public void getUserData(String email) {
+        try {
+            if(connection == null)throw new SQLException("Error with getting User Data");
             String query = "SELECT * FROM instructors WHERE Email = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, email);
@@ -72,13 +64,11 @@ public class InstructorDatabase extends DatabaseConnection{
                 loggedInUser.setLastName(resultSet.getString("LastName"));
                 loggedInUser.setUniversity(resultSet.getString("University"));
                 loggedInUser.setRole("Learner");
-                return loggedInUser; // Return the singleton instance
             } else {
                 throw new RuntimeException("No user found");
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
     }
 
@@ -88,8 +78,7 @@ public class InstructorDatabase extends DatabaseConnection{
     public boolean checkPassword(String userPassword, String email) throws SQLException {
         String selectQuery = "SELECT Password FROM instructors WHERE Email = ?";
 
-        try (Connection connection = DriverManager.getConnection(url, username, password);
-             PreparedStatement ps = connection.prepareStatement(selectQuery)) {
+        try (PreparedStatement ps = connection.prepareStatement(selectQuery)) {
 
             ps.setString(1, email);
 
@@ -111,7 +100,8 @@ public class InstructorDatabase extends DatabaseConnection{
 
     public int numberOfInstructors() throws SQLException {
         int ctr = 0;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
+            if(connection == null)throw new SQLException("Error with getting instructor ID");
             String selectQuery = "SELECT LastName FROM instructors";
             try (Statement selectStmt = connection.createStatement();
                     ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
@@ -129,7 +119,8 @@ public class InstructorDatabase extends DatabaseConnection{
 
     public int getInstructorID(String email) throws SQLException {
         int ctr = 1;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
+            if(connection == null)throw new SQLException("Error with getting instructor ID");
             String selectQuery = "SELECT Email FROM instructors";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
@@ -140,7 +131,7 @@ public class InstructorDatabase extends DatabaseConnection{
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
         return ctr;
     }

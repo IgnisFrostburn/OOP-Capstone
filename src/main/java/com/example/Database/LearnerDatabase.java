@@ -4,31 +4,25 @@ import com.example.Login_SignUp.LoggedInUser;
 
 import java.sql.*;
 
-public class LearnerDatabase extends DatabaseConnection {
-    String url = "jdbc:mysql://192.168.1.8/excelone";
-    String username = "excelOneAdmin";
-    String password = "secure123";
-
+public class LearnerDatabase extends UserDatabase {
     public LearnerDatabase() {
         super();
     }
 
-    public LearnerDatabase(String lastName, String firstName, String middleName, String university, String email, String password) {
-        super(lastName, firstName, middleName, university, email, password);
-    }
 
     @Override
-    public void insertData() {
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+    public void insertData(String lastName, String firstName, String middleName,String university, String email, String password) {
+        try{
+            if(connection != null)
             System.out.println("Connected to the database!");
             String insertQuery = "INSERT INTO learners (LastName, FirstName, MiddleName, University, Email, Password) VALUES (?, ?, ?, ?, ?, ?)";
             try (PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {
-                insertStmt.setString(1, getLastName());
-                insertStmt.setString(2, getFirstName());
-                insertStmt.setString(3, getMiddleName());
-                insertStmt.setString(4, getUniversity());
-                insertStmt.setString(5, getEmail());
-                insertStmt.setString(6, getPass());
+                insertStmt.setString(1, lastName);
+                insertStmt.setString(2, firstName);
+                insertStmt.setString(3, middleName);
+                insertStmt.setString(4, university);
+                insertStmt.setString(5, email);
+                insertStmt.setString(6, password);
                 insertStmt.executeUpdate();
                 System.out.println("Student data inserted successfully!");
             }
@@ -37,7 +31,7 @@ public class LearnerDatabase extends DatabaseConnection {
         }
     }
 //TIWASA NI
-public LoggedInUser getUserData(String email) {
+public void getUserData(String email) {
     try (Connection connection = DriverManager.getConnection(url, username, password)) {
         String query = "SELECT * FROM learners WHERE Email = ?";
         PreparedStatement statement = connection.prepareStatement(query);
@@ -50,14 +44,13 @@ public LoggedInUser getUserData(String email) {
             loggedInUser.setFirstName(resultSet.getString("FirstName"));
             loggedInUser.setLastName(resultSet.getString("LastName"));
             loggedInUser.setUniversity(resultSet.getString("University"));
+            loggedInUser.setID(resultSet.getInt("ID"));
             loggedInUser.setRole("Learner");
-            return loggedInUser; // Return the singleton instance
         } else {
             throw new RuntimeException("No user found");
         }
     } catch (SQLException e) {
         e.printStackTrace();
-        return null;
     }
 }
 

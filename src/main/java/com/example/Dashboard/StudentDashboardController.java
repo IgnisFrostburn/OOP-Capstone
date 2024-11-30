@@ -1,7 +1,9 @@
 package com.example.Dashboard;
 
+import com.example.Database.EnrollmentDatabase;
 import com.example.Database.InstructorsInfoDatabase;
 import com.example.Database.LearnerDatabase;
+import com.example.Login_SignUp.LoggedInUser;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
@@ -31,7 +33,9 @@ public class StudentDashboardController {
     @FXML
     private GridPane browseCourseGridPane;
     @FXML
-    private Text dashboardName;
+    private Text dashboardFirstName;
+    @FXML
+    private Text dashboardLastName;
     @FXML
     private Pane browseCourseInnerGridPane;
 
@@ -41,7 +45,6 @@ public class StudentDashboardController {
     @FXML
     private Text meetingsTodayCTR;
 
-    private int coursesCtr = 0;
     private int gridCtr = 0;
     private int row = 0;
     private final double rowHeight = 220.0;
@@ -93,11 +96,21 @@ public class StudentDashboardController {
             }
         }
     }
+    public void setUserInfo(LoggedInUser loggedInUser, EnrollmentDatabase enrollmentDB){
+        coursesEnrolledCTR.setText(enrollmentDB.getCourseCTR(loggedInUser.getID()));
+        dashboardFirstName.setText(loggedInUser.getFirstName());
+        dashboardLastName.setText(loggedInUser.getLastName());
+        dashboardEmail.setText(loggedInUser.getEmail());
+        dashboardUniversity.setText(loggedInUser.getUniversity());
+    }
 
     public void initialize() throws SQLException {
-        coursesCtr = InstructorsInfoDatabase.numberOfCourses();
+        LoggedInUser loggedInUser = LoggedInUser.getInstance();
+        EnrollmentDatabase enrollmentDB = new EnrollmentDatabase();
+        int coursesCtr = InstructorsInfoDatabase.numberOfCourses();
         LearnerDatabase learnerDB = new LearnerDatabase();
-        coursesEnrolledCTR.setText("1");
+
+        setUserInfo(loggedInUser, enrollmentDB);
         createBrowseCourses(coursesCtr);
     }
 }
