@@ -1,7 +1,8 @@
 package com.example.Dashboard;
 
+import com.example.Course_content.Course_Info;
+import com.example.Course_content.Course_Info_Controller;
 import com.example.Database.CoursesDatabase;
-import com.example.Database.InstructorsInfoDatabase;
 import com.example.Database.LearnerDatabase;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -10,6 +11,7 @@ import javafx.scene.text.Text;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
@@ -64,6 +66,7 @@ public class StudentDashboardController {
             outerPane.getChildren().add(innerPane);
 
             Pane innerDesignPane = new Pane();
+            innerPane.setId("innerPane"+i);
             innerDesignPane.setPrefSize(370, 73);
             innerDesignPane.setStyle("-fx-background-radius: 0 0 10 10; -fx-background-color: white;");
             innerDesignPane.layoutYProperty().bind(innerPane.heightProperty().subtract(innerDesignPane.prefHeightProperty()));
@@ -87,6 +90,22 @@ public class StudentDashboardController {
 
             double newHeight = (row + 1) * rowHeight;
             browseCourseWrapperPane.setPrefHeight(newHeight);
+
+            int finalI = i;
+            innerPane.setOnMouseClicked(event -> {
+                System.out.println(finalI+1);
+                String[] strArr = CoursesDatabase.getCourseTitle(finalI).split(" - ");
+                Course_Info_Controller.setNameAndTitle(strArr[0], strArr[1]);
+                Stage courseInfoStage = new Stage();
+                Course_Info courseInfo = new Course_Info();
+                try {
+                    courseInfo.start(courseInfoStage);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+                courseInfoStage = (Stage) studentDashBoardStackPane.getScene().getWindow();
+                courseInfoStage.close();
+            });
 
             browseCourseGridPane.getRowConstraints().add(rowConstraints);
             if (gridCtr == 2) {

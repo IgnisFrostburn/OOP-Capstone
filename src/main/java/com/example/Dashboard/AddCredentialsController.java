@@ -40,7 +40,7 @@ public class AddCredentialsController {
     private Button backBtn;
 
     private File selectedFile;
-    private int id;
+    private String id;
 
     public String getTeachingExperienceField1() {
         return teachingExperienceField1.getText();
@@ -118,8 +118,8 @@ public class AddCredentialsController {
         buttonEffects(backBtn);
 
         id = new InstructorDatabase().getInstructorID(LoggedInUser.getInstance().getEmail());
-        if(InstructorsInfoDatabase.dataExists(Integer.toString(id))) {
-            InstructorsInfoDatabase instructorDetails = InstructorsInfoDatabase.instructorDetails(Integer.toString(id));
+        if(InstructorsInfoDatabase.dataExists(id)) {
+            InstructorsInfoDatabase instructorDetails = InstructorsInfoDatabase.instructorDetails(id);
             teachingExperienceField1.setText(instructorDetails.getTeachingExperience_1());
             teachingExperienceField2.setText(instructorDetails.getTeachingExperience_2());
             teachingExperienceField3.setText(instructorDetails.getTeachingExperience_3());
@@ -131,7 +131,8 @@ public class AddCredentialsController {
 
         addCredentialsBtn.setOnAction(actionEvent -> {
             InstructorsInfoDatabase instructorsInfoDatabase = new InstructorsInfoDatabase(getTeachingExperienceField1(), getTeachingExperienceField2(), getTeachingExperienceField3(), getTeachingExpertiseField1(), getTeachingExpertiseField2(), getTeachingExpertiseField3(), getLinkedInUrlField());
-            instructorsInfoDatabase.editInfo(Integer.toString(id), selectedFile);
+            System.out.println("id is " + id);
+            instructorsInfoDatabase.editInfo(id, selectedFile);
         });
 
         uploadBtn.setOnAction(e -> uploadImage());
