@@ -1,5 +1,6 @@
 package com.example.Dashboard;
 
+import com.example.Database.CoursesDatabase;
 import com.example.Database.InstructorsInfoDatabase;
 import com.example.Database.LearnerDatabase;
 import javafx.fxml.FXML;
@@ -72,8 +73,9 @@ public class StudentDashboardController {
             courseTitle.setPrefSize(345, 58);
             courseTitle.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.prefWidthProperty()).divide(2));
             courseTitle.layoutYProperty().bind(innerDesignPane.heightProperty().subtract(courseTitle.prefHeightProperty()).divide(2));
-            courseTitle.setText("Course Title");
+            courseTitle.setText(CoursesDatabase.getCourseTitle(i));
             courseTitle.setAlignment(Pos.CENTER);
+            courseTitle.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
             innerDesignPane.getChildren().add(courseTitle);
 
             browseCourseGridPane.add(outerPane, gridCtr++, row);
@@ -95,7 +97,7 @@ public class StudentDashboardController {
     }
 
     public void initialize() throws SQLException {
-        coursesCtr = InstructorsInfoDatabase.numberOfCourses();
+        coursesCtr = CoursesDatabase.numberOfCourses();
         LearnerDatabase learnerDB = new LearnerDatabase();
         coursesEnrolledCTR.setText("1");
         createBrowseCourses(coursesCtr);

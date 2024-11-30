@@ -1,5 +1,6 @@
 package com.example.Database;
 
+import com.example.Dashboard.AddCourse;
 import javafx.fxml.FXML;
 
 import java.io.File;
@@ -8,7 +9,7 @@ import java.io.FileNotFoundException;
 import java.sql.*;
 
 public class CoursesDatabase {
-    private static String url = "jdbc:mysql://192.168.1.8:3306/excelone";
+    private static String url = "jdbc:mysql://192.168.1.2:3306/excelone";
     private static String username = "excelOneAdmin";
     private static String password = "secure123";
 
@@ -82,6 +83,54 @@ public class CoursesDatabase {
         if(ctr == 3) return true;
         return false;
     }
+
+    public static int numberOfCourses() {
+        int ctr = 0;
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            String selectQuery = "SELECT instructor_id FROM courses";
+            try (Statement selectStmt = connection.createStatement();
+                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
+
+                while (resultSet.next()) {
+                    ctr++;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ctr;
+    };
+
+    //fetches course info
+    public static String getCourseTitle(int ctr) {
+        String courseTitle = "";
+        String instructorName = "";
+        int instructor_id;
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            String selectQuery = "SELECT course_title, instructor_id FROM courses";
+            String selectQuery2 = "SELECT LastName, FirstName, MiddleName FROM instructors";
+            try (Statement selectStmt = connection.createStatement();
+                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
+                    for(int i  = 0; i <= ctr; i++) {
+                        resultSet.next();
+                    }
+                    courseTitle = resultSet.getString("course_title");
+                    instructor_id = Integer.parseInt(resultSet.getString("instructor_id"));
+                }
+            try(Statement selectStmt = connection.createStatement();
+                ResultSet resultSet2 = selectStmt.executeQuery(selectQuery2)) {
+                    for(int i = 1; i <= instructor_id; i++) {
+                        resultSet2.next();
+                    }
+                    instructorName += resultSet2.getString("FirstName") + " ";
+                    instructorName += resultSet2.getString("MiddleName") + " ";
+                    instructorName += resultSet2.getString("LastName") + " ";
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courseTitle + " - " + instructorName;
+    };
 }
 
 

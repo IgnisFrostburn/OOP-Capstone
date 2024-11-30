@@ -5,7 +5,7 @@ import com.example.Login_SignUp.LoggedInUser;
 import java.sql.*;
 
 public class LearnerDatabase extends DatabaseConnection {
-    String url = "jdbc:mysql://192.168.1.8/excelone";
+    String url = "jdbc:mysql://192.168.1.2/excelone";
     String username = "excelOneAdmin";
     String password = "secure123";
 

@@ -5,7 +5,7 @@ import com.example.Login_SignUp.LoggedInUser;
 import java.sql.*;
 
 public class InstructorDatabase extends DatabaseConnection{
-    String url = "jdbc:mysql://192.168.1.8:3306/excelone";
+    String url = "jdbc:mysql://192.168.1.2:3306/excelone";
     String username = "excelOneAdmin";
     String password = "secure123";
     public InstructorDatabase() {
@@ -82,8 +82,6 @@ public class InstructorDatabase extends DatabaseConnection{
         }
     }
 
-
-
     @Override
     public boolean checkPassword(String userPassword, String email) throws SQLException {
         String selectQuery = "SELECT Password FROM instructors WHERE Email = ?";
@@ -107,7 +105,6 @@ public class InstructorDatabase extends DatabaseConnection{
 
         return false;
     }
-
 
     public int numberOfInstructors() throws SQLException {
         int ctr = 0;

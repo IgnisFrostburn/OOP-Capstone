@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.sql.*;
 
 public class InstructorsInfoDatabase {
-    static String url = "jdbc:mysql://192.168.1.8:3306/excelone";
+    static String url = "jdbc:mysql://192.168.1.2:3306/excelone";
     static String username = "excelOneAdmin";
     static String password = "secure123";
     private String teachingExperience_1;
@@ -73,23 +73,6 @@ public class InstructorsInfoDatabase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public static int numberOfCourses() throws SQLException {
-        int ctr = 0;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT ID FROM instructor_info";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-
-                while (resultSet.next()) {
-                    ctr++;
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return ctr;
     }
 
     //checks if data exists
