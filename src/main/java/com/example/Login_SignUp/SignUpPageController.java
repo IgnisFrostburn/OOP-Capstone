@@ -241,11 +241,11 @@ public class SignUpPageController {
                 if(userOTP.matches(String.valueOf(OTP))){
                     System.out.println("Correct");
                     if(isLearner) {
-                        LearnerDatabase learnerDatabase = new LearnerDatabase(studentLastNameTF.getText(), studentFirstNameTF.getText(), studentMiddleNameTF.getText(), studentUniversityTF.getText(), getEmail(), getPassword());
-                        learnerDatabase.insertData();
+                        LearnerDatabase learnerDatabase = new LearnerDatabase();
+                        learnerDatabase.insertData(studentLastNameTF.getText(), studentFirstNameTF.getText(), studentMiddleNameTF.getText(), studentUniversityTF.getText(), getEmail(), getPassword());
                     } else if(isInstructor) {
-                        InstructorDatabase instructorDatabase = new InstructorDatabase(instructorLastNameTF.getText(), instructorFirstNameTF.getText(), instructorMiddleNameTF.getText(), instructorUniversityTF.getText(), getEmail(), getPassword());
-                        instructorDatabase.insertData();
+                        InstructorDatabase instructorDatabase = new InstructorDatabase();
+                        instructorDatabase.insertData(instructorLastNameTF.getText(), instructorFirstNameTF.getText(), instructorMiddleNameTF.getText(), instructorUniversityTF.getText(), getEmail(), getPassword());
                     }
                 }else{
                     throw new RuntimeException("Invalid OTP");

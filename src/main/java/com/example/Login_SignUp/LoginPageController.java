@@ -4,6 +4,7 @@ import com.example.Dashboard.StudentDashboard;
 import com.example.Dashboard.TeacherDashboard;
 import com.example.Database.InstructorDatabase;
 import com.example.Database.LearnerDatabase;
+import com.mysql.cj.log.Log;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -153,16 +154,10 @@ public class LoginPageController {
                 try {
                     if (validEmail && validPassword) {
                         LearnerDatabase learnerDatabase = new LearnerDatabase();
-                        LoggedInUser loggedInUser = learnerDatabase.getUserData(getLoginEmail());
-
+                        learnerDatabase.getUserData(getLoginEmail());
+                        LoggedInUser loggedInUser = LoggedInUser.getInstance();
                         if (loggedInUser != null) {
                             System.out.println(loggedInUser.getFirstName());
-                            LoggedInUser instance = LoggedInUser.getInstance();
-                            instance.setEmail(loggedInUser.getEmail());
-                            instance.setFirstName(loggedInUser.getFirstName());
-                            instance.setLastName(loggedInUser.getLastName());
-                            instance.setUniversity(loggedInUser.getUniversity());
-                            instance.setRole("Learner");
                         } else {
                             throw new RuntimeException("NO USER FOUND");
                         }
@@ -190,16 +185,13 @@ public class LoginPageController {
                 try {
                     if (validEmail && validPassword) {
                         InstructorDatabase instructorDatabase = new InstructorDatabase();
-                        LoggedInUser loggedInUser = instructorDatabase.getUserData(getLoginEmail());
+                        instructorDatabase.getUserData(getLoginEmail());
+                        LoggedInUser loggedInUser = LoggedInUser.getInstance();
 
                         if (loggedInUser != null) {
                             System.out.println(loggedInUser.getFirstName());
-                            LoggedInUser instance = LoggedInUser.getInstance();
-                            instance.setEmail(loggedInUser.getEmail());
-                            instance.setFirstName(loggedInUser.getFirstName());
-                            instance.setLastName(loggedInUser.getLastName());
-                            instance.setUniversity(loggedInUser.getUniversity());
-                            instance.setRole("Instructor");
+                        } else {
+                            throw new RuntimeException("NO USER FOUND");
                         }
 
                         Stage teacherStage = new Stage();

@@ -8,6 +8,7 @@ public class LoggedInUser {
     private String lastName;
     private String university;
     private String role;
+    private int ID;
 
 
     private LoggedInUser() {}
@@ -58,6 +59,14 @@ public class LoggedInUser {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int getID() {
+        return ID;
     }
 
     public void clear() {

@@ -5,10 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.*;
 
-public class InstructorsInfoDatabase {
-    static String url = "jdbc:mysql://192.168.1.8:3306/excelone";
-    static String username = "excelOneAdmin";
-    static String password = "secure123";
+public class InstructorsInfoDatabase extends UtilityDatabase {
     private String teachingExperience_1;
     private String teachingExperience_2;
     private String teachingExperience_3;
@@ -40,6 +37,7 @@ public class InstructorsInfoDatabase {
     }
 
     public InstructorsInfoDatabase(String teachingExperience_1, String teachingExperience_2, String teachingExperience_3, String teachingExpertise_1, String teachingExpertise_2, String teachingExpertise_3, String linkedInURL) {
+        super();
         this.teachingExperience_1 = teachingExperience_1;
         this.teachingExperience_2 = teachingExperience_2;
         this.teachingExperience_3 = teachingExperience_3;
@@ -50,7 +48,8 @@ public class InstructorsInfoDatabase {
     }
 
     public void insertData(String id, File pfp) {
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
+            if(connection == null)throw new SQLException();
             System.out.println("Connected to the database!");
             String insertQuery = "INSERT INTO instructor_info (instructor_ID, teaching_experience1, teaching_experience2, teaching_experience3, teaching_expertise1, teaching_expertise2, teaching_expertise3, linkedIn_url, teacher_pfp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {
@@ -77,7 +76,8 @@ public class InstructorsInfoDatabase {
 
     public static int numberOfCourses() throws SQLException {
         int ctr = 0;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
+            if(connection == null)throw new SQLException();
             String selectQuery = "SELECT ID FROM instructor_info";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
@@ -94,7 +94,8 @@ public class InstructorsInfoDatabase {
 
     //checks if data exists
     public static boolean dataExists(String id) throws SQLException {
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
+            if(connection == null)throw new SQLException();
             String selectQuery = "SELECT instructor_id FROM instructor_info";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
@@ -104,6 +105,7 @@ public class InstructorsInfoDatabase {
                 }
             }
         } catch (SQLException e) {
+            System.out.println("data exist exception");
             e.printStackTrace();
         }
         return false;
@@ -112,7 +114,8 @@ public class InstructorsInfoDatabase {
     //finds the instructors credentials
     //if it exists, it edits that row, if it doesn't, it creates a new one
     public void editInfo(String id, File pfp) {
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
+            if(connection == null)throw new SQLException();
             if(dataExists(id)) {
                 String updateQuery = "UPDATE instructor_info SET teaching_experience1 = ?, teaching_experience2 = ?, teaching_experience3 = ?, teaching_expertise1 = ?, teaching_expertise2 = ?, teaching_expertise3 = ?, linkedIn_url = ?, teacher_pfp = ? WHERE instructor_id = ?";
                 try(PreparedStatement updateStmt = connection.prepareStatement(updateQuery)) {
@@ -132,8 +135,41 @@ public class InstructorsInfoDatabase {
                 }
             } else insertData(id, pfp);
         } catch (SQLException e) {
+            System.out.println("edit data exception");
             e.printStackTrace();
         }
+    }
+
+    public static InstructorsInfoDatabase instructorDetails(String id) {
+        InstructorsInfoDatabase instructorsInfoDatabase = null;
+        String query = "SELECT teaching_experience1, teaching_experience2, teaching_experience3, teaching_expertise1, teaching_expertise2, teaching_expertise3, linkedIn_url FROM instructor_info WHERE instructor_ID = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            if(connection == null)throw new SQLException();
+            stmt.setString(1, id);
+            try (ResultSet resultSet = stmt.executeQuery()) {
+                if (resultSet.next()) {
+                    String teachingExperience1 = resultSet.getString("teaching_experience1");
+                    String teachingExperience2 = resultSet.getString("teaching_experience2");
+                    String teachingExperience3 = resultSet.getString("teaching_experience3");
+                    String teachingExpertise1 = resultSet.getString("teaching_expertise1");
+                    String teachingExpertise2 = resultSet.getString("teaching_expertise2");
+                    String teachingExpertise3 = resultSet.getString("teaching_expertise3");
+                    String linkedInURL = resultSet.getString("linkedIn_url");
+
+                    instructorsInfoDatabase = new InstructorsInfoDatabase(
+                            teachingExperience1,
+                            teachingExperience2,
+                            teachingExperience3,
+                            teachingExpertise1,
+                            teachingExpertise2,
+                            teachingExpertise3,
+                            linkedInURL);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return instructorsInfoDatabase;
     }
 }
 

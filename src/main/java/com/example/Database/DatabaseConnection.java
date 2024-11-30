@@ -4,58 +4,19 @@ import com.example.Login_SignUp.LoggedInUser;
 import java.sql.*;
 
 public abstract class DatabaseConnection {
-    private String lastName;
-    private String firstName;
-    private String middleName;
-    private String university;
-    private String email;
-    private String pass;
+    protected String url = "jdbc:mysql://192.168.1.2:3306/excelone";
+    protected String username = "excelOneAdmin";
+    protected String password = "secure123";
+    protected static Connection connection;
 
-    public String getPass() {
-        return pass;
+    public DatabaseConnection()  {
+        try{
+            connection = DriverManager.getConnection(url, username, password);
+        } catch (SQLException e) {
+            System.out.println("Error on creating DB Connection: " + e.getMessage());
+        }
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public String getUniversity() {
-        return university;
-    }
 
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public DatabaseConnection() {
-        this.lastName = null;
-        this.firstName = null;
-        this.middleName = null;
-        this.university = null;
-        this.email = null;
-        this.pass = null;
-    }
-
-    public DatabaseConnection(String lastName, String firstName, String middleName,String university, String email, String password) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.university = university;
-        this.email = email;
-        this.pass = password;
-    }
-
-    public abstract void insertData();
-    public abstract LoggedInUser getUserData(String email);
-
-    public abstract boolean checkEmail(String email) throws SQLException;
-    public abstract boolean checkPassword(String userPassword, String email) throws SQLException;
 }

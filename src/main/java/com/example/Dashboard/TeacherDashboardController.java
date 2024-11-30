@@ -34,10 +34,12 @@ public class TeacherDashboardController {
     @FXML
     private Button addCredentialsBtn;
 
+    @FXML
+    private Button addCoursesBtn;
+
     public void initialize() {
         coursesOfferedCTR.setText("2"); // Example: Set to the count of courses offered
         addCredentialsBtn.setOnAction(actionEvent -> {
-            System.out.println("clicked");
             Stage addCredentialsStage = new Stage();
             AddCredentials addCredentials = new AddCredentials();
             try {
@@ -47,6 +49,18 @@ public class TeacherDashboardController {
             }
             addCredentialsStage = (Stage) instructorDashboardStackPane.getScene().getWindow();
             addCredentialsStage.close();
+        });
+
+        addCoursesBtn.setOnAction(actionEvent -> {
+            Stage addCoursesStage = new Stage();
+            AddCourse addCourse = new AddCourse();
+            try {
+                addCourse.start(addCoursesStage);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            addCoursesStage = (Stage) instructorDashboardStackPane.getScene().getWindow();
+            addCoursesStage.close();
         });
     }
 }
