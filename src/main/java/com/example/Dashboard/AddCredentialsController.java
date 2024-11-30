@@ -120,16 +120,16 @@ public class AddCredentialsController {
 
         id = new InstructorDatabase().getInstructorID(LoggedInUser.getInstance().getEmail());
         if(InstructorsInfoDatabase.dataExists(Integer.toString(id))) {
-            ResultSet rs = InstructorsInfoDatabase.instructorDetails(Integer.toString(id));
-            if(rs!=null) {
-                teachingExperienceField1.setText(rs.getString("teaching_experience1"));
-                teachingExperienceField2.setText(rs.getString("teaching_experience2"));
-                teachingExperienceField3.setText(rs.getString("teaching_experience3"));
-                teachingExpertiseField1.setText(rs.getString("teaching_expertise1"));
-                teachingExpertiseField2.setText(rs.getString("teaching_expertise1"));
-                teachingExpertiseField3.setText(rs.getString("teaching_expertise1"));
-                linkedInUrlField.setText(rs.getString("linkedIN_url"));
-            }
+            InstructorsInfoDatabase instructorsInfoDatabase = InstructorsInfoDatabase.instructorDetails(Integer.toString(id));
+
+                teachingExperienceField1.setText(instructorsInfoDatabase.getTeachingExperience_1());
+                teachingExperienceField2.setText(instructorsInfoDatabase.getTeachingExperience_2());
+                teachingExperienceField3.setText(instructorsInfoDatabase.getTeachingExperience_3());
+                teachingExpertiseField1.setText(instructorsInfoDatabase.getTeachingExpertise_1());
+                teachingExpertiseField2.setText(instructorsInfoDatabase.getTeachingExpertise_2());
+                teachingExpertiseField3.setText(instructorsInfoDatabase.getTeachingExperience_3());
+                linkedInUrlField.setText(instructorsInfoDatabase.getLinkedInURL());
+
         }
 
         addCredentialsBtn.setOnAction(actionEvent -> {
