@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="course info sa">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/CourseContent.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/JavaFXSampleApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +16,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaFXApplication" />
         <option value="Class" />
         <option value="FxmlFile" />
+        <option value="JavaFXApplication" />
       </list>
     </option>
   </component>
@@ -47,21 +48,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AddCourse.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AddCredentials.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CourseContent.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Course_Info.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SignUpPage.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TeacherDashboard.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Dashboard&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AddCourse.executor": "Run",
+    "Application.AddCredentials.executor": "Run",
+    "Application.CourseContent.executor": "Run",
+    "Application.Course_Info.executor": "Run",
+    "Application.JavaFXSampleApp.executor": "Run",
+    "Application.LoginPageApplication.executor": "Run",
+    "Application.SignUpPage.executor": "Run",
+    "Application.StudentDashboard.executor": "Run",
+    "Application.TeacherDashboard.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Dashboard",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Java/OOP-Capstone/src/main/java/modules/mysql-connector-j-9.1.0.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Java\OOP-Capstone\src\main\resources\com\example\Login_SignUp" />
@@ -128,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732922423419</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="course info sa">
+      <option name="closed" value="true" />
+      <created>1732944266843</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732944266843</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
