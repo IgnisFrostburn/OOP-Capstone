@@ -1,11 +1,8 @@
 package com.example.Dashboard;
 
-import com.example.Database.EnrollmentDatabase;
-import com.example.Database.InstructorsInfoDatabase;
+import com.example.Database.*;
 import com.example.Course_content.Course_Info;
 import com.example.Course_content.Course_Info_Controller;
-import com.example.Database.CoursesDatabase;
-import com.example.Database.LearnerDatabase;
 import com.example.Login_SignUp.LoggedInUser;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -24,12 +21,10 @@ public class StudentDashboardController {
     private StackPane studentDashBoardStackPane;
     @FXML
     private Text coursesEnrolledCTR;
-
     @FXML
     private ScrollPane browseScrollPane;
     @FXML
     private Button dashboardBtn;
-
     @FXML
     private Pane browseCourseWrapperPane;
     @FXML
@@ -57,10 +52,12 @@ public class StudentDashboardController {
     private static final double innerPaneSize = 50.0;
 
     private void createBrowseCourses(int coursesCtr) {
-        for(int i = 0; i < coursesCtr; i++) {
+        for(int i = 0; i <= coursesCtr; i++) {
             System.out.println("addRow pressed and row is " + row);
             Pane outerPane = new Pane();
             outerPane.setPrefSize(columnWidth, rowHeight);
+
+            browseCourseGridPane.add(outerPane, gridCtr++, row);
 
             Pane innerPane = new Pane();
             innerPane.setPrefSize(370, 192);
@@ -86,8 +83,6 @@ public class StudentDashboardController {
             courseTitle.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
             innerDesignPane.getChildren().add(courseTitle);
 
-            browseCourseGridPane.add(outerPane, gridCtr++, row);
-
             RowConstraints rowConstraints = new RowConstraints();
             rowConstraints.setMinHeight(220.0);
             rowConstraints.setPrefHeight(220.0);
@@ -95,12 +90,19 @@ public class StudentDashboardController {
 
             double newHeight = (row + 1) * rowHeight;
             browseCourseWrapperPane.setPrefHeight(newHeight);
-
+            System.out.println("i is " + i);
             int finalI = i;
+
             innerPane.setOnMouseClicked(event -> {
-                System.out.println(finalI+1);
+                String id;
+                try {
+                    id = new InstructorDatabase().getInstructorID(Integer.toString(finalI));
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                System.out.println("final I is " + finalI);
                 String[] strArr = CoursesDatabase.getCourseTitle(finalI).split(" - ");
-                Course_Info_Controller.setNameAndTitle(strArr[0], strArr[1]);
+                Course_Info_Controller.setNameAndTitle(strArr[0], strArr[1], id);
                 Stage courseInfoStage = new Stage();
                 Course_Info courseInfo = new Course_Info();
                 try {
@@ -131,7 +133,6 @@ public class StudentDashboardController {
         LoggedInUser loggedInUser = LoggedInUser.getInstance();
         EnrollmentDatabase enrollmentDB = new EnrollmentDatabase();
         int coursesCtr = InstructorsInfoDatabase.numberOfCourses();
-        LearnerDatabase learnerDB = new LearnerDatabase();
 
         setUserInfo(loggedInUser, enrollmentDB);
         createBrowseCourses(coursesCtr);

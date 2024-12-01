@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b82dafa5-c263-45e1-be5b-c62a7e0f71aa" name="Changes" comment="Added EnrollmentDB and MeetingDb. Cleaned DB java files">
-      <list default="true" id="0c389a45-d214-4c35-84d5-6c2b7f36f434" name="Changes" comment="&quot;Add Course and Add Credentials design update&quot;">
-        <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
-        <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Course_content/CourseContent.java" beforeDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Course_content/CourseContentController.java" beforeDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" afterDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourseController.java" afterDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentialsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentialsController.java" afterDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" afterDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" afterDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/CourseContent.fxml" beforeDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/Course_Info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/Course_Info.fxml" afterDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/StudentDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/StudentDashboard.fxml" afterDir="false" />
-        <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/courseInfo.css" beforeDir="false" />
-      </list>
+    <list default="true" id="0c389a45-d214-4c35-84d5-6c2b7f36f434" name="Changes" comment="&quot;Add Course and Add Credentials design update&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/Course_Info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/Course_Info.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/StudentDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/StudentDashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,14 +59,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-        &quot;keyToString&quot;: {
-          &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
-          &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
-          &quot;git-widget-placeholder&quot;: &quot;master&quot;
-        }
-      }</component>
-  <component name="RunManager" selected="Application.LoginPageApplication">
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.LoginPageApplication.executor": "Run",
+    "Application.StudentDashboard.executor": "Run",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.StudentDashboard">
     <configuration name="AddCourse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Dashboard.AddCourse" />
       <method v="2">
@@ -88,14 +80,134 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StudentDashboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Dashboard.StudentDashboard" />
+      <module name="JavaFXDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Dashboard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.LoginPageApplication" />
+      <item itemvalue="Application.StudentDashboard" />
       <item itemvalue="Application.AddCourse" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StudentDashboard" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="&quot;Browse Courses&quot;">
       <option name="closed" value="true" />
+      <created>1732770675846</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732770675846</updated>
     </task>
+    <task id="LOCAL-00002" summary="&quot;Revised &quot;">
+      <option name="closed" value="true" />
+      <created>1732804441226</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732804441226</updated>
+    </task>
+    <task id="LOCAL-00003" summary="&quot;Revised &quot;">
+      <option name="closed" value="true" />
+      <created>1732807488442</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732807488442</updated>
+    </task>
+    <task id="LOCAL-00004" summary="&quot;Connected login to dashboard&quot;">
+      <option name="closed" value="true" />
+      <created>1732808778849</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732808778849</updated>
+    </task>
+    <task id="LOCAL-00005" summary="course info sa">
+      <option name="closed" value="true" />
+      <created>1732922423419</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732922423419</updated>
+    </task>
+    <task id="LOCAL-00006" summary="&quot;Add credential update - database connection and update&quot;">
+      <option name="closed" value="true" />
+      <created>1732885023702</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732885023702</updated>
+    </task>
+    <task id="LOCAL-00007" summary="&quot;Add course Update&quot;">
+      <option name="closed" value="true" />
+      <created>1732920499697</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732920499697</updated>
+    </task>
+    <task id="LOCAL-00008" summary="&quot;Changed ip address&quot;">
+      <option name="closed" value="true" />
+      <created>1732926867364</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732926867364</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="course content" />
+      <created>1732894268475</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732894268475</updated>
+    </task>
+    <task id="LOCAL-00009" summary="&quot;Add Course and Add Credentials design update&quot;">
+      <option name="closed" value="true" />
+      <created>1732966119781</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732966119781</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;Browse Courses&quot;" />
+    <MESSAGE value="&quot;Browse Courses Update 1&quot;" />
+    <MESSAGE value="&quot;Revised &quot;" />
+    <MESSAGE value="&quot;Connected login to dashboard&quot;" />
+    <MESSAGE value="&quot;Add credential update - database connection and update&quot;" />
+    <MESSAGE value="&quot;Add course Update&quot;" />
+    <MESSAGE value="&quot;Changed ip address&quot;" />
+    <MESSAGE value="course info sa" />
+    <MESSAGE value="&quot;Add Course and Add Credentials design update&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Add Course and Add Credentials design update&quot;" />
   </component>
 </project>

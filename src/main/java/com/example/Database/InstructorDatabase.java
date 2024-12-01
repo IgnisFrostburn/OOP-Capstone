@@ -48,7 +48,6 @@ public class InstructorDatabase extends UserDatabase{
     }
 
     @Override
-
     public void getUserData(String email) {
         try {
             if(connection == null)throw new SQLException("Error with getting User Data");
@@ -105,6 +104,22 @@ public class InstructorDatabase extends UserDatabase{
 
                 while (resultSet.next()) {
                     if(resultSet.getString("Email").equals(email)) return resultSet.getString("ID");
+                }
+            }
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+        return "1";
+    }
+
+    public static String getUniversity(String id) throws SQLException {
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            String selectQuery = "SELECT ID, University FROM instructors";
+            try (Statement selectStmt = connection.createStatement();
+                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
+
+                while (resultSet.next()) {
+                    if(resultSet.getString("ID").equals(id)) return resultSet.getString("University");
                 }
             }
         } catch (SQLException e) {

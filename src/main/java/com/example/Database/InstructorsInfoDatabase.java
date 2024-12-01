@@ -1,8 +1,6 @@
 package com.example.Database;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.sql.*;
 
 public class InstructorsInfoDatabase extends UtilityDatabase {
@@ -13,6 +11,10 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
     private String teachingExpertise_2;
     private String teachingExpertise_3;
     private String linkedInURL;
+
+    public InstructorsInfoDatabase() {
+
+    }
 
     public String getTeachingExperience_1() {
         return teachingExperience_1;
@@ -170,6 +172,37 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
             e.printStackTrace();
         }
         return instructorsInfoDatabase;
+    }
+
+    public File getProfileImage(String id) throws SQLException {
+        File pfp = null;
+        String query = "SELECT teacher_pfp FROM instructor_info WHERE instructor_ID = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            if (connection == null) throw new SQLException();
+            stmt.setString(1, id);
+            try (ResultSet resultSet = stmt.executeQuery()) {
+                if (resultSet.next()) {
+                    try (InputStream inputStream = resultSet.getBinaryStream("teacher_pfp")) {
+                        if (inputStream != null) {
+                            pfp = File.createTempFile("profile_image_" + id, ".png");
+                            try (OutputStream outputStream = new FileOutputStream(pfp)) {
+                                byte[] buffer = new byte[1024];
+                                int bytesRead;
+                                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                                    outputStream.write(buffer);
+                                }
+                                System.out.println("Profile image retrieved and saved to: " + pfp.getAbsolutePath());
+                            }
+                        } else System.out.println("No image found for instructor ID: " + id);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return pfp;
     }
 }
 

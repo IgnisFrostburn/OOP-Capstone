@@ -4,9 +4,9 @@ import com.example.Login_SignUp.LoggedInUser;
 import java.sql.*;
 
 public abstract class DatabaseConnection {
-    protected String url = "jdbc:mysql://192.168.1.2:3306/excelone";
-    protected String username = "excelOneAdmin";
-    protected String password = "secure123";
+    protected static String url = "jdbc:mysql://192.168.1.2:3306/excelone";
+    protected static String username = "excelOneAdmin";
+    protected static String password = "secure123";
     protected static Connection connection;
 
     public DatabaseConnection()  {
