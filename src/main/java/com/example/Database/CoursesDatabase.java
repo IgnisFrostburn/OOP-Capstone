@@ -80,36 +80,50 @@ public class CoursesDatabase extends UtilityDatabase {
         return false;
     }
 
-    //fetches course info
-    public static String getCourseTitle(int ctr) {
-        String courseTitle = "";
-        String instructorName = "";
-        int instructor_id;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT course_title, instructor_id FROM courses";
-            String selectQuery2 = "SELECT LastName, FirstName, MiddleName FROM instructors";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-                    for(int i  = 0; i <= ctr; i++) {
-                        resultSet.next();
+    //fetches course title
+    public static String getCourseTitle(String id) {
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course title");
+            String selectQuery = "SELECT course_title FROM courses WHERE course_ID = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, id);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getString("course_title");
                     }
-                    courseTitle = resultSet.getString("course_title");
-                    instructor_id = Integer.parseInt(resultSet.getString("instructor_id"));
                 }
-            try(Statement selectStmt = connection.createStatement();
-                ResultSet resultSet2 = selectStmt.executeQuery(selectQuery2)) {
-                    for(int i = 1; i <= instructor_id; i++) {
-                        resultSet2.next();
-                    }
-                    instructorName += resultSet2.getString("FirstName") + " ";
-                    instructorName += resultSet2.getString("MiddleName") + " ";
-                    instructorName += resultSet2.getString("LastName") + " ";
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return courseTitle + " - " + instructorName;
+        System.out.println("null");
+        return null;
     };
+
+    public static String getInstructorName(String id) {
+        try {
+            if (connection == null) throw new SQLException("Exception in getting instructor name");
+            String query = """
+            SELECT i.LastName, i.FirstName, i.MiddleName
+            FROM instructors i
+            INNER JOIN courses c ON i.ID = c.instructor_id
+            WHERE c.course_ID = ?
+        """;
+            try (PreparedStatement stmt = connection.prepareStatement(query)) {
+                stmt.setString(1, id);
+                try (ResultSet resultSet = stmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getString("FirstName") + " " + resultSet.getString("MiddleName") + " " + resultSet.getString("LastName");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "Not found";
+    }
+
+
 
     public static int[] numberOfCourses() {
         List<Integer> courses = new ArrayList<Integer>();

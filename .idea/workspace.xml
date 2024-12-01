@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c389a45-d214-4c35-84d5-6c2b7f36f434" name="Changes" comment="&quot;Add Course and Add Credentials design update&quot;">
+    <list default="true" id="0c389a45-d214-4c35-84d5-6c2b7f36f434" name="Changes" comment="&quot;Browse courses layout update - added course image&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/CoursesDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/CoursesDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733054917050</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="&quot;Browse courses layout update - added course image&quot;">
+      <option name="closed" value="true" />
+      <created>1733062445342</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733062445342</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,6 +236,7 @@
     <MESSAGE value="&quot;Changed ip address&quot;" />
     <MESSAGE value="course info sa" />
     <MESSAGE value="&quot;Add Course and Add Credentials design update&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Add Course and Add Credentials design update&quot;" />
+    <MESSAGE value="&quot;Browse courses layout update - added course image&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Browse courses layout update - added course image&quot;" />
   </component>
 </project>
