@@ -65,16 +65,13 @@ public class StudentDashboardController {
     @FXML
     private GridPane myCoursesGridPane;
 
-    private int coursesCtr = 0;
     private int gridCtr = 0;
     private int row = 0;
     private final double rowHeight = 220.0;
     private final double columnWidth = 390.0;
-    private static final double innerPaneSize = 50.0;
 
     private void createBrowseCourses(int[] courses) {
         for(int i : courses) {
-            System.out.println("addRow pressed and row is " + row);
             Pane outerPane = new Pane();
             outerPane.setPrefSize(columnWidth, rowHeight);
             int finalI = i;
@@ -115,15 +112,23 @@ public class StudentDashboardController {
             innerDesignPane.layoutYProperty().bind(innerPane.heightProperty().subtract(innerDesignPane.prefHeightProperty()));
             innerPane.getChildren().add(innerDesignPane);
 
-
             Text courseTitle = new Text();
             courseTitle.setWrappingWidth(345);
             courseTitle.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.wrappingWidthProperty()).divide(2));
             courseTitle.layoutYProperty().bind(innerDesignPane.heightProperty().subtract(courseTitle.getBoundsInLocal().getHeight()).divide(2));
-            courseTitle.setText(CoursesDatabase.getCourseTitle(i-1));
+            courseTitle.setText(CoursesDatabase.getCourseTitle( Integer.toString(i)));
             courseTitle.setTextAlignment(TextAlignment.CENTER);
             courseTitle.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
             innerDesignPane.getChildren().add(courseTitle);
+
+            Text instructorName = new Text();
+            instructorName.setWrappingWidth(345);
+            instructorName.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.wrappingWidthProperty()).divide(2));
+            instructorName.layoutYProperty().bind(courseTitle.layoutYProperty().add(courseTitle.getBoundsInLocal().getHeight()).add(5));
+            instructorName.setText(CoursesDatabase.getInstructorName( Integer.toString(i)));
+            instructorName.setTextAlignment(TextAlignment.CENTER);
+            instructorName.setStyle("-fx-font-size: 14px;");
+            innerDesignPane.getChildren().add(instructorName);
 
             RowConstraints rowConstraints = new RowConstraints();
             rowConstraints.setMinHeight(220.0);
@@ -132,8 +137,8 @@ public class StudentDashboardController {
 
             double newHeight = (row + 1) * rowHeight;
             browseCourseWrapperPane.setPrefHeight(newHeight);
-            System.out.println("i is " + i);
 
+            //pane is clicked
             innerPane.setOnMouseClicked(event -> {
                 String id;
                 try {
@@ -142,8 +147,10 @@ public class StudentDashboardController {
                     throw new RuntimeException(e);
                 }
                 System.out.println("final I is " + finalI);
-                String[] strArr = CoursesDatabase.getCourseTitle(finalI-1).split(" - ");
-                Course_Info_Controller.setNameAndTitle(strArr[0], strArr[1], id, Integer.toString(finalI));
+
+                String courseName= CoursesDatabase.getCourseTitle(Integer.toString(i));
+                String courseInstructorName = CoursesDatabase.getInstructorName(Integer.toString(i));
+                Course_Info_Controller.setNameAndTitle(courseName, courseInstructorName, id, Integer.toString(finalI));
                 Stage courseInfoStage = new Stage();
                 Course_Info courseInfo = new Course_Info();
                 try {

@@ -76,24 +76,6 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
         }
     }
 
-    public static int numberOfCourses() throws SQLException {
-        int ctr = 0;
-        try {
-            if(connection == null)throw new SQLException();
-            String selectQuery = "SELECT ID FROM instructor_info";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-
-                while (resultSet.next()) {
-                    ctr++;
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return ctr;
-    }
-
     //checks if data exists
     public static boolean dataExists(String id) throws SQLException {
         try {

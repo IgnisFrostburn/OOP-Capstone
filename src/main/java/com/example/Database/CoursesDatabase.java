@@ -31,17 +31,12 @@ public class CoursesDatabase extends UtilityDatabase {
         return shortDescription;
     }
 
-    public CoursesDatabase(String courseTitle, String category1, String category2, String category3, String shortDescription) throws SQLException {
-        super();
+    public CoursesDatabase(String courseTitle, String category1, String category2, String category3, String shortDescription) {
         this.courseTitle = courseTitle;
         this.category1 = category1;
         this.category2 = category2;
         this.category3 = category3;
         this.shortDescription = shortDescription;
-    }
-
-    public CoursesDatabase(){
-        super();
     }
 
     public void insertData(String id, File courseImage) {
@@ -85,75 +80,50 @@ public class CoursesDatabase extends UtilityDatabase {
         return false;
     }
 
-    public static int numberOfCourses() {
-        int ctr = 0;
+    //fetches course title
+    public static String getCourseTitle(String id) {
         try {
-            String selectQuery = "SELECT instructor_id FROM courses";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-
-                while (resultSet.next()) {
-                    ctr++;
+            if(connection == null) throw new SQLException("Exception in getting course title");
+            String selectQuery = "SELECT course_title FROM courses WHERE course_ID = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, id);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getString("course_title");
+                    }
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return ctr;
+        System.out.println("null");
+        return null;
     };
 
-    public int getCID(String title){
-        try{
-            System.out.println("hello ");
-            String query = "SELECT course_ID FROM courses WHERE course_title = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, title);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            if(resultSet.next()){
-                return resultSet.getInt("course_ID");
+    public static String getInstructorName(String id) {
+        try {
+            if (connection == null) throw new SQLException("Exception in getting instructor name");
+            String query = """
+            SELECT i.LastName, i.FirstName, i.MiddleName
+            FROM instructors i
+            INNER JOIN courses c ON i.ID = c.instructor_id
+            WHERE c.course_ID = ?
+        """;
+            try (PreparedStatement stmt = connection.prepareStatement(query)) {
+                stmt.setString(1, id);
+                try (ResultSet resultSet = stmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getString("FirstName") + " " + resultSet.getString("MiddleName") + " " + resultSet.getString("LastName");
+                    }
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return -1;
+        return "Not found";
     }
 
-//    public static void main(String[] args) {
-//        CoursesDatabase coursesDatabase = new CoursesDatabase();
-//        System.out.println(coursesDatabase.getCID("course1"));
-//    }
 
-    //fetches course info
-    public static String getCourseTitle(int ctr) {
-        String courseTitle = "";
-        String instructorName = "";
-        int instructor_id;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT course_title, instructor_id FROM courses";
-            String selectQuery2 = "SELECT LastName, FirstName, MiddleName FROM instructors";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-                    for(int i  = 0; i <= ctr; i++) {
-                        resultSet.next();
-                    }
-                    courseTitle = resultSet.getString("course_title");
-                    instructor_id = Integer.parseInt(resultSet.getString("instructor_id"));
-                }
-            try(Statement selectStmt = connection.createStatement();
-                ResultSet resultSet2 = selectStmt.executeQuery(selectQuery2)) {
-                    for(int i = 1; i <= instructor_id; i++) {
-                        resultSet2.next();
-                    }
-                    instructorName += resultSet2.getString("FirstName") + " ";
-                    instructorName += resultSet2.getString("MiddleName") + " ";
-                    instructorName += resultSet2.getString("LastName") + " ";
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return courseTitle + " - " + instructorName;
-    };
 
     public static int[] numberOfCourses() {
         List<Integer> courses = new ArrayList<Integer>();
