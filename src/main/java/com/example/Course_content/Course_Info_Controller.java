@@ -1,5 +1,6 @@
 package com.example.Course_content;
 
+import com.example.Database.CoursesDatabase;
 import com.example.Database.InstructorDatabase;
 import com.example.Database.InstructorsInfoDatabase;
 import javafx.fxml.FXML;
@@ -43,24 +44,26 @@ public class Course_Info_Controller {
     @FXML
     private Label courseTitle;
     @FXML
-    private Label category1;
+    private Text category1;
     @FXML
-    private Label category2;
+    private Text category2;
     @FXML
-    private Label category3;
+    private Text category3;
     @FXML
-    private Label shortDescription;
+    private Text shortDescription;
 
     private static String instructor;
     private static String title;
     private static String ID;
+    private static String courseID;
     private File pfp;
     private String url;
 
-    public static void setNameAndTitle(String course_title, String instructor_name, String id) {
+    public static void setNameAndTitle(String course_title, String instructor_name, String id, String course_id) {
        instructor = instructor_name;
        title = course_title;
        ID = id;
+       courseID = course_id;
     }
 
     public void initializeInstructorInfo(InstructorsInfoDatabase instructorsInfoDatabase) throws SQLException {
@@ -72,6 +75,15 @@ public class Course_Info_Controller {
         teachingExpertise3.setText(instructorsInfoDatabase.getTeachingExpertise_3());
         url = instructorsInfoDatabase.getLinkedInURL();
         schoolName.setText(InstructorDatabase.getUniversity(ID));
+    }
+
+    public void initializeCourseInfo() {
+//        CoursesDatabase coursesDatabase;
+//        coursesDatabase = CoursesDatabase.getCourseData(courseID);
+//        category1.setText(coursesDatabase.getCategory1());
+//        category2.setText(coursesDatabase.getCategory2());
+//        category3.setText(coursesDatabase.getCategory3());
+//        shortDescription.setText(coursesDatabase.getShortDescription());
     }
 
     public void openLink(String url) {
@@ -88,7 +100,7 @@ public class Course_Info_Controller {
     public void initialize() throws SQLException {
         instructorName.setText(instructor);
         courseTitle.setText(title);
-        InstructorsInfoDatabase instructorsInfoDatabase = new InstructorsInfoDatabase();
+        InstructorsInfoDatabase instructorsInfoDatabase;
         instructorsInfoDatabase = InstructorsInfoDatabase.instructorDetails(ID);
         initializeInstructorInfo(instructorsInfoDatabase);
         linkedInImage.setOnMouseClicked(event -> openLink(url));
@@ -96,6 +108,8 @@ public class Course_Info_Controller {
 
         if(profileImage != null && profileImage.exists()) profilePicture.setImage(new Image(profileImage.toURI().toString()));
         else System.out.println("file does not exist");
+
+        initializeCourseInfo();
 
         profilePicture.setPreserveRatio(true);
         profilePicture.setSmooth(true);

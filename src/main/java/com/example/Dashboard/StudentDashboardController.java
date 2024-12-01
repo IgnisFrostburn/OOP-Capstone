@@ -51,11 +51,12 @@ public class StudentDashboardController {
     private final double columnWidth = 390.0;
     private static final double innerPaneSize = 50.0;
 
-    private void createBrowseCourses(int coursesCtr) {
-        for(int i = 0; i <= coursesCtr; i++) {
+    private void createBrowseCourses(int[] courses) {
+        for(int i : courses) {
             System.out.println("addRow pressed and row is " + row);
             Pane outerPane = new Pane();
             outerPane.setPrefSize(columnWidth, rowHeight);
+
 
             browseCourseGridPane.add(outerPane, gridCtr++, row);
 
@@ -78,7 +79,7 @@ public class StudentDashboardController {
             courseTitle.setPrefSize(345, 58);
             courseTitle.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.prefWidthProperty()).divide(2));
             courseTitle.layoutYProperty().bind(innerDesignPane.heightProperty().subtract(courseTitle.prefHeightProperty()).divide(2));
-            courseTitle.setText(CoursesDatabase.getCourseTitle(i));
+            courseTitle.setText(CoursesDatabase.getCourseTitle(i-1));
             courseTitle.setAlignment(Pos.CENTER);
             courseTitle.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
             innerDesignPane.getChildren().add(courseTitle);
@@ -101,8 +102,8 @@ public class StudentDashboardController {
                     throw new RuntimeException(e);
                 }
                 System.out.println("final I is " + finalI);
-                String[] strArr = CoursesDatabase.getCourseTitle(finalI).split(" - ");
-                Course_Info_Controller.setNameAndTitle(strArr[0], strArr[1], id);
+                String[] strArr = CoursesDatabase.getCourseTitle(finalI-1).split(" - ");
+                Course_Info_Controller.setNameAndTitle(strArr[0], strArr[1], id, Integer.toString(finalI));
                 Stage courseInfoStage = new Stage();
                 Course_Info courseInfo = new Course_Info();
                 try {
@@ -132,10 +133,15 @@ public class StudentDashboardController {
     public void initialize() throws SQLException {
         LoggedInUser loggedInUser = LoggedInUser.getInstance();
         EnrollmentDatabase enrollmentDB = new EnrollmentDatabase();
-        int coursesCtr = InstructorsInfoDatabase.numberOfCourses();
+
+        int[] courses = CoursesDatabase.numberOfCourses();
+        System.out.println("IDs of courses: ");
+        for(int s: courses) {
+            System.out.println(s);
+        }
 
         setUserInfo(loggedInUser, enrollmentDB);
-        createBrowseCourses(coursesCtr);
+        createBrowseCourses(courses);
     }
 }
 

@@ -1,17 +1,11 @@
 package com.example.Database;
 
-import com.example.Dashboard.AddCourse;
-import javafx.fxml.FXML;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CoursesDatabase {
-    private static String url = "jdbc:mysql://192.168.1.2:3306/excelone";
-    private static String username = "excelOneAdmin";
-    private static String password = "secure123";
+public class CoursesDatabase extends UtilityDatabase {
 
     private String courseTitle;
     private String category1;
@@ -44,7 +38,7 @@ public class CoursesDatabase {
     }
 
     public void insertData(String id, File courseImage) {
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
             System.out.println("Connected to the database!");
             String insertQuery = "INSERT INTO courses (instructor_id, course_title, category_1, category_2, category_3, short_description, course_image) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {
@@ -68,7 +62,7 @@ public class CoursesDatabase {
 
     public static boolean maxCoursesReached(String id) throws SQLException {
         int ctr = 0;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
             String selectQuery = "SELECT instructor_id FROM courses";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
@@ -83,23 +77,6 @@ public class CoursesDatabase {
         if(ctr == 3) return true;
         return false;
     }
-
-    public static int numberOfCourses() {
-        int ctr = 0;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT instructor_id FROM courses";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-
-                while (resultSet.next()) {
-                    ctr++;
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return ctr;
-    };
 
     //fetches course info
     public static String getCourseTitle(int ctr) {
@@ -131,6 +108,67 @@ public class CoursesDatabase {
         }
         return courseTitle + " - " + instructorName;
     };
+
+    public static int[] numberOfCourses() {
+        List<Integer> courses = new ArrayList<Integer>();
+        try {
+            if(connection == null)throw new SQLException();
+            String selectQuery = "SELECT course_ID FROM courses";
+            try (Statement selectStmt = connection.createStatement();
+                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
+
+                while (resultSet.next()) {
+                    courses.add(Integer.parseInt(resultSet.getString("course_ID")));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courses.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+//    public static CoursesDatabase getCourseData(String id) {
+//        CoursesDatabase courseData = null;
+//        File imageFile = null;
+//
+//        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+//            String selectQuery = "SELECT course_title, category_1, category_2, category_3, short_description, course_image " +
+//                    "FROM courses WHERE instructor_id = ?";
+//            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+//                selectStmt.setString(1, id);
+//
+//                try (ResultSet resultSet = selectStmt.executeQuery()) {
+//                    if (resultSet.next()) {
+//                        String courseTitle = resultSet.getString("course_title");
+//                        String category1 = resultSet.getString("category_1");
+//                        String category2 = resultSet.getString("category_2");
+//                        String category3 = resultSet.getString("category_3");
+//                        String shortDescription = resultSet.getString("short_description");
+//
+//                        Blob imageBlob = resultSet.getBlob("course_image");
+//                        if (imageBlob != null) {
+//                            byte[] imageBytes = imageBlob.getBytes(1, (int) imageBlob.length());
+//
+//                            imageFile = File.createTempFile("course_image_", ".png");
+//                            try (FileOutputStream fos = new FileOutputStream(imageFile)) {
+//                                fos.write(imageBytes);
+//                            }
+//                        }
+//
+//                        courseData = new CoursesDatabase(courseTitle, category1, category2, category3, shortDescription);
+//                    }
+//                }
+//            }
+//        } catch (SQLException | IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        if (imageFile != null) {
+//            System.out.println("Image saved to: " + imageFile.getAbsolutePath());
+//        }
+//        return courseData;
+//    }
+
 }
 
 
