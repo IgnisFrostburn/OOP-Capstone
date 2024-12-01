@@ -1,5 +1,7 @@
 package com.example.Database;
 
+import javafx.scene.image.Image;
+
 import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
@@ -127,48 +129,50 @@ public class CoursesDatabase extends UtilityDatabase {
         return courses.stream().mapToInt(Integer::intValue).toArray();
     }
 
-//    public static CoursesDatabase getCourseData(String id) {
-//        CoursesDatabase courseData = null;
-//        File imageFile = null;
-//
-//        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-//            String selectQuery = "SELECT course_title, category_1, category_2, category_3, short_description, course_image " +
-//                    "FROM courses WHERE instructor_id = ?";
-//            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
-//                selectStmt.setString(1, id);
-//
-//                try (ResultSet resultSet = selectStmt.executeQuery()) {
-//                    if (resultSet.next()) {
-//                        String courseTitle = resultSet.getString("course_title");
-//                        String category1 = resultSet.getString("category_1");
-//                        String category2 = resultSet.getString("category_2");
-//                        String category3 = resultSet.getString("category_3");
-//                        String shortDescription = resultSet.getString("short_description");
-//
-//                        Blob imageBlob = resultSet.getBlob("course_image");
-//                        if (imageBlob != null) {
-//                            byte[] imageBytes = imageBlob.getBytes(1, (int) imageBlob.length());
-//
-//                            imageFile = File.createTempFile("course_image_", ".png");
-//                            try (FileOutputStream fos = new FileOutputStream(imageFile)) {
-//                                fos.write(imageBytes);
-//                            }
-//                        }
-//
-//                        courseData = new CoursesDatabase(courseTitle, category1, category2, category3, shortDescription);
-//                    }
-//                }
-//            }
-//        } catch (SQLException | IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        if (imageFile != null) {
-//            System.out.println("Image saved to: " + imageFile.getAbsolutePath());
-//        }
-//        return courseData;
-//    }
+    public static CoursesDatabase getCourseData(String id) {
+        CoursesDatabase courseData = null;
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course data");
+            String selectQuery = "SELECT course_title, category_1, category_2, category_3, short_description " +
+                    "FROM courses WHERE course_ID = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, id);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        String courseTitle = resultSet.getString("course_title");
+                        String category1 = resultSet.getString("category_1");
+                        String category2 = resultSet.getString("category_2");
+                        String category3 = resultSet.getString("category_3");
+                        String shortDescription = resultSet.getString("short_description");
 
+                        courseData = new CoursesDatabase(courseTitle, category1, category2, category3, shortDescription);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courseData;
+    }
+
+    public static Image getImage(String id) {
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course image");
+            String selectQuery = "SELECT course_image FROM courses WHERE course_ID = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, id);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        InputStream inputStream = resultSet.getBinaryStream("course_image");
+                        return new Image(inputStream);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
 
 

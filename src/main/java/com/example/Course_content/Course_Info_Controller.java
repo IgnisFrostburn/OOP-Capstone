@@ -1,18 +1,20 @@
 package com.example.Course_content;
 
+import com.example.Dashboard.StudentDashboard;
 import com.example.Database.CoursesDatabase;
 import com.example.Database.InstructorDatabase;
 import com.example.Database.InstructorsInfoDatabase;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.awt.*;
-import java.awt.event.MouseEvent;
 import java.io.File;
 import java.net.URI;
 import java.sql.SQLException;
@@ -51,6 +53,8 @@ public class Course_Info_Controller {
     private Text category3;
     @FXML
     private Text shortDescription;
+    @FXML
+    private Button backBtn;
 
     private static String instructor;
     private static String title;
@@ -78,12 +82,12 @@ public class Course_Info_Controller {
     }
 
     public void initializeCourseInfo() {
-//        CoursesDatabase coursesDatabase;
-//        coursesDatabase = CoursesDatabase.getCourseData(courseID);
-//        category1.setText(coursesDatabase.getCategory1());
-//        category2.setText(coursesDatabase.getCategory2());
-//        category3.setText(coursesDatabase.getCategory3());
-//        shortDescription.setText(coursesDatabase.getShortDescription());
+        CoursesDatabase coursesDatabase;
+        coursesDatabase = CoursesDatabase.getCourseData(courseID);
+        category1.setText(coursesDatabase.getCategory1());
+        category2.setText(coursesDatabase.getCategory2());
+        category3.setText(coursesDatabase.getCategory3());
+        shortDescription.setText(coursesDatabase.getShortDescription());
     }
 
     public void openLink(String url) {
@@ -113,6 +117,18 @@ public class Course_Info_Controller {
 
         profilePicture.setPreserveRatio(true);
         profilePicture.setSmooth(true);
+
+        backBtn.setOnAction(actionEvent -> {
+            Stage courseInfoStage = new Stage();
+            StudentDashboard studentDashboard = new StudentDashboard();
+            try {
+                studentDashboard.start(courseInfoStage);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            courseInfoStage = (Stage) courseInfoAnchorPane.getScene().getWindow();
+            courseInfoStage.close();
+        });
     }
 }
 
