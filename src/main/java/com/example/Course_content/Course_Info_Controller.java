@@ -2,6 +2,8 @@ package com.example.Course_content;
 
 import com.example.Database.CoursesDatabase;
 import com.example.Database.EnrollmentDatabase;
+import com.example.Dashboard.StudentDashboard;
+import com.example.Database.CoursesDatabase;
 import com.example.Database.InstructorDatabase;
 import com.example.Database.InstructorsInfoDatabase;
 import com.example.Login_SignUp.LoggedInUser;
@@ -14,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -51,24 +54,28 @@ public class Course_Info_Controller {
     @FXML
     private Button enrollBtn;
     @FXML
-    private Label category1;
+    private Text category1;
     @FXML
-    private Label category2;
+    private Text category2;
     @FXML
-    private Label category3;
+    private Text category3;
     @FXML
-    private Label shortDescription;
+    private Text shortDescription;
+    @FXML
+    private Button backBtn;
 
     private static String instructor;
     private static String title;
     private static String ID;
+    private static String courseID;
     private File pfp;
     private String url;
 
-    public static void setNameAndTitle(String course_title, String instructor_name, String id) {
+    public static void setNameAndTitle(String course_title, String instructor_name, String id, String course_id) {
        instructor = instructor_name;
        title = course_title;
        ID = id;
+       courseID = course_id;
     }
 
     public void enroll(){
@@ -112,6 +119,15 @@ public class Course_Info_Controller {
         schoolName.setText(InstructorDatabase.getUniversity(ID));
     }
 
+    public void initializeCourseInfo() {
+        CoursesDatabase coursesDatabase;
+        coursesDatabase = CoursesDatabase.getCourseData(courseID);
+        category1.setText(coursesDatabase.getCategory1());
+        category2.setText(coursesDatabase.getCategory2());
+        category3.setText(coursesDatabase.getCategory3());
+        shortDescription.setText(coursesDatabase.getShortDescription());
+    }
+
     public void openLink(String url) {
         try {
             String[] str = url.split(":");
@@ -124,6 +140,8 @@ public class Course_Info_Controller {
 
     @FXML
     public void initialize() throws SQLException {
+        instructorName.setText(instructor);
+        courseTitle.setText(title);
         InstructorsInfoDatabase instructorsInfoDatabase = new InstructorsInfoDatabase();
         instructorsInfoDatabase = InstructorsInfoDatabase.instructorDetails(ID);
         initializeInstructorInfo(instructorsInfoDatabase);
@@ -137,10 +155,24 @@ public class Course_Info_Controller {
         if(profileImage != null && profileImage.exists()) profilePicture.setImage(new Image(profileImage.toURI().toString()));
         else System.out.println("file does not exist");
 
+        initializeCourseInfo();
+
         profilePicture.setPreserveRatio(true);
         profilePicture.setSmooth(true);
 
         enrollBtn.setOnAction(actionEvent -> enroll());
+
+        backBtn.setOnAction(actionEvent -> {
+            Stage courseInfoStage = new Stage();
+            StudentDashboard studentDashboard = new StudentDashboard();
+            try {
+                studentDashboard.start(courseInfoStage);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            courseInfoStage = (Stage) courseInfoAnchorPane.getScene().getWindow();
+            courseInfoStage.close();
+        });
     }
 }
 

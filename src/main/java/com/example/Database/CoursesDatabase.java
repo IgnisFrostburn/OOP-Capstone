@@ -1,14 +1,13 @@
 package com.example.Database;
 
-import com.example.Dashboard.AddCourse;
-import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CoursesDatabase extends UtilityDatabase{
+public class CoursesDatabase extends UtilityDatabase {
 
     private String courseTitle;
     private String category1;
@@ -46,7 +45,7 @@ public class CoursesDatabase extends UtilityDatabase{
     }
 
     public void insertData(String id, File courseImage) {
-        try{
+        try {
             System.out.println("Connected to the database!");
             String insertQuery = "INSERT INTO courses (instructor_id, course_title, category_1, category_2, category_3, short_description, course_image) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {
@@ -155,6 +154,69 @@ public class CoursesDatabase extends UtilityDatabase{
         }
         return courseTitle + " - " + instructorName;
     };
+
+    public static int[] numberOfCourses() {
+        List<Integer> courses = new ArrayList<Integer>();
+        try {
+            if(connection == null)throw new SQLException();
+            String selectQuery = "SELECT course_ID FROM courses";
+            try (Statement selectStmt = connection.createStatement();
+                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
+
+                while (resultSet.next()) {
+                    courses.add(Integer.parseInt(resultSet.getString("course_ID")));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courses.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    public static CoursesDatabase getCourseData(String id) {
+        CoursesDatabase courseData = null;
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course data");
+            String selectQuery = "SELECT course_title, category_1, category_2, category_3, short_description " +
+                    "FROM courses WHERE course_ID = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, id);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        String courseTitle = resultSet.getString("course_title");
+                        String category1 = resultSet.getString("category_1");
+                        String category2 = resultSet.getString("category_2");
+                        String category3 = resultSet.getString("category_3");
+                        String shortDescription = resultSet.getString("short_description");
+
+                        courseData = new CoursesDatabase(courseTitle, category1, category2, category3, shortDescription);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courseData;
+    }
+
+    public static Image getImage(String id) {
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course image");
+            String selectQuery = "SELECT course_image FROM courses WHERE course_ID = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, id);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        InputStream inputStream = resultSet.getBinaryStream("course_image");
+                        return new Image(inputStream);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
 
 
