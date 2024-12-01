@@ -8,10 +8,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.*;
 
-public class CoursesDatabase {
-    private static String url = "jdbc:mysql://192.168.1.2:3306/excelone";
-    private static String username = "excelOneAdmin";
-    private static String password = "secure123";
+public class CoursesDatabase extends UtilityDatabase{
 
     private String courseTitle;
     private String category1;
@@ -35,7 +32,8 @@ public class CoursesDatabase {
         return shortDescription;
     }
 
-    public CoursesDatabase(String courseTitle, String category1, String category2, String category3, String shortDescription) {
+    public CoursesDatabase(String courseTitle, String category1, String category2, String category3, String shortDescription) throws SQLException {
+        super();
         this.courseTitle = courseTitle;
         this.category1 = category1;
         this.category2 = category2;
@@ -43,8 +41,12 @@ public class CoursesDatabase {
         this.shortDescription = shortDescription;
     }
 
+    public CoursesDatabase(){
+        super();
+    }
+
     public void insertData(String id, File courseImage) {
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try{
             System.out.println("Connected to the database!");
             String insertQuery = "INSERT INTO courses (instructor_id, course_title, category_1, category_2, category_3, short_description, course_image) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {
@@ -68,7 +70,7 @@ public class CoursesDatabase {
 
     public static boolean maxCoursesReached(String id) throws SQLException {
         int ctr = 0;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
             String selectQuery = "SELECT instructor_id FROM courses";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
@@ -86,7 +88,7 @@ public class CoursesDatabase {
 
     public static int numberOfCourses() {
         int ctr = 0;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
             String selectQuery = "SELECT instructor_id FROM courses";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
@@ -100,6 +102,28 @@ public class CoursesDatabase {
         }
         return ctr;
     };
+
+    public int getCID(String title){
+        try{
+            System.out.println("hello ");
+            String query = "SELECT course_ID FROM courses WHERE course_title = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, title);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()){
+                return resultSet.getInt("course_ID");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+//    public static void main(String[] args) {
+//        CoursesDatabase coursesDatabase = new CoursesDatabase();
+//        System.out.println(coursesDatabase.getCID("course1"));
+//    }
 
     //fetches course info
     public static String getCourseTitle(int ctr) {

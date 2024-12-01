@@ -1,5 +1,7 @@
 package com.example.Database;
 
+import com.example.Login_SignUp.LoggedInUser;
+
 import java.sql.*;
 
 public  class EnrollmentDatabase extends UtilityDatabase{
@@ -22,6 +24,23 @@ public  class EnrollmentDatabase extends UtilityDatabase{
             System.out.println(e.getMessage());
         }
         return null;
+    }
+    public boolean checkIfEnrolled(int userID, int courseID){
+        String query = "SELECT COUNT(*) AS count FROM enrollment WHERE LearnerID = ? AND CourseID = ?;";
+        try{
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, String.valueOf(userID));
+            statement.setString(2, String.valueOf(courseID));
+            ResultSet resultSet = statement.executeQuery();
+
+            if(resultSet.next()){
+                return resultSet.getInt("count") > 0;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return false;
     }
 
     public boolean enrollLearner(int learnerID, int courseID){

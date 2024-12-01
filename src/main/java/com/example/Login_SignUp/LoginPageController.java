@@ -99,17 +99,6 @@ public class LoginPageController {
         return false;
     }
 
-    protected void goToStudentDash() {
-        Stage studentDashboardStage = new Stage();
-        StudentDashboard studentDashboard = new StudentDashboard();
-        try {
-            studentDashboard.start(studentDashboardStage);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        stage = (Stage) loginAnchorPane.getScene().getWindow();
-        stage.close();
-    }
 
     @FXML
     protected void textFieldChecker(TextField textField) {
@@ -178,7 +167,7 @@ public class LoginPageController {
                         else setBorderColor(loginPasswordTF, "green");
                     }
                 } catch (RuntimeException e) {
-                    System.out.println(e.getMessage());
+                    e.printStackTrace();
                 }
             } else if (isInstructor) {
                 loginAccountTypeWarning.setText("");
@@ -210,7 +199,7 @@ public class LoginPageController {
                         else setBorderColor(loginPasswordTF, "green");
                     }
                 } catch (RuntimeException e) {
-                    System.out.println(e.getMessage());
+                    e.printStackTrace();
                 }
             } else {
                 loginAccountTypeWarning.setText("Please choose an account type");
