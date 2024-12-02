@@ -6,13 +6,17 @@
     import javafx.collections.FXCollections;
     import javafx.collections.ObservableList;
     import javafx.fxml.FXML;
+    import javafx.geometry.Rectangle2D;
     import javafx.scene.control.*;
     import javafx.scene.control.Alert.AlertType;
+    import javafx.scene.image.Image;
+    import javafx.scene.image.ImageView;
     import javafx.scene.layout.StackPane;
     import javafx.stage.FileChooser;
     import javafx.stage.Stage;
 
     import java.io.File;
+    import java.net.URISyntaxException;
     import java.sql.SQLException;
 
     public class AddCourseController {
@@ -38,6 +42,8 @@
         private Label imageWarningLabel;
         @FXML
         private Button uploadBtn;
+        @FXML
+        private ImageView courseImage;
 
         private File selectedFile;
         private String id;
@@ -78,6 +84,7 @@
             FileChooser fileChooser = new FileChooser();
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image Files", "*  .jpg", "*.png", "*.jpeg"));
             selectedFile = fileChooser.showOpenDialog(uploadBtn.getScene().getWindow());
+            setCourseImage(selectedFile);
         }
 
         public void buttonEffects(Button button) {
@@ -87,9 +94,20 @@
             button.setOnMouseReleased(e -> button.setStyle("-fx-background-color: #096ff6; -fx-text-fill: white;"));
         }
 
+        public void setCourseImage(File file) {
+            Image image = new Image(file.toURI().toString());
+            double scale = Math.max(370 / image.getWidth(), 192 / image.getHeight());
+            double viewportWidth = 370 / scale;
+            double viewportHeight = 192 / scale;
+            double viewportX = (image.getWidth() - viewportWidth) / 2;
+            double viewportY = (image.getHeight() - viewportHeight) / 2;
+            courseImage.setViewport(new Rectangle2D(viewportX, viewportY, viewportWidth, viewportHeight));
+            courseImage.setImage(image);
+        }
+
 
         @FXML
-        public void initialize() {
+        public void initialize() throws URISyntaxException {
             initializeArrayList();
             categoryComboBox1.setItems(categoryObservableList);
             categoryComboBox2.setItems(categoryObservableList);
@@ -97,7 +115,8 @@
             buttonEffects(addCourseBtn);
             buttonEffects(uploadBtn);
             buttonEffects(cancelBtn);
-
+            File tempImage = new File(getClass().getResource("/images/1.png").toURI());
+            setCourseImage(tempImage);
 
 
             addCourseBtn.setOnAction(actionEvent -> {

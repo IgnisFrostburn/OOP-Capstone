@@ -156,7 +156,7 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
         return instructorsInfoDatabase;
     }
 
-    public File getProfileImage(String id) throws SQLException {
+    public static File getProfileImage(String id) throws SQLException {
         File pfp = null;
         String query = "SELECT teacher_pfp FROM instructor_info WHERE instructor_ID = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {

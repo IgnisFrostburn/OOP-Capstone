@@ -8,6 +8,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -38,6 +40,8 @@ public class AddCredentialsController {
     private Button uploadBtn;
     @FXML
     private Button backBtn;
+    @FXML
+    private ImageView pfpImageView;
 
     private File selectedFile;
     private String id;
@@ -103,6 +107,7 @@ public class AddCredentialsController {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image Files", "*  .jpg", "*.png", "*.jpeg"));
         selectedFile = fileChooser.showOpenDialog(uploadBtn.getScene().getWindow());
+        pfpImageView.setImage(new Image(selectedFile.toURI().toString()));
     }
 
     public void buttonEffects(Button button) {
@@ -114,8 +119,11 @@ public class AddCredentialsController {
 
     public void initialize() throws SQLException {
         buttonEffects(addCredentialsBtn);
-        buttonEffects(uploadBtn);
         buttonEffects(backBtn);
+        uploadBtn.setOnMouseEntered(e -> uploadBtn.setStyle("-fx-background-color: #0fffc6; -fx-text-fill: white;"));
+        uploadBtn.setOnMouseExited(e -> uploadBtn.setStyle("-fx-background-color: #77FFDF; -fx-text-fill: white;"));
+        uploadBtn.setOnMousePressed(e -> uploadBtn.setStyle("-fx-background-color: #00c697; -fx-text-fill: white;"));
+        uploadBtn.setOnMouseReleased(e -> uploadBtn.setStyle("-fx-background-color: #0fffc6; -fx-text-fill: white;"));
 
         id = new InstructorDatabase().getInstructorID(LoggedInUser.getInstance().getEmail());
         if(InstructorsInfoDatabase.dataExists(id)) {
@@ -127,6 +135,8 @@ public class AddCredentialsController {
             teachingExpertiseField2.setText(instructorDetails.getTeachingExpertise_2());
             teachingExpertiseField3.setText(instructorDetails.getTeachingExpertise_3());
             linkedInUrlField.setText(instructorDetails.getLinkedInURL());
+            String instructorID = InstructorDatabase.getInstructorID(id);
+            pfpImageView.setImage(new Image(InstructorsInfoDatabase.getProfileImage(instructorID).toURI().toString()));
         }
 
         addCredentialsBtn.setOnAction(actionEvent -> {
