@@ -148,7 +148,7 @@ public class StudentDashboardController {
                 }
                 System.out.println("final I is " + finalI);
 
-                String courseName= CoursesDatabase.getCourseTitle(Integer.toString(i));
+                String courseName = CoursesDatabase.getCourseTitle(Integer.toString(i));
                 String courseInstructorName = CoursesDatabase.getInstructorName(Integer.toString(i));
                 Course_Info_Controller.setNameAndTitle(courseName, courseInstructorName, id, Integer.toString(finalI));
                 Stage courseInfoStage = new Stage();
@@ -170,76 +170,6 @@ public class StudentDashboardController {
         }
     }
 
-    private void createMyCourses(int coursesCtr) {
-        for(int i = 0; i <= coursesCtr; i++) {
-            System.out.println("addRow pressed and row is " + row);
-            Pane outerPane = new Pane();
-            outerPane.setPrefSize(columnWidth, rowHeight);
-
-            myCoursesGridPane.add(outerPane, gridCtr++, row);
-
-            Pane innerPane = new Pane();
-            innerPane.setPrefSize(370, 192);
-            innerPane.setStyle("-fx-background-radius: 10; -fx-background-color: #1e90ff;");
-            innerPane.layoutXProperty().bind(outerPane.widthProperty().subtract(innerPane.prefWidthProperty()).divide(2));
-            innerPane.layoutYProperty().bind(outerPane.heightProperty().subtract(innerPane.prefHeightProperty()).divide(2));
-            innerPane.setCursor(Cursor.HAND);
-            outerPane.getChildren().add(innerPane);
-
-            Pane innerDesignPane = new Pane();
-            innerPane.setId("innerPane"+i);
-            innerDesignPane.setPrefSize(370, 73);
-            innerDesignPane.setStyle("-fx-background-radius: 0 0 10 10; -fx-background-color: white;");
-            innerDesignPane.layoutYProperty().bind(innerPane.heightProperty().subtract(innerDesignPane.prefHeightProperty()));
-            innerPane.getChildren().add(innerDesignPane);
-
-            Label courseTitle = new Label();
-            courseTitle.setPrefSize(345, 58);
-            courseTitle.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.prefWidthProperty()).divide(2));
-            courseTitle.layoutYProperty().bind(innerDesignPane.heightProperty().subtract(courseTitle.prefHeightProperty()).divide(2));
-            courseTitle.setText(CoursesDatabase.getCourseTitle(i));
-            courseTitle.setAlignment(Pos.CENTER);
-            courseTitle.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
-            innerDesignPane.getChildren().add(courseTitle);
-
-            RowConstraints rowConstraints = new RowConstraints();
-            rowConstraints.setMinHeight(220.0);
-            rowConstraints.setPrefHeight(220.0);
-            rowConstraints.setVgrow(javafx.scene.layout.Priority.NEVER);
-
-            double newHeight = (row + 1) * rowHeight;
-            myCourseWrapperPane.setPrefHeight(newHeight);
-            System.out.println("i is " + i);
-            int finalI = i;
-
-            innerPane.setOnMouseClicked(event -> {
-                String id;
-                try {
-                    id = new InstructorDatabase().getInstructorID(Integer.toString(finalI));
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                System.out.println("final I is " + finalI);
-                String[] strArr = CoursesDatabase.getCourseTitle(finalI).split(" - ");
-                Course_Info_Controller.setNameAndTitle(strArr[0], strArr[1], id);
-                Stage courseInfoStage = new Stage();
-                Course_Info courseInfo = new Course_Info();
-                try {
-                    courseInfo.start(courseInfoStage);
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-                courseInfoStage = (Stage) studentDashBoardStackPane.getScene().getWindow();
-                courseInfoStage.close();
-            });
-
-            browseCourseGridPane.getRowConstraints().add(rowConstraints);
-            if (gridCtr == 2) {
-                gridCtr = 0;
-                row++;
-            }
-        }
-    }
 
 
     public void setUserInfo(LoggedInUser loggedInUser, EnrollmentDatabase enrollmentDB){
@@ -279,7 +209,6 @@ public class StudentDashboardController {
         interfacePanel.setVisible(true);
         setDashboardPanelVisible();
         setUserInfo(loggedInUser, enrollmentDB);
-        createBrowseCourses(InstructorsInfoDatabase.numberOfCourses());
 
         dashboardBtn.setOnAction(actionEvent -> setDashboardPanelVisible());
         myCoursesBtn.setOnAction(actionEvent -> setMyCoursesPanelVisible());

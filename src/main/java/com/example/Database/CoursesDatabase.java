@@ -15,6 +15,10 @@ public class CoursesDatabase extends UtilityDatabase {
     private String category3;
     private String shortDescription;
 
+    public CoursesDatabase() {
+        super();
+    }
+
     public String getCourseTitle() {
         return courseTitle;
     }
@@ -186,6 +190,24 @@ public class CoursesDatabase extends UtilityDatabase {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public int getCID(String title) {
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course image");
+            String selectQuery = "SELECT course_ID FROM courses WHERE course_title = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, title);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getInt("course_ID");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 }
 
