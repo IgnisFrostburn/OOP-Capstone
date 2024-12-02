@@ -157,8 +157,9 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
     }
 
     public static File getProfileImage(String id) throws SQLException {
+        System.out.println("ID passed is " + id);
         File pfp = null;
-        String query = "SELECT teacher_pfp FROM instructor_info WHERE instructor_ID = ?";
+        String query = "SELECT teacher_pfp FROM instructor_info WHERE ID = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             if (connection == null) throw new SQLException();
             stmt.setString(1, id);
@@ -169,13 +170,11 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
                             pfp = File.createTempFile("profile_image_" + id, ".png");
                             try (OutputStream outputStream = new FileOutputStream(pfp)) {
                                 byte[] buffer = new byte[1024];
-                                int bytesRead;
-                                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                                while (inputStream.read(buffer) != -1) {
                                     outputStream.write(buffer);
                                 }
-                                System.out.println("Profile image retrieved and saved to: " + pfp.getAbsolutePath());
                             }
-                        } else System.out.println("No image found for instructor ID: " + id);
+                        }
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
