@@ -71,22 +71,25 @@ public class StudentDashboardController {
     private final double columnWidth = 390.0;
 
     private void createBrowseCourses(int[] courses) {
+        //i is course ID
         for(int i : courses) {
+            String id = new CoursesDatabase().getCourseInstructorID(Integer.toString(i));
             Pane outerPane = new Pane();
             outerPane.setPrefSize(columnWidth, rowHeight);
-            int finalI = i;
 
             browseCourseGridPane.add(outerPane, gridCtr++, row);
 
+            //creates the rounded box pane
             Pane innerPane = new Pane();
             innerPane.setPrefSize(370, 192);
-            Image courseImage = CoursesDatabase.getImage(Integer.toString(finalI));
             innerPane.setStyle("-fx-background-radius: 10; -fx-background-color: blue;");
             innerPane.layoutXProperty().bind(outerPane.widthProperty().subtract(innerPane.prefWidthProperty()).divide(2));
             innerPane.layoutYProperty().bind(outerPane.heightProperty().subtract(innerPane.prefHeightProperty()).divide(2));
             innerPane.setCursor(Cursor.HAND);
             outerPane.getChildren().add(innerPane);
 
+            //creates and displays the course image
+            Image courseImage = CoursesDatabase.getImage(Integer.toString(i));
             ImageView courseProfile = new ImageView();
             courseProfile.setFitWidth(370);
             courseProfile.setFitHeight(192);
@@ -105,6 +108,7 @@ public class StudentDashboardController {
             courseProfile.setClip(clip);
             innerPane.getChildren().add(courseProfile);
 
+            //creates the bottom pane which contains the course title and instructor name
             Pane innerDesignPane = new Pane();
             innerPane.setId("innerPane"+i);
             innerDesignPane.setPrefSize(370, 73);
@@ -112,6 +116,7 @@ public class StudentDashboardController {
             innerDesignPane.layoutYProperty().bind(innerPane.heightProperty().subtract(innerDesignPane.prefHeightProperty()));
             innerPane.getChildren().add(innerDesignPane);
 
+            //displays the course title
             Text courseTitle = new Text();
             courseTitle.setWrappingWidth(345);
             courseTitle.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.wrappingWidthProperty()).divide(2));
@@ -121,6 +126,7 @@ public class StudentDashboardController {
             courseTitle.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
             innerDesignPane.getChildren().add(courseTitle);
 
+            //displays the course instructor
             Text instructorName = new Text();
             instructorName.setWrappingWidth(345);
             instructorName.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.wrappingWidthProperty()).divide(2));
@@ -140,17 +146,11 @@ public class StudentDashboardController {
 
             //pane is clicked
             innerPane.setOnMouseClicked(event -> {
-                String id;
-                try {
-                    id = new InstructorDatabase().getInstructorID(Integer.toString(finalI));
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                System.out.println("final I is " + finalI);
-
+//                String id = new CoursesDatabase().getCourseInstructorID(Integer.toString(i));
                 String courseName = CoursesDatabase.getCourseTitle(Integer.toString(i));
+                System.out.println("i is " + i);
                 String courseInstructorName = CoursesDatabase.getInstructorName(Integer.toString(i));
-                Course_Info_Controller.setNameAndTitle(courseName, courseInstructorName, id, Integer.toString(finalI));
+                Course_Info_Controller.setNameAndTitle(courseName, courseInstructorName, id, Integer.toString(i));
                 Stage courseInfoStage = new Stage();
                 Course_Info courseInfo = new Course_Info();
                 try {

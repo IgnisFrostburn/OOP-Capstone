@@ -1,5 +1,6 @@
     package com.example.Dashboard;
 
+    import com.example.Course_content.Course_Info;
     import com.example.Database.CoursesDatabase;
     import com.example.Database.InstructorDatabase;
     import com.example.Login_SignUp.LoggedInUser;
@@ -105,6 +106,18 @@
             courseImage.setImage(image);
         }
 
+        public void closePane() {
+            Stage teacherDashboardStage = new Stage();
+            TeacherDashboard teacherDashboard = new TeacherDashboard();
+            try {
+                teacherDashboard.start(teacherDashboardStage);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            teacherDashboardStage = (Stage) addCourseStackPane.getScene().getWindow();
+            teacherDashboardStage.close();
+        }
+
 
         @FXML
         public void initialize() throws URISyntaxException {
@@ -162,18 +175,11 @@
                     }
                 }
 
+                closePane();
             });
 
             cancelBtn.setOnAction(actionEvent -> {
-                Stage teacherDashboardStage = new Stage();
-                TeacherDashboard teacherDashboard = new TeacherDashboard();
-                try {
-                    teacherDashboard.start(teacherDashboardStage);
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-                teacherDashboardStage = (Stage) addCourseStackPane.getScene().getWindow();
-                teacherDashboardStage.close();
+                closePane();
             });
 
             uploadBtn.setOnAction(actionEvent -> {

@@ -1,5 +1,6 @@
 package com.example.Course_content;
 
+import com.example.Dashboard.StudentDashboardController;
 import com.example.Database.CoursesDatabase;
 import com.example.Database.EnrollmentDatabase;
 import com.example.Dashboard.StudentDashboard;
@@ -69,7 +70,6 @@ public class Course_Info_Controller {
     private static String title;
     private static String ID;
     private static String courseID;
-    private File pfp;
     private String url;
 
     public static void setNameAndTitle(String course_title, String instructor_name, String id, String course_id) {
@@ -77,6 +77,7 @@ public class Course_Info_Controller {
        title = course_title;
        ID = id;
        courseID = course_id;
+       System.out.println("id passed is " + ID);
     }
 
     public void enroll(){
@@ -154,15 +155,14 @@ public class Course_Info_Controller {
     public void initialize() throws SQLException {
         instructorName.setText(instructor);
         courseTitle.setText(title);
-        InstructorsInfoDatabase instructorsInfoDatabase = new InstructorsInfoDatabase();
-        instructorsInfoDatabase = InstructorsInfoDatabase.instructorDetails(ID);
+        InstructorsInfoDatabase instructorsInfoDatabase = InstructorsInfoDatabase.instructorDetails(ID);
         initializeInstructorInfo(instructorsInfoDatabase);
         checkIfEnrolled();
 
         instructorName.setText(instructor);
         courseTitle.setText(title);
         linkedInImage.setOnMouseClicked(event -> openLink(url));
-        File profileImage = instructorsInfoDatabase.getProfileImage(courseID);
+        File profileImage = instructorsInfoDatabase.getProfileImage(ID);
 
         if(profileImage != null && profileImage.exists()) setCourseImage(profileImage);
         else System.out.println("file does not exist");

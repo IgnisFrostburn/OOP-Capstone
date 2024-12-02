@@ -157,9 +157,8 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
     }
 
     public static File getProfileImage(String id) throws SQLException {
-        System.out.println("ID passed is " + id);
         File pfp = null;
-        String query = "SELECT teacher_pfp FROM instructor_info WHERE ID = ?";
+        String query = "SELECT teacher_pfp FROM instructor_info WHERE instructor_ID = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             if (connection == null) throw new SQLException();
             stmt.setString(1, id);

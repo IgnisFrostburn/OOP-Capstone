@@ -127,13 +127,11 @@ public class CoursesDatabase extends UtilityDatabase {
         return "Not found";
     }
 
-
-
     public static int[] numberOfCourses() {
         List<Integer> courses = new ArrayList<Integer>();
         try {
             if(connection == null)throw new SQLException();
-            String selectQuery = "SELECT course_ID FROM courses";
+            String selectQuery = "SELECT course_ID FROM courses ORDER BY course_ID ASC";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
 
@@ -208,6 +206,24 @@ public class CoursesDatabase extends UtilityDatabase {
             e.printStackTrace();
         }
         return -1;
+    }
+
+    public static String getCourseInstructorID(String id) {
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course image");
+            String selectQuery = "SELECT instructor_id FROM courses WHERE course_ID = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, id);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getString("instructor_id");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "-1";
     }
 }
 
