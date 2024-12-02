@@ -9,6 +9,7 @@ import com.example.Database.InstructorsInfoDatabase;
 import com.example.Login_SignUp.LoggedInUser;
 import com.mysql.cj.log.Log;
 import javafx.fxml.FXML;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -138,6 +139,17 @@ public class Course_Info_Controller {
         }
     }
 
+    public void setCourseImage(File file) {
+        Image image = new Image(file.toURI().toString());
+        double scale = Math.max(150 / image.getWidth(), 150 / image.getHeight());
+        double viewportWidth = 150 / scale;
+        double viewportHeight = 150 / scale;
+        double viewportX = (image.getWidth() - viewportWidth) / 2;
+        double viewportY = (image.getHeight() - viewportHeight) / 2;
+        profilePicture.setViewport(new Rectangle2D(viewportX, viewportY, viewportWidth, viewportHeight));
+        profilePicture.setImage(image);
+    }
+
     @FXML
     public void initialize() throws SQLException {
         instructorName.setText(instructor);
@@ -150,9 +162,9 @@ public class Course_Info_Controller {
         instructorName.setText(instructor);
         courseTitle.setText(title);
         linkedInImage.setOnMouseClicked(event -> openLink(url));
-        File profileImage = instructorsInfoDatabase.getProfileImage(ID);
+        File profileImage = instructorsInfoDatabase.getProfileImage(courseID);
 
-        if(profileImage != null && profileImage.exists()) profilePicture.setImage(new Image(profileImage.toURI().toString()));
+        if(profileImage != null && profileImage.exists()) setCourseImage(profileImage);
         else System.out.println("file does not exist");
 
         initializeCourseInfo();

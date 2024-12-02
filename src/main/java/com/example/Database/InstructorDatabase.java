@@ -96,8 +96,8 @@ public class InstructorDatabase extends UserDatabase{
         return false;
     }
 
-    public String getInstructorID(String email) throws SQLException {
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+    public static String getInstructorID(String email) throws SQLException {
+        try {
             String selectQuery = "SELECT ID, Email FROM instructors";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {

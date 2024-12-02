@@ -57,12 +57,12 @@
             </Label>
             <Label layoutX="367.0" layoutY="98.0" text="Category">
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="367.0" layoutY="159.0" text="Short description">
+            <Label layoutX="367.0" layoutY="197.0" text="Short description">
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <ImageView fx:id="linkedInImage" fitHeight="60.0" fitWidth="61.0" layoutX="114.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
@@ -129,10 +129,26 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="category1" layoutX="387.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="category 1" textAlignment="CENTER" wrappingWidth="149.9999999999999" />
-            <Text fx:id="category3" layoutX="759.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="category 3" textAlignment="CENTER" wrappingWidth="149.9999999999999" />
-            <Text fx:id="category2" layoutX="574.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="category 2" textAlignment="CENTER" wrappingWidth="149.9999999999999" />
-            <Text fx:id="shortDescription" layoutX="367.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="description" wrappingWidth="526.1367797851562" />
+            <Text fx:id="category1" layoutX="387.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="category 1" textAlignment="CENTER" wrappingWidth="149.9999999999999">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="category3" layoutX="759.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="category 3" textAlignment="CENTER" wrappingWidth="149.9999999999999">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="category2" layoutX="574.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="category 2" textAlignment="CENTER" wrappingWidth="149.9999999999999">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="shortDescription" layoutX="390.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="description" wrappingWidth="526.1367797851562">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>

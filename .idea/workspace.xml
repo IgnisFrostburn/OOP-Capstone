@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0c389a45-d214-4c35-84d5-6c2b7f36f434" name="Changes" comment="&quot;Browse courses layout update - added course image&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+    <list default="true" id="0c389a45-d214-4c35-84d5-6c2b7f36f434" name="Changes" comment="&quot;Add course and Add credentials design update&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/CoursesDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/CoursesDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/Course_Info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/Course_Info.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,11 +65,32 @@
     &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AddCourse.executor": "Run",
+    "Application.AddCredentials.executor": "Run",
+    "Application.LoginPageApplication.executor": "Run",
+    "Application.StudentDashboard.executor": "Run",
+    "git-widget-placeholder": "master"
   }
 }</component>
   <component name="RunManager" selected="Application.LoginPageApplication">
     <configuration name="AddCourse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Dashboard.AddCourse" />
+      <module name="JavaFXDemo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddCredentials" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Dashboard.AddCredentials" />
+      <module name="JavaFXDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Dashboard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -92,12 +117,15 @@
     </configuration>
     <list>
       <item itemvalue="Application.LoginPageApplication" />
+      <item itemvalue="Application.AddCredentials" />
       <item itemvalue="Application.StudentDashboard" />
       <item itemvalue="Application.AddCourse" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.StudentDashboard" />
+        <item itemvalue="Application.AddCourse" />
+        <item itemvalue="Application.AddCredentials" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +241,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733062445342</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="&quot;Update and fixed browse courses and added getCourseTitle and getInstructorName in CoursesDatabase&quot;">
+      <option name="closed" value="true" />
+      <created>1733067573390</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733067573390</updated>
+    </task>
+    <task id="LOCAL-00015" summary="&quot;Add course and Add credentials design update&quot;">
+      <option name="closed" value="true" />
+      <created>1733132124989</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733132124989</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,6 +294,8 @@
     <MESSAGE value="course info sa" />
     <MESSAGE value="&quot;Add Course and Add Credentials design update&quot;" />
     <MESSAGE value="&quot;Browse courses layout update - added course image&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Browse courses layout update - added course image&quot;" />
+    <MESSAGE value="&quot;Update and fixed browse courses and added getCourseTitle and getInstructorName in CoursesDatabase&quot;" />
+    <MESSAGE value="&quot;Add course and Add credentials design update&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Add course and Add credentials design update&quot;" />
   </component>
 </project>
