@@ -4,6 +4,8 @@ import com.example.Database.*;
 import com.example.Course_content.Course_Info;
 import com.example.Course_content.Course_Info_Controller;
 import com.example.Login_SignUp.LoggedInUser;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
@@ -64,13 +66,42 @@ public class StudentDashboardController {
     private Pane myCourseWrapperPane;
     @FXML
     private GridPane myCoursesGridPane;
+    @FXML
+    private ComboBox<String> filterComboBox;
+    @FXML
+    private ImageView filterBtn;
 
     private int gridCtr = 0;
     private int row = 0;
     private final double rowHeight = 220.0;
     private final double columnWidth = 390.0;
+    private String filter;
+    private int[] courses;
+
+    private ObservableList<String> filterObservableList;
+    private void initializeArrayList() {
+        filterObservableList = FXCollections.observableArrayList(
+                "Select a filter",
+                "Aeronautical Engineering",
+                "Aerospace Engineering",
+                "Biosystems Engineering",
+                "Civil Engineering",
+                "Computer Science",
+                "Electrical Engineering",
+                "Electronics Communications Engineering",
+                "Geodetic Engineering",
+                "Industrial Engineering",
+                "Information Technology",
+                "Marine Engineering",
+                "Mechanical Engineering",
+                "Mining Engineering",
+                "Naval Engineering"
+        );
+    }
 
     private void createBrowseCourses(int[] courses) {
+        gridCtr = 0;
+        row = 0;
         //i is course ID
         for(int i : courses) {
             String id = new CoursesDatabase().getCourseInstructorID(Integer.toString(i));
@@ -170,16 +201,17 @@ public class StudentDashboardController {
         }
     }
     private void createMyCourses(int[] courses) {
+        gridCtr = 0;
+        row = 0;
         for(int i : courses) {
             Pane outerPane = new Pane();
             outerPane.setPrefSize(columnWidth, rowHeight);
-            int finalI = i;
 
             myCoursesGridPane.add(outerPane, gridCtr++, row);
 
             Pane innerPane = new Pane();
             innerPane.setPrefSize(370, 192);
-            Image courseImage = CoursesDatabase.getImage(Integer.toString(finalI));
+            Image courseImage = CoursesDatabase.getImage(Integer.toString(i));
             innerPane.setStyle("-fx-background-radius: 10; -fx-background-color: blue;");
             innerPane.layoutXProperty().bind(outerPane.widthProperty().subtract(innerPane.prefWidthProperty()).divide(2));
             innerPane.layoutYProperty().bind(outerPane.heightProperty().subtract(innerPane.prefHeightProperty()).divide(2));
@@ -241,15 +273,15 @@ public class StudentDashboardController {
             innerPane.setOnMouseClicked(event -> {
                 String id;
                 try {
-                    id = new InstructorDatabase().getInstructorID(Integer.toString(finalI));
+                    id = new InstructorDatabase().getInstructorID(Integer.toString(i));
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println("final I is " + finalI);
+                System.out.println("final I is " + i);
 
                 String courseName = CoursesDatabase.getCourseTitle(Integer.toString(i));
                 String courseInstructorName = CoursesDatabase.getInstructorName(Integer.toString(i));
-                Course_Info_Controller.setNameAndTitle(courseName, courseInstructorName, id, Integer.toString(finalI));
+                Course_Info_Controller.setNameAndTitle(courseName, courseInstructorName, id, Integer.toString(i));
                 Stage courseInfoStage = new Stage();
                 Course_Info courseInfo = new Course_Info();
                 try {
@@ -268,8 +300,13 @@ public class StudentDashboardController {
             }
         }
     }
-
-
+    private void clearBrowseCourses() {
+        browseCourseGridPane.getChildren().clear();
+        browseCourseGridPane.getRowConstraints().clear();
+        gridCtr = 0;
+        row = 0;
+        browseCourseWrapperPane.setPrefHeight(0);
+    }
 
     public void setUserInfo(LoggedInUser loggedInUser, EnrollmentDatabase enrollmentDB){
         coursesEnrolledCTR.setText(enrollmentDB.getCourseCTR(loggedInUser.getID()));
@@ -295,12 +332,22 @@ public class StudentDashboardController {
     }
 
 
-    public void initialize() throws SQLException {
+    public void initialize() {
         LoggedInUser loggedInUser = LoggedInUser.getInstance();
         EnrollmentDatabase enrollmentDB = new EnrollmentDatabase();
-
-        int[] courses = CoursesDatabase.numberOfCourses();
+        initializeArrayList();
+        filterComboBox.setItems(filterObservableList);
+        courses = CoursesDatabase.numberOfCourses(filter);
         int[] coursesEnrolled = enrollmentDB.getCourses(loggedInUser.getID());
+
+        filterBtn.setOnMousePressed(event -> {
+            filter = filterComboBox.getValue();
+            clearBrowseCourses();
+            if(filter.equals("Select a filter")) courses = CoursesDatabase.numberOfCourses(null);
+            else courses = CoursesDatabase.numberOfCourses(filter);
+            createBrowseCourses(courses);
+        });
+
         System.out.println("IDs of courses: ");
         for(int s: courses) {
             System.out.println(s);
@@ -318,8 +365,6 @@ public class StudentDashboardController {
         dashboardBtn.setOnAction(actionEvent -> setDashboardPanelVisible());
         myCoursesBtn.setOnAction(actionEvent -> setMyCoursesPanelVisible());
         browseBtn.setOnAction(actionEvent -> setbrowseCoursesPanelVisible());
-
-
 
         createBrowseCourses(courses);
         createMyCourses(coursesEnrolled);

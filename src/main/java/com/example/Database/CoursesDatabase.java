@@ -127,17 +127,29 @@ public class CoursesDatabase extends UtilityDatabase {
         return "Not found";
     }
 
-    public static int[] numberOfCourses() {
+    public static int[] numberOfCourses(String filter) {
         List<Integer> courses = new ArrayList<Integer>();
         try {
             if(connection == null)throw new SQLException();
-            String selectQuery = "SELECT course_ID FROM courses ORDER BY course_ID ASC";
+            String selectQuery = "SELECT course_ID, category_1, category_2, category_3 FROM courses ORDER BY course_ID ASC";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
 
-                while (resultSet.next()) {
-                    courses.add(Integer.parseInt(resultSet.getString("course_ID")));
+                System.out.println("filter passed is " + filter);
+                if(filter != null) {
+                    while (resultSet.next()) {
+                        String category1 = resultSet.getString("category_1");
+                        String category2 = resultSet.getString("category_2");
+                        String category3 = resultSet.getString("category_3");
+                        if(filter.equals(category1) || filter.equals(category2) || filter.equals(category3))
+                            courses.add(Integer.parseInt(resultSet.getString("course_ID")));
+                    }
+                } else {
+                    while (resultSet.next()) {
+                        courses.add(Integer.parseInt(resultSet.getString("course_ID")));
+                    }
                 }
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
