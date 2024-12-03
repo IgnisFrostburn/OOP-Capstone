@@ -32,7 +32,7 @@ public class LearnerDatabase extends UserDatabase {
     }
 //TIWASA NI
 public void getUserData(String email) {
-    try (Connection connection = DriverManager.getConnection(url, username, password)) {
+    try{
         String query = "SELECT * FROM learners WHERE Email = ?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setString(1, email);

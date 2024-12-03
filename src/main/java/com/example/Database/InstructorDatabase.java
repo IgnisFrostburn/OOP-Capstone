@@ -4,7 +4,7 @@ import com.example.Login_SignUp.LoggedInUser;
 
 import java.sql.*;
 
-public class InstructorDatabase extends UserDatabase{
+public class InstructorDatabase extends UserDatabase    {
     public InstructorDatabase() {
         super();
     }

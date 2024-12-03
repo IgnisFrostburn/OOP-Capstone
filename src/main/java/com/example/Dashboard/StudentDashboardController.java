@@ -169,6 +169,105 @@ public class StudentDashboardController {
             }
         }
     }
+    private void createMyCourses(int[] courses) {
+        for(int i : courses) {
+            Pane outerPane = new Pane();
+            outerPane.setPrefSize(columnWidth, rowHeight);
+            int finalI = i;
+
+            myCoursesGridPane.add(outerPane, gridCtr++, row);
+
+            Pane innerPane = new Pane();
+            innerPane.setPrefSize(370, 192);
+            Image courseImage = CoursesDatabase.getImage(Integer.toString(finalI));
+            innerPane.setStyle("-fx-background-radius: 10; -fx-background-color: blue;");
+            innerPane.layoutXProperty().bind(outerPane.widthProperty().subtract(innerPane.prefWidthProperty()).divide(2));
+            innerPane.layoutYProperty().bind(outerPane.heightProperty().subtract(innerPane.prefHeightProperty()).divide(2));
+            innerPane.setCursor(Cursor.HAND);
+            outerPane.getChildren().add(innerPane);
+
+            ImageView courseProfile = new ImageView();
+            courseProfile.setFitWidth(370);
+            courseProfile.setFitHeight(192);
+            courseProfile.setPreserveRatio(true);
+            courseProfile.setSmooth(true);
+            courseProfile.setImage(courseImage);
+            double scale = Math.max(370 / courseImage.getWidth(), 192 / courseImage.getHeight());
+            double viewportWidth = 370 / scale;
+            double viewportHeight = 192 / scale;
+            double viewportX = (courseImage.getWidth() - viewportWidth) / 2;
+            double viewportY = (courseImage.getHeight() - viewportHeight) / 2;
+            courseProfile.setViewport(new Rectangle2D(viewportX, viewportY, viewportWidth, viewportHeight));
+            Rectangle clip = new Rectangle(370, 192);
+            clip.setArcWidth(20);
+            clip.setArcHeight(20);
+            courseProfile.setClip(clip);
+            innerPane.getChildren().add(courseProfile);
+
+            Pane innerDesignPane = new Pane();
+            innerPane.setId("innerPane"+i);
+            innerDesignPane.setPrefSize(370, 73);
+            innerDesignPane.setStyle("-fx-background-radius: 0 0 10 10; -fx-background-color: white;");
+            innerDesignPane.layoutYProperty().bind(innerPane.heightProperty().subtract(innerDesignPane.prefHeightProperty()));
+            innerPane.getChildren().add(innerDesignPane);
+
+            Text courseTitle = new Text();
+            courseTitle.setWrappingWidth(345);
+            courseTitle.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.wrappingWidthProperty()).divide(2));
+            courseTitle.layoutYProperty().bind(innerDesignPane.heightProperty().subtract(courseTitle.getBoundsInLocal().getHeight()).divide(2));
+            courseTitle.setText(CoursesDatabase.getCourseTitle( Integer.toString(i)));
+            courseTitle.setTextAlignment(TextAlignment.CENTER);
+            courseTitle.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
+            innerDesignPane.getChildren().add(courseTitle);
+
+            Text instructorName = new Text();
+            instructorName.setWrappingWidth(345);
+            instructorName.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.wrappingWidthProperty()).divide(2));
+            instructorName.layoutYProperty().bind(courseTitle.layoutYProperty().add(courseTitle.getBoundsInLocal().getHeight()).add(5));
+            instructorName.setText(CoursesDatabase.getInstructorName( Integer.toString(i)));
+            instructorName.setTextAlignment(TextAlignment.CENTER);
+            instructorName.setStyle("-fx-font-size: 14px;");
+            innerDesignPane.getChildren().add(instructorName);
+
+            RowConstraints rowConstraints = new RowConstraints();
+            rowConstraints.setMinHeight(220.0);
+            rowConstraints.setPrefHeight(220.0);
+            rowConstraints.setVgrow(javafx.scene.layout.Priority.NEVER);
+
+            double newHeight = (row + 1) * rowHeight;
+            myCourseWrapperPane.setPrefHeight(newHeight);
+
+            //pane is clicked
+            innerPane.setOnMouseClicked(event -> {
+                String id;
+                try {
+                    id = new InstructorDatabase().getInstructorID(Integer.toString(finalI));
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                System.out.println("final I is " + finalI);
+
+                String courseName = CoursesDatabase.getCourseTitle(Integer.toString(i));
+                String courseInstructorName = CoursesDatabase.getInstructorName(Integer.toString(i));
+                Course_Info_Controller.setNameAndTitle(courseName, courseInstructorName, id, Integer.toString(finalI));
+                Stage courseInfoStage = new Stage();
+                Course_Info courseInfo = new Course_Info();
+                try {
+                    courseInfo.start(courseInfoStage);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+                courseInfoStage = (Stage) studentDashBoardStackPane.getScene().getWindow();
+                courseInfoStage.close();
+            });
+
+            myCoursesGridPane.getRowConstraints().add(rowConstraints);
+            if (gridCtr == 2) {
+                gridCtr = 0;
+                row++;
+            }
+        }
+    }
 
 
 
@@ -201,10 +300,16 @@ public class StudentDashboardController {
         EnrollmentDatabase enrollmentDB = new EnrollmentDatabase();
 
         int[] courses = CoursesDatabase.numberOfCourses();
+        int[] coursesEnrolled = enrollmentDB.getCourses(loggedInUser.getID());
         System.out.println("IDs of courses: ");
         for(int s: courses) {
             System.out.println(s);
         }
+        System.out.println("ENROLLED");
+        for(int s: coursesEnrolled) {
+            System.out.println(s);
+        }
+
 
         interfacePanel.setVisible(true);
         setDashboardPanelVisible();
@@ -217,6 +322,7 @@ public class StudentDashboardController {
 
 
         createBrowseCourses(courses);
+        createMyCourses(coursesEnrolled);
     }
 }
 

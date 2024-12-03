@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9eef15b-3944-4c7f-aba8-575ae52d549a" name="Changes" comment="&quot;Course info image view fix and update&quot;">
+    <list default="true" id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="added navigation button and enrollment functionalities">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/JavaFXSampleApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/CoursesDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/CoursesDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,13 +18,18 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.LoginPageApplication.executor": "Run",
-    "Application.StudentDashboard.executor": "Run",
-    "git-widget-placeholder": "master"
-  }
-}]]></component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+      &quot;keyToString&quot;: {
+        &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
+        &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
+        &quot;Application.MeetingDatabase.executor&quot;: &quot;Run&quot;,
+        &quot;git-widget-placeholder&quot;: &quot;master&quot;
+      }
+    }</component>
   <component name="RunManager" selected="Application.StudentDashboard">
     <configuration name="LoginPageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.LoginPageApplication" />
@@ -67,11 +68,24 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="&quot;Course info image view fix and update&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Course info image view fix and update&quot;" />
+    <MESSAGE value="Browse courses layout update - added course image" />
+    <MESSAGE value="Course info image view fix and update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Browse courses layout update - added course image" />
   </component>
 </project>
