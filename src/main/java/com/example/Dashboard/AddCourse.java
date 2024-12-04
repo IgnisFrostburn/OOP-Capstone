@@ -12,7 +12,7 @@ public class AddCourse extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setTitle("ExcelOne");
-        FXMLLoader loader = new FXMLLoader(AddCourse.class.getResource("/com/example/Login_SignUp/AddCourse.fxml"));
+        FXMLLoader loader = new FXMLLoader(AddCourse.class.getResource("/com/example/Dashboard/AddCourse.fxml"));
         StackPane root = loader.load();
         Scene scene = new Scene(root, 1080, 720);
         primaryStage.setScene(scene);

@@ -85,22 +85,22 @@
                 </Text>
                 <AnchorPane layoutX="292.0" layoutY="93.0" prefHeight="256.0" prefWidth="732.0" style="-fx-background-color: #8FC7FF;">
                     <children>
-                        <Text fx:id="coursesOfferedCTR" fill="WHITE" layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$num">
+                        <Text fx:id="coursesOfferedCTR" layoutX="97.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$num">
                             <font>
                                 <Font name="System Bold" size="47.0" />
                             </font>
                         </Text>
-                        <Text fill="DODGERBLUE" layoutX="97.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="courses">
+                        <Text layoutX="97.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="courses">
                             <font>
                                 <Font name="System Bold" size="31.0" />
                             </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="122.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="offered">
+                        <Text layoutX="216.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="offered">
                             <font>
                                 <Font name="System Bold" size="31.0" />
                             </font>
                         </Text>
-                        <Text layoutX="148.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="students on OOP" wrappingWidth="386.84375">
+                        <Text layoutX="148.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="students" wrappingWidth="386.84375">
                             <font>
                                 <Font name="System Bold" size="31.0" />
                             </font>
