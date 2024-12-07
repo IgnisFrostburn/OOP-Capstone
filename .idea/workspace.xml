@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c389a45-d214-4c35-84d5-6c2b7f36f434" name="Changes" comment="&quot;Add Course and Add Credentials design update&quot;" />
+    <list default="true" id="0c389a45-d214-4c35-84d5-6c2b7f36f434" name="Changes" comment="&quot;Add Course and Add Credentials design update&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,13 +53,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.LoginPageApplication.executor": "Run",
-    "Application.StudentDashboard.executor": "Run",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Dashboard&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.StudentDashboard">
     <configuration name="AddCourse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Dashboard.AddCourse" />
@@ -85,9 +88,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.AddCourse" />
       <item itemvalue="Application.LoginPageApplication" />
       <item itemvalue="Application.StudentDashboard" />
-      <item itemvalue="Application.AddCourse" />
     </list>
     <recent_temporary>
       <list>
@@ -207,6 +210,7 @@
     <MESSAGE value="&quot;Changed ip address&quot;" />
     <MESSAGE value="course info sa" />
     <MESSAGE value="&quot;Add Course and Add Credentials design update&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Add Course and Add Credentials design update&quot;" />
+    <MESSAGE value="wow" />
+    <option name="LAST_COMMIT_MESSAGE" value="wow" />
   </component>
 </project>
