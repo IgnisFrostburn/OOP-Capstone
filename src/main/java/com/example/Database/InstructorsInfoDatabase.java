@@ -76,24 +76,6 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
         }
     }
 
-    public static int numberOfCourses() throws SQLException {
-        int ctr = 0;
-        try {
-            if(connection == null)throw new SQLException();
-            String selectQuery = "SELECT ID FROM instructor_info";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-
-                while (resultSet.next()) {
-                    ctr++;
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return ctr;
-    }
-
     //checks if data exists
     public static boolean dataExists(String id) throws SQLException {
         try {
@@ -174,7 +156,7 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
         return instructorsInfoDatabase;
     }
 
-    public File getProfileImage(String id) throws SQLException {
+    public static File getProfileImage(String id) throws SQLException {
         File pfp = null;
         String query = "SELECT teacher_pfp FROM instructor_info WHERE instructor_ID = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
@@ -187,13 +169,11 @@ public class InstructorsInfoDatabase extends UtilityDatabase {
                             pfp = File.createTempFile("profile_image_" + id, ".png");
                             try (OutputStream outputStream = new FileOutputStream(pfp)) {
                                 byte[] buffer = new byte[1024];
-                                int bytesRead;
-                                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                                while (inputStream.read(buffer) != -1) {
                                     outputStream.write(buffer);
                                 }
-                                System.out.println("Profile image retrieved and saved to: " + pfp.getAbsolutePath());
                             }
-                        } else System.out.println("No image found for instructor ID: " + id);
+                        }
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

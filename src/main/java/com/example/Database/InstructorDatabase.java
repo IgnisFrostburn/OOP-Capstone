@@ -4,7 +4,7 @@ import com.example.Login_SignUp.LoggedInUser;
 
 import java.sql.*;
 
-public class InstructorDatabase extends UserDatabase{
+public class InstructorDatabase extends UserDatabase    {
     public InstructorDatabase() {
         super();
     }
@@ -96,8 +96,8 @@ public class InstructorDatabase extends UserDatabase{
         return false;
     }
 
-    public String getInstructorID(String email) throws SQLException {
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+    public static String getInstructorID(String email) throws SQLException {
+        try {
             String selectQuery = "SELECT ID, Email FROM instructors";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
@@ -113,7 +113,7 @@ public class InstructorDatabase extends UserDatabase{
     }
 
     public static String getUniversity(String id) throws SQLException {
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
             String selectQuery = "SELECT ID, University FROM instructors";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {

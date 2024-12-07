@@ -4,48 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c389a45-d214-4c35-84d5-6c2b7f36f434" name="Changes" comment="&quot;Add Course and Add Credentials design update&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+    <list default="true" id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="added navigation button and enrollment functionalities">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/EnrollmentDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/EnrollmentDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCourse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Dashboard/AddCourse.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafxdemo/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafxdemo/Dashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaFXApplication" />
-        <option value="Class" />
-        <option value="FxmlFile" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-        &quot;lastFilter&quot;: {
-          &quot;state&quot;: &quot;OPEN&quot;,
-          &quot;assignee&quot;: &quot;kevyelly&quot;
-        }
-      }</component>
-  <component name="GithubPullRequestsUISettings">{
-        &quot;selectedUrlAndAccountId&quot;: {
-          &quot;url&quot;: &quot;https://github.com/IgnisFrostburn/OOP-Capstone.git&quot;,
-          &quot;accountId&quot;: &quot;0d04d356-f879-440a-9c2b-b4a203bebd0f&quot;
-        }
-      }</component>
-  <component name="ProjectColorInfo">{
-        &quot;associatedIndex&quot;: 6
-      }</component>
-  <component name="ProjectId" id="2pX04b9bj24Q55hg8vBIoHnzefk" />
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Naweeeeeh"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/IgnisFrostburn/OOP-Capstone.git",
+    "accountId": "6d363f26-476b-4f9f-853e-8ce583b39534"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2pkt6gThSPVISX6NL73V2oryuIJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -53,23 +45,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Dashboard&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.LoginPageApplication.executor": "Run",
+    "Application.MeetingDatabase.executor": "Run",
+    "Application.StudentDashboard.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.StudentDashboard">
-    <configuration name="AddCourse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.Dashboard.AddCourse" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginPageApplication" type="Application" factoryName="Application">
+}]]></component>
+  <component name="RunManager" selected="Application.LoginPageApplication">
+    <configuration name="LoginPageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.LoginPageApplication" />
       <module name="JavaFXDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Login_SignUp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -88,105 +84,25 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.AddCourse" />
       <item itemvalue="Application.LoginPageApplication" />
       <item itemvalue="Application.StudentDashboard" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.StudentDashboard" />
+        <item itemvalue="Application.LoginPageApplication" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="&quot;Browse Courses&quot;">
-      <option name="closed" value="true" />
-      <created>1732770675846</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1732770675846</updated>
-    </task>
-    <task id="LOCAL-00002" summary="&quot;Revised &quot;">
-      <option name="closed" value="true" />
-      <created>1732804441226</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1732804441226</updated>
-    </task>
-    <task id="LOCAL-00003" summary="&quot;Revised &quot;">
-      <option name="closed" value="true" />
-      <created>1732807488442</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1732807488442</updated>
-    </task>
-    <task id="LOCAL-00004" summary="&quot;Connected login to dashboard&quot;">
-      <option name="closed" value="true" />
-      <created>1732808778849</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1732808778849</updated>
-    </task>
-    <task id="LOCAL-00005" summary="course info sa">
-      <option name="closed" value="true" />
-      <created>1732922423419</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1732922423419</updated>
-    </task>
-    <task id="LOCAL-00006" summary="&quot;Add credential update - database connection and update&quot;">
-      <option name="closed" value="true" />
-      <created>1732885023702</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1732885023702</updated>
-    </task>
-    <task id="LOCAL-00007" summary="&quot;Add course Update&quot;">
-      <option name="closed" value="true" />
-      <created>1732920499697</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1732920499697</updated>
-    </task>
-    <task id="LOCAL-00008" summary="&quot;Changed ip address&quot;">
-      <option name="closed" value="true" />
-      <created>1732926867364</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1732926867364</updated>
-    </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="course content" />
-      <created>1732894268475</created>
+      <changelist id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="added navigation button and enrollment functionalities" />
+      <created>1733321729353</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1732894268475</updated>
+      <updated>1733321729353</updated>
     </task>
-    <task id="LOCAL-00009" summary="&quot;Add Course and Add Credentials design update&quot;">
-      <option name="closed" value="true" />
-      <created>1732966119781</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1732966119781</updated>
-    </task>
-    <task id="LOCAL-00010" summary="&quot;Add Course and Add Credentials design update&quot;">
-      <option name="closed" value="true" />
-      <created>1733017157212</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1733017157212</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,16 +117,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="&quot;Browse Courses&quot;" />
-    <MESSAGE value="&quot;Browse Courses Update 1&quot;" />
-    <MESSAGE value="&quot;Revised &quot;" />
-    <MESSAGE value="&quot;Connected login to dashboard&quot;" />
-    <MESSAGE value="&quot;Add credential update - database connection and update&quot;" />
-    <MESSAGE value="&quot;Add course Update&quot;" />
-    <MESSAGE value="&quot;Changed ip address&quot;" />
-    <MESSAGE value="course info sa" />
-    <MESSAGE value="&quot;Add Course and Add Credentials design update&quot;" />
-    <MESSAGE value="wow" />
-    <option name="LAST_COMMIT_MESSAGE" value="wow" />
+    <MESSAGE value="Browse courses layout update - added course image" />
+    <MESSAGE value="Course info image view fix and update" />
+    <MESSAGE value="&quot;Meetings&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Meetings&quot;" />
   </component>
 </project>

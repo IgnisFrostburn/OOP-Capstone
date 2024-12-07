@@ -17,7 +17,7 @@
 
 <StackPane fx:id="signUpPageStackPane" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Login_SignUp.SignUpPageController">
    <children>
-      <AnchorPane fx:id="signUpPageOnePane" prefHeight="720.0" prefWidth="1080.0">
+      <AnchorPane fx:id="signUpPageOnePane" prefHeight="720.0" prefWidth="1080.0" visible="false">
          <children>
             <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -357,8 +357,13 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane id="mainScene" fx:id="verifyEmailPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css" visible="false">
+      <AnchorPane id="mainScene" fx:id="verifyEmailPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css">
          <children>
+            <ImageView fitHeight="722.0" fitWidth="1082.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/registerbg.png" />
+               </image>
+            </ImageView>
             <AnchorPane id="formContainer" fx:id="as2" layoutX="282.0" layoutY="130.0" prefHeight="520.0" prefWidth="500.0" stylesheets="@styles.css" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="298.0">
                <children>
                   <Button id="proceedbtn" fx:id="submitbtn" layoutX="272.0" layoutY="320.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Submit" textFill="WHITE">

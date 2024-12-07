@@ -1,23 +1,23 @@
 package com.example.Database;
 
-import com.example.Dashboard.AddCourse;
-import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CoursesDatabase {
-    private static String url = "jdbc:mysql://192.168.1.2:3306/excelone";
-    private static String username = "excelOneAdmin";
-    private static String password = "secure123";
+public class CoursesDatabase extends UtilityDatabase {
 
     private String courseTitle;
     private String category1;
     private String category2;
     private String category3;
     private String shortDescription;
+
+    public CoursesDatabase() {
+        super();
+    }
 
     public String getCourseTitle() {
         return courseTitle;
@@ -44,7 +44,7 @@ public class CoursesDatabase {
     }
 
     public void insertData(String id, File courseImage) {
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
             System.out.println("Connected to the database!");
             String insertQuery = "INSERT INTO courses (instructor_id, course_title, category_1, category_2, category_3, short_description, course_image) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {
@@ -68,7 +68,7 @@ public class CoursesDatabase {
 
     public static boolean maxCoursesReached(String id) throws SQLException {
         int ctr = 0;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+        try {
             String selectQuery = "SELECT instructor_id FROM courses";
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
@@ -84,53 +84,159 @@ public class CoursesDatabase {
         return false;
     }
 
-    public static int numberOfCourses() {
-        int ctr = 0;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT instructor_id FROM courses";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-
-                while (resultSet.next()) {
-                    ctr++;
+    //fetches course title
+    public static String getCourseTitle(String id) {
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course title");
+            String selectQuery = "SELECT course_title FROM courses WHERE course_ID = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, id);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getString("course_title");
+                    }
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return ctr;
+        System.out.println("null");
+        return null;
     };
 
-    //fetches course info
-    public static String getCourseTitle(int ctr) {
-        String courseTitle = "";
-        String instructorName = "";
-        int instructor_id;
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String selectQuery = "SELECT course_title, instructor_id FROM courses";
-            String selectQuery2 = "SELECT LastName, FirstName, MiddleName FROM instructors";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-                    for(int i  = 0; i <= ctr; i++) {
-                        resultSet.next();
+    public static String getInstructorName(String id) {
+        try {
+            if (connection == null) throw new SQLException("Exception in getting instructor name");
+            String query = """
+            SELECT i.LastName, i.FirstName, i.MiddleName
+            FROM instructors i
+            INNER JOIN courses c ON i.ID = c.instructor_id
+            WHERE c.course_ID = ?
+        """;
+            try (PreparedStatement stmt = connection.prepareStatement(query)) {
+                stmt.setString(1, id);
+                try (ResultSet resultSet = stmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getString("FirstName") + " " + resultSet.getString("MiddleName") + " " + resultSet.getString("LastName");
                     }
-                    courseTitle = resultSet.getString("course_title");
-                    instructor_id = Integer.parseInt(resultSet.getString("instructor_id"));
                 }
-            try(Statement selectStmt = connection.createStatement();
-                ResultSet resultSet2 = selectStmt.executeQuery(selectQuery2)) {
-                    for(int i = 1; i <= instructor_id; i++) {
-                        resultSet2.next();
-                    }
-                    instructorName += resultSet2.getString("FirstName") + " ";
-                    instructorName += resultSet2.getString("MiddleName") + " ";
-                    instructorName += resultSet2.getString("LastName") + " ";
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return courseTitle + " - " + instructorName;
-    };
+        return "Not found";
+    }
+
+    public static int[] numberOfCourses(String filter) {
+        List<Integer> courses = new ArrayList<Integer>();
+        try {
+            if(connection == null)throw new SQLException();
+            String selectQuery = "SELECT course_ID, category_1, category_2, category_3 FROM courses ORDER BY course_ID ASC";
+            try (Statement selectStmt = connection.createStatement();
+                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
+
+                System.out.println("filter passed is " + filter);
+                if(filter != null) {
+                    while (resultSet.next()) {
+                        String category1 = resultSet.getString("category_1");
+                        String category2 = resultSet.getString("category_2");
+                        String category3 = resultSet.getString("category_3");
+                        if(filter.equals(category1) || filter.equals(category2) || filter.equals(category3))
+                            courses.add(Integer.parseInt(resultSet.getString("course_ID")));
+                    }
+                } else {
+                    while (resultSet.next()) {
+                        courses.add(Integer.parseInt(resultSet.getString("course_ID")));
+                    }
+                }
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courses.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    public static CoursesDatabase getCourseData(String id) {
+        CoursesDatabase courseData = null;
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course data");
+            String selectQuery = "SELECT course_title, category_1, category_2, category_3, short_description " +
+                    "FROM courses WHERE course_ID = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, id);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        String courseTitle = resultSet.getString("course_title");
+                        String category1 = resultSet.getString("category_1");
+                        String category2 = resultSet.getString("category_2");
+                        String category3 = resultSet.getString("category_3");
+                        String shortDescription = resultSet.getString("short_description");
+
+                        courseData = new CoursesDatabase(courseTitle, category1, category2, category3, shortDescription);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courseData;
+    }
+
+    public static Image getImage(String id) {
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course image");
+            String selectQuery = "SELECT course_image FROM courses WHERE course_ID = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, id);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        InputStream inputStream = resultSet.getBinaryStream("course_image");
+                        return new Image(inputStream);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public int getCID(String title) {
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course image");
+            String selectQuery = "SELECT course_ID FROM courses WHERE course_title = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, title);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getInt("course_ID");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public static String getCourseInstructorID(String id) {
+        try {
+            if(connection == null) throw new SQLException("Exception in getting course image");
+            String selectQuery = "SELECT instructor_id FROM courses WHERE course_ID = ?";
+            try (PreparedStatement selectStmt = connection.prepareStatement(selectQuery)) {
+                selectStmt.setString(1, id);
+                try (ResultSet resultSet = selectStmt.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getString("instructor_id");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "-1";
+    }
 }
 
 

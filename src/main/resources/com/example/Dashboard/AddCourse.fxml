@@ -56,12 +56,12 @@
                                 <Font name="System Bold" size="31.0" />
                             </font>
                         </Text>
-                        <Text layoutX="23.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Description">
+                        <Text layoutX="23.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Description">
                             <font>
                                 <Font name="System Bold" size="31.0" />
                             </font>
                         </Text>
-                        <TextArea fx:id="courseDescriptionArea" layoutX="25.0" layoutY="286.0" prefHeight="118.0" prefWidth="850.0" style="-fx-border-color: black; -fx-border-width: 2;" text="&#10;" wrapText="true">
+                        <TextArea fx:id="courseDescriptionArea" layoutX="25.0" layoutY="361.0" prefHeight="118.0" prefWidth="477.0" style="-fx-border-color: black; -fx-border-width: 2;" text="&#10;" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font></TextArea>
@@ -81,15 +81,15 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ComboBox fx:id="categoryComboBox1" layoutX="23.0" layoutY="179.0" prefHeight="50.0" prefWidth="255.0" promptText="Select a category" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" />
-                  <ComboBox fx:id="categoryComboBox2" layoutX="319.0" layoutY="179.0" prefHeight="50.0" prefWidth="255.0" promptText="Select a category" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" />
-                  <ComboBox fx:id="categoryComboBox3" layoutX="617.0" layoutY="179.0" prefHeight="50.0" prefWidth="255.0" promptText="Select a category" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" />
+                  <ComboBox fx:id="categoryComboBox1" layoutX="23.0" layoutY="179.0" prefHeight="40.0" prefWidth="255.0" promptText="Select a category" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" />
+                  <ComboBox fx:id="categoryComboBox2" layoutX="23.0" layoutY="226.0" prefHeight="40.0" prefWidth="255.0" promptText="Select a category" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" />
+                  <ComboBox fx:id="categoryComboBox3" layoutX="23.0" layoutY="273.0" prefHeight="40.0" prefWidth="255.0" promptText="Select a category" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" />
                   <Label fx:id="courseDescriptionWarningLabel" alignment="CENTER" layoutX="188.0" layoutY="419.0" prefHeight="22.0" prefWidth="526.0" textFill="RED">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Button fx:id="uploadBtn" layoutX="301.0" layoutY="459.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #1E90FF;" text="Upload Course Image" textFill="WHITE">
+                  <Button fx:id="uploadBtn" layoutX="558.0" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="260.0" style="-fx-background-color: #1E90FF;" text="Upload Course Image" textFill="WHITE">
                      <font>
                         <Font name="Inter 24pt ExtraBold" size="22.0" />
                      </font>
@@ -102,6 +102,8 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
+                  <Label layoutX="597.0" layoutY="372.0" text="Note: Image must be 370 x 192 px" />
+                  <ImageView fx:id="courseImage" fitHeight="192.0" fitWidth="370.0" layoutX="503.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true" />
                     </children>
                 </AnchorPane>
             </children>

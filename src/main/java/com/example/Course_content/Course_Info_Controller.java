@@ -1,19 +1,30 @@
 package com.example.Course_content;
 
+import com.example.Dashboard.StudentDashboardController;
+import com.example.Database.CoursesDatabase;
+import com.example.Database.EnrollmentDatabase;
+import com.example.Dashboard.StudentDashboard;
+import com.example.Database.CoursesDatabase;
 import com.example.Database.InstructorDatabase;
 import com.example.Database.InstructorsInfoDatabase;
+import com.example.Login_SignUp.LoggedInUser;
+import com.mysql.cj.log.Log;
 import javafx.fxml.FXML;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.net.URI;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 
@@ -43,24 +54,60 @@ public class Course_Info_Controller {
     @FXML
     private Label courseTitle;
     @FXML
-    private Label category1;
+    private Button enrollBtn;
     @FXML
-    private Label category2;
+    private Text category1;
     @FXML
-    private Label category3;
+    private Text category2;
     @FXML
-    private Label shortDescription;
+    private Text category3;
+    @FXML
+    private Text shortDescription;
+    @FXML
+    private Button backBtn;
 
     private static String instructor;
     private static String title;
     private static String ID;
-    private File pfp;
+    private static String courseID;
     private String url;
 
-    public static void setNameAndTitle(String course_title, String instructor_name, String id) {
+    public static void setNameAndTitle(String course_title, String instructor_name, String id, String course_id) {
        instructor = instructor_name;
        title = course_title;
        ID = id;
+       courseID = course_id;
+       System.out.println("id passed is " + ID);
+    }
+
+    public void enroll(){
+        LoggedInUser loggedInUser = LoggedInUser.getInstance();
+        EnrollmentDatabase enrollmentDB = new EnrollmentDatabase();
+        CoursesDatabase courseDB = new CoursesDatabase();
+        try{
+            enrollmentDB.enrollLearner(loggedInUser.getID(), courseDB.getCID(title));
+        }catch(Exception e){
+            System.out.println("Error with enrollment" + e.getMessage());
+        }
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Enrollment Successful");
+        alert.setHeaderText("Enrollment Success!");
+        alert.setContentText("Have fun in your learning journey!");
+        alert.showAndWait();
+        enrollBtnDisable();
+    }
+    public void checkIfEnrolled(){
+        LoggedInUser loggedInUser = LoggedInUser.getInstance();
+        EnrollmentDatabase enrollmentDatabase = new EnrollmentDatabase();
+        CoursesDatabase courseDB = new CoursesDatabase();
+        if(enrollmentDatabase.checkIfEnrolled(loggedInUser.getID(), courseDB.getCID(title))){
+            enrollBtnDisable();
+        }
+
+    }
+    public void enrollBtnDisable(){
+        enrollBtn.setText("Enrolled");
+        enrollBtn.setDisable(true);
     }
 
     public void initializeInstructorInfo(InstructorsInfoDatabase instructorsInfoDatabase) throws SQLException {
@@ -74,6 +121,15 @@ public class Course_Info_Controller {
         schoolName.setText(InstructorDatabase.getUniversity(ID));
     }
 
+    public void initializeCourseInfo() {
+        CoursesDatabase coursesDatabase;
+        coursesDatabase = CoursesDatabase.getCourseData(courseID);
+        category1.setText(coursesDatabase.getCategory1());
+        category2.setText(coursesDatabase.getCategory2());
+        category3.setText(coursesDatabase.getCategory3());
+        shortDescription.setText(coursesDatabase.getShortDescription());
+    }
+
     public void openLink(String url) {
         try {
             String[] str = url.split(":");
@@ -84,21 +140,51 @@ public class Course_Info_Controller {
         }
     }
 
+    public void setCourseImage(File file) {
+        Image image = new Image(file.toURI().toString());
+        double scale = Math.max(150 / image.getWidth(), 150 / image.getHeight());
+        double viewportWidth = 150 / scale;
+        double viewportHeight = 150 / scale;
+        double viewportX = (image.getWidth() - viewportWidth) / 2;
+        double viewportY = (image.getHeight() - viewportHeight) / 2;
+        profilePicture.setViewport(new Rectangle2D(viewportX, viewportY, viewportWidth, viewportHeight));
+        profilePicture.setImage(image);
+    }
+
     @FXML
     public void initialize() throws SQLException {
         instructorName.setText(instructor);
         courseTitle.setText(title);
-        InstructorsInfoDatabase instructorsInfoDatabase = new InstructorsInfoDatabase();
-        instructorsInfoDatabase = InstructorsInfoDatabase.instructorDetails(ID);
+        InstructorsInfoDatabase instructorsInfoDatabase = InstructorsInfoDatabase.instructorDetails(ID);
         initializeInstructorInfo(instructorsInfoDatabase);
+        checkIfEnrolled();
+
+        instructorName.setText(instructor);
+        courseTitle.setText(title);
         linkedInImage.setOnMouseClicked(event -> openLink(url));
         File profileImage = instructorsInfoDatabase.getProfileImage(ID);
 
-        if(profileImage != null && profileImage.exists()) profilePicture.setImage(new Image(profileImage.toURI().toString()));
+        if(profileImage != null && profileImage.exists()) setCourseImage(profileImage);
         else System.out.println("file does not exist");
+
+        initializeCourseInfo();
 
         profilePicture.setPreserveRatio(true);
         profilePicture.setSmooth(true);
+
+        enrollBtn.setOnAction(actionEvent -> enroll());
+
+        backBtn.setOnAction(actionEvent -> {
+            Stage courseInfoStage = new Stage();
+            StudentDashboard studentDashboard = new StudentDashboard();
+            try {
+                studentDashboard.start(courseInfoStage);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            courseInfoStage = (Stage) courseInfoAnchorPane.getScene().getWindow();
+            courseInfoStage.close();
+        });
     }
 }
 
