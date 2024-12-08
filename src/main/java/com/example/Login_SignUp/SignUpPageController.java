@@ -9,17 +9,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
 
@@ -250,6 +248,19 @@ public class SignUpPageController {
                 }else{
                     throw new RuntimeException("Invalid OTP");
                 }
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Registration");
+                alert.setHeaderText("Registration Successful!");
+                Optional<ButtonType> result = alert.showAndWait();
+                Stage loginStage = new Stage();
+                LoginPageApplication loginPageApplication = new LoginPageApplication();
+                try {
+                    loginPageApplication.start(loginStage);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                stage = (Stage) signUpPageStackPane.getScene().getWindow();
+                stage.close();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 showInvalid();

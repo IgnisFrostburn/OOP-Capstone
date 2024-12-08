@@ -69,7 +69,6 @@ public class PayMongoIntegration {
 
         Map<String, Object> redirect = new HashMap<>();
         redirect.put("success", "https://example.com/success?token=" + uniqueToken);
-
         redirect.put("failed", "https://example.com/failed");
 
         Map<String, Object> sourceAttributes = new HashMap<>();
@@ -138,7 +137,6 @@ public class PayMongoIntegration {
             URI uri = new URI(redirectUrl);
             String query = uri.getQuery();
 
-            // Parse the query parameters into a map
             Map<String, String> params = new HashMap<>();
             if (query != null) {
                 for (String param : query.split("&")) {
@@ -149,18 +147,17 @@ public class PayMongoIntegration {
                 }
             }
 
-            // Check for the token parameter in the URL
             String token = params.get("token");
             if (token != null) {
                 System.out.println("Payment Success with Token: " + token);
-                return true; // Payment successful, return true
+                return true;
             } else {
                 System.err.println("No token found in redirect URL");
-                return false; // No token found, payment failed or cancelled
+                return false;
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return false; // Error occurred, return false
+            return false;
         }
     }
 
