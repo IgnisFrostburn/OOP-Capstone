@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="course" fx:id="courseInfoAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Course_content.Course_Info_Controller">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="-28.0" layoutY="-58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/logowhitenotext.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="375.0" layoutY="11.0" prefHeight="60.0" prefWidth="135.0" text="Course ">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="497.0" layoutY="11.0" prefHeight="60.0" prefWidth="220.0" text="Information" textFill="#0088cd">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="45.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="389.0" style="-fx-background-color: #F0F8FF; -fx-border-color: dodgerblue; -fx-border-style: solid; -fx-border-radius: 0; -fx-border-width: 1px;">
+         <children>
+            <Label fx:id="courseTitle" layoutX="17.0" layoutY="10.0" maxWidth="900.0" prefHeight="60.0" prefWidth="544.0" text="Data Structures and Algorithm">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fc7ff" height="38.0" layoutX="40.0" layoutY="149.0" stroke="DODGERBLUE" strokeType="INSIDE" strokeWidth="2.0" width="135.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fc7ff" height="38.0" layoutX="211.0" layoutY="149.0" stroke="DODGERBLUE" strokeType="INSIDE" strokeWidth="2.0" width="135.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fc7ff" height="38.0" layoutX="125.0" layoutY="99.0" stroke="DODGERBLUE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="2.0" width="135.0" />
+            <Label fx:id="cat3Label" layoutX="219.0" layoutY="160.0" prefWidth="120.0" style="-fx-alignment: center;" text="Electrical Engineering" textAlignment="CENTER" textFill="DODGERBLUE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="cat2Label" layoutX="133.0" layoutY="110.0" prefWidth="120.0" style="-fx-alignment: center;" text="Civil Engineering" textAlignment="CENTER" textFill="DODGERBLUE">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="cat1Label" layoutX="46.0" layoutY="159.0" prefWidth="120.0" style="-fx-alignment: center;" text="Computer Science" textAlignment="CENTER" textFill="DODGERBLUE">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="instructorName" layoutX="17.0" layoutY="50.0" maxWidth="1500.0" prefHeight="21.0" prefWidth="183.0" text="Karol Vincent Bebedor" textFill="#2197ff9a">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="emailLabel" layoutX="17.0" layoutY="63.0" maxWidth="900.0" prefHeight="21.0" prefWidth="156.0" text="bebedorkarolvincent@gmail.com" textFill="#2197ff9d">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="461.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="576.0" style="-fx-background-color: #F0F8FF; -fx-border-color: dodgerblue; -fx-border-style: solid; -fx-border-radius: 0; -fx-border-width: 1px;">
+         <children>
+            <Label layoutX="34.0" layoutY="13.0" maxWidth="900.0" prefHeight="38.0" prefWidth="83.0" text="Enrolled ">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="110.0" layoutY="13.0" maxWidth="900.0" prefHeight="38.0" prefWidth="83.0" text="Learners" textFill="DODGERBLUE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <ListView fx:id="enrolledLearnersListView" layoutX="33.0" layoutY="52.0" prefHeight="502.0" prefWidth="512.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="45.0" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="379.0" prefWidth="389.0" style="-fx-background-color: #F0F8FF; -fx-border-color: dodgerblue; -fx-border-style: solid; -fx-border-radius: 0; -fx-border-width: 1px;" />
+   </children>
+</AnchorPane>

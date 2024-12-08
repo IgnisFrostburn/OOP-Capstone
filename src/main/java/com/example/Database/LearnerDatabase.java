@@ -1,5 +1,7 @@
 package com.example.Database;
 
+import com.example.Account.Account;
+import com.example.Account.Learner;
 import com.example.Login_SignUp.LoggedInUser;
 
 import java.sql.*;
@@ -40,12 +42,13 @@ public class LearnerDatabase extends UserDatabase {
 
         if (resultSet.next()) {
             LoggedInUser loggedInUser = LoggedInUser.getInstance();
-            loggedInUser.setEmail(resultSet.getString("Email"));
-            loggedInUser.setFirstName(resultSet.getString("FirstName"));
-            loggedInUser.setLastName(resultSet.getString("LastName"));
-            loggedInUser.setUniversity(resultSet.getString("University"));
-            loggedInUser.setID(resultSet.getInt("ID"));
-            loggedInUser.setRole("Learner");
+            String mail = resultSet.getString("Email");
+            String firstName = resultSet.getString("FirstName");
+            String lastName = resultSet.getString("LastName");
+            String university = resultSet.getString("University");
+            int ID = resultSet.getInt("ID");
+            Account account = new Learner(ID, firstName, lastName, mail, university);
+            loggedInUser.setLoggedInAccount(account);
         } else {
             throw new RuntimeException("No user found");
         }

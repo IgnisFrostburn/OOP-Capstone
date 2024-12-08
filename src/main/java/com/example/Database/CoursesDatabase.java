@@ -127,6 +127,23 @@ public class CoursesDatabase extends UtilityDatabase {
         return "Not found";
     }
 
+    public String getCourseCTR(int InstructorID){
+        try{
+            String query = "SELECT COUNT(*) AS courseCTR FROM courses WHERE instructor_id = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, InstructorID);
+            ResultSet resultSet = statement.executeQuery();
+            if(resultSet.next()){
+                System.out.println(resultSet.getInt("courseCTR") + " " + InstructorID);
+                return String.valueOf(resultSet.getInt("courseCTR"));
+            }
+        } catch (SQLException e) {
+            System.out.println("smthing wrong with sql on method");
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
     public static int[] numberOfCourses(String filter) {
         List<Integer> courses = new ArrayList<Integer>();
         try {
@@ -237,6 +254,25 @@ public class CoursesDatabase extends UtilityDatabase {
         }
         return "-1";
     }
+
+    public int[] getCoursesInstructor(int InstructorID) {
+        List<Integer> courses = new ArrayList<Integer>();
+        try {
+            if(connection == null)throw new SQLException();
+            String query = "SELECT course_ID FROM courses WHERE instructor_id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, InstructorID);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                courses.add(Integer.parseInt(resultSet.getString("course_ID")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courses.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+//    public int
 }
 
 

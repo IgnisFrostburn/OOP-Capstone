@@ -146,7 +146,7 @@ public class LoginPageController {
                         learnerDatabase.getUserData(getLoginEmail());
                         LoggedInUser loggedInUser = LoggedInUser.getInstance();
                         if (loggedInUser != null) {
-                            System.out.println(loggedInUser.getFirstName());
+                            System.out.println(loggedInUser.getLoggedInAccount().getFirstName());
                         } else {
                             throw new RuntimeException("NO USER FOUND");
                         }
@@ -176,9 +176,8 @@ public class LoginPageController {
                         InstructorDatabase instructorDatabase = new InstructorDatabase();
                         instructorDatabase.getUserData(getLoginEmail());
                         LoggedInUser loggedInUser = LoggedInUser.getInstance();
-
                         if (loggedInUser != null) {
-                            System.out.println(loggedInUser.getFirstName());
+                            System.out.println(loggedInUser.getLoggedInAccount().getFirstName() + " " + loggedInUser.getLoggedInAccount().getID());
                         } else {
                             throw new RuntimeException("NO USER FOUND");
                         }

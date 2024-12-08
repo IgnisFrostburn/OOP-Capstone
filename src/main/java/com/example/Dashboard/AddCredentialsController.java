@@ -125,7 +125,7 @@ public class AddCredentialsController {
         uploadBtn.setOnMousePressed(e -> uploadBtn.setStyle("-fx-background-color: #00c697; -fx-text-fill: white;"));
         uploadBtn.setOnMouseReleased(e -> uploadBtn.setStyle("-fx-background-color: #0fffc6; -fx-text-fill: white;"));
 
-        id = new InstructorDatabase().getInstructorID(LoggedInUser.getInstance().getEmail());
+        id = new InstructorDatabase().getInstructorID(LoggedInUser.getInstance().getLoggedInAccount().getEmail());
         if(InstructorsInfoDatabase.dataExists(id)) {
             InstructorsInfoDatabase instructorDetails = InstructorsInfoDatabase.instructorDetails(id);
             teachingExperienceField1.setText(instructorDetails.getTeachingExperience_1());

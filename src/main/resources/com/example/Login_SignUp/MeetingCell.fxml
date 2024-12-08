@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="650.0" style="-fx-background-image: src/main/resources/images/cellbg.png;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Login_SignUp.MeetingCell">
+   <children>
+      <ImageView fitHeight="106.0" fitWidth="650.0" layoutY="-2.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../images/cellbg.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="courseTitle" layoutX="14.0" layoutY="29.0" prefHeight="31.0" prefWidth="295.0" text="Discrete Structures" textFill="DODGERBLUE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="instructorName" layoutX="14.0" layoutY="50.0" prefHeight="31.0" prefWidth="307.0" text="Karol Vincent Bebedor" textFill="DODGERBLUE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="date" layoutX="480.0" layoutY="34.0" text="December 3, 2024" textFill="DODGERBLUE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="startTime" layoutX="480.0" layoutY="55.0" text="4:00pm" textFill="DODGERBLUE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="endTime" layoutX="566.0" layoutY="55.0" text="4:00pm" textFill="DODGERBLUE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="540.0" layoutY="55.0" style="-fx-font-weight: bold;" text="-" textFill="DODGERBLUE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
