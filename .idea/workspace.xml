@@ -7,11 +7,21 @@
     <list default="true" id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="unfinished">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/Course.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/teacherStyles.css" afterDir="false" />
+    <list default="true" id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="added navigation button and enrollment functionalities">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PayMongoIntegration/PayMongoIntegration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/jackson-annotations-2.15.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/jackson-core-2.15.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/jackson-databind-2.15.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/kotlin-stdlib-1.8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/okhttp-4.11.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/okio-2.10.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Account/Learner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Account/Learner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/EnrolledLearner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/EnrolledLearner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/EnrolledLearnerCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/EnrolledLearnerCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/EnrolledLearnerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/EnrolledLearnerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/EnrollmentDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/EnrollmentDatabase.java" afterDir="false" />
@@ -20,6 +30,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/Email.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoggedInUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoggedInUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/MeetingCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/MeetingCell.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/StudentDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/StudentDashboard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/enrolledLearnerCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/enrolledLearnerCell.fxml" afterDir="false" />
@@ -49,7 +60,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/IgnisFrostburn/OOP-Capstone.git&quot;,
-    &quot;accountId&quot;: &quot;0d04d356-f879-440a-9c2b-b4a203bebd0f&quot;
+    &quot;accountId&quot;: &quot;cd5c9167-9ff1-4512-98d0-d2ff5300d41a&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -92,10 +103,35 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MeetingDatabase.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SignUpPage.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JavaFXDemo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Mcxine and Mckyla/IdeaProjects/MASTEROOP/src/main/java/com/example/Login_SignUp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Josh/IdeaProjects/OOP-Capstone/src/main/java/modules/mysql-connector-j-9.1.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Josh\IdeaProjects\OOP-Capstone\src\main\java\modules" />
+      <recent name="C:\Users\Josh\IdeaProjects\OOP-Capstone\src\main\java\com\example" />
+    </key>
+  </component>
 }]]></component>
   <component name="RunManager" selected="Application.LoginPageApplication">
-    <configuration name="LoginPageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginPageApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.LoginPageApplication" />
       <module name="JavaFXDemo" />
       <extension name="coverage">
@@ -127,7 +163,6 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LoginPageApplication" />
         <item itemvalue="Application.StudentDashboard" />
       </list>
     </recent_temporary>

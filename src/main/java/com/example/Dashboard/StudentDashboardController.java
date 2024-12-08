@@ -21,6 +21,9 @@ import javafx.scene.layout.*;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -360,6 +363,7 @@ public class StudentDashboardController {
 
         toggleVideoCallButton();
     }
+    TeacherDashboardController teach = new TeacherDashboardController();
     private void checkMeetingTime(Meeting meeting) {
         LocalDateTime currentTime = LocalDateTime.now();
 
@@ -368,16 +372,33 @@ public class StudentDashboardController {
 
 
         if (currentTime.isAfter(meetingStartTime) && currentTime.isBefore(meetingEndTime)) {
-            videoCallBtn.setDisable(false);
+            videoCallBtn.setDisable(true);
             videoCallBtn.setText("Wait for Schedule");
-        } else {
+        } else if(teach.startMeeting()){
+            System.out.println(meeting.getCourseTitle());
+            videoCallBtn.setDisable(false);
+            videoCallBtn.setText("Join Video Call");
+        }else{
             System.out.println(meeting.getCourseTitle());
             videoCallBtn.setDisable(true);
-            videoCallBtn.setText("Start Video Call");
+            videoCallBtn.setText("Join Video Call");
         }
     }
     private void toggleVideoCallButton() {
         videoCallBtn.setDisable(meetingsListView.getItems().isEmpty());
+    }
+    private String ip = "https://192.168.1.14:8181/";
+
+    private String getIP(){
+        return this.ip;
+    }
+
+    private void openWebPage() {
+        try {
+            Desktop.getDesktop().browse(new URI(getIP()));
+        } catch (IOException | java.net.URISyntaxException e) {
+            e.printStackTrace();
+        }
     }
 
     public void initialize() {
@@ -397,6 +418,8 @@ public class StudentDashboardController {
         filterComboBox.setItems(filterObservableList);
         courses = CoursesDatabase.numberOfCourses(filter);
 
+        //start vc
+        videoCallBtn.setOnAction(event -> openWebPage());
 
         //actions
         filterBtn.setOnMousePressed(event -> {
@@ -430,6 +453,7 @@ public class StudentDashboardController {
                 goToLogin();
             }
 
+            createBrowseCourses(courses);
         });
         meetingsBtn.setOnAction(actionEvent -> {
             setMeetingsPanelVisible();
@@ -450,8 +474,3 @@ public class StudentDashboardController {
         courseInfoStage.close();
     }
 }
-
-
-
-
-
