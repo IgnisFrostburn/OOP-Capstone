@@ -3,10 +3,10 @@ module com.example.Login_SignUp {
     requires javafx.fxml;
 
     requires com.dlsc.formsfx;
-    requires java.desktop;
     requires java.mail;
     requires java.sql;
     requires transitive mysql.connector.j;
+    requires java.desktop;
 
     opens com.example.Login_SignUp to javafx.fxml;
     exports com.example.Login_SignUp;
@@ -17,4 +17,5 @@ module com.example.Login_SignUp {
 //    exports com.example.MainUserInterface;
     opens com.example.Course_content to javafx.fxml;
     exports com.example.Course_content;
+    exports com.example.Account;
 }

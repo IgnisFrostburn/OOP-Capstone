@@ -1,5 +1,6 @@
 package com.example.Dashboard;
 
+import com.example.Account.Account;
 import com.example.Database.*;
 import com.example.Course_content.Course_Info;
 import com.example.Course_content.Course_Info_Controller;
@@ -14,13 +15,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.util.List;
 
 
 public class StudentDashboardController {
@@ -29,13 +31,17 @@ public class StudentDashboardController {
     @FXML
     private Text coursesEnrolledCTR;
     @FXML
-    private ScrollPane browseScrollPane;
-    @FXML
     private Button dashboardBtn;
     @FXML
     private Button browseBtn;
     @FXML
+    private ListView<Meeting> meetingsListView;
+    @FXML
+    private Button videoCallBtn;
+    @FXML
     private Button myCoursesBtn;
+    @FXML
+    private Button meetingsBtn;
     @FXML
     private Pane browseCourseWrapperPane;
     @FXML
@@ -47,9 +53,9 @@ public class StudentDashboardController {
     @FXML
     private Text dashboardLastName;
     @FXML
-    private Pane browseCourseInnerGridPane;
-    @FXML
     private AnchorPane interfacePanel;
+    @FXML
+    private AnchorPane meetingsPanel;
     @FXML
     private AnchorPane dashboardPanel;
     @FXML
@@ -59,9 +65,7 @@ public class StudentDashboardController {
     @FXML
     private Text dashboardUniversity;
     @FXML
-    private Text meetingsTodayCTR;
-    @FXML
-    private ScrollPane myCourseScrollPane;
+    private Text meetingsCTR;
     @FXML
     private Pane myCourseWrapperPane;
     @FXML
@@ -70,13 +74,13 @@ public class StudentDashboardController {
     private ComboBox<String> filterComboBox;
     @FXML
     private ImageView filterBtn;
-
+    @FXML
     private int gridCtr = 0;
     private int row = 0;
     private final double rowHeight = 220.0;
     private final double columnWidth = 390.0;
     private String filter;
-    private int[] courses;
+    int[] courses;
 
     private ObservableList<String> filterObservableList;
     private void initializeArrayList() {
@@ -98,7 +102,6 @@ public class StudentDashboardController {
                 "Naval Engineering"
         );
     }
-
     private void createBrowseCourses(int[] courses) {
         gridCtr = 0;
         row = 0;
@@ -307,39 +310,89 @@ public class StudentDashboardController {
         row = 0;
         browseCourseWrapperPane.setPrefHeight(0);
     }
-
-    public void setUserInfo(LoggedInUser loggedInUser, EnrollmentDatabase enrollmentDB){
+    public void setUserInfo(Account loggedInUser, EnrollmentDatabase enrollmentDB, MeetingDatabase meetingDatabase){
         coursesEnrolledCTR.setText(enrollmentDB.getCourseCTR(loggedInUser.getID()));
         dashboardFirstName.setText(loggedInUser.getFirstName());
         dashboardLastName.setText(loggedInUser.getLastName());
         dashboardEmail.setText(loggedInUser.getEmail());
         dashboardUniversity.setText(loggedInUser.getUniversity());
+        meetingsCTR.setText(meetingDatabase.countMeetings(loggedInUser.getID()));
     }
     public void setDashboardPanelVisible(){
+        interfacePanel.setVisible(true);
         dashboardPanel.setVisible(true);
         myCoursesPanel.setVisible(false);
         browseCoursesPanel.setVisible(false);
+        meetingsPanel.setVisible(false);
     }
     public void setbrowseCoursesPanelVisible(){
         dashboardPanel.setVisible(false);
         myCoursesPanel.setVisible(false);
         browseCoursesPanel.setVisible(true);
+        meetingsPanel.setVisible(false);
+    }
+    public void setMeetingsPanelVisible(){
+        meetingsPanel.setVisible(true);
+        dashboardPanel.setVisible(false);
+        myCoursesPanel.setVisible(false);
+        browseCoursesPanel.setVisible(false);
     }
     public void setMyCoursesPanelVisible(){
         dashboardPanel.setVisible(false);
         myCoursesPanel.setVisible(true);
         browseCoursesPanel.setVisible(false);
+        meetingsPanel.setVisible(false);
+    }
+    public void setMeetings(int studentID) {
+        MeetingDatabase meetingDatabase = new MeetingDatabase();
+        List<Meeting> meetings = meetingDatabase.getUpcomingMeetings(studentID);
+        ObservableList<Meeting> todayMeetings = FXCollections.observableArrayList(meetings);
+
+        meetingsListView.setCellFactory(param -> new MeetingCellFactory());
+
+        meetingsListView.setItems(todayMeetings);
+
+        toggleVideoCallButton();
+    }
+    private void checkMeetingTime(Meeting meeting) {
+        LocalDateTime currentTime = LocalDateTime.now();
+
+        LocalDateTime meetingStartTime = meeting.getTimeStart();
+        LocalDateTime meetingEndTime = meeting.getTimeEnd();
+
+
+        if (currentTime.isAfter(meetingStartTime) && currentTime.isBefore(meetingEndTime)) {
+            videoCallBtn.setDisable(false);
+            videoCallBtn.setText("Wait for Schedule");
+        } else {
+            System.out.println(meeting.getCourseTitle());
+            videoCallBtn.setDisable(true);
+            videoCallBtn.setText("Start Video Call");
+        }
+    }
+    private void toggleVideoCallButton() {
+        videoCallBtn.setDisable(meetingsListView.getItems().isEmpty());
     }
 
-
     public void initialize() {
-        LoggedInUser loggedInUser = LoggedInUser.getInstance();
+        //mga query
+        Account loggedInUser = LoggedInUser.getInstance().getLoggedInAccount();
         EnrollmentDatabase enrollmentDB = new EnrollmentDatabase();
+        MeetingDatabase meetingDatabase = new MeetingDatabase();
+        int[] coursesEnrolled = enrollmentDB.getCourses(loggedInUser.getID());
+        //to add ani kay mag incrmeent if magenroll
+
+        //mga intializations
         initializeArrayList();
+        setDashboardPanelVisible();
+        setUserInfo(loggedInUser, enrollmentDB, meetingDatabase);
+        setMeetings(loggedInUser.getID());
+
         filterComboBox.setItems(filterObservableList);
         courses = CoursesDatabase.numberOfCourses(filter);
-        int[] coursesEnrolled = enrollmentDB.getCourses(loggedInUser.getID());
 
+
+        //actions
         filterBtn.setOnMousePressed(event -> {
             filter = filterComboBox.getValue();
             clearBrowseCourses();
@@ -347,27 +400,25 @@ public class StudentDashboardController {
             else courses = CoursesDatabase.numberOfCourses(filter);
             createBrowseCourses(courses);
         });
-
-        System.out.println("IDs of courses: ");
-        for(int s: courses) {
-            System.out.println(s);
-        }
-        System.out.println("ENROLLED");
-        for(int s: coursesEnrolled) {
-            System.out.println(s);
-        }
-
-
-        interfacePanel.setVisible(true);
-        setDashboardPanelVisible();
-        setUserInfo(loggedInUser, enrollmentDB);
-
+        meetingsListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                checkMeetingTime(newValue);
+            }
+        });
         dashboardBtn.setOnAction(actionEvent -> setDashboardPanelVisible());
-        myCoursesBtn.setOnAction(actionEvent -> setMyCoursesPanelVisible());
-        browseBtn.setOnAction(actionEvent -> setbrowseCoursesPanelVisible());
-
-        createBrowseCourses(courses);
-        createMyCourses(coursesEnrolled);
+        myCoursesBtn.setOnAction(actionEvent -> {
+            setMyCoursesPanelVisible();
+            createBrowseCourses(courses);
+        });
+        browseBtn.setOnAction(actionEvent -> {
+            setbrowseCoursesPanelVisible();
+            createMyCourses(coursesEnrolled);
+        });
+        meetingsBtn.setOnAction(actionEvent -> {
+            setMeetingsPanelVisible();
+            videoCallBtn.setDisable(true);
+            meetingDatabase.deleteExpiredMeetings();
+        });
     }
 }
 

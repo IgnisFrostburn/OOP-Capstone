@@ -5,6 +5,7 @@ import com.example.Login_SignUp.LoggedInUser;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MeetingDatabase extends UtilityDatabase{
     public MeetingDatabase(){
@@ -28,33 +29,73 @@ public class MeetingDatabase extends UtilityDatabase{
             throw new RuntimeException(e);
         }
     }
-
-    public int[] getMeetings(int LearnerID){
+    public void deleteExpiredMeetings(){
+        String query = "DELETE from meetings WHERE EndTime < Now()";
         try {
-            String query = "SELECT MeetingID FROM meetings WHERE LearnerID = ?";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, String.valueOf(LearnerID));
-            ResultSet resultSet = statement.executeQuery();
-            ArrayList<Integer> idList = new ArrayList<>();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.executeUpdate();
 
-            while (resultSet.next()) {
-                idList.add(resultSet.getInt("MeetingID"));
-            }
-            return idList.stream().mapToInt(Integer::intValue).toArray();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+    public String countMeetings(int ID) {
+        String query = "SELECT COUNT(*) FROM meetings WHERE LearnerID = ? AND StartTime > Now()";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, ID);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                return String.valueOf(resultSet.getInt(1));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
         return null;
     }
 
-    public static void main(String[] args) {
-        MeetingDatabase meetingDB = new MeetingDatabase();
-        LocalDateTime startTime = LocalDateTime.of(2024, 12, 10, 14, 0);
-        LocalDateTime endTime = LocalDateTime.of(2024, 12, 10, 15, 0);
-        //System.out.println(meetingDB.scheduleMeeting(3, 3, 2, startTime, endTime));
-        int[] meetings = meetingDB.getMeetings(3);
-        for(int i : meetings){
-            System.out.println(i);
+
+
+    public List<Meeting> getUpcomingMeetings(int learnerId) {
+        List<Meeting> meetings = new ArrayList<>();
+        String query = "SELECT c.course_title, CONCAT(i.FirstName, ' ', i.LastName) AS instructor_name, " +
+                "m.StartTime, m.EndTime " +
+                "FROM Meetings m " +
+                "JOIN Courses c ON m.CourseID = c.course_ID " +
+                "JOIN Instructors i ON m.InstructorID = i.ID " +
+                "WHERE m.LearnerID = ? " +
+                "ORDER BY m.StartTime ASC";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, learnerId);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                meetings.add(new Meeting(
+                        resultSet.getTimestamp("StartTime"),
+                        resultSet.getTimestamp("EndTime"),
+                        resultSet.getString("course_title"),
+                        resultSet.getString("instructor_name")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return meetings;
     }
+
+    public static void main(String[] args) {
+        MeetingDatabase meetingDatabase = new MeetingDatabase();
+        meetingDatabase.scheduleMeeting(3, 1, 3, LocalDateTime.now(), LocalDateTime.now());
+        meetingDatabase.scheduleMeeting(3, 1, 4, LocalDateTime.now(), LocalDateTime.now());
+        meetingDatabase.scheduleMeeting(3, 1, 4, LocalDateTime.now(), LocalDateTime.now());
+        System.out.println("succ");
+    }
+
+
+
+
+
+
 }

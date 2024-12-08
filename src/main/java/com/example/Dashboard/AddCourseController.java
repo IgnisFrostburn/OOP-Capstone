@@ -163,7 +163,7 @@
                 if(ctr == 0) {
                     InstructorDatabase instructorDatabase = new InstructorDatabase();
                     try {
-                        id = instructorDatabase.getInstructorID(LoggedInUser.getInstance().getEmail());
+                        id = instructorDatabase.getInstructorID(LoggedInUser.getInstance().getLoggedInAccount().getEmail());
                         CoursesDatabase coursesDatabase = new CoursesDatabase(courseTitleField.getText(), categoryComboBox1.getValue(), categoryComboBox2.getValue(), categoryComboBox3.getValue(), courseDescriptionArea.getText());
                         if(!CoursesDatabase.maxCoursesReached(id)) coursesDatabase.insertData(id, selectedFile);
                         else {

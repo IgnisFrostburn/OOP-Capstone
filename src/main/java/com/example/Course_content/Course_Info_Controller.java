@@ -1,5 +1,6 @@
 package com.example.Course_content;
 
+import com.example.Account.Account;
 import com.example.Dashboard.StudentDashboardController;
 import com.example.Database.CoursesDatabase;
 import com.example.Database.EnrollmentDatabase;
@@ -81,7 +82,7 @@ public class Course_Info_Controller {
     }
 
     public void enroll(){
-        LoggedInUser loggedInUser = LoggedInUser.getInstance();
+        Account loggedInUser = LoggedInUser.getInstance().getLoggedInAccount();
         EnrollmentDatabase enrollmentDB = new EnrollmentDatabase();
         CoursesDatabase courseDB = new CoursesDatabase();
         try{
@@ -97,7 +98,7 @@ public class Course_Info_Controller {
         enrollBtnDisable();
     }
     public void checkIfEnrolled(){
-        LoggedInUser loggedInUser = LoggedInUser.getInstance();
+        Account loggedInUser = LoggedInUser.getInstance().getLoggedInAccount();
         EnrollmentDatabase enrollmentDatabase = new EnrollmentDatabase();
         CoursesDatabase courseDB = new CoursesDatabase();
         if(enrollmentDatabase.checkIfEnrolled(loggedInUser.getID(), courseDB.getCID(title))){
