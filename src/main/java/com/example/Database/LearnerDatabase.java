@@ -31,7 +31,7 @@ public class LearnerDatabase extends UserDatabase {
         }
     }
 //TIWASA NI
-public void getUserData(String email) {
+    public void getUserData(String email) {
     try{
         String query = "SELECT * FROM learners WHERE Email = ?";
         PreparedStatement statement = connection.prepareStatement(query);
