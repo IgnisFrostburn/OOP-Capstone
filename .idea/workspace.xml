@@ -30,12 +30,12 @@
     &quot;assignee&quot;: &quot;kevyelly&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/IgnisFrostburn/OOP-Capstone.git",
-    "accountId": "d3a0edc4-e4f5-4810-a231-eb7a69c9b9d9"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/IgnisFrostburn/OOP-Capstone.git&quot;,
+    &quot;accountId&quot;: &quot;d3a0edc4-e4f5-4810-a231-eb7a69c9b9d9&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
@@ -51,34 +51,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Course_Info.executor": "Run",
-    "Application.LoginPageApplication.executor": "Run",
-    "Application.MeetingDatabase.executor": "Run",
-    "Application.SignUpPage.executor": "Run",
-    "Application.StudentDashboard.executor": "Run",
-    "Maven.JavaFXDemo [clean].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/Mcxine and Mckyla/IdeaProjects/MASTEROOP/src/main/java/com/example/Login_SignUp",
-    "last_opened_file_path": "C:/Java/cap/src/main/java/modules/okio-2.10.0.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Course_Info.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MeetingDatabase.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SignUpPage.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JavaFXDemo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Mcxine and Mckyla/IdeaProjects/MASTEROOP/src/main/java/com/example/Login_SignUp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Java/cap/src/main/java/modules/okio-2.10.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Josh\IdeaProjects\OOP-Capstone\src\main\java\modules" />
       <recent name="C:\Users\Josh\IdeaProjects\OOP-Capstone\src\main\java\com\example" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.LoginPageApplication">
     <configuration name="LoginPageApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.LoginPageApplication" />
       <module name="JavaFXDemo" />
