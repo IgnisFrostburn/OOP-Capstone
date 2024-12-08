@@ -68,8 +68,8 @@ public class PayMongoIntegration {
         billing.put("email", "john.doe@example.com");
 
         Map<String, Object> redirect = new HashMap<>();
-//        redirect.put("success", "https://example.com/success?token=" + uniqueToken);
-        redirect.put("success", "http://localhost:8080/success");
+        redirect.put("success", "https://example.com/success?token=" + uniqueToken);
+
         redirect.put("failed", "https://example.com/failed");
 
         Map<String, Object> sourceAttributes = new HashMap<>();

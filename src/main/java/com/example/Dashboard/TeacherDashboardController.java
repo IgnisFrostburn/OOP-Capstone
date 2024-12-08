@@ -8,6 +8,7 @@ import com.example.Course_content.Course_Info;
 import com.example.Course_content.Course_Info_Controller;
 import com.example.Database.*;
 import com.example.Login_SignUp.LoggedInUser;
+import com.example.Login_SignUp.LoginPageApplication;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -27,7 +29,6 @@ import javafx.stage.Stage;
 
 import javax.mail.MessagingException;
 import java.awt.*;
-import java.awt.Label;
 import java.io.IOException;
 import java.net.URI;
 import java.sql.SQLException;
@@ -44,58 +45,36 @@ public class TeacherDashboardController {
     private Button addCoursesBtn;
     @FXML
     private Button logoutBtn;
-
     @FXML
     private Button addCredentialsBtn;
-
-    @FXML
-    private ScrollPane browseScrollPane;
-
     @FXML
     private Text coursesOfferedCTR;
-
     @FXML
     private Button dashboardBtn;
-
     @FXML
     private Text dashboardEmail;
-
     @FXML
     private Text dashboardFirstName;
-
     @FXML
     private Text dashboardLastName;
-
     @FXML
     private AnchorPane dashboardPanel;
-
     @FXML
     private ImageView dashboardProfilePicture;
-
     @FXML
     private Text dashboardUniversity;
-
     @FXML
     private StackPane instructorDashboardStackPane;
-
     @FXML
     private AnchorPane interfacePane;
-
     @FXML
     private Button meetingsBtn;
-
     @FXML
     private Text meetingsCTR;
-
     @FXML
     private ListView<Meeting> meetingsListView;
-
     @FXML
     private AnchorPane meetingsPanel;
-
-    @FXML
-    private Text meetingsTodayCTR;
-
     @FXML
     private Pane myCourseWrapperPane;
 
@@ -154,6 +133,7 @@ public class TeacherDashboardController {
     MeetingDatabase meetingDatabase = new MeetingDatabase();
     EnrollmentDatabase enrollmentDatabase = new EnrollmentDatabase();
     Course openedCourse = null;
+    private String ip = "https://192.168.1.14:8181/";
 
     //set VISIBLE sa mga panel
     public void setScheduleModalVisible(boolean visible) {
@@ -216,16 +196,10 @@ public class TeacherDashboardController {
         setMyCoursesPanelVisible();
     }
     //for da meeting
-    public void setMeetings(int InstructorID) {
-        MeetingDatabase meetingDatabase = new MeetingDatabase();
-        List<Meeting> meetings = meetingDatabase.getUpcomingMeetingsforInstructor(InstructorID);
-        ObservableList<Meeting> todayMeetings = FXCollections.observableArrayList(meetings);
-
-        meetingsListView.setCellFactory(param -> new MeetingCellFactory());
-
-        meetingsListView.setItems(todayMeetings);
-
-        toggleVideoCallButton();
+    public void setMeetingsPanelVisible(){
+        meetingsPanel.setVisible(true);
+        dashboardPanel.setVisible(false);
+        myCoursesPanel.setVisible(false);
     }
     private void checkMeetingTime(Meeting meeting) {
         LocalDateTime currentTime = LocalDateTime.now();
@@ -233,11 +207,6 @@ public class TeacherDashboardController {
         LocalDateTime meetingStartTime = meeting.getTimeStart();
         LocalDateTime meetingEndTime = meeting.getTimeEnd();
 
-    public void setMeetingsPanelVisible(){
-        meetingsPanel.setVisible(true);
-        dashboardPanel.setVisible(false);
-        myCoursesPanel.setVisible(false);
-    }
 
         if (currentTime.isAfter(meetingStartTime) && currentTime.isBefore(meetingEndTime)) {
             videoCallBtn.setDisable(false);
@@ -351,6 +320,7 @@ public class TeacherDashboardController {
         enrolledLearnersListView.setCellFactory(param -> new EnrolledLearnerFactory());
         enrolledLearnersListView.setFixedCellSize(-1);
         enrolledLearnersListView.setItems(todayMeetings);
+    }
     protected boolean startMeeting() {
         if (videoCallBtn != null) {
             videoCallBtn.setDisable(false);
@@ -359,8 +329,16 @@ public class TeacherDashboardController {
         }
         return false;
     }
-
-
+    private String getIP(){
+        return this.ip;
+    }
+    private void openWebPage() {
+        try {
+            Desktop.getDesktop().browse(new URI(getIP()));
+        } catch (IOException | java.net.URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
     public void setMeetings(int teacherID) {
         MeetingDatabase meetingDatabase = new MeetingDatabase();
         List<Meeting> meetings = meetingDatabase.getUpcomingMeetings(teacherID);
@@ -372,100 +350,32 @@ public class TeacherDashboardController {
 
         toggleVideoCallButton();
     }
-    private void toggleVideoCallButton() {
-        videoCallBtn.setDisable(meetingsListView.getItems().isEmpty());
-    }
 
-    private String ip = "https://192.168.1.14:8181/";
-
-    private String getIP(){
-        return this.ip;
-    }
-
-    private void openWebPage() {
-        try {
-            Desktop.getDesktop().browse(new URI(getIP()));
-        } catch (IOException | java.net.URISyntaxException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void setUserInfo(){
-        dashboardLastName.setText(loggedInUser.getLastName());
-        dashboardFirstName.setText(loggedInUser.getFirstName());
-        dashboardEmail.setText(loggedInUser.getEmail());
-        dashboardUniversity.setText(loggedInUser.getUniversity());
-        System.out.println(loggedInUser.getID());
-        coursesOfferedCTR.setText(coursesDatabase.getCourseCTR(loggedInUser.getID()));
-        meetingsCTR.setText(meetingDatabase.countMeetings(loggedInUser.getID()));
-    }
-    protected boolean startMeeting() {
-        if (videoCallBtn != null) {
-            videoCallBtn.setDisable(false);
-            videoCallBtn.setText("Start Video Call");
-            return true;
-        }
-        return false;
-    }
-
-
-    public void setMeetings(int teacherID) {
-        MeetingDatabase meetingDatabase = new MeetingDatabase();
-        List<Meeting> meetings = meetingDatabase.getUpcomingMeetings(teacherID);
-        ObservableList<Meeting> todayMeetings = FXCollections.observableArrayList(meetings);
-
-        meetingsListView.setCellFactory(param -> new MeetingCellFactory());
-
-        meetingsListView.setItems(todayMeetings);
-
-        toggleVideoCallButton();
-    }
-    private void toggleVideoCallButton() {
-        videoCallBtn.setDisable(meetingsListView.getItems().isEmpty());
-    }
-
-    private String ip = "https://192.168.1.14:8181/";
-
-    private String getIP(){
-        return this.ip;
-    }
-
-    private void openWebPage() {
-        try {
-            Desktop.getDesktop().browse(new URI(getIP()));
-        } catch (IOException | java.net.URISyntaxException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void setUserInfo(){
-        dashboardLastName.setText(loggedInUser.getLastName());
-        dashboardFirstName.setText(loggedInUser.getFirstName());
-        dashboardEmail.setText(loggedInUser.getEmail());
-        dashboardUniversity.setText(loggedInUser.getUniversity());
-        System.out.println(loggedInUser.getID());
-        coursesOfferedCTR.setText(coursesDatabase.getCourseCTR(loggedInUser.getID()));
-        meetingsCTR.setText(meetingDatabase.countMeetings(loggedInUser.getID()));
-    }
     public void setupSpinners(){
         SpinnerValueFactory<Integer> startHourValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 23);
         startHourValueFactory.setWrapAround(true);
+        startHourValueFactory.setValue(1);
         startHourSpinner.setValueFactory(startHourValueFactory);
         startHourSpinner.setPromptText("Hour");
+        startHourSpinner.getValueFactory().setValue(1);
         SpinnerValueFactory<Integer> endHourValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 23);
         endHourValueFactory.setWrapAround(true);
+        endHourValueFactory.setValue(1);
         endHourSpinner.setValueFactory(endHourValueFactory);
         endHourSpinner.setPromptText("Hour");
 
         SpinnerValueFactory<Integer> minuteValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 59);
         minuteValueFactory.setWrapAround(true);
+        minuteValueFactory.setValue(0);
         startMinuteSpinner.setValueFactory(minuteValueFactory);
         startMinuteSpinner.setPromptText("Minutes");
 
         SpinnerValueFactory<Integer> endMinuteValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 59);
         endMinuteValueFactory.setWrapAround(true);
+        endMinuteValueFactory.setValue(0);
         endMinuteSpinner.setValueFactory(endMinuteValueFactory);
         endMinuteSpinner.setPromptText("Minutes");
+
     }
     public LocalDateTime[] getStartAndEndDateTime() {
         LocalDateTime selectedDate = datePicker.getValue().atStartOfDay(); // Default to start of the day
@@ -484,7 +394,7 @@ public class TeacherDashboardController {
         return new LocalDateTime[] {startDateTime, endDateTime};
     }
     public void refreshFields(){
-        datePicker.setValue(null);
+        datePicker.setValue(LocalDate.from(LocalDateTime.now()));
         startHourSpinner.getValueFactory().setValue(1);
         startMinuteSpinner.getValueFactory().setValue(1);
         endMinuteSpinner.getValueFactory().setValue(0);
@@ -551,7 +461,6 @@ public class TeacherDashboardController {
 
 
 
-
     public void initialize() {
         setUserInfo();
         setDashboardPanelVisible();
@@ -561,7 +470,7 @@ public class TeacherDashboardController {
         //actionEvents
         enrolledLearnersListView.setOnMouseClicked(event -> {
             EnrolledLearner selectedLearner = enrolledLearnersListView.getSelectionModel().getSelectedItem();
-
+            setupSpinners();
             if (selectedLearner != null) {
                 setMeetingBtn.setDisable(false);
                 System.out.println("Selected Learner: " + selectedLearner.getLearner().getFirstName() + " " + selectedLearner.getLearner().getLastName());
