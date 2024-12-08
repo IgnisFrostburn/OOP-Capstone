@@ -1,0 +1,239 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"693a45ab-ecd4-4656-a3e1-77bf69e3a98c\" name=\"Changes\" comment=\"added navigation button and enrollment functionalities\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM_[Changes]/shelved.patch\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM__Changes_.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourse.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourse.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Database/EnrollmentDatabase.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Database/EnrollmentDatabase.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCourse.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/Dashboard/AddCourse.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/javafxdemo/Dashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/javafxdemo/Dashboard.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\r\n  \"lastFilter\": {\r\n    \"state\": \"OPEN\",\r\n    \"assignee\": \"Naweeeeeh\"\r\n  }\r\n}]]></component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/IgnisFrostburn/OOP-Capstone.git\",\r\n    \"accountId\": \"6d363f26-476b-4f9f-853e-8ce583b39534\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 0\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2pkt6gThSPVISX6NL73V2oryuIJ\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.LoginPageApplication.executor\": \"Run\",\r\n    \"Application.MeetingDatabase.executor\": \"Run\",\r\n    \"Application.StudentDashboard.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"kotlin-language-version-configured\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\" selected=\"Application.LoginPageApplication\">\r\n    <configuration name=\"LoginPageApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.Login_SignUp.LoginPageApplication\" />\r\n      <module name=\"JavaFXDemo\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.Login_SignUp.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"StudentDashboard\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.Dashboard.StudentDashboard\" />\r\n      <module name=\"JavaFXDemo\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.Dashboard.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.LoginPageApplication\" />\r\n      <item itemvalue=\"Application.StudentDashboard\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.StudentDashboard\" />\r\n        <item itemvalue=\"Application.LoginPageApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"693a45ab-ecd4-4656-a3e1-77bf69e3a98c\" name=\"Changes\" comment=\"added navigation button and enrollment functionalities\" />\r\n      <created>1733321729353</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1733321729353</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Browse courses layout update - added course image\" />\r\n    <MESSAGE value=\"Course info image view fix and update\" />\r\n    <MESSAGE value=\"&quot;Meetings&quot;\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"&quot;Meetings&quot;\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 57bdaed2ec494ecdcbba78fffb8c9999669a13cb)
++++ b/.idea/workspace.xml	(date 1733667346505)
+@@ -5,14 +5,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="added navigation button and enrollment functionalities">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM_[Changes]/shelved.patch" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM__Changes_.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourse.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/EnrollmentDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/EnrollmentDatabase.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCourse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Dashboard/AddCourse.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafxdemo/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafxdemo/Dashboard.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/Email.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -22,21 +16,21 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-  "lastFilter": {
+-    "state": "OPEN",
+-    "assignee": "Naweeeeeh"
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;Naweeeeeh&quot;
+   }
+-}]]></component>
+-  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-  "selectedUrlAndAccountId": {
+-    "url": "https://github.com/IgnisFrostburn/OOP-Capstone.git",
+-    "accountId": "6d363f26-476b-4f9f-853e-8ce583b39534"
++}</component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/IgnisFrostburn/OOP-Capstone.git&quot;,
++    &quot;accountId&quot;: &quot;d3a0edc4-e4f5-4810-a231-eb7a69c9b9d9&quot;
+   }
+-}]]></component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 0
+-}]]></component>
++}</component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 0
++}</component>
+   <component name="ProjectId" id="2pkt6gThSPVISX6NL73V2oryuIJ" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <ConfirmationsSetting value="2" id="Add" />
+@@ -52,8 +46,14 @@
+     "Application.StudentDashboard.executor": "Run",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "master",
+-    "kotlin-language-version-configured": "true"
++    "git-widget-placeholder": "Dashboard",
++    "kotlin-language-version-configured": "true",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+   <component name="RunManager" selected="Application.LoginPageApplication">
+@@ -93,6 +93,14 @@
+         <item itemvalue="Application.LoginPageApplication" />
+       </list>
+     </recent_temporary>
++  </component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
++        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
++      </set>
++    </attachedChunks>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -102,8 +110,22 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1733321729353</updated>
++      <workItem from="1733660890000" duration="203000" />
++      <workItem from="1733661130336" duration="946000" />
+     </task>
++    <task id="LOCAL-00001" summary="added navigation button and enrollment functionalities">
++      <option name="closed" value="true" />
++      <created>1733646876383</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1733646876383</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
+Index: src/main/java/com/example/Login_SignUp/Email.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Login_SignUp;\r\n\r\nimport javax.mail.Message;\r\nimport javax.mail.MessagingException;\r\nimport javax.mail.Session;\r\nimport javax.mail.Transport;\r\nimport javax.mail.internet.*;\r\nimport java.security.SecureRandom;\r\nimport java.util.Properties;\r\n\r\npublic class Email {\r\n    Session newSession = null;\r\n    MimeMessage mimeMessage;\r\n    private String OTP;\r\n    public String getOTP() {\r\n        return OTP;\r\n    }\r\n\r\n    public void sendEmail() throws MessagingException {\r\n        String fromUser = \"exceloneotp@gmail.com\";\r\n        String fromUserPassword = \"qkgm elma bfep hhnw\";\r\n        String emailHost = \"smtp.gmail.com\";\r\n        Transport transport = newSession.getTransport(\"smtp\");\r\n        transport.connect(emailHost,fromUser, fromUserPassword);\r\n        transport.sendMessage(mimeMessage, mimeMessage.getAllRecipients());\r\n        transport.close();\r\n        System.out.println(\"Email sent successfully!\");\r\n    }\r\n    public MimeMessage draftEmail(String emailRecipient) throws MessagingException {\r\n        String emailSubject = \"ExcelOne OTP\";\r\n        OTP = generateOTP();\r\n        String emailBody = \"<b>ExcelOne Authorization</b> <br><br>Thank you for signing up with us! Your One-Time Password is <b>\" + OTP + \"</b>.\";\r\n        mimeMessage = new MimeMessage(newSession);\r\n        mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(emailRecipient));\r\n        mimeMessage.setSubject(emailSubject);\r\n        MimeBodyPart mimeBodyPart = new MimeBodyPart();\r\n        mimeBodyPart.setContent(emailBody, \"text/html\");\r\n        MimeMultipart multipart = new MimeMultipart();\r\n        multipart.addBodyPart(mimeBodyPart);\r\n        mimeMessage.setContent(multipart);\r\n        return mimeMessage;\r\n    }\r\n    public void setupServer(){\r\n        Properties properties = System.getProperties();\r\n        properties.put(\"mail.smtp.port\", \"587\");\r\n        properties.put(\"mail.smtp.auth\", \"true\");\r\n        properties.put(\"mail.smtp.starttls.enable\", \"true\");\r\n        //properties.setProperty(\"javax.net.debug\", \"ssl,handshake\");\r\n        newSession = Session.getDefaultInstance(properties,null);\r\n    }\r\n    public String generateOTP(){\r\n        SecureRandom random = new SecureRandom();\r\n        int otp = 100000 + random.nextInt(900000);\r\n        return String.valueOf(otp);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/Login_SignUp/Email.java b/src/main/java/com/example/Login_SignUp/Email.java
+--- a/src/main/java/com/example/Login_SignUp/Email.java	(revision 57bdaed2ec494ecdcbba78fffb8c9999669a13cb)
++++ b/src/main/java/com/example/Login_SignUp/Email.java	(date 1733649694437)
+@@ -1,56 +1,56 @@
+-package com.example.Login_SignUp;
+-
+-import javax.mail.Message;
+-import javax.mail.MessagingException;
+-import javax.mail.Session;
+-import javax.mail.Transport;
+-import javax.mail.internet.*;
+-import java.security.SecureRandom;
+-import java.util.Properties;
+-
+-public class Email {
+-    Session newSession = null;
+-    MimeMessage mimeMessage;
+-    private String OTP;
+-    public String getOTP() {
+-        return OTP;
+-    }
+-
+-    public void sendEmail() throws MessagingException {
+-        String fromUser = "exceloneotp@gmail.com";
+-        String fromUserPassword = "qkgm elma bfep hhnw";
+-        String emailHost = "smtp.gmail.com";
+-        Transport transport = newSession.getTransport("smtp");
+-        transport.connect(emailHost,fromUser, fromUserPassword);
+-        transport.sendMessage(mimeMessage, mimeMessage.getAllRecipients());
+-        transport.close();
+-        System.out.println("Email sent successfully!");
+-    }
+-    public MimeMessage draftEmail(String emailRecipient) throws MessagingException {
+-        String emailSubject = "ExcelOne OTP";
+-        OTP = generateOTP();
+-        String emailBody = "<b>ExcelOne Authorization</b> <br><br>Thank you for signing up with us! Your One-Time Password is <b>" + OTP + "</b>.";
+-        mimeMessage = new MimeMessage(newSession);
+-        mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(emailRecipient));
+-        mimeMessage.setSubject(emailSubject);
+-        MimeBodyPart mimeBodyPart = new MimeBodyPart();
+-        mimeBodyPart.setContent(emailBody, "text/html");
+-        MimeMultipart multipart = new MimeMultipart();
+-        multipart.addBodyPart(mimeBodyPart);
+-        mimeMessage.setContent(multipart);
+-        return mimeMessage;
+-    }
+-    public void setupServer(){
+-        Properties properties = System.getProperties();
+-        properties.put("mail.smtp.port", "587");
+-        properties.put("mail.smtp.auth", "true");
+-        properties.put("mail.smtp.starttls.enable", "true");
+-        //properties.setProperty("javax.net.debug", "ssl,handshake");
+-        newSession = Session.getDefaultInstance(properties,null);
+-    }
+-    public String generateOTP(){
+-        SecureRandom random = new SecureRandom();
+-        int otp = 100000 + random.nextInt(900000);
+-        return String.valueOf(otp);
+-    }
+-}
++        package com.example.Login_SignUp;
++        
++        import javax.mail.Message;
++        import javax.mail.MessagingException;
++        import javax.mail.Session;
++        import javax.mail.Transport;
++        import javax.mail.internet.*;
++        import java.security.SecureRandom;
++        import java.util.Properties;
++        
++        public class Email {
++            Session newSession = null;
++            MimeMessage mimeMessage;
++            private String OTP;
++            public String getOTP() {
++                return OTP;
++            }
++        
++            public void sendEmail() throws MessagingException {
++                String fromUser = "exceloneotp@gmail.com";
++                String fromUserPassword = "qkgm elma bfep hhnw";
++                String emailHost = "smtp.gmail.com";
++                Transport transport = newSession.getTransport("smtp");
++                transport.connect(emailHost,fromUser, fromUserPassword);
++                transport.sendMessage(mimeMessage, mimeMessage.getAllRecipients());
++                transport.close();
++                System.out.println("Email sent successfully!");
++            }
++            public MimeMessage draftEmail(String emailRecipient) throws MessagingException {
++                String emailSubject = "ExcelOne OTP";
++                OTP = generateOTP();
++                String emailBody = "<b>ExcelOne Authorization</b> <br><br>Thank you for signing up with us! Your One-Time Password is <b>" + OTP + "</b>.";
++                mimeMessage = new MimeMessage(newSession);
++                mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(emailRecipient));
++                mimeMessage.setSubject(emailSubject);
++                MimeBodyPart mimeBodyPart = new MimeBodyPart();
++                mimeBodyPart.setContent(emailBody, "text/html");
++                MimeMultipart multipart = new MimeMultipart();
++                multipart.addBodyPart(mimeBodyPart);
++                mimeMessage.setContent(multipart);
++                return mimeMessage;
++            }
++            public void setupServer(){
++                Properties properties = System.getProperties();
++                properties.put("mail.smtp.port", "587");
++                properties.put("mail.smtp.auth", "true");
++                properties.put("mail.smtp.starttls.enable", "true");
++                //properties.setProperty("javax.net.debug", "ssl,handshake");
++                newSession = Session.getDefaultInstance(properties,null);
++            }
++            public String generateOTP(){
++                SecureRandom random = new SecureRandom();
++                int otp = 100000 + random.nextInt(900000);
++                return String.valueOf(otp);
++            }
++        }
