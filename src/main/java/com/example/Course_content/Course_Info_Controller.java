@@ -1,15 +1,13 @@
 package com.example.Course_content;
 
 import com.example.Account.Account;
-import com.example.Dashboard.StudentDashboardController;
 import com.example.Database.CoursesDatabase;
 import com.example.Database.EnrollmentDatabase;
 import com.example.Dashboard.StudentDashboard;
-import com.example.Database.CoursesDatabase;
 import com.example.Database.InstructorDatabase;
 import com.example.Database.InstructorsInfoDatabase;
 import com.example.Login_SignUp.LoggedInUser;
-import com.mysql.cj.log.Log;
+import com.example.PayMongoIntegration.PayMongoIntegration;
 import javafx.fxml.FXML;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
@@ -24,6 +22,7 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -86,10 +85,14 @@ public class Course_Info_Controller {
         EnrollmentDatabase enrollmentDB = new EnrollmentDatabase();
         CoursesDatabase courseDB = new CoursesDatabase();
         try{
-            enrollmentDB.enrollLearner(loggedInUser.getID(), courseDB.getCID(title));
+            //temporary
+//            enrollmentDB.enrollLearner(loggedInUser.getID(), courseDB.getCID(title));
+            if(initiatePayment()) enrollmentDB.enrollLearner(loggedInUser.getID(), courseDB.getCID(title));;
+
         }catch(Exception e){
             System.out.println("Error with enrollment" + e.getMessage());
         }
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Enrollment Successful");
         alert.setHeaderText("Enrollment Success!");
@@ -97,6 +100,29 @@ public class Course_Info_Controller {
         alert.showAndWait();
         enrollBtnDisable();
     }
+
+    private boolean initiatePayment() throws IOException {
+        int amount = 10000;
+        String currency = "PHP";
+
+        try {
+            PayMongoIntegration paymentIntegration = new PayMongoIntegration();
+            String paymentIntentId = paymentIntegration.createPaymentIntent(amount, currency);
+            paymentIntegration.createGCashSource(paymentIntentId, amount, currency);
+
+
+        } catch (IOException e) {
+            System.out.println("Payment failed: " + e.getMessage());
+            // Optionally, show an alert for payment failure
+            Alert paymentAlert = new Alert(Alert.AlertType.ERROR);
+            paymentAlert.setTitle("Payment Failed");
+            paymentAlert.setHeaderText("Payment Unsuccessful");
+            paymentAlert.setContentText("Something went wrong with the payment. Please try again.");
+            paymentAlert.showAndWait();
+        }
+        return false;
+    }
+
     public void checkIfEnrolled(){
         Account loggedInUser = LoggedInUser.getInstance().getLoggedInAccount();
         EnrollmentDatabase enrollmentDatabase = new EnrollmentDatabase();

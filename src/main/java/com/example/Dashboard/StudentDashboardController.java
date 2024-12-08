@@ -431,11 +431,11 @@ public class StudentDashboardController {
         dashboardBtn.setOnAction(actionEvent -> setDashboardPanelVisible());
         myCoursesBtn.setOnAction(actionEvent -> {
             setMyCoursesPanelVisible();
-            createBrowseCourses(courses);
+            createMyCourses(coursesEnrolled);
         });
         browseBtn.setOnAction(actionEvent -> {
             setbrowseCoursesPanelVisible();
-            createMyCourses(coursesEnrolled);
+            createBrowseCourses(courses);
         });
         meetingsBtn.setOnAction(actionEvent -> {
             setMeetingsPanelVisible();
