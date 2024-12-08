@@ -372,16 +372,14 @@ public class StudentDashboardController {
 
 
         if (currentTime.isAfter(meetingStartTime) && currentTime.isBefore(meetingEndTime)) {
-            videoCallBtn.setDisable(true);
-            videoCallBtn.setText("Wait for Schedule");
-        } else if(teach.startMeeting()){
-            System.out.println(meeting.getCourseTitle());
             videoCallBtn.setDisable(false);
             videoCallBtn.setText("Join Video Call");
+
         }else{
             System.out.println(meeting.getCourseTitle());
             videoCallBtn.setDisable(true);
-            videoCallBtn.setText("Join Video Call");
+            videoCallBtn.setText("Wait for Schedule");
+
         }
     }
     private void toggleVideoCallButton() {
