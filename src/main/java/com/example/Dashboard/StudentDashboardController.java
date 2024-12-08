@@ -5,6 +5,7 @@ import com.example.Database.*;
 import com.example.Course_content.Course_Info;
 import com.example.Course_content.Course_Info_Controller;
 import com.example.Login_SignUp.LoggedInUser;
+import com.example.Login_SignUp.LoginPageApplication;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -22,7 +23,9 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 
 public class StudentDashboardController {
@@ -75,6 +78,7 @@ public class StudentDashboardController {
     @FXML
     private ImageView filterBtn;
     @FXML
+    private Button logoutBtn;
     private int gridCtr = 0;
     private int row = 0;
     private final double rowHeight = 220.0;
@@ -105,8 +109,10 @@ public class StudentDashboardController {
     private void createBrowseCourses(int[] courses) {
         gridCtr = 0;
         row = 0;
+        System.out.println(Arrays.toString(courses));
         //i is course ID
         for(int i : courses) {
+
             String id = new CoursesDatabase().getCourseInstructorID(Integer.toString(i));
             Pane outerPane = new Pane();
             outerPane.setPrefSize(columnWidth, rowHeight);
@@ -408,17 +414,40 @@ public class StudentDashboardController {
         dashboardBtn.setOnAction(actionEvent -> setDashboardPanelVisible());
         myCoursesBtn.setOnAction(actionEvent -> {
             setMyCoursesPanelVisible();
-            createBrowseCourses(courses);
+            createMyCourses(coursesEnrolled);
         });
         browseBtn.setOnAction(actionEvent -> {
             setbrowseCoursesPanelVisible();
-            createMyCourses(coursesEnrolled);
+            createBrowseCourses(courses);
+        });
+        logoutBtn.setOnAction(actionEvent -> {
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to log out?", ButtonType.YES, ButtonType.NO);
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent() && result.get() == ButtonType.YES) {
+                LoggedInUser l = LoggedInUser.getInstance();
+                l.clearLoggedInAccount();
+                goToLogin();
+            }
+
         });
         meetingsBtn.setOnAction(actionEvent -> {
             setMeetingsPanelVisible();
             videoCallBtn.setDisable(true);
             meetingDatabase.deleteExpiredMeetings();
         });
+    }
+
+    private void goToLogin() {
+        Stage courseInfoStage = new Stage();
+        LoginPageApplication loginPageApplication = new LoginPageApplication();
+        try {
+            loginPageApplication.start(courseInfoStage);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        courseInfoStage = (Stage) studentDashBoardStackPane.getScene().getWindow();
+        courseInfoStage.close();
     }
 }
 

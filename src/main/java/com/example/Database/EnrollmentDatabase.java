@@ -111,9 +111,9 @@ public  class EnrollmentDatabase extends UtilityDatabase{
 
     public List<EnrolledLearner> getEnrolledLearners(int courseId) {
         List<EnrolledLearner> enrolledLearners = new ArrayList<>();
-        String query = "SELECT learners.FirstName, learners.LastName, learners.Email, enrollment.EnrollmentDate " +
+        String query = "SELECT learners.ID, learners.FirstName, learners.LastName, learners.Email, enrollment.EnrollmentDate " +
                 "FROM enrollment " +
-                "JOIN learners ON enrollment.LearnerID = learners.LearnerID " +
+                "JOIN learners ON enrollment.LearnerID = learners.ID " +
                 "WHERE enrollment.CourseID = ?";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -121,11 +121,12 @@ public  class EnrollmentDatabase extends UtilityDatabase{
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
+                int ID = resultSet.getInt("ID");
                 String firstName = resultSet.getString("FirstName");
                 String lastName = resultSet.getString("LastName");
                 String email = resultSet.getString("Email");
                 LocalDateTime enrollmentDate = resultSet.getTimestamp("EnrollmentDate").toLocalDateTime();
-                Learner learner = new Learner(firstName, lastName, email);
+                Learner learner = new Learner(ID, firstName, lastName, email);
 
                 enrolledLearners.add(new EnrolledLearner(learner, enrollmentDate));
             }
@@ -136,10 +137,14 @@ public  class EnrollmentDatabase extends UtilityDatabase{
         return enrolledLearners;
     }
 
-    public static void main(String[] args) {
-        EnrollmentDatabase enrollmentDatabase = new EnrollmentDatabase();
-        enrollmentDatabase.getEnrolledLearners(1);
-    }
+//    public static void main(String[] args) {
+//        EnrollmentDatabase enrollmentDatabase = new EnrollmentDatabase();
+//        List<EnrolledLearner> enrolledLearners = enrollmentDatabase.getEnrolledLearners(2);
+//        for(EnrolledLearner e : enrolledLearners){
+//            System.out.println(e.getLearner().getFirstName());
+//        }
+//
+//    }
 
 }
 

@@ -24,4 +24,8 @@ public class LoggedInUser {
     public void setLoggedInAccount(Account account) {
         this.account = account;
     }
+    public void clearLoggedInAccount() {
+        account = null;
+        instance = null;
+    }
 }

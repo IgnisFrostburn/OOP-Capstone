@@ -18,7 +18,7 @@ public class EnrolledLearnerCell {
     @FXML
     private Label learnerName;
 
-    public void setInfo(EnrolledLearner enrolledLearner, LocalDateTime localDateTime) {
+    public void setInfo(EnrolledLearner enrolledLearner, String localDateTime) {
         dateEnrolled.setText(String.valueOf(localDateTime));
         learnerEmail.setText(enrolledLearner.getLearner().getEmail());
         learnerName.setText(enrolledLearner.getLearner().getFirstName() + " " + enrolledLearner.getLearner().getLastName());

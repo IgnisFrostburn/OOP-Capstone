@@ -2,7 +2,11 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,12 +16,50 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <StackPane fx:id="instructorDashboardStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Dashboard.TeacherDashboardController">
     <children>
-          <AnchorPane fx:id="dashboardPanel" prefHeight="256.0" prefWidth="732.0" style="-fx-background-color: #8FC7FF;" visible="false">
+      <AnchorPane fx:id="meetingsPanel" prefHeight="720.0" prefWidth="1080.0" visible="false">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/bg.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="425.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upcoming">
+               <font>
+                  <Font name="System Bold" size="47.0" />
+               </font>
+            </Text>
+            <Text fill="DODGERBLUE" layoutX="653.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meetings">
+               <font>
+                  <Font name="System Bold" size="47.0" />
+               </font>
+            </Text>
+            <Button fx:id="videoCallBtn" layoutX="304.0" layoutY="602.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="226.0" style="-fx-background-color: #8FC7FF;" text="Start Video Call" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <AnchorPane layoutX="302.0" layoutY="103.0" prefHeight="467.0" prefWidth="732.0" style="-fx-background-color: #8FC7FF;">
+               <children>
+                  <Text fill="DODGERBLUE" layoutX="34.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upcoming Meetings" wrappingWidth="300.84814453125">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Text>
+                  <ListView fx:id="meetingsListView" layoutX="25.0" layoutY="60.0" prefHeight="380.0" prefWidth="676.0" stylesheets="@styles.css" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+          <AnchorPane fx:id="dashboardPanel" prefHeight="256.0" prefWidth="732.0" style="-fx-background-color: #8FC7FF;">
               <children>
                 <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -79,17 +121,17 @@
             </AnchorPane>
             <AnchorPane layoutX="294.0" layoutY="411.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="739.0" style="-fx-background-color: #8FC7FF;">
                <children>
-                  <Text fx:id="dashboardFirstName" fill="WHITE" layoutX="235.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FirstName" wrappingWidth="463.0">
+                  <Text fx:id="dashboardFirstName" fill="WHITE" layoutX="235.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FirstName" wrappingWidth="463.0">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Text>
-                  <Text fx:id="dashboardUniversity" fill="#ffffffb5" layoutX="235.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="univ" wrappingWidth="269.0000305175781">
+                  <Text fx:id="dashboardUniversity" fill="#ffffffb5" layoutX="235.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="univ" wrappingWidth="478.0000305175781">
                      <font>
                         <Font name="System Italic" size="18.0" />
                      </font>
                   </Text>
-                  <Text fx:id="dashboardEmail" fill="#ffffffb5" layoutX="235.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="406.56982421875">
+                  <Text fx:id="dashboardEmail" fill="#ffffffb5" layoutX="235.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="492.56982421875">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -99,7 +141,7 @@
                         <Image url="@../../../images/noehpp.jpg" />
                      </image>
                   </ImageView>
-                  <Text fx:id="dashboardLastName" fill="WHITE" layoutX="235.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LastName" wrappingWidth="435.0">
+                  <Text fx:id="dashboardLastName" fill="WHITE" layoutX="235.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LastName" wrappingWidth="435.0">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -108,7 +150,7 @@
             </AnchorPane>
               </children>
           </AnchorPane>
-      <AnchorPane fx:id="myCoursesPanel" prefHeight="720.0" prefWidth="1080.0">
+      <AnchorPane fx:id="myCoursesPanel" prefHeight="720.0" prefWidth="1080.0" visible="false">
          <children>
             <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -125,11 +167,11 @@
                   <Font name="System Bold" size="47.0" />
                </font>
             </Text>
-            <ScrollPane fx:id="browseScrollPane" hbarPolicy="NEVER" layoutX="271.0" layoutY="79.0" prefHeight="621.0" prefWidth="798.0" style="-fx-background-image: #8FC7FF;">
+            <ScrollPane fx:id="browseScrollPane" hbarPolicy="NEVER" layoutX="271.0" layoutY="79.0" prefHeight="621.0" prefWidth="798.0" style="-fx-background-color: #8FC7FF;">
                <content>
-                  <Pane fx:id="myCourseWrapperPane" prefHeight="621.0" prefWidth="797.0" style="-fx-background-color: #8FC7FF;">
+                  <Pane fx:id="myCourseWrapperPane" prefHeight="621.0" prefWidth="797.0">
                      <children>
-                        <GridPane fx:id="myCoursesGridPane" layoutX="4.0" layoutY="2.0" prefHeight="581.0" prefWidth="782.0" style="-fx-background-image: #8FC7FF;">
+                        <GridPane fx:id="myCoursesGridPane" layoutX="4.0" layoutY="2.0" prefHeight="581.0" prefWidth="782.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="NEVER" minWidth="390.0" prefWidth="390.0" />
                               <ColumnConstraints hgrow="NEVER" minWidth="390.0" prefWidth="390.0" />
@@ -216,7 +258,174 @@
                   <Image url="@../../../images/meetingIcon.png" />
                </image>
             </ImageView>
+            <Button fx:id="logoutBtn" layoutX="17.0" layoutY="547.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="226.0" style="-fx-background-color: #8FC7FF;" text="Logout" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="30.0" layoutX="33.0" layoutY="557.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/logoutIcon.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
+      <AnchorPane id="course" fx:id="courseInfoAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@teacherStyles.css" visible="false">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/bg.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="-28.0" layoutY="-58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/logowhitenotext.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="375.0" layoutY="11.0" prefHeight="60.0" prefWidth="135.0" text="Course ">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="497.0" layoutY="11.0" prefHeight="60.0" prefWidth="220.0" text="Information" textFill="#0088cd">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="45.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="389.0" style="-fx-background-color: #F0F8FF; -fx-border-color: dodgerblue; -fx-border-style: solid; -fx-border-radius: 0; -fx-border-width: 1px;">
+               <children>
+                  <Label fx:id="courseTitle" layoutX="17.0" layoutY="10.0" maxWidth="900.0" prefHeight="60.0" prefWidth="544.0" text="Data Structures and Algorithm">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fc7ff" height="38.0" layoutX="40.0" layoutY="149.0" stroke="DODGERBLUE" strokeType="INSIDE" strokeWidth="2.0" width="135.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fc7ff" height="38.0" layoutX="211.0" layoutY="149.0" stroke="DODGERBLUE" strokeType="INSIDE" strokeWidth="2.0" width="135.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fc7ff" height="38.0" layoutX="125.0" layoutY="99.0" stroke="DODGERBLUE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="2.0" width="135.0" />
+                  <Label fx:id="cat3Label" layoutX="219.0" layoutY="160.0" prefWidth="120.0" style="-fx-alignment: center;" text="Electrical Engineering" textAlignment="CENTER" textFill="DODGERBLUE" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="cat2Label" layoutX="133.0" layoutY="110.0" prefWidth="120.0" style="-fx-alignment: center;" text="Civil Engineering" textAlignment="CENTER" textFill="DODGERBLUE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="cat1Label" layoutX="46.0" layoutY="159.0" prefWidth="120.0" style="-fx-alignment: center;" text="Computer Science" textAlignment="CENTER" textFill="DODGERBLUE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="instructorName" layoutX="17.0" layoutY="55.0" maxWidth="1500.0" prefHeight="21.0" prefWidth="183.0" text="Karol Vincent Bebedor" textFill="#2197ff9a">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="461.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="576.0" style="-fx-background-color: #F0F8FF; -fx-border-color: dodgerblue; -fx-border-style: solid; -fx-border-radius: 0; -fx-border-width: 1px;">
+               <children>
+                  <Label layoutX="34.0" layoutY="13.0" maxWidth="900.0" prefHeight="38.0" prefWidth="83.0" text="Enrolled ">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="110.0" layoutY="13.0" maxWidth="900.0" prefHeight="38.0" prefWidth="83.0" text="Learners" textFill="DODGERBLUE">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="enrolledLearnersListView" layoutX="33.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="512.0" style="-fx-padding: 0;" />
+                  <Button fx:id="setMeetingBtn" layoutX="346.0" layoutY="564.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="36.0" prefWidth="202.0" style="-fx-background-color: #8FC7FF;" text="Set Meeting Schedule" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="45.0" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="389.0" style="-fx-background-color: #F0F8FF; -fx-border-color: dodgerblue; -fx-border-style: solid; -fx-border-radius: 0; -fx-border-width: 1px;">
+               <children>
+                  <Label layoutX="23.0" layoutY="10.0" maxWidth="900.0" prefHeight="38.0" prefWidth="83.0" text="Course">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="90.0" layoutY="10.0" maxWidth="900.0" prefHeight="38.0" prefWidth="137.0" text="Description" textFill="DODGERBLUE">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="shortDesc" layoutX="23.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="JUSTIFY" wrappingWidth="348.13671875" />
+               </children></AnchorPane>
+            <Button fx:id="backBtn" layoutX="45.0" layoutY="643.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="36.0" prefWidth="384.0" style="-fx-background-color: #8FC7FF;" text="Back to Previous Page" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <AnchorPane fx:id="setScheduleModal" prefHeight="720.0" prefWidth="1080.0" visible="false">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000006b" height="720.0" stroke="BLACK" strokeType="INSIDE" width="1080.0" />
+                  <AnchorPane layoutX="354.0" layoutY="215.0" prefHeight="263.0" prefWidth="359.0" style="-fx-background-color: #8FC7FF;">
+                     <children>
+                        <ImageView fitHeight="263.0" fitWidth="359.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/setSchedulePopUp.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="20.0" layoutY="12.0" prefHeight="39.0" prefWidth="38.0" text="Set">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="13.0" prefHeight="39.0" prefWidth="114.0" text="Schedule" textFill="DODGERBLUE">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="datePicker" layoutX="83.0" layoutY="62.0" prefHeight="23.0" prefWidth="188.0" promptText="Select Schedule Date" />
+                        <Label layoutX="41.0" layoutY="43.0" prefHeight="19.0" prefWidth="108.0" text="Choose Date:">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label layoutX="41.0" layoutY="87.0" prefHeight="19.0" prefWidth="149.0" text="Choose Start Time:">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="startHourSpinner" editable="true" layoutX="83.0" layoutY="105.0" prefHeight="25.0" prefWidth="84.0" />
+                        <Spinner fx:id="startMinuteSpinner" editable="true" layoutX="189.0" layoutY="105.0" prefHeight="25.0" prefWidth="83.0" />
+                        <Button fx:id="submitScheduleBtn" layoutX="76.0" layoutY="206.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: #8FC7FF; -fx-border-radius: 5px;" text="Submit">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="setScheduleBackbtn" layoutX="181.0" layoutY="206.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: #8FC7FF; -fx-border-radius: 5px;" text="Back">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="41.0" layoutY="132.0" prefHeight="19.0" prefWidth="149.0" text="Choose End Time:">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="endHourSpinner" editable="true" layoutX="83.0" layoutY="171.0" prefHeight="25.0" prefWidth="84.0" />
+                        <Spinner fx:id="endMinuteSpinner" editable="true" layoutX="188.0" layoutY="171.0" prefHeight="25.0" prefWidth="84.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
     </children>
 </StackPane>

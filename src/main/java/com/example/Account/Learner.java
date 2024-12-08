@@ -8,7 +8,8 @@ public class Learner extends Account{
     public Learner() {
     }
 
-    public Learner(String fn, String ln, String email){
+    public Learner(int ID, String fn, String ln, String email){
+        this.ID = ID;
         this.email = email;
         firstName = fn;
         lastName = ln;
