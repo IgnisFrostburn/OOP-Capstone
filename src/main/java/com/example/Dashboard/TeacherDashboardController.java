@@ -3,15 +3,15 @@ package com.example.Dashboard;
 import com.example.Account.Account;
 import com.example.Course_content.Course_Info;
 import com.example.Course_content.Course_Info_Controller;
-import com.example.Database.CoursesDatabase;
-import com.example.Database.EnrollmentDatabase;
-import com.example.Database.InstructorDatabase;
-import com.example.Database.MeetingDatabase;
+import com.example.Database.*;
 import com.example.Login_SignUp.LoggedInUser;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -21,48 +21,83 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
 import java.sql.SQLException;
+import java.util.List;
 
 
 public class TeacherDashboardController {
     @FXML
-    private StackPane instructorDashboardStackPane;
-    @FXML
     private Button addCoursesBtn;
+
     @FXML
     private Button addCredentialsBtn;
-    @FXML
-    private Text coursesOfferedCTR;
-    @FXML
-    private Button dashboardBtn;
-    @FXML
-    private Text dashboardEmail;
-    @FXML
-    private Text dashboardFirstName;
-    @FXML
-    private Text dashboardLastName;
-    @FXML
-    private AnchorPane dashboardPanel;
-    @FXML
-    private ImageView dashboardProfilePicture;
-    @FXML
-    private Text dashboardUniversity;
-    @FXML
-    private AnchorPane interfacePane;
-    @FXML
-    private Text meetingsCTR;
+
     @FXML
     private ScrollPane browseScrollPane;
+
+    @FXML
+    private Text coursesOfferedCTR;
+
+    @FXML
+    private Button dashboardBtn;
+
+    @FXML
+    private Text dashboardEmail;
+
+    @FXML
+    private Text dashboardFirstName;
+
+    @FXML
+    private Text dashboardLastName;
+
+    @FXML
+    private AnchorPane dashboardPanel;
+
+    @FXML
+    private ImageView dashboardProfilePicture;
+
+    @FXML
+    private Text dashboardUniversity;
+
+    @FXML
+    private StackPane instructorDashboardStackPane;
+
+    @FXML
+    private AnchorPane interfacePane;
+
     @FXML
     private Button meetingsBtn;
+
+    @FXML
+    private Text meetingsCTR;
+
+    @FXML
+    private ListView<Meeting> meetingsListView;
+
+    @FXML
+    private AnchorPane meetingsPanel;
+
+    @FXML
+    private Text meetingsTodayCTR;
+
     @FXML
     private Pane myCourseWrapperPane;
+
     @FXML
     private Button myCoursesBtn;
+
     @FXML
     private GridPane myCoursesGridPane;
+
     @FXML
     private AnchorPane myCoursesPanel;
+
+    @FXML
+    private Button videoCallBtn;
+
 
 
     //mga variables
@@ -80,6 +115,11 @@ public class TeacherDashboardController {
     public void setMyCoursesPanelVisible(){
         dashboardPanel.setVisible(false);
         myCoursesPanel.setVisible(true);
+    }
+    public void setMeetingsPanelVisible(){
+        meetingsPanel.setVisible(true);
+        dashboardPanel.setVisible(false);
+        myCoursesPanel.setVisible(false);
     }
 
     private void createMyCourses(int[] courses) {
@@ -184,6 +224,45 @@ public class TeacherDashboardController {
             }
         }
     }
+    protected boolean startMeeting() {
+        if (videoCallBtn != null) {
+            videoCallBtn.setDisable(false);
+            videoCallBtn.setText("Start Video Call");
+            return true;
+        }
+        return false;
+    }
+
+
+    public void setMeetings(int teacherID) {
+        MeetingDatabase meetingDatabase = new MeetingDatabase();
+        List<Meeting> meetings = meetingDatabase.getUpcomingMeetings(teacherID);
+        ObservableList<Meeting> todayMeetings = FXCollections.observableArrayList(meetings);
+
+        meetingsListView.setCellFactory(param -> new MeetingCellFactory());
+
+        meetingsListView.setItems(todayMeetings);
+
+        toggleVideoCallButton();
+    }
+    private void toggleVideoCallButton() {
+        videoCallBtn.setDisable(meetingsListView.getItems().isEmpty());
+    }
+
+    private String ip = "https://192.168.1.14:8181/";
+
+    private String getIP(){
+        return this.ip;
+    }
+
+    private void openWebPage() {
+        try {
+            Desktop.getDesktop().browse(new URI(getIP()));
+        } catch (IOException | java.net.URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void setUserInfo(){
         dashboardLastName.setText(loggedInUser.getLastName());
         dashboardFirstName.setText(loggedInUser.getFirstName());
@@ -197,6 +276,7 @@ public class TeacherDashboardController {
     public void initialize() {
         setUserInfo();
         setDashboardPanelVisible();
+        setMeetings(loggedInUser.getID());
 
 
         //actionEvents
@@ -226,6 +306,18 @@ public class TeacherDashboardController {
             }
             addCoursesStage = (Stage) instructorDashboardStackPane.getScene().getWindow();
             addCoursesStage.close();
+        });
+        meetingsListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                startMeeting();
+            }
+        });
+        videoCallBtn.setOnAction(event -> openWebPage());
+
+        meetingsBtn.setOnAction(actionEvent -> {
+            setMeetingsPanelVisible();
+            videoCallBtn.setDisable(true);
+            meetingDatabase.deleteExpiredMeetings();
         });
     }
 }
