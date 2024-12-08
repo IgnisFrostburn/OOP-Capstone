@@ -29,6 +29,7 @@ import javafx.stage.Stage;
 
 import javax.mail.MessagingException;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.sql.SQLException;
@@ -180,13 +181,25 @@ public class TeacherDashboardController {
         System.out.println("yes");
         System.out.println(course.getID() + "" + course.getInstructorID());
     }
-    private void setUserInfo(){
+    public void setDashboardProfile(File file) {
+        Image image = new Image(file.toURI().toString());
+        double scale = Math.max(150 / image.getWidth(), 150 / image.getHeight());
+        double viewportWidth = 150 / scale;
+        double viewportHeight = 150 / scale;
+        double viewportX = (image.getWidth() - viewportWidth) / 2;
+        double viewportY = (image.getHeight() - viewportHeight) / 2;
+        dashboardProfilePicture.setViewport(new Rectangle2D(viewportX, viewportY, viewportWidth, viewportHeight));
+        dashboardProfilePicture.setImage(image);
+    }
+    private void setUserInfo() throws SQLException {
         dashboardLastName.setText(loggedInUser.getLastName());
         dashboardFirstName.setText(loggedInUser.getFirstName());
         dashboardEmail.setText(loggedInUser.getEmail());
         dashboardUniversity.setText(loggedInUser.getUniversity());
         coursesOfferedCTR.setText(coursesDatabase.getCourseCTR(loggedInUser.getID()));
         meetingsCTR.setText(meetingDatabase.countMeetings(loggedInUser.getID()));
+        File profileImage = InstructorsInfoDatabase.getProfileImage(Integer.toString(loggedInUser.getID()));
+        if(profileImage != null && profileImage.exists()) setDashboardProfile(profileImage);
     }
     private void activateBackBtn(){
         interfacePane.setVisible(true);
@@ -461,7 +474,7 @@ public class TeacherDashboardController {
 
 
 
-    public void initialize() {
+    public void initialize() throws SQLException {
         setUserInfo();
         setDashboardPanelVisible();
         setMeetings(loggedInUser.getID());
