@@ -1,0 +1,147 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d25717de-1212-4a3e-bab7-a9d2bbaf4ffd\" name=\"Changes\" comment=\"&quot;Connected login to dashboard&quot;\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentialsController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentialsController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCredentials.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCredentials.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.AddCourse.executor\": \"Run\",\r\n    \"Application.AddCredentials.executor\": \"Run\",\r\n    \"Application.LoginPageApplication.executor\": \"Run\",\r\n    \"Application.SignUpPage.executor\": \"Run\",\r\n    \"Application.StudentDashboard.executor\": \"Run\",\r\n    \"Application.TeacherDashboard.executor\": \"Run\",\r\n    \"git-widget-placeholder\": \"master\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"LoginPageApplication\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.Login_SignUp.LoginPageApplication\" />\r\n      <module name=\"JavaFXDemo\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task id=\"LOCAL-00001\" summary=\"&quot;Browse Courses&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732770675846</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732770675846</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"&quot;Revised &quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732804441226</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732804441226</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"&quot;Revised &quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732807488442</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732807488442</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"&quot;Connected login to dashboard&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732808778849</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732808778849</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"&quot;Browse Courses&quot;\" />\r\n    <MESSAGE value=\"&quot;Browse Courses Update 1&quot;\" />\r\n    <MESSAGE value=\"&quot;Revised &quot;\" />\r\n    <MESSAGE value=\"&quot;Connected login to dashboard&quot;\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"&quot;Connected login to dashboard&quot;\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3e09f80db566843d8e198225575df0ce83d09c5d)
++++ b/.idea/workspace.xml	(date 1732888474431)
+@@ -5,19 +5,22 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="&quot;Connected login to dashboard&quot;">
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/EnrollmentDatabase.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentialsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCredentialsController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/TeacherDashboardController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCredentials.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/AddCredentials.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/TeacherDashboard.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/DashboardStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/DashboardStudent.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Class" />
++      </list>
++    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -25,17 +28,17 @@
+   <component name="ProjectLevelVcsManager">
+     <ConfirmationsSetting value="2" id="Add" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.AddCourse.executor": "Run",
+-    "Application.AddCredentials.executor": "Run",
+-    "Application.LoginPageApplication.executor": "Run",
+-    "Application.SignUpPage.executor": "Run",
+-    "Application.StudentDashboard.executor": "Run",
+-    "Application.TeacherDashboard.executor": "Run",
+-    "git-widget-placeholder": "master"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.AddCourse.executor&quot;: &quot;Run&quot;,
++    &quot;Application.AddCredentials.executor&quot;: &quot;Run&quot;,
++    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
++    &quot;Application.SignUpPage.executor&quot;: &quot;Run&quot;,
++    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
++    &quot;Application.TeacherDashboard.executor&quot;: &quot;Run&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RunManager">
+     <configuration name="LoginPageApplication" type="Application" factoryName="Application">
+       <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.LoginPageApplication" />
+@@ -80,6 +83,17 @@
+     </task>
+     <option name="localTasksCounter" value="5" />
+     <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="&quot;Browse Courses&quot;" />
+Index: src/main/java/com/example/Database/EnrollmentDatabase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/Database/EnrollmentDatabase.java b/src/main/java/com/example/Database/EnrollmentDatabase.java
+new file mode 100644
+--- /dev/null	(date 1732888352654)
++++ b/src/main/java/com/example/Database/EnrollmentDatabase.java	(date 1732888352654)
+@@ -0,0 +1,52 @@
++package com.example.Database;
++
++import com.example.Login_SignUp.LoggedInUser;
++
++import java.sql.*;
++
++public class EnrollmentDatabase extends DatabaseConnection{
++    String url = "jdbc:mysql://192.168.1.8/excelone";
++    String username = "excelOneAdmin";
++    String password = "secure123";
++    Connection connection;
++
++    public EnrollmentDatabase(){
++        try{
++            connection = DriverManager.getConnection(url, username, password);
++        }catch(SQLException e){
++            System.out.println("smthing wrong with SQL");
++        }
++    }
++    @Override
++    public void insertData() {
++
++    }
++    public int getCourseCtr(int studentID){
++        try{
++            String query = "SELECT COUNT(*) AS EnrolledCTR FROM enrollment WHERE LearnerID = ?";
++            PreparedStatement statement = connection.prepareStatement(query);
++            statement.setString(1, String.valueOf(studentID));
++            ResultSet resultSet = statement.executeQuery();
++
++            if(resultSet.next()){
++                return resultSet.getInt("EnrolledCTR");
++            }
++        } catch (SQLException e) {
++            throw new RuntimeException(e);
++        }
++    }
++
++    @Override
++    public boolean checkEmail(String email) throws SQLException {
++        return false;
++    }
++    @Override
++    public boolean checkPassword(String userPassword, String email) throws SQLException {
++        return false;
++    }
++    @Override
++    public LoggedInUser getUserData(String email) {
++        return null;
++    }
++
++}

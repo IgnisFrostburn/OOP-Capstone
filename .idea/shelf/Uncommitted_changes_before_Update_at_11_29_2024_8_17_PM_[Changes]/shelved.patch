@@ -1,0 +1,155 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d25717de-1212-4a3e-bab7-a9d2bbaf4ffd\" name=\"Changes\" comment=\"&quot;Browse Courses Update 1&quot;\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseConnection.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseConnection.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Database/LearnerDatabase.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Database/LearnerDatabase.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoggedInUser.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoggedInUser.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.AddCourse.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.AddCredentials.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.SignUpPage.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.LoginPageApplication\">\r\n    <configuration type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.Login_SignUp.SignUpPage\" />\r\n      <module name=\"JavaFXDemo\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"LoginPageApplication\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.Login_SignUp.LoginPageApplication\" />\r\n      <module name=\"JavaFXDemo\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.\" />\r\n      <item itemvalue=\"Application.LoginPageApplication\" />\r\n    </list>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task id=\"LOCAL-00001\" summary=\"&quot;Browse Courses&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732770675846</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732770675846</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"&quot;Browse Courses&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732771209682</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732771209682</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"&quot;Browse Courses Update 1&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732792720701</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732792720701</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"&quot;Browse Courses&quot;\" />\r\n    <MESSAGE value=\"&quot;Browse Courses Update 1&quot;\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"&quot;Browse Courses Update 1&quot;\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 93f083f5cc1b90b0e853dad7c634bcdc5695159b)
++++ b/.idea/workspace.xml	(date 1732882436268)
+@@ -4,12 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="&quot;Browse Courses Update 1&quot;">
++    <list default="true" id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="ADDEDD LOGIN FUNCTIONALITIES">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/DatabaseConnection.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/LearnerDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/LearnerDatabase.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoggedInUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoggedInUser.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -20,19 +16,34 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="CurrentFile" />
++  </component>
++  <component name="ProjectColorInfo"><![CDATA[{
++  "associatedIndex": 5
++}]]></component>
++  <component name="ProjectId" id="2pWUuSCTG7vR13nASvUbAIV82oT" />
+   <component name="ProjectLevelVcsManager">
+     <ConfirmationsSetting value="2" id="Add" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Application.AddCourse.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.AddCredentials.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.SignUpPage.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application..executor": "Run",
++    "Application.AddCourse.executor": "Run",
++    "Application.AddCredentials.executor": "Run",
++    "Application.LoginPageApplication.executor": "Run",
++    "Application.SignUpPage.executor": "Run",
++    "Application.StudentDashboard.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "git-widget-placeholder": "master",
++    "kotlin-language-version-configured": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RunManager" selected="Application.LoginPageApplication">
+     <configuration type="Application" factoryName="Application">
+       <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.SignUpPage" />
+@@ -49,10 +60,10 @@
+       </method>
+     </configuration>
+     <list>
+-      <item itemvalue="Application." />
+       <item itemvalue="Application.LoginPageApplication" />
+     </list>
+   </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task id="LOCAL-00001" summary="&quot;Browse Courses&quot;">
+       <option name="closed" value="true" />
+@@ -62,13 +73,13 @@
+       <option name="project" value="LOCAL" />
+       <updated>1732770675846</updated>
+     </task>
+-    <task id="LOCAL-00002" summary="&quot;Browse Courses&quot;">
++    <task id="LOCAL-00002" summary="ADDEDD LOGIN FUNCTIONALITIES">
+       <option name="closed" value="true" />
+-      <created>1732771209682</created>
++      <created>1732807507127</created>
+       <option name="number" value="00002" />
+       <option name="presentableId" value="LOCAL-00002" />
+       <option name="project" value="LOCAL" />
+-      <updated>1732771209682</updated>
++      <updated>1732807507127</updated>
+     </task>
+     <task id="LOCAL-00003" summary="&quot;Browse Courses Update 1&quot;">
+       <option name="closed" value="true" />
+@@ -78,12 +89,20 @@
+       <option name="project" value="LOCAL" />
+       <updated>1732792720701</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="ADDEDD LOGIN FUNCTIONALITIES" />
++      <created>1732881554032</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1732881554032</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="&quot;Browse Courses&quot;" />
+     <MESSAGE value="&quot;Browse Courses Update 1&quot;" />
+-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Browse Courses Update 1&quot;" />
++    <MESSAGE value="ADDEDD LOGIN FUNCTIONALITIES" />
++    <option name="LAST_COMMIT_MESSAGE" value="ADDEDD LOGIN FUNCTIONALITIES" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/com/example/Login_SignUp/LoginPageController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Login_SignUp;\r\n\r\nimport com.example.Dashboard.StudentDashboard;\r\nimport com.example.Database.InstructorDatabase;\r\nimport com.example.Database.LearnerDatabase;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.layout.AnchorPane;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\nimport java.sql.SQLOutput;\r\n\r\n\r\npublic class LoginPageController {\r\n    @FXML\r\n    private AnchorPane loginAnchorPane;\r\n    @FXML\r\n    private Button loginBtn;\r\n    @FXML\r\n    private Button loginLearnerBtn;\r\n    @FXML\r\n    private Button loginInstructorBtn;\r\n    @FXML\r\n    private TextField loginPasswordTF;\r\n    @FXML\r\n    private TextField loginEmailTF;\r\n    @FXML\r\n    private Label loginAccountTypeWarning;\r\n\r\n    Stage stage;\r\n    private boolean isLearner = false;\r\n    private boolean isInstructor = false;\r\n\r\n    private String getLoginEmail() {\r\n        return loginEmailTF.getText();\r\n    }\r\n\r\n    private String getLoginPassword() {\r\n        return loginPasswordTF.getText();\r\n    }\r\n\r\n    protected boolean checkEmail(String email) throws SQLException {\r\n        if (isLearner) {\r\n            LearnerDatabase learnerDatabase = new LearnerDatabase();\r\n            System.out.println(\"EMAIL IS TRUE\");\r\n            return (learnerDatabase.checkEmail(email)) && !isBlankTF(loginEmailTF);\r\n        } else if (isInstructor) {\r\n            InstructorDatabase instructorDatabase = new InstructorDatabase();\r\n            return (instructorDatabase.checkEmail(email) && !isBlankTF(loginEmailTF));\r\n        }\r\n\r\n        return false;\r\n    }\r\n\r\n    protected boolean checkPassword(String password, String email) throws SQLException {\r\n        if (isLearner) {\r\n            LearnerDatabase learnerDatabase = new LearnerDatabase();\r\n            System.out.println(\"PASSWORD IS TRUE\");\r\n            return learnerDatabase.checkPassword(password, email);\r\n        } else if (isInstructor) {\r\n            InstructorDatabase instructorDatabase = new InstructorDatabase();\r\n            return instructorDatabase.checkPassword(password, email);\r\n        }\r\n        return false;\r\n    }\r\n\r\n    protected void setBorderColor(TextField textField, String color) {\r\n        textField.setStyle(\"-fx-border-color: \" + color + \"; -fx-border-width: 2px;\");\r\n    }\r\n\r\n    @FXML\r\n    protected void onSignUpButtonClick(ActionEvent event) {\r\n        Stage signUpStage = new Stage();\r\n        SignUpPage signUpPage = new SignUpPage();\r\n        try {\r\n            signUpPage.start(signUpStage);\r\n        } catch (IOException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n        stage = (Stage) loginAnchorPane.getScene().getWindow();\r\n        stage.close();\r\n    }\r\n\r\n    @FXML\r\n    protected boolean isBlankTF(TextField textField) {\r\n        if (textField.getText().isBlank()) {\r\n            System.out.println(\"red\");\r\n            setBorderColor(textField, \"red\");\r\n            return true;\r\n        } else setBorderColor(textField, \"green\");\r\n        return false;\r\n    }\r\n\r\n    protected void goToStudentDash() {\r\n        Stage studentDashboardStage = new Stage();\r\n        StudentDashboard studentDashboard = new StudentDashboard();\r\n        try {\r\n            studentDashboard.start(studentDashboardStage);\r\n        } catch (IOException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n        stage = (Stage) loginAnchorPane.getScene().getWindow();\r\n        stage.close();\r\n    }\r\n\r\n    @FXML\r\n    protected void textFieldChecker(TextField textField) {\r\n        if (textField.getText().isBlank()) {\r\n            setBorderColor(textField, \"red\");\r\n        } else {\r\n            setBorderColor(textField, \"green\");\r\n        }\r\n    }\r\n\r\n    @FXML\r\n    public void initialize() throws SQLException {\r\n        loginLearnerBtn.setOnAction(e -> {\r\n            isLearner = true;\r\n            isInstructor = false;\r\n            loginLearnerBtn.setStyle(\"-fx-background-color: #77FFDF; -fx-text-fill: white;\");\r\n            loginInstructorBtn.setStyle(\"-fx-background-color: #007bff; -fx-text-fill: white;\");\r\n        });\r\n\r\n        loginInstructorBtn.setOnAction(e -> {\r\n            isInstructor = true;\r\n            isLearner = false;\r\n            loginInstructorBtn.setStyle(\"-fx-background-color: #77FFDF; -fx-text-fill: white;\");\r\n            loginLearnerBtn.setStyle(\"-fx-background-color: #007bff; -fx-text-fill: white;\");\r\n        });\r\n\r\n        loginBtn.setOnAction(actionEvent -> {\r\n            boolean validEmail = false;\r\n            boolean validPassword = false;\r\n            try {\r\n                validEmail = checkEmail(getLoginEmail());\r\n                validPassword = checkPassword(getLoginPassword(), getLoginEmail());\r\n            } catch (SQLException e) {\r\n                System.out.println(\"Invalid Email\");\r\n            }\r\n\r\n            textFieldChecker(loginEmailTF);\r\n            textFieldChecker(loginPasswordTF);\r\n\r\n            if (isLearner) {\r\n                loginAccountTypeWarning.setText(\"\");\r\n                try {\r\n                    if (validEmail && validPassword) {\r\n                        LearnerDatabase learnerDatabase = new LearnerDatabase();\r\n                        LoggedInUser loggedInUser = learnerDatabase.getUserData(getLoginEmail());\r\n\r\n                        if (loggedInUser != null) {\r\n                            System.out.println(loggedInUser.getFirstName());\r\n                            LoggedInUser instance = LoggedInUser.getInstance();\r\n                            instance.setEmail(loggedInUser.getEmail());\r\n                            instance.setFirstName(loggedInUser.getFirstName());\r\n                            instance.setLastName(loggedInUser.getLastName());\r\n                            instance.setUniversity(loggedInUser.getUniversity());\r\n                            instance.setRole(\"Learner\");\r\n                        } else {\r\n                            throw new RuntimeException(\"NO USER FOUND\");\r\n                        }\r\n                    } else {\r\n                        if (!validEmail) setBorderColor(loginEmailTF, \"red\");\r\n                        else setBorderColor(loginEmailTF, \"green\");\r\n                        if (!validPassword) setBorderColor(loginPasswordTF, \"blue\");\r\n                        else setBorderColor(loginPasswordTF, \"green\");\r\n                    }\r\n                } catch (RuntimeException e) {\r\n                    System.out.println(e.getMessage());\r\n                }\r\n            } else if (isInstructor) {\r\n                loginAccountTypeWarning.setText(\"\");\r\n                try {\r\n                    if (validEmail && validPassword) {\r\n                        InstructorDatabase instructorDatabase = new InstructorDatabase();\r\n                        LoggedInUser loggedInUser = instructorDatabase.getUserData(getLoginEmail());\r\n\r\n                        if (loggedInUser != null) {\r\n                            System.out.println(loggedInUser.getFirstName());\r\n                            LoggedInUser instance = LoggedInUser.getInstance();\r\n                            instance.setEmail(loggedInUser.getEmail());\r\n                            instance.setFirstName(loggedInUser.getFirstName());\r\n                            instance.setLastName(loggedInUser.getLastName());\r\n                            instance.setUniversity(loggedInUser.getUniversity());\r\n                            instance.setRole(\"Instructor\");\r\n                        }\r\n                    } else {\r\n                        if (validEmail) setBorderColor(loginEmailTF, \"red\");\r\n                        else setBorderColor(loginEmailTF, \"green\");\r\n                        if (validPassword) setBorderColor(loginPasswordTF, \"red\");\r\n                        else setBorderColor(loginPasswordTF, \"green\");\r\n                    }\r\n                } catch (RuntimeException e) {\r\n                    System.out.println(e.getMessage());\r\n                }\r\n            } else {\r\n                loginAccountTypeWarning.setText(\"Please choose an account type\");\r\n            }\r\n        });\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/Login_SignUp/LoginPageController.java b/src/main/java/com/example/Login_SignUp/LoginPageController.java
+--- a/src/main/java/com/example/Login_SignUp/LoginPageController.java	(revision 93f083f5cc1b90b0e853dad7c634bcdc5695159b)
++++ b/src/main/java/com/example/Login_SignUp/LoginPageController.java	(date 1732808129484)
+@@ -5,6 +5,7 @@
+ import com.example.Database.LearnerDatabase;
+ import javafx.event.ActionEvent;
+ import javafx.fxml.FXML;
++import javafx.fxml.FXMLLoader;
+ import javafx.scene.control.Button;
+ import javafx.scene.control.Label;
+ import javafx.scene.control.TextField;
+@@ -98,6 +99,7 @@
+     }
+ 
+     protected void goToStudentDash() {
++        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Login_SignUp/StudentDashboard.fxml"));
+         Stage studentDashboardStage = new Stage();
+         StudentDashboard studentDashboard = new StudentDashboard();
+         try {
+@@ -162,6 +164,7 @@
+                             instance.setLastName(loggedInUser.getLastName());
+                             instance.setUniversity(loggedInUser.getUniversity());
+                             instance.setRole("Learner");
++                            goToStudentDash();
+                         } else {
+                             throw new RuntimeException("NO USER FOUND");
+                         }

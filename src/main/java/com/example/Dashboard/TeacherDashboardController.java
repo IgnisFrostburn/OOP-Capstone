@@ -350,7 +350,6 @@ public class TeacherDashboardController {
 
         toggleVideoCallButton();
     }
-
     public void setupSpinners(){
         SpinnerValueFactory<Integer> startHourValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 23);
         startHourValueFactory.setWrapAround(true);
