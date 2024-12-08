@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="Teacher dashboard profile pic update">
+    <list default="true" id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="Meeting logic update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Login_SignUp/LoginPageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,15 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733685218326</updated>
     </task>
-    <task id="LOCAL-00004" summary="Teacher dashboard profile pic update">
+    <task id="LOCAL-00004" summary="Meeting logic update">
       <option name="closed" value="true" />
-      <created>1733686485496</created>
+      <created>1733689823795</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1733686485496</updated>
+      <updated>1733689823795</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +184,8 @@
     <MESSAGE value="paymongo integration and stuff" />
     <MESSAGE value="Teacher dashboard profile pic update" />
     <MESSAGE value="merged  noeh and my changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Teacher dashboard profile pic update" />
+    <MESSAGE value="Meeting logic update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Meeting logic update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -192,11 +194,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboard.java</url>
           <line>21</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/Database/CoursesDatabase.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
