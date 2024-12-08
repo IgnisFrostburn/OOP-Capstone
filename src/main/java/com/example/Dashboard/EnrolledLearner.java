@@ -3,20 +3,23 @@ package com.example.Dashboard;
 import com.example.Account.Learner;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class EnrolledLearner {
     private Learner learner;
-    private LocalDateTime enrollmentDate;
+    private String enrollmentDate;
 
-    public EnrolledLearner(Learner l, LocalDateTime e){
+    public EnrolledLearner(Learner l, LocalDateTime e) {
         learner = l;
-        enrollmentDate = e;
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+        this.enrollmentDate = e.format(dateFormat);
     }
 
-    public Learner getLearner(){
+    public Learner getLearner() {
         return learner;
     }
-    public LocalDateTime getEnrollmentDate(){
+
+    public String getEnrollmentDate() {
         return enrollmentDate;
     }
 }

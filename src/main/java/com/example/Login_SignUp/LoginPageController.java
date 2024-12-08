@@ -34,6 +34,8 @@ public class LoginPageController {
     private TextField loginEmailTF;
     @FXML
     private Label loginAccountTypeWarning;
+    @FXML
+    private Button signUpBtn;
 
     Stage stage;
     private boolean isLearner = false;
@@ -109,8 +111,25 @@ public class LoginPageController {
         }
     }
 
+    public void loginButtonEffects(Button button) {
+        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #084581; -fx-text-fill: white;"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-background-color:  #095197; -fx-text-fill: white;"));
+        button.setOnMousePressed(e -> button.setStyle("-fx-background-color: #063562; -fx-text-fill: white;"));
+        button.setOnMouseReleased(e -> button.setStyle("-fx-background-color: #084581; -fx-text-fill: white;"));
+    }
+
+    public void signupButtonEffects(Button button) {
+        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #096ff6; -fx-text-fill: white;"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #1E90FF; -fx-text-fill: white;"));
+        button.setOnMousePressed(e -> button.setStyle("-fx-background-color: #0d2fc7; -fx-text-fill: white;"));
+        button.setOnMouseReleased(e -> button.setStyle("-fx-background-color: #096ff6; -fx-text-fill: white;"));
+    }
+
     @FXML
     public void initialize() throws SQLException {
+        loginButtonEffects(loginBtn);
+        signupButtonEffects(signUpBtn);
+
         loginLearnerBtn.setOnAction(e -> {
             isLearner = true;
             isInstructor = false;

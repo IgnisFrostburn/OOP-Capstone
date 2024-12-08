@@ -13,30 +13,30 @@
             <Image url="@../../../images/cellbg.png" />
          </image>
       </ImageView>
-      <Label fx:id="courseTitle" layoutX="14.0" layoutY="29.0" prefHeight="31.0" prefWidth="295.0" text="Discrete Structures" textFill="DODGERBLUE">
+      <Label fx:id="courseTitle" layoutX="14.0" layoutY="29.0" prefHeight="31.0" prefWidth="295.0" text="Discrete Structures">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Label fx:id="instructorName" layoutX="14.0" layoutY="50.0" prefHeight="31.0" prefWidth="307.0" text="Karol Vincent Bebedor" textFill="DODGERBLUE">
+      <Label fx:id="instructorName" layoutX="14.0" layoutY="50.0" prefHeight="31.0" prefWidth="307.0" text="Karol Vincent Bebedor">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="date" layoutX="480.0" layoutY="34.0" text="December 3, 2024" textFill="DODGERBLUE">
+      <Label fx:id="date" layoutX="480.0" layoutY="34.0" text="December 3, 2024">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="startTime" layoutX="480.0" layoutY="55.0" text="4:00pm" textFill="DODGERBLUE">
+      <Label fx:id="startTime" layoutX="480.0" layoutY="55.0" text="4:00pm">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="endTime" layoutX="566.0" layoutY="55.0" text="4:00pm" textFill="DODGERBLUE">
+      <Label fx:id="endTime" layoutX="566.0" layoutY="55.0" text="4:00pm">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label layoutX="540.0" layoutY="55.0" style="-fx-font-weight: bold;" text="-" textFill="DODGERBLUE">
+      <Label layoutX="540.0" layoutY="55.0" style="-fx-font-weight: bold;" text="-">
          <font>
             <Font size="15.0" />
          </font>

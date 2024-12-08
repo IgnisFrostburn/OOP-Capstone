@@ -54,9 +54,6 @@ public class MeetingDatabase extends UtilityDatabase{
         }
         return null;
     }
-
-
-
     public List<Meeting> getUpcomingMeetings(int learnerId) {
         List<Meeting> meetings = new ArrayList<>();
         String query = "SELECT c.course_title, CONCAT(i.FirstName, ' ', i.LastName) AS instructor_name, " +
@@ -84,14 +81,42 @@ public class MeetingDatabase extends UtilityDatabase{
         }
         return meetings;
     }
+    public List<Meeting> getUpcomingMeetingsforInstructor(int InstructorID) {
+        List<Meeting> meetings = new ArrayList<>();
+        String query = "SELECT c.course_title, m.StartTime, m.EndTime, " +
+                "CONCAT(l.FirstName, ' ', l.LastName) AS student_name " +  // Student name concatenated
+                "FROM meetings m " +
+                "JOIN courses c ON m.CourseID = c.course_ID " +
+                "JOIN enrollment e ON e.CourseID = c.course_ID " +   // Assuming Enrollments table connects students to courses
+                "JOIN learners l ON e.LearnerID = l.ID " +  // Get learner's full name
+                "WHERE m.InstructorID = ? " +   // Filter by InstructorID
+                "ORDER BY m.StartTime ASC";   // Order by meeting time
 
-    public static void main(String[] args) {
-        MeetingDatabase meetingDatabase = new MeetingDatabase();
-        meetingDatabase.scheduleMeeting(3, 1, 3, LocalDateTime.now(), LocalDateTime.now());
-        meetingDatabase.scheduleMeeting(3, 1, 4, LocalDateTime.now(), LocalDateTime.now());
-        meetingDatabase.scheduleMeeting(3, 1, 4, LocalDateTime.now(), LocalDateTime.now());
-        System.out.println("succ");
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, InstructorID);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                meetings.add(new Meeting(
+                        resultSet.getTimestamp("StartTime"),
+                        resultSet.getTimestamp("EndTime"),
+                        resultSet.getString("course_title"),
+                        resultSet.getString("student_name")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return meetings;
     }
+
+//    public static void main(String[] args) {
+//        MeetingDatabase meetingDatabase = new MeetingDatabase();
+//        meetingDatabase.scheduleMeeting(3, 1, 3, LocalDateTime.now(), LocalDateTime.now());
+//        meetingDatabase.scheduleMeeting(3, 1, 4, LocalDateTime.now(), LocalDateTime.now());
+//        meetingDatabase.scheduleMeeting(3, 1, 4, LocalDateTime.now(), LocalDateTime.now());
+//        System.out.println("succ");
+//    }
 
 
 

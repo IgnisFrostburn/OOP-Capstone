@@ -1,0 +1,737 @@
+Index: .idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml	(revision 5ae3262032344e9818fa69658a8f0cf094af278c)
++++ /dev/null	(revision 5ae3262032344e9818fa69658a8f0cf094af278c)
+@@ -1,7 +0,0 @@
+-<changelist name="Uncommitted_changes_before_rebase_[Changes]" date="1732520654221" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Changes]" />
+-  <binary>
+-    <option name="BEFORE_PATH" value="src/main/resources/images/sidePanel.png" />
+-  </binary>
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch	(revision 5ae3262032344e9818fa69658a8f0cf094af278c)
++++ /dev/null	(revision 5ae3262032344e9818fa69658a8f0cf094af278c)
+@@ -1,58 +0,0 @@
+-Index: src/main/resources/com/example/javafxdemo/styles.css
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>#mainScene {\r\n    -fx-background-image: url(\"file:///C:/Users/Josh/IdeaProjects/JavaFXDemo/src/main/resources/images/registerbg.png\");\r\n    -fx-background-size: auto; /* Cover the entire area */\r\n    -fx-background-position: center center; /* Center the image */\r\n    -fx-background-repeat: no-repeat; /* Prevent image from repeating */\r\n}\r\n#registerLogoPane{\r\n    -fx-background-image: url(\"file:///C:/Users/Josh/IdeaProjects/JavaFXDemo/src/main/resources/images/logowhitenotext.png\");\r\n    -fx-background-size: 100% 100%; /* Cover the entire area */\r\n    -fx-background-position: center center; /* Center the image */\r\n    -fx-background-repeat: no-repeat; /* Prevent image from repeating */\r\n}\r\n#formContainerRegisterOne{\r\n    -fx-background-color: rgba(255, 255, 255, 0.54); /* Semi-transparent white background */\r\n    -fx-border-color: rgba(255, 255, 255, 0.3); /* Semi-transparent border */\r\n    -fx-border-width: 1px; /* Border width */\r\n    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 30, 0.0, 0.0, 4.0);\r\n}\r\n\r\n.button{\r\n    -fx-background-color: #77FFDF;\r\n}\r\n#proceedbtn{\r\n    -fx-background-color: #03cfc9\r\n}\r\n.clicked-button {\r\n    -fx-background-color: #1E90FF;\r\n    -fx-text-fill: white;\r\n}\r\n\r\n#sidePane{\r\n     -fx-background-color: skyblue; /* Set background to sky blue */\r\n}\r\n\r\n\r\n\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/resources/com/example/javafxdemo/styles.css b/src/main/resources/com/example/javafxdemo/styles.css
+---- a/src/main/resources/com/example/javafxdemo/styles.css	(revision 075892cc3912217a82475aa2c5411f08ddc86804)
+-+++ b/src/main/resources/com/example/javafxdemo/styles.css	(date 1732520487437)
+-@@ -29,7 +29,13 @@
+- }
+- 
+- #sidePane{
+--     -fx-background-color: skyblue; /* Set background to sky blue */
+-+        -fx-background-color: skyblue; /* Set background to sky blue */
+-+          -fx-padding: 10; /* Add somse padding inside the pane */
+-+            -fx-border-color: lightgray; /* Optional: Add a border for better visibility */
+-+            -fx-border-width: 2; /* Border thickness */
+-+            -fx-border-radius: 5; /* Optional: Rounded corners */
+-+            -fx-background-radius: 5; /* Matches the border radius */
+-+
+- }
+- 
+- 
+-Index: src/main/resources/com/example/javafxdemo/Dashboard.fxml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.Pane?>\r\n\r\n<AnchorPane prefHeight=\"720.0\" prefWidth=\"1080.0\" stylesheets=\"@styles.css\" xmlns=\"http://javafx.com/javafx/23.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.example.javafxdemo.Dashboard\">\r\n   <children>\r\n      <Pane id=\"sidePane\" layoutY=\"-7.0\" prefHeight=\"740.0\" prefWidth=\"200.0\">\r\n         <children>\r\n            <ImageView fitHeight=\"740.0\" fitWidth=\"200.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../images/sidePanel.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <ImageView id=\"DashboardIcon\" fitHeight=\"25.0\" fitWidth=\"25.0\" layoutX=\"20.0\" layoutY=\"135.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../images/dashboard.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <ImageView fitHeight=\"25.0\" fitWidth=\"25.0\" layoutX=\"20.0\" layoutY=\"185.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../images/teacher.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <ImageView fitHeight=\"25.0\" fitWidth=\"25.0\" layoutX=\"20.0\" layoutY=\"285.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../images/quiz.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <ImageView fitHeight=\"25.0\" fitWidth=\"25.0\" layoutX=\"20.0\" layoutY=\"235.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../images/read.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <Button layoutX=\"55.0\" layoutY=\"135.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"80.0\" text=\"Dashboard\" />\r\n            <Button layoutX=\"55.0\" layoutY=\"185.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"80.0\" text=\"Teacher\" />\r\n            <Button layoutX=\"55.0\" layoutY=\"285.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"80.0\" text=\"Quiz\" />\r\n            <Button layoutX=\"55.0\" layoutY=\"235.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"80.0\" text=\"Student\" />\r\n         </children>\r\n      </Pane>\r\n      <Pane id=\"mainBody\" layoutX=\"207.0\" layoutY=\"-27.0\" prefHeight=\"759.0\" prefWidth=\"880.0\" />\r\n   </children>\r\n</AnchorPane>\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/resources/com/example/javafxdemo/Dashboard.fxml b/src/main/resources/com/example/javafxdemo/Dashboard.fxml
+---- a/src/main/resources/com/example/javafxdemo/Dashboard.fxml	(revision 075892cc3912217a82475aa2c5411f08ddc86804)
+-+++ b/src/main/resources/com/example/javafxdemo/Dashboard.fxml	(date 1732520544084)
+-@@ -8,11 +8,11 @@
+- 
+- <AnchorPane prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.Dashboard">
+-    <children>
+--      <Pane id="sidePane" layoutY="-7.0" prefHeight="740.0" prefWidth="200.0">
+-+      <Pane id="sidePane" layoutY="-1.0" prefHeight="720.0" prefWidth="250.0">
+-          <children>
+--            <ImageView fitHeight="740.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+-+            <ImageView fitHeight="720.0" fitWidth="287.0" pickOnBounds="true" preserveRatio="true">
+-                <image>
+--                  <Image url="@../../../images/sidePanel.png" />
+-+                  <Image url="@../../../images/sideTo.png" />
+-                </image>
+-             </ImageView>
+-             <ImageView id="DashboardIcon" fitHeight="25.0" fitWidth="25.0" layoutX="20.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+-@@ -41,6 +41,6 @@
+-             <Button layoutX="55.0" layoutY="235.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Student" />
+-          </children>
+-       </Pane>
+--      <Pane id="mainBody" layoutX="207.0" layoutY="-27.0" prefHeight="759.0" prefWidth="880.0" />
+-+      <Pane id="mainBody" layoutX="247.0" layoutY="-27.0" prefHeight="759.0" prefWidth="840.0" />
+-    </children>
+- </AnchorPane>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"0c389a45-d214-4c35-84d5-6c2b7f36f434\" name=\"Changes\" comment=\"&quot;Browse courses layout update - added course image&quot;\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml\" afterDir=\"false\" />\r\n    <list default=\"true\" id=\"0c389a45-d214-4c35-84d5-6c2b7f36f434\" name=\"Changes\" comment=\"&quot;Add course and Add credentials design update&quot;\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Database/CoursesDatabase.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Database/CoursesDatabase.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/Course_Info.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/Course_Info.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaFXApplication\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"RESET_MODE\" value=\"HARD\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n        &quot;lastFilter&quot;: {\r\n          &quot;state&quot;: &quot;OPEN&quot;,\r\n          &quot;assignee&quot;: &quot;kevyelly&quot;\r\n        }\r\n      }</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n        &quot;selectedUrlAndAccountId&quot;: {\r\n          &quot;url&quot;: &quot;https://github.com/IgnisFrostburn/OOP-Capstone.git&quot;,\r\n          &quot;accountId&quot;: &quot;0d04d356-f879-440a-9c2b-b4a203bebd0f&quot;\r\n        }\r\n      }</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n        &quot;associatedIndex&quot;: 6\r\n      }</component>\r\n  <component name=\"ProjectId\" id=\"2pX04b9bj24Q55hg8vBIoHnzefk\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.AddCourse.executor\": \"Run\",\r\n    \"Application.AddCredentials.executor\": \"Run\",\r\n    \"Application.LoginPageApplication.executor\": \"Run\",\r\n    \"Application.StudentDashboard.executor\": \"Run\",\r\n    \"git-widget-placeholder\": \"master\"\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.LoginPageApplication\">\r\n    <configuration name=\"AddCourse\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.Dashboard.AddCourse\" />\r\n      <module name=\"JavaFXDemo\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"AddCredentials\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.Dashboard.AddCredentials\" />\r\n      <module name=\"JavaFXDemo\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.Dashboard.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"LoginPageApplication\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.Login_SignUp.LoginPageApplication\" />\r\n      <module name=\"JavaFXDemo\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"StudentDashboard\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.Dashboard.StudentDashboard\" />\r\n      <module name=\"JavaFXDemo\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.Dashboard.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.LoginPageApplication\" />\r\n      <item itemvalue=\"Application.AddCredentials\" />\r\n      <item itemvalue=\"Application.StudentDashboard\" />\r\n      <item itemvalue=\"Application.AddCourse\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.StudentDashboard\" />\r\n        <item itemvalue=\"Application.AddCourse\" />\r\n        <item itemvalue=\"Application.AddCredentials\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task id=\"LOCAL-00001\" summary=\"&quot;Browse Courses&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732770675846</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732770675846</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"&quot;Revised &quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732804441226</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732804441226</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"&quot;Revised &quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732807488442</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732807488442</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"&quot;Connected login to dashboard&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732808778849</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732808778849</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"course info sa\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732922423419</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732922423419</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"&quot;Add credential update - database connection and update&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732885023702</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732885023702</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"&quot;Add course Update&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732920499697</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732920499697</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"&quot;Changed ip address&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732926867364</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732926867364</updated>\r\n    </task>\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d25717de-1212-4a3e-bab7-a9d2bbaf4ffd\" name=\"Changes\" comment=\"course content\" />\r\n      <created>1732894268475</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732894268475</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"&quot;Add Course and Add Credentials design update&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732966119781</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732966119781</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"&quot;Add Course and Add Credentials design update&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1733017157212</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1733017157212</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"&quot;Add Course and Add Credentials design update&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1733017562402</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1733017562402</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"&quot;Add Course and Add Credentials design update&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1733054917050</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1733054917050</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"&quot;Browse courses layout update - added course image&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1733062445342</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1733062445342</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"&quot;Update and fixed browse courses and added getCourseTitle and getInstructorName in CoursesDatabase&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1733067573390</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1733067573390</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"&quot;Add course and Add credentials design update&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1733132124989</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1733132124989</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"16\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"&quot;Browse Courses&quot;\" />\r\n    <MESSAGE value=\"&quot;Browse Courses Update 1&quot;\" />\r\n    <MESSAGE value=\"&quot;Revised &quot;\" />\r\n    <MESSAGE value=\"&quot;Connected login to dashboard&quot;\" />\r\n    <MESSAGE value=\"&quot;Add credential update - database connection and update&quot;\" />\r\n    <MESSAGE value=\"&quot;Add course Update&quot;\" />\r\n    <MESSAGE value=\"&quot;Changed ip address&quot;\" />\r\n    <MESSAGE value=\"course info sa\" />\r\n    <MESSAGE value=\"&quot;Add Course and Add Credentials design update&quot;\" />\r\n    <MESSAGE value=\"&quot;Browse courses layout update - added course image&quot;\" />\r\n    <MESSAGE value=\"&quot;Update and fixed browse courses and added getCourseTitle and getInstructorName in CoursesDatabase&quot;\" />\r\n    <MESSAGE value=\"&quot;Add course and Add credentials design update&quot;\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"&quot;Add course and Add credentials design update&quot;\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 5ae3262032344e9818fa69658a8f0cf094af278c)
++++ b/.idea/workspace.xml	(date 1733153141814)
+@@ -4,298 +4,44 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="0c389a45-d214-4c35-84d5-6c2b7f36f434" name="Changes" comment="&quot;Browse courses layout update - added course image&quot;">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+-    <list default="true" id="0c389a45-d214-4c35-84d5-6c2b7f36f434" name="Changes" comment="&quot;Add course and Add credentials design update&quot;">
++    <list default="true" id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="addedd navigation button and enrollment functioanlities">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/CoursesDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/CoursesDatabase.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorsInfoDatabase.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/Course_Info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/Course_Info.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/EnrollmentDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/EnrollmentDatabase.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/InstructorDatabase.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/LearnerDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/LearnerDatabase.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Database/MeetingDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Database/MeetingDatabase.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="JavaFXApplication" />
+-        <option value="Class" />
+-        <option value="FxmlFile" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="Git.Settings">
+-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-      <map>
+-        <entry key="$PROJECT_DIR$" value="master" />
+-      </map>
+-    </option>
+-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-    <option name="RESET_MODE" value="HARD" />
+-  </component>
+-  <component name="GitHubPullRequestSearchHistory">{
+-        &quot;lastFilter&quot;: {
+-          &quot;state&quot;: &quot;OPEN&quot;,
+-          &quot;assignee&quot;: &quot;kevyelly&quot;
+-        }
+-      }</component>
+-  <component name="GithubPullRequestsUISettings">{
+-        &quot;selectedUrlAndAccountId&quot;: {
+-          &quot;url&quot;: &quot;https://github.com/IgnisFrostburn/OOP-Capstone.git&quot;,
+-          &quot;accountId&quot;: &quot;0d04d356-f879-440a-9c2b-b4a203bebd0f&quot;
+-        }
+-      }</component>
+-  <component name="ProjectColorInfo">{
+-        &quot;associatedIndex&quot;: 6
+-      }</component>
+-  <component name="ProjectId" id="2pX04b9bj24Q55hg8vBIoHnzefk" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <ConfirmationsSetting value="2" id="Add" />
+   </component>
+-  <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showLibraryContents" value="true" />
+-  </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+-    "Application.AddCourse.executor": "Run",
+-    "Application.AddCredentials.executor": "Run",
+-    "Application.LoginPageApplication.executor": "Run",
+-    "Application.StudentDashboard.executor": "Run",
++    "Application.MeetingDatabase.executor": "Run",
++    "Application.Unnamed.executor": "Run",
+     "git-widget-placeholder": "master"
+   }
+-}</component>
+-  <component name="RunManager" selected="Application.LoginPageApplication">
+-    <configuration name="AddCourse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="com.example.Dashboard.AddCourse" />
+-      <module name="JavaFXDemo" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="AddCredentials" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="com.example.Dashboard.AddCredentials" />
+-      <module name="JavaFXDemo" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.example.Dashboard.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="LoginPageApplication" type="Application" factoryName="Application">
++}]]></component>
++  <component name="RunManager">
++    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.LoginPageApplication" />
+       <module name="JavaFXDemo" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="StudentDashboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="com.example.Dashboard.StudentDashboard" />
+-      <module name="JavaFXDemo" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.example.Dashboard.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <list>
+-      <item itemvalue="Application.LoginPageApplication" />
+-      <item itemvalue="Application.AddCredentials" />
+-      <item itemvalue="Application.StudentDashboard" />
+-      <item itemvalue="Application.AddCourse" />
+-    </list>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Application.StudentDashboard" />
+-        <item itemvalue="Application.AddCourse" />
+-        <item itemvalue="Application.AddCredentials" />
+-      </list>
+-    </recent_temporary>
+   </component>
+   <component name="TaskManager">
+-    <task id="LOCAL-00001" summary="&quot;Browse Courses&quot;">
+-      <option name="closed" value="true" />
+-      <created>1732770675846</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732770675846</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="&quot;Revised &quot;">
+-      <option name="closed" value="true" />
+-      <created>1732804441226</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732804441226</updated>
+-    </task>
+-    <task id="LOCAL-00003" summary="&quot;Revised &quot;">
+-      <option name="closed" value="true" />
+-      <created>1732807488442</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732807488442</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="&quot;Connected login to dashboard&quot;">
+-      <option name="closed" value="true" />
+-      <created>1732808778849</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732808778849</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="course info sa">
+-      <option name="closed" value="true" />
+-      <created>1732922423419</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732922423419</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="&quot;Add credential update - database connection and update&quot;">
+-      <option name="closed" value="true" />
+-      <created>1732885023702</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732885023702</updated>
+-    </task>
+-    <task id="LOCAL-00007" summary="&quot;Add course Update&quot;">
+-      <option name="closed" value="true" />
+-      <created>1732920499697</created>
+-      <option name="number" value="00007" />
+-      <option name="presentableId" value="LOCAL-00007" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732920499697</updated>
+-    </task>
+-    <task id="LOCAL-00008" summary="&quot;Changed ip address&quot;">
+-      <option name="closed" value="true" />
+-      <created>1732926867364</created>
+-      <option name="number" value="00008" />
+-      <option name="presentableId" value="LOCAL-00008" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732926867364</updated>
+-    </task>
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="d25717de-1212-4a3e-bab7-a9d2bbaf4ffd" name="Changes" comment="course content" />
+-      <created>1732894268475</created>
+-      <option name="number" value="Default" />
+-      <option name="presentableId" value="Default" />
+-      <updated>1732894268475</updated>
+-    </task>
+-    <task id="LOCAL-00009" summary="&quot;Add Course and Add Credentials design update&quot;">
+-      <option name="closed" value="true" />
+-      <created>1732966119781</created>
+-      <option name="number" value="00009" />
+-      <option name="presentableId" value="LOCAL-00009" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732966119781</updated>
+-    </task>
+-    <task id="LOCAL-00010" summary="&quot;Add Course and Add Credentials design update&quot;">
+-      <option name="closed" value="true" />
+-      <created>1733017157212</created>
+-      <option name="number" value="00010" />
+-      <option name="presentableId" value="LOCAL-00010" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1733017157212</updated>
+-    </task>
+-    <task id="LOCAL-00011" summary="&quot;Add Course and Add Credentials design update&quot;">
+-      <option name="closed" value="true" />
+-      <created>1733017562402</created>
+-      <option name="number" value="00011" />
+-      <option name="presentableId" value="LOCAL-00011" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1733017562402</updated>
+-    </task>
+-    <task id="LOCAL-00012" summary="&quot;Add Course and Add Credentials design update&quot;">
+-      <option name="closed" value="true" />
+-      <created>1733054917050</created>
+-      <option name="number" value="00012" />
+-      <option name="presentableId" value="LOCAL-00012" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1733054917050</updated>
+-    </task>
+-    <task id="LOCAL-00013" summary="&quot;Browse courses layout update - added course image&quot;">
+-      <option name="closed" value="true" />
+-      <created>1733062445342</created>
+-      <option name="number" value="00013" />
+-      <option name="presentableId" value="LOCAL-00013" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1733062445342</updated>
+-    </task>
+-    <task id="LOCAL-00014" summary="&quot;Update and fixed browse courses and added getCourseTitle and getInstructorName in CoursesDatabase&quot;">
+-      <option name="closed" value="true" />
+-      <created>1733067573390</created>
+-      <option name="number" value="00014" />
+-      <option name="presentableId" value="LOCAL-00014" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1733067573390</updated>
+-    </task>
+-    <task id="LOCAL-00015" summary="&quot;Add course and Add credentials design update&quot;">
+-      <option name="closed" value="true" />
+-      <created>1733132124989</created>
+-      <option name="number" value="00015" />
+-      <option name="presentableId" value="LOCAL-00015" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1733132124989</updated>
+-    </task>
+-    <option name="localTasksCounter" value="16" />
+     <servers />
+   </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State>
+-              <option name="FILTERS">
+-                <map>
+-                  <entry key="branch">
+-                    <value>
+-                      <list>
+-                        <option value="master" />
+-                      </list>
+-                    </value>
+-                  </entry>
+-                </map>
+-              </option>
+-            </State>
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-  </component>
+   <component name="VcsManagerConfiguration">
+-    <MESSAGE value="&quot;Browse Courses&quot;" />
+-    <MESSAGE value="&quot;Browse Courses Update 1&quot;" />
+-    <MESSAGE value="&quot;Revised &quot;" />
+-    <MESSAGE value="&quot;Connected login to dashboard&quot;" />
+-    <MESSAGE value="&quot;Add credential update - database connection and update&quot;" />
+-    <MESSAGE value="&quot;Add course Update&quot;" />
+-    <MESSAGE value="&quot;Changed ip address&quot;" />
+-    <MESSAGE value="course info sa" />
+-    <MESSAGE value="&quot;Add Course and Add Credentials design update&quot;" />
+     <MESSAGE value="&quot;Browse courses layout update - added course image&quot;" />
+-    <MESSAGE value="&quot;Update and fixed browse courses and added getCourseTitle and getInstructorName in CoursesDatabase&quot;" />
+-    <MESSAGE value="&quot;Add course and Add credentials design update&quot;" />
+-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Add course and Add credentials design update&quot;" />
++    <option name="LAST_COMMIT_MESSAGE" value="&quot;Browse courses layout update - added course image&quot;" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/com/example/Database/EnrollmentDatabase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Database;\r\n\r\nimport com.example.Login_SignUp.LoggedInUser;\r\n\r\nimport java.sql.*;\r\n\r\npublic  class EnrollmentDatabase extends UtilityDatabase{\r\n\r\n    public EnrollmentDatabase(){\r\n        super();\r\n    }\r\n    public String getCourseCTR(int studentID){\r\n        try{\r\n            String query = \"SELECT COUNT(*) AS courseCTR FROM enrollment WHERE LearnerID = ?\";\r\n            PreparedStatement statement = connection.prepareStatement(query);\r\n            statement.setString(1, String.valueOf(studentID));\r\n            ResultSet resultSet = statement.executeQuery();\r\n\r\n            if(resultSet.next()){\r\n                return String.valueOf(resultSet.getInt(\"courseCTR\"));\r\n            }\r\n        } catch (SQLException e) {\r\n            System.out.println(\"smthing wrong with sql on method\");\r\n            System.out.println(e.getMessage());\r\n        }\r\n        return null;\r\n    }\r\n    public boolean checkIfEnrolled(int userID, int courseID){\r\n        String query = \"SELECT COUNT(*) AS count FROM enrollment WHERE LearnerID = ? AND CourseID = ?;\";\r\n        try{\r\n            PreparedStatement statement = connection.prepareStatement(query);\r\n            statement.setString(1, String.valueOf(userID));\r\n            statement.setString(2, String.valueOf(courseID));\r\n            ResultSet resultSet = statement.executeQuery();\r\n\r\n            if(resultSet.next()){\r\n                return resultSet.getInt(\"count\") > 0;\r\n            }\r\n        } catch (SQLException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n\r\n        return false;\r\n    }\r\n\r\n    public boolean enrollLearner(int learnerID, int courseID){\r\n        String query = \"INSERT INTO Enrollment (LearnerID, CourseID) VALUES (?, ?)\";\r\n\r\n        try(PreparedStatement preparedStatement = connection.prepareStatement(query)){\r\n            preparedStatement.setInt(1, learnerID);\r\n            preparedStatement.setInt(2, courseID);\r\n\r\n            int change = preparedStatement.executeUpdate();\r\n            System.out.println(change);\r\n            return change > 0;\r\n        } catch (SQLException e) {\r\n            System.out.println(\"SQL Error sa enroll: \" + e.getMessage());\r\n        }\r\n        return false;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/Database/EnrollmentDatabase.java b/src/main/java/com/example/Database/EnrollmentDatabase.java
+--- a/src/main/java/com/example/Database/EnrollmentDatabase.java	(revision 5ae3262032344e9818fa69658a8f0cf094af278c)
++++ b/src/main/java/com/example/Database/EnrollmentDatabase.java	(date 1733152724617)
+@@ -3,12 +3,32 @@
+ import com.example.Login_SignUp.LoggedInUser;
+ 
+ import java.sql.*;
++import java.util.ArrayList;
++import java.util.List;
+ 
+ public  class EnrollmentDatabase extends UtilityDatabase{
+ 
+     public EnrollmentDatabase(){
+         super();
+     }
++
++    public int[] getCourses(int LearnerID) {
++        List<Integer> courses = new ArrayList<Integer>();
++        try {
++            if(connection == null)throw new SQLException();
++            String query = "SELECT CourseID FROM enrollment WHERE LearnerID = ?";
++            PreparedStatement preparedStatement = connection.prepareStatement(query);
++            preparedStatement.setString(1, String.valueOf(LearnerID));
++            ResultSet resultSet = preparedStatement.executeQuery();
++
++            while (resultSet.next()) {
++                    courses.add(Integer.parseInt(resultSet.getString("CourseID")));
++            }
++        } catch (SQLException e) {
++            e.printStackTrace();
++        }
++        return courses.stream().mapToInt(Integer::intValue).toArray();
++    }
+     public String getCourseCTR(int studentID){
+         try{
+             String query = "SELECT COUNT(*) AS courseCTR FROM enrollment WHERE LearnerID = ?";
+@@ -25,6 +45,7 @@
+         }
+         return null;
+     }
++
+     public boolean checkIfEnrolled(int userID, int courseID){
+         String query = "SELECT COUNT(*) AS count FROM enrollment WHERE LearnerID = ? AND CourseID = ?;";
+         try{
+Index: src/main/java/com/example/Database/LearnerDatabase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Database;\r\n\r\nimport com.example.Login_SignUp.LoggedInUser;\r\n\r\nimport java.sql.*;\r\n\r\npublic class LearnerDatabase extends UserDatabase {\r\n    public LearnerDatabase() {\r\n        super();\r\n    }\r\n\r\n\r\n    @Override\r\n    public void insertData(String lastName, String firstName, String middleName,String university, String email, String password) {\r\n        try{\r\n            if(connection != null)\r\n            System.out.println(\"Connected to the database!\");\r\n            String insertQuery = \"INSERT INTO learners (LastName, FirstName, MiddleName, University, Email, Password) VALUES (?, ?, ?, ?, ?, ?)\";\r\n            try (PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {\r\n                insertStmt.setString(1, lastName);\r\n                insertStmt.setString(2, firstName);\r\n                insertStmt.setString(3, middleName);\r\n                insertStmt.setString(4, university);\r\n                insertStmt.setString(5, email);\r\n                insertStmt.setString(6, password);\r\n                insertStmt.executeUpdate();\r\n                System.out.println(\"Student data inserted successfully!\");\r\n            }\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n//TIWASA NI\r\npublic void getUserData(String email) {\r\n    try (Connection connection = DriverManager.getConnection(url, username, password)) {\r\n        String query = \"SELECT * FROM learners WHERE Email = ?\";\r\n        PreparedStatement statement = connection.prepareStatement(query);\r\n        statement.setString(1, email);\r\n        ResultSet resultSet = statement.executeQuery();\r\n\r\n        if (resultSet.next()) {\r\n            LoggedInUser loggedInUser = LoggedInUser.getInstance();\r\n            loggedInUser.setEmail(resultSet.getString(\"Email\"));\r\n            loggedInUser.setFirstName(resultSet.getString(\"FirstName\"));\r\n            loggedInUser.setLastName(resultSet.getString(\"LastName\"));\r\n            loggedInUser.setUniversity(resultSet.getString(\"University\"));\r\n            loggedInUser.setID(resultSet.getInt(\"ID\"));\r\n            loggedInUser.setRole(\"Learner\");\r\n        } else {\r\n            throw new RuntimeException(\"No user found\");\r\n        }\r\n    } catch (SQLException e) {\r\n        e.printStackTrace();\r\n    }\r\n}\r\n\r\n\r\n    @Override\r\n    public boolean checkEmail(String email) throws SQLException {\r\n        try (Connection connection = DriverManager.getConnection(url, username, password)) {\r\n            String selectQuery = \"SELECT Email FROM learners\";\r\n            try (Statement selectStmt = connection.createStatement();\r\n                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {\r\n\r\n                while (resultSet.next()) {\r\n                    if(resultSet.getString(\"Email\").equals(email)) return true;\r\n                }\r\n            }\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n        }\r\n        return false;\r\n    }\r\n\r\n    @Override\r\n    public boolean checkPassword(String userPassword, String email) throws SQLException {\r\n        String selectQuery = \"SELECT Password FROM learners WHERE Email = ?\";\r\n\r\n        try (Connection connection = DriverManager.getConnection(url, username, password);\r\n             PreparedStatement ps = connection.prepareStatement(selectQuery)) {\r\n\r\n            ps.setString(1, email);\r\n\r\n            try (ResultSet resultSet = ps.executeQuery()) {\r\n                if (resultSet.next()) {\r\n                    String storedPassword = resultSet.getString(\"Password\");\r\n                    if (storedPassword.equals(userPassword)) {\r\n                        return true;\r\n                    }\r\n                }\r\n            }\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        return false;\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/Database/LearnerDatabase.java b/src/main/java/com/example/Database/LearnerDatabase.java
+--- a/src/main/java/com/example/Database/LearnerDatabase.java	(revision 5ae3262032344e9818fa69658a8f0cf094af278c)
++++ b/src/main/java/com/example/Database/LearnerDatabase.java	(date 1733151712933)
+@@ -32,7 +32,7 @@
+     }
+ //TIWASA NI
+ public void getUserData(String email) {
+-    try (Connection connection = DriverManager.getConnection(url, username, password)) {
++    try{
+         String query = "SELECT * FROM learners WHERE Email = ?";
+         PreparedStatement statement = connection.prepareStatement(query);
+         statement.setString(1, email);
+Index: src/main/java/com/example/Database/MeetingDatabase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Database;\r\n\r\npublic class MeetingDatabase extends UtilityDatabase{\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/Database/MeetingDatabase.java b/src/main/java/com/example/Database/MeetingDatabase.java
+--- a/src/main/java/com/example/Database/MeetingDatabase.java	(revision 5ae3262032344e9818fa69658a8f0cf094af278c)
++++ b/src/main/java/com/example/Database/MeetingDatabase.java	(date 1733152113340)
+@@ -1,4 +1,60 @@
+ package com.example.Database;
+ 
++import com.example.Login_SignUp.LoggedInUser;
++
++import java.sql.*;
++import java.time.LocalDateTime;
++import java.util.ArrayList;
++
+ public class MeetingDatabase extends UtilityDatabase{
++    public MeetingDatabase(){
++        super();
++    }
++
++    public boolean scheduleMeeting(int learnerID, int instructorID, int courseID, LocalDateTime startTime, LocalDateTime endTime){
++        try{
++            if(connection == null)throw new RuntimeException();
++            String query = "INSERT INTO meetings (LearnerID, InstructorID, CourseID, StartTime, EndTime) VALUES (?, ?, ?, ?, ?)";
++            PreparedStatement ps = connection.prepareStatement(query);
++            ps.setInt(1, learnerID);
++            ps.setInt(2, instructorID);
++            ps.setInt(3, courseID);
++            ps.setTimestamp(4, Timestamp.valueOf(startTime));
++            ps.setTimestamp(5, Timestamp.valueOf(endTime));
++
++            int worked = ps.executeUpdate();
++            return worked > 0;
++        } catch (SQLException e) {
++            throw new RuntimeException(e);
++        }
++    }
++
++    public int[] getMeetings(int LearnerID){
++        try {
++            String query = "SELECT MeetingID FROM meetings WHERE LearnerID = ?";
++            PreparedStatement statement = connection.prepareStatement(query);
++            statement.setString(1, String.valueOf(LearnerID));
++            ResultSet resultSet = statement.executeQuery();
++            ArrayList<Integer> idList = new ArrayList<>();
++
++            while (resultSet.next()) {
++                idList.add(resultSet.getInt("MeetingID"));
++            }
++            return idList.stream().mapToInt(Integer::intValue).toArray();
++        } catch (SQLException e) {
++            e.printStackTrace();
++        }
++        return null;
++    }
++
++    public static void main(String[] args) {
++        MeetingDatabase meetingDB = new MeetingDatabase();
++        LocalDateTime startTime = LocalDateTime.of(2024, 12, 10, 14, 0);
++        LocalDateTime endTime = LocalDateTime.of(2024, 12, 10, 15, 0);
++        //System.out.println(meetingDB.scheduleMeeting(3, 3, 2, startTime, endTime));
++        int[] meetings = meetingDB.getMeetings(3);
++        for(int i : meetings){
++            System.out.println(i);
++        }
++    }
+ }
+Index: src/main/java/com/example/Database/InstructorDatabase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Database;\r\n\r\nimport com.example.Login_SignUp.LoggedInUser;\r\n\r\nimport java.sql.*;\r\n\r\npublic class InstructorDatabase extends UserDatabase{\r\n    public InstructorDatabase() {\r\n        super();\r\n    }\r\n\r\n    @Override\r\n    public void insertData(String lastName, String firstName, String middleName,String university, String email, String password) {\r\n        try{\r\n            if(connection != null) System.out.println(\"Connected to the database!\");\r\n            String insertQuery = \"INSERT INTO instructors (LastName, FirstName, MiddleName, University, Email, Password) VALUES (?, ?, ?, ?, ?, ?)\";\r\n            try (PreparedStatement insertStmt = connection.prepareStatement(insertQuery)) {\r\n                insertStmt.setString(1, lastName);\r\n                insertStmt.setString(2, firstName);\r\n                insertStmt.setString(3, middleName);\r\n                insertStmt.setString(4, university);\r\n                insertStmt.setString(5, email);\r\n                insertStmt.setString(6, password);\r\n                insertStmt.executeUpdate();\r\n                System.out.println(\"Instructor data inserted successfully!\");\r\n            }\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n    public boolean checkEmail(String email) throws SQLException {\r\n        String selectQuery = \"SELECT Email FROM instructors WHERE Email = ?\";\r\n\r\n        try (PreparedStatement ps = connection.prepareStatement(selectQuery)) {\r\n\r\n            ps.setString(1, email);\r\n\r\n            try (ResultSet resultSet = ps.executeQuery()) {\r\n                if (resultSet.next()) {\r\n                    return true;\r\n                }\r\n            }\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        return false;\r\n    }\r\n\r\n    @Override\r\n    public void getUserData(String email) {\r\n        try {\r\n            if(connection == null)throw new SQLException(\"Error with getting User Data\");\r\n            String query = \"SELECT * FROM instructors WHERE Email = ?\";\r\n            PreparedStatement statement = connection.prepareStatement(query);\r\n            statement.setString(1, email);\r\n            ResultSet resultSet = statement.executeQuery();\r\n\r\n            if (resultSet.next()) {\r\n                LoggedInUser loggedInUser = LoggedInUser.getInstance();\r\n                loggedInUser.setEmail(resultSet.getString(\"Email\"));\r\n                loggedInUser.setFirstName(resultSet.getString(\"FirstName\"));\r\n                loggedInUser.setLastName(resultSet.getString(\"LastName\"));\r\n                loggedInUser.setUniversity(resultSet.getString(\"University\"));\r\n                loggedInUser.setRole(\"Learner\");\r\n            } else {\r\n                throw new RuntimeException(\"No user found\");\r\n            }\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n\r\n\r\n    @Override\r\n    public boolean checkPassword(String userPassword, String email) throws SQLException {\r\n        String selectQuery = \"SELECT Password FROM instructors WHERE Email = ?\";\r\n\r\n        try (PreparedStatement ps = connection.prepareStatement(selectQuery)) {\r\n\r\n            ps.setString(1, email);\r\n\r\n            try (ResultSet resultSet = ps.executeQuery()) {\r\n                if (resultSet.next()) {\r\n                    String storedPassword = resultSet.getString(\"Password\");\r\n                    if (storedPassword.equals(userPassword)) {\r\n                        return true;\r\n                    }\r\n                }\r\n            }\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        return false;\r\n    }\r\n\r\n    public static String getInstructorID(String email) throws SQLException {\r\n        try {\r\n            String selectQuery = \"SELECT ID, Email FROM instructors\";\r\n            try (Statement selectStmt = connection.createStatement();\r\n                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {\r\n\r\n                while (resultSet.next()) {\r\n                    if(resultSet.getString(\"Email\").equals(email)) return resultSet.getString(\"ID\");\r\n                }\r\n            }\r\n        } catch (SQLException e) {\r\n            e.getMessage();\r\n        }\r\n        return \"1\";\r\n    }\r\n\r\n    public static String getUniversity(String id) throws SQLException {\r\n        try (Connection connection = DriverManager.getConnection(url, username, password)) {\r\n            String selectQuery = \"SELECT ID, University FROM instructors\";\r\n            try (Statement selectStmt = connection.createStatement();\r\n                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {\r\n\r\n                while (resultSet.next()) {\r\n                    if(resultSet.getString(\"ID\").equals(id)) return resultSet.getString(\"University\");\r\n                }\r\n            }\r\n        } catch (SQLException e) {\r\n            e.getMessage();\r\n        }\r\n        return \"1\";\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/Database/InstructorDatabase.java b/src/main/java/com/example/Database/InstructorDatabase.java
+--- a/src/main/java/com/example/Database/InstructorDatabase.java	(revision 5ae3262032344e9818fa69658a8f0cf094af278c)
++++ b/src/main/java/com/example/Database/InstructorDatabase.java	(date 1733152144601)
+@@ -4,7 +4,7 @@
+ 
+ import java.sql.*;
+ 
+-public class InstructorDatabase extends UserDatabase{
++public class InstructorDatabase extends UserDatabase    {
+     public InstructorDatabase() {
+         super();
+     }
+Index: src/main/java/com/example/Dashboard/StudentDashboardController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Dashboard;\r\n\r\nimport com.example.Database.*;\r\nimport com.example.Course_content.Course_Info;\r\nimport com.example.Course_content.Course_Info_Controller;\r\nimport com.example.Login_SignUp.LoggedInUser;\r\nimport javafx.fxml.FXML;\r\nimport javafx.geometry.Rectangle2D;\r\nimport javafx.scene.Cursor;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.scene.shape.Rectangle;\r\nimport javafx.scene.text.Text;\r\nimport javafx.geometry.Pos;\r\nimport javafx.scene.control.*;\r\nimport javafx.scene.layout.*;\r\nimport javafx.scene.text.TextAlignment;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.sql.SQLException;\r\n\r\n\r\npublic class StudentDashboardController {\r\n    @FXML\r\n    private StackPane studentDashBoardStackPane;\r\n    @FXML\r\n    private Text coursesEnrolledCTR;\r\n    @FXML\r\n    private ScrollPane browseScrollPane;\r\n    @FXML\r\n    private Button dashboardBtn;\r\n    @FXML\r\n    private Button browseBtn;\r\n    @FXML\r\n    private Button myCoursesBtn;\r\n    @FXML\r\n    private Pane browseCourseWrapperPane;\r\n    @FXML\r\n    private Text dashboardEmail;\r\n    @FXML\r\n    private GridPane browseCourseGridPane;\r\n    @FXML\r\n    private Text dashboardFirstName;\r\n    @FXML\r\n    private Text dashboardLastName;\r\n    @FXML\r\n    private Pane browseCourseInnerGridPane;\r\n    @FXML\r\n    private AnchorPane interfacePanel;\r\n    @FXML\r\n    private AnchorPane dashboardPanel;\r\n    @FXML\r\n    private AnchorPane myCoursesPanel;\r\n    @FXML\r\n    private AnchorPane browseCoursesPanel;\r\n    @FXML\r\n    private Text dashboardUniversity;\r\n    @FXML\r\n    private Text meetingsTodayCTR;\r\n    @FXML\r\n    private ScrollPane myCourseScrollPane;\r\n    @FXML\r\n    private Pane myCourseWrapperPane;\r\n    @FXML\r\n    private GridPane myCoursesGridPane;\r\n\r\n    private int gridCtr = 0;\r\n    private int row = 0;\r\n    private final double rowHeight = 220.0;\r\n    private final double columnWidth = 390.0;\r\n\r\n    private void createBrowseCourses(int[] courses) {\r\n        for(int i : courses) {\r\n            Pane outerPane = new Pane();\r\n            outerPane.setPrefSize(columnWidth, rowHeight);\r\n            int finalI = i;\r\n\r\n            browseCourseGridPane.add(outerPane, gridCtr++, row);\r\n\r\n            Pane innerPane = new Pane();\r\n            innerPane.setPrefSize(370, 192);\r\n            Image courseImage = CoursesDatabase.getImage(Integer.toString(finalI));\r\n            innerPane.setStyle(\"-fx-background-radius: 10; -fx-background-color: blue;\");\r\n            innerPane.layoutXProperty().bind(outerPane.widthProperty().subtract(innerPane.prefWidthProperty()).divide(2));\r\n            innerPane.layoutYProperty().bind(outerPane.heightProperty().subtract(innerPane.prefHeightProperty()).divide(2));\r\n            innerPane.setCursor(Cursor.HAND);\r\n            outerPane.getChildren().add(innerPane);\r\n\r\n            ImageView courseProfile = new ImageView();\r\n            courseProfile.setFitWidth(370);\r\n            courseProfile.setFitHeight(192);\r\n            courseProfile.setPreserveRatio(true);\r\n            courseProfile.setSmooth(true);\r\n            courseProfile.setImage(courseImage);\r\n            double scale = Math.max(370 / courseImage.getWidth(), 192 / courseImage.getHeight());\r\n            double viewportWidth = 370 / scale;\r\n            double viewportHeight = 192 / scale;\r\n            double viewportX = (courseImage.getWidth() - viewportWidth) / 2;\r\n            double viewportY = (courseImage.getHeight() - viewportHeight) / 2;\r\n            courseProfile.setViewport(new Rectangle2D(viewportX, viewportY, viewportWidth, viewportHeight));\r\n            Rectangle clip = new Rectangle(370, 192);\r\n            clip.setArcWidth(20);\r\n            clip.setArcHeight(20);\r\n            courseProfile.setClip(clip);\r\n            innerPane.getChildren().add(courseProfile);\r\n\r\n            Pane innerDesignPane = new Pane();\r\n            innerPane.setId(\"innerPane\"+i);\r\n            innerDesignPane.setPrefSize(370, 73);\r\n            innerDesignPane.setStyle(\"-fx-background-radius: 0 0 10 10; -fx-background-color: white;\");\r\n            innerDesignPane.layoutYProperty().bind(innerPane.heightProperty().subtract(innerDesignPane.prefHeightProperty()));\r\n            innerPane.getChildren().add(innerDesignPane);\r\n\r\n            Text courseTitle = new Text();\r\n            courseTitle.setWrappingWidth(345);\r\n            courseTitle.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.wrappingWidthProperty()).divide(2));\r\n            courseTitle.layoutYProperty().bind(innerDesignPane.heightProperty().subtract(courseTitle.getBoundsInLocal().getHeight()).divide(2));\r\n            courseTitle.setText(CoursesDatabase.getCourseTitle( Integer.toString(i)));\r\n            courseTitle.setTextAlignment(TextAlignment.CENTER);\r\n            courseTitle.setStyle(\"-fx-font-size: 14px; -fx-font-weight: bold;\");\r\n            innerDesignPane.getChildren().add(courseTitle);\r\n\r\n            Text instructorName = new Text();\r\n            instructorName.setWrappingWidth(345);\r\n            instructorName.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.wrappingWidthProperty()).divide(2));\r\n            instructorName.layoutYProperty().bind(courseTitle.layoutYProperty().add(courseTitle.getBoundsInLocal().getHeight()).add(5));\r\n            instructorName.setText(CoursesDatabase.getInstructorName( Integer.toString(i)));\r\n            instructorName.setTextAlignment(TextAlignment.CENTER);\r\n            instructorName.setStyle(\"-fx-font-size: 14px;\");\r\n            innerDesignPane.getChildren().add(instructorName);\r\n\r\n            RowConstraints rowConstraints = new RowConstraints();\r\n            rowConstraints.setMinHeight(220.0);\r\n            rowConstraints.setPrefHeight(220.0);\r\n            rowConstraints.setVgrow(javafx.scene.layout.Priority.NEVER);\r\n\r\n            double newHeight = (row + 1) * rowHeight;\r\n            browseCourseWrapperPane.setPrefHeight(newHeight);\r\n\r\n            //pane is clicked\r\n            innerPane.setOnMouseClicked(event -> {\r\n                String id;\r\n                try {\r\n                    id = new InstructorDatabase().getInstructorID(Integer.toString(finalI));\r\n                } catch (SQLException e) {\r\n                    throw new RuntimeException(e);\r\n                }\r\n                System.out.println(\"final I is \" + finalI);\r\n\r\n                String courseName = CoursesDatabase.getCourseTitle(Integer.toString(i));\r\n                String courseInstructorName = CoursesDatabase.getInstructorName(Integer.toString(i));\r\n                Course_Info_Controller.setNameAndTitle(courseName, courseInstructorName, id, Integer.toString(finalI));\r\n                Stage courseInfoStage = new Stage();\r\n                Course_Info courseInfo = new Course_Info();\r\n                try {\r\n                    courseInfo.start(courseInfoStage);\r\n                } catch (Exception e) {\r\n                    throw new RuntimeException(e);\r\n                }\r\n                courseInfoStage = (Stage) studentDashBoardStackPane.getScene().getWindow();\r\n                courseInfoStage.close();\r\n            });\r\n\r\n            browseCourseGridPane.getRowConstraints().add(rowConstraints);\r\n            if (gridCtr == 2) {\r\n                gridCtr = 0;\r\n                row++;\r\n            }\r\n        }\r\n    }\r\n\r\n\r\n\r\n    public void setUserInfo(LoggedInUser loggedInUser, EnrollmentDatabase enrollmentDB){\r\n        coursesEnrolledCTR.setText(enrollmentDB.getCourseCTR(loggedInUser.getID()));\r\n        dashboardFirstName.setText(loggedInUser.getFirstName());\r\n        dashboardLastName.setText(loggedInUser.getLastName());\r\n        dashboardEmail.setText(loggedInUser.getEmail());\r\n        dashboardUniversity.setText(loggedInUser.getUniversity());\r\n    }\r\n    public void setDashboardPanelVisible(){\r\n        dashboardPanel.setVisible(true);\r\n        myCoursesPanel.setVisible(false);\r\n        browseCoursesPanel.setVisible(false);\r\n    }\r\n    public void setbrowseCoursesPanelVisible(){\r\n        dashboardPanel.setVisible(false);\r\n        myCoursesPanel.setVisible(false);\r\n        browseCoursesPanel.setVisible(true);\r\n    }\r\n    public void setMyCoursesPanelVisible(){\r\n        dashboardPanel.setVisible(false);\r\n        myCoursesPanel.setVisible(true);\r\n        browseCoursesPanel.setVisible(false);\r\n    }\r\n\r\n\r\n    public void initialize() throws SQLException {\r\n        LoggedInUser loggedInUser = LoggedInUser.getInstance();\r\n        EnrollmentDatabase enrollmentDB = new EnrollmentDatabase();\r\n\r\n        int[] courses = CoursesDatabase.numberOfCourses();\r\n        System.out.println(\"IDs of courses: \");\r\n        for(int s: courses) {\r\n            System.out.println(s);\r\n        }\r\n\r\n        interfacePanel.setVisible(true);\r\n        setDashboardPanelVisible();\r\n        setUserInfo(loggedInUser, enrollmentDB);\r\n\r\n        dashboardBtn.setOnAction(actionEvent -> setDashboardPanelVisible());\r\n        myCoursesBtn.setOnAction(actionEvent -> setMyCoursesPanelVisible());\r\n        browseBtn.setOnAction(actionEvent -> setbrowseCoursesPanelVisible());\r\n\r\n\r\n\r\n        createBrowseCourses(courses);\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/Dashboard/StudentDashboardController.java b/src/main/java/com/example/Dashboard/StudentDashboardController.java
+--- a/src/main/java/com/example/Dashboard/StudentDashboardController.java	(revision 5ae3262032344e9818fa69658a8f0cf094af278c)
++++ b/src/main/java/com/example/Dashboard/StudentDashboardController.java	(date 1733152658462)
+@@ -169,6 +169,105 @@
+             }
+         }
+     }
++    private void createMyCourses(int[] courses) {
++        for(int i : courses) {
++            Pane outerPane = new Pane();
++            outerPane.setPrefSize(columnWidth, rowHeight);
++            int finalI = i;
++
++            myCoursesGridPane.add(outerPane, gridCtr++, row);
++
++            Pane innerPane = new Pane();
++            innerPane.setPrefSize(370, 192);
++            Image courseImage = CoursesDatabase.getImage(Integer.toString(finalI));
++            innerPane.setStyle("-fx-background-radius: 10; -fx-background-color: blue;");
++            innerPane.layoutXProperty().bind(outerPane.widthProperty().subtract(innerPane.prefWidthProperty()).divide(2));
++            innerPane.layoutYProperty().bind(outerPane.heightProperty().subtract(innerPane.prefHeightProperty()).divide(2));
++            innerPane.setCursor(Cursor.HAND);
++            outerPane.getChildren().add(innerPane);
++
++            ImageView courseProfile = new ImageView();
++            courseProfile.setFitWidth(370);
++            courseProfile.setFitHeight(192);
++            courseProfile.setPreserveRatio(true);
++            courseProfile.setSmooth(true);
++            courseProfile.setImage(courseImage);
++            double scale = Math.max(370 / courseImage.getWidth(), 192 / courseImage.getHeight());
++            double viewportWidth = 370 / scale;
++            double viewportHeight = 192 / scale;
++            double viewportX = (courseImage.getWidth() - viewportWidth) / 2;
++            double viewportY = (courseImage.getHeight() - viewportHeight) / 2;
++            courseProfile.setViewport(new Rectangle2D(viewportX, viewportY, viewportWidth, viewportHeight));
++            Rectangle clip = new Rectangle(370, 192);
++            clip.setArcWidth(20);
++            clip.setArcHeight(20);
++            courseProfile.setClip(clip);
++            innerPane.getChildren().add(courseProfile);
++
++            Pane innerDesignPane = new Pane();
++            innerPane.setId("innerPane"+i);
++            innerDesignPane.setPrefSize(370, 73);
++            innerDesignPane.setStyle("-fx-background-radius: 0 0 10 10; -fx-background-color: white;");
++            innerDesignPane.layoutYProperty().bind(innerPane.heightProperty().subtract(innerDesignPane.prefHeightProperty()));
++            innerPane.getChildren().add(innerDesignPane);
++
++            Text courseTitle = new Text();
++            courseTitle.setWrappingWidth(345);
++            courseTitle.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.wrappingWidthProperty()).divide(2));
++            courseTitle.layoutYProperty().bind(innerDesignPane.heightProperty().subtract(courseTitle.getBoundsInLocal().getHeight()).divide(2));
++            courseTitle.setText(CoursesDatabase.getCourseTitle( Integer.toString(i)));
++            courseTitle.setTextAlignment(TextAlignment.CENTER);
++            courseTitle.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
++            innerDesignPane.getChildren().add(courseTitle);
++
++            Text instructorName = new Text();
++            instructorName.setWrappingWidth(345);
++            instructorName.layoutXProperty().bind(innerDesignPane.widthProperty().subtract(courseTitle.wrappingWidthProperty()).divide(2));
++            instructorName.layoutYProperty().bind(courseTitle.layoutYProperty().add(courseTitle.getBoundsInLocal().getHeight()).add(5));
++            instructorName.setText(CoursesDatabase.getInstructorName( Integer.toString(i)));
++            instructorName.setTextAlignment(TextAlignment.CENTER);
++            instructorName.setStyle("-fx-font-size: 14px;");
++            innerDesignPane.getChildren().add(instructorName);
++
++            RowConstraints rowConstraints = new RowConstraints();
++            rowConstraints.setMinHeight(220.0);
++            rowConstraints.setPrefHeight(220.0);
++            rowConstraints.setVgrow(javafx.scene.layout.Priority.NEVER);
++
++            double newHeight = (row + 1) * rowHeight;
++            myCourseWrapperPane.setPrefHeight(newHeight);
++
++            //pane is clicked
++            innerPane.setOnMouseClicked(event -> {
++                String id;
++                try {
++                    id = new InstructorDatabase().getInstructorID(Integer.toString(finalI));
++                } catch (SQLException e) {
++                    throw new RuntimeException(e);
++                }
++                System.out.println("final I is " + finalI);
++
++                String courseName = CoursesDatabase.getCourseTitle(Integer.toString(i));
++                String courseInstructorName = CoursesDatabase.getInstructorName(Integer.toString(i));
++                Course_Info_Controller.setNameAndTitle(courseName, courseInstructorName, id, Integer.toString(finalI));
++                Stage courseInfoStage = new Stage();
++                Course_Info courseInfo = new Course_Info();
++                try {
++                    courseInfo.start(courseInfoStage);
++                } catch (Exception e) {
++                    throw new RuntimeException(e);
++                }
++                courseInfoStage = (Stage) studentDashBoardStackPane.getScene().getWindow();
++                courseInfoStage.close();
++            });
++
++            myCoursesGridPane.getRowConstraints().add(rowConstraints);
++            if (gridCtr == 2) {
++                gridCtr = 0;
++                row++;
++            }
++        }
++    }
+ 
+ 
+ 
+@@ -201,10 +300,16 @@
+         EnrollmentDatabase enrollmentDB = new EnrollmentDatabase();
+ 
+         int[] courses = CoursesDatabase.numberOfCourses();
++        int[] coursesEnrolled = enrollmentDB.getCourses(loggedInUser.getID());
+         System.out.println("IDs of courses: ");
+         for(int s: courses) {
+             System.out.println(s);
+         }
++        System.out.println("ENROLLED");
++        for(int s: coursesEnrolled) {
++            System.out.println(s);
++        }
++
+ 
+         interfacePanel.setVisible(true);
+         setDashboardPanelVisible();
+@@ -217,6 +322,7 @@
+ 
+ 
+         createBrowseCourses(courses);
++        createMyCourses(coursesEnrolled);
+     }
+ }
+ 
+Index: src/main/resources/com/example/Login_SignUp/SignUpPage.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.Cursor?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.StackPane?>\r\n<?import javafx.scene.shape.Circle?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<StackPane fx:id=\"signUpPageStackPane\" prefHeight=\"720.0\" prefWidth=\"1080.0\" xmlns=\"http://javafx.com/javafx/23.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.example.Login_SignUp.SignUpPageController\">\r\n   <children>\r\n      <AnchorPane fx:id=\"signUpPageOnePane\" prefHeight=\"720.0\" prefWidth=\"1080.0\">\r\n         <children>\r\n            <ImageView fitHeight=\"720.0\" fitWidth=\"1080.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../images/Register%20Page.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <ImageView fitHeight=\"245.0\" fitWidth=\"342.0\" layoutX=\"-12.0\" layoutY=\"-61.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../images/ExceloneLogo.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <Line endX=\"1372.166748046875\" layoutX=\"-965.0\" layoutY=\"105.0\" startX=\"1486.666748046875\" strokeWidth=\"2.0\" />\r\n            <Line endX=\"1372.166748046875\" layoutX=\"-810.0\" layoutY=\"105.0\" startX=\"1486.666748046875\" strokeWidth=\"2.0\" />\r\n            <Text fill=\"#373643\" layoutX=\"409.0\" layoutY=\"70.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Create\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"40.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"DODGERBLUE\" layoutX=\"540.0\" layoutY=\"70.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Account\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"40.0\" />\r\n               </font>\r\n            </Text>\r\n            <Circle fill=\"DODGERBLUE\" layoutX=\"387.0\" layoutY=\"105.0\" radius=\"20.0\" stroke=\"#1d00ff\" strokeType=\"INSIDE\" strokeWidth=\"2.0\" />\r\n            <Circle fill=\"WHITE\" layoutX=\"542.0\" layoutY=\"105.0\" radius=\"20.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" strokeWidth=\"2.0\" />\r\n            <Circle fill=\"WHITE\" layoutX=\"697.0\" layoutY=\"106.0\" radius=\"20.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" strokeWidth=\"2.0\" />\r\n            <Text fill=\"WHITE\" layoutX=\"382.0\" layoutY=\"112.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"1\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"DODGERBLUE\" layoutX=\"537.0\" layoutY=\"112.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"2\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"DODGERBLUE\" layoutX=\"692.0\" layoutY=\"113.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"3\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <AnchorPane id=\"formContainerRegisterOne\" fx:id=\"as\" layoutX=\"292.0\" layoutY=\"140.0\" prefHeight=\"520.0\" prefWidth=\"500.0\" stylesheets=\"@styles.css\">\r\n               <children>\r\n                  <Button fx:id=\"proceedBtn\" layoutX=\"272.0\" layoutY=\"441.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"180.0\" style=\"-fx-background-color: #007bff;\" text=\"Proceed\" textFill=\"WHITE\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"22.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </Button>\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"35.0\" layoutY=\"237.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"PASSWORD\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"20.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <TextField id=\"emailtf\" fx:id=\"emailTF\" layoutX=\"35.0\" layoutY=\"168.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"40.0\" prefWidth=\"420.0\" promptText=\"Enter email address\" style=\"-fx-border-color: black;\">\r\n                     <font>\r\n                        <Font name=\"Inter 18pt Regular\" size=\"14.0\" />\r\n                     </font>\r\n                  </TextField>\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"35.0\" layoutY=\"157.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"EMAIL ADDRESS\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"20.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"35.0\" layoutY=\"313.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"CONFIRM PASSWORD\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"20.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Button fx:id=\"learnerBtn\" layoutX=\"39.0\" layoutY=\"58.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"180.0\" style=\"-fx-background-color: #007bff; -fx-font-style: bold;\" text=\"LEARNER\" textFill=\"WHITE\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"22.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </Button>\r\n                  <Line endX=\"1372.166748046875\" layoutX=\"-1335.0\" layoutY=\"111.0\" startX=\"1788.5333251953125\" strokeWidth=\"3.0\" />\r\n                  <Button fx:id=\"instructorBtn\" layoutX=\"272.0\" layoutY=\"58.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"180.0\" style=\"-fx-background-color: #007bff;\" text=\"INSTRUCTOR\" textFill=\"WHITE\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"22.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </Button>\r\n                  <Label fx:id=\"accountTypeWarningLabel\" alignment=\"CENTER\" layoutX=\"113.0\" layoutY=\"121.0\" prefHeight=\"18.0\" prefWidth=\"263.0\" textFill=\"RED\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"15.0\" />\r\n                     </font></Label>\r\n                  <Label fx:id=\"emailAddressWarning\" alignment=\"CENTER_RIGHT\" layoutX=\"190.0\" layoutY=\"208.0\" prefHeight=\"18.0\" prefWidth=\"263.0\" textFill=\"RED\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"15.0\" />\r\n                     </font>\r\n                  </Label>\r\n                  <Button fx:id=\"backToLoginBtn\" layoutX=\"39.0\" layoutY=\"441.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"180.0\" style=\"-fx-background-color: #007bff;\" text=\"Back to Login\" textFill=\"WHITE\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"22.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </Button>\r\n                  <PasswordField fx:id=\"passwordPF\" layoutX=\"35.0\" layoutY=\"248.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"40.0\" prefWidth=\"420.0\" promptText=\"Enter password\" style=\"-fx-border-color: black;\">\r\n                     <font>\r\n                        <Font size=\"14.0\" />\r\n                     </font>\r\n                  </PasswordField>\r\n                  <PasswordField fx:id=\"confirmPasswordPF\" layoutX=\"35.0\" layoutY=\"324.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"40.0\" prefWidth=\"420.0\" promptText=\"Enter password\" style=\"-fx-border-color: black;\">\r\n                     <font>\r\n                        <Font size=\"14.0\" />\r\n                     </font>\r\n                  </PasswordField>\r\n               </children>\r\n            </AnchorPane>\r\n         </children>\r\n      </AnchorPane>\r\n      <AnchorPane fx:id=\"signUpStudentPane\" prefHeight=\"720.0\" prefWidth=\"1080.0\" visible=\"false\">\r\n         <children>\r\n            <ImageView fitHeight=\"720.0\" fitWidth=\"1080.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../images/Register%20Page.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <ImageView fitHeight=\"245.0\" fitWidth=\"342.0\" layoutX=\"-12.0\" layoutY=\"-61.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../images/ExceloneLogo.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <Line endX=\"1372.166748046875\" layoutX=\"-965.0\" layoutY=\"105.0\" startX=\"1486.666748046875\" stroke=\"DODGERBLUE\" strokeWidth=\"2.0\" />\r\n            <Line endX=\"1372.166748046875\" layoutX=\"-810.0\" layoutY=\"105.0\" startX=\"1486.666748046875\" strokeWidth=\"2.0\" />\r\n            <Text fill=\"#373643\" layoutX=\"409.0\" layoutY=\"70.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Create\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"40.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"DODGERBLUE\" layoutX=\"540.0\" layoutY=\"70.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Account\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"40.0\" />\r\n               </font>\r\n            </Text>\r\n            <Circle fill=\"DODGERBLUE\" layoutX=\"387.0\" layoutY=\"105.0\" radius=\"20.0\" stroke=\"#1d00ff\" strokeType=\"INSIDE\" strokeWidth=\"2.0\" />\r\n            <Circle fill=\"DODGERBLUE\" layoutX=\"542.0\" layoutY=\"105.0\" radius=\"20.0\" stroke=\"#1d00ff\" strokeType=\"INSIDE\" strokeWidth=\"2.0\" />\r\n            <Circle fill=\"WHITE\" layoutX=\"697.0\" layoutY=\"106.0\" radius=\"20.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" strokeWidth=\"2.0\" />\r\n            <Text fill=\"WHITE\" layoutX=\"382.0\" layoutY=\"112.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"1\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"WHITE\" layoutX=\"537.0\" layoutY=\"112.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"2\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"DODGERBLUE\" layoutX=\"692.0\" layoutY=\"113.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"3\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <AnchorPane id=\"formContainerRegisterOne\" fx:id=\"as1\" layoutX=\"292.0\" layoutY=\"140.0\" prefHeight=\"520.0\" prefWidth=\"500.0\" stylesheets=\"@styles.css\">\r\n               <children>\r\n                  <Button id=\"proceedbtn\" fx:id=\"proceedBtnStudent\" layoutX=\"273.0\" layoutY=\"441.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"180.0\" style=\"-fx-background-color: #007bff;\" text=\"Proceed\" textFill=\"WHITE\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"22.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </Button>\r\n                  <Line endX=\"1372.166748046875\" layoutX=\"-1336.0\" layoutY=\"72.0\" startX=\"1788.5333251953125\" strokeWidth=\"3.0\" />\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"34.0\" layoutY=\"47.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"I AM A LEARNER\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"25.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"35.0\" layoutY=\"100.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"FIRST NAME\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"20.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <TextField id=\"emailtf\" fx:id=\"studentFirstNameTF\" layoutX=\"35.0\" layoutY=\"111.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"40.0\" prefWidth=\"420.0\" promptText=\"Enter First Name e.g. John\" style=\"-fx-border-color: black;\">\r\n                     <font>\r\n                        <Font name=\"Inter 18pt Regular\" size=\"14.0\" />\r\n                     </font>\r\n                  </TextField>\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"35.0\" layoutY=\"249.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"LAST NAME\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"20.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <TextField id=\"emailtf\" fx:id=\"studentMiddleNameTF\" layoutX=\"35.0\" layoutY=\"185.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"40.0\" prefWidth=\"420.0\" promptText=\"Enter Middle Name e.g. Fernandez\" style=\"-fx-border-color: black;\">\r\n                     <font>\r\n                        <Font name=\"Inter 18pt Regular\" size=\"14.0\" />\r\n                     </font>\r\n                  </TextField>\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"35.0\" layoutY=\"174.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"MIDDLE NAME\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"20.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <TextField id=\"emailtf\" fx:id=\"studentLastNameTF\" layoutX=\"35.0\" layoutY=\"260.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"40.0\" prefWidth=\"420.0\" promptText=\"Enter Last Name e.g. Doe\" style=\"-fx-border-color: black;\">\r\n                     <font>\r\n                        <Font name=\"Inter 18pt Regular\" size=\"14.0\" />\r\n                     </font>\r\n                  </TextField>\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"35.0\" layoutY=\"325.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"UNIVERSITY\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"20.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Button id=\"proceedbtn\" fx:id=\"backBtnStudent\" layoutX=\"35.0\" layoutY=\"441.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"180.0\" style=\"-fx-background-color: #007bff;\" text=\"Back\" textFill=\"WHITE\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"22.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </Button>\r\n                  <TextField id=\"emailtf\" fx:id=\"studentUniversityTF\" layoutX=\"35.0\" layoutY=\"336.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"40.0\" prefWidth=\"420.0\" promptText=\"Enter University e.g. Cebu Institute of Technology-University\" style=\"-fx-border-color: black;\">\r\n                     <font>\r\n                        <Font name=\"Inter 18pt Regular\" size=\"14.0\" />\r\n                     </font>\r\n                  </TextField>\r\n               </children>\r\n            </AnchorPane>\r\n         </children>\r\n      </AnchorPane>\r\n      <AnchorPane fx:id=\"signUpInstructorPane\" layoutX=\"10.0\" layoutY=\"10.0\" prefHeight=\"720.0\" prefWidth=\"1080.0\" visible=\"false\">\r\n         <children>\r\n            <ImageView fitHeight=\"720.0\" fitWidth=\"1080.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../images/Register%20Page.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <ImageView fitHeight=\"245.0\" fitWidth=\"342.0\" layoutX=\"-12.0\" layoutY=\"-61.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../images/ExceloneLogo.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <Line endX=\"1372.166748046875\" layoutX=\"-965.0\" layoutY=\"105.0\" startX=\"1486.666748046875\" stroke=\"DODGERBLUE\" strokeWidth=\"2.0\" />\r\n            <Line endX=\"1372.166748046875\" layoutX=\"-810.0\" layoutY=\"105.0\" startX=\"1486.666748046875\" strokeWidth=\"2.0\" />\r\n            <Text fill=\"#373643\" layoutX=\"409.0\" layoutY=\"70.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Create\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"40.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"DODGERBLUE\" layoutX=\"540.0\" layoutY=\"70.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Account\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"40.0\" />\r\n               </font>\r\n            </Text>\r\n            <Circle fill=\"DODGERBLUE\" layoutX=\"387.0\" layoutY=\"105.0\" radius=\"20.0\" stroke=\"#1d00ff\" strokeType=\"INSIDE\" strokeWidth=\"2.0\" />\r\n            <Circle fill=\"DODGERBLUE\" layoutX=\"542.0\" layoutY=\"105.0\" radius=\"20.0\" stroke=\"#1d00ff\" strokeType=\"INSIDE\" strokeWidth=\"2.0\" />\r\n            <Circle fill=\"WHITE\" layoutX=\"697.0\" layoutY=\"106.0\" radius=\"20.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" strokeWidth=\"2.0\" />\r\n            <Text fill=\"WHITE\" layoutX=\"382.0\" layoutY=\"112.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"1\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"WHITE\" layoutX=\"537.0\" layoutY=\"112.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"2\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"DODGERBLUE\" layoutX=\"692.0\" layoutY=\"113.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"3\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <AnchorPane id=\"formContainerRegisterOne\" fx:id=\"as11\" layoutX=\"292.0\" layoutY=\"140.0\" prefHeight=\"520.0\" prefWidth=\"500.0\" stylesheets=\"@styles.css\">\r\n               <children>\r\n                  <Button id=\"proceedbtn\" fx:id=\"proceedBtnInstructor\" layoutX=\"273.0\" layoutY=\"441.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"180.0\" style=\"-fx-background-color: #007bff;\" text=\"Proceed\" textFill=\"WHITE\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"22.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </Button>\r\n                  <Line endX=\"1372.166748046875\" layoutX=\"-1336.0\" layoutY=\"72.0\" startX=\"1788.5333251953125\" strokeWidth=\"3.0\" />\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"34.0\" layoutY=\"47.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"I AM AN INSTRUCTOR\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"25.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"35.0\" layoutY=\"100.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"FIRST NAME\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"20.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <TextField id=\"emailtf\" fx:id=\"instructorFirstNameTF\" layoutX=\"35.0\" layoutY=\"111.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"40.0\" prefWidth=\"420.0\" promptText=\"Enter First Name e.g. John\" style=\"-fx-border-color: black;\">\r\n                     <font>\r\n                        <Font name=\"Inter 18pt Regular\" size=\"14.0\" />\r\n                     </font>\r\n                  </TextField>\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"35.0\" layoutY=\"249.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"LAST NAME\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"20.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <TextField id=\"emailtf\" fx:id=\"instructorMiddleNameTF\" layoutX=\"35.0\" layoutY=\"185.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"40.0\" prefWidth=\"420.0\" promptText=\"Enter Middle Name e.g. Fernandez\" style=\"-fx-border-color: black;\">\r\n                     <font>\r\n                        <Font name=\"Inter 18pt Regular\" size=\"14.0\" />\r\n                     </font>\r\n                  </TextField>\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"35.0\" layoutY=\"174.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"MIDDLE NAME\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"20.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <TextField id=\"emailtf\" fx:id=\"instructorLastNameTF\" layoutX=\"35.0\" layoutY=\"260.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"40.0\" prefWidth=\"420.0\" promptText=\"Enter Last Name e.g. Doe\" style=\"-fx-border-color: black;\">\r\n                     <font>\r\n                        <Font name=\"Inter 18pt Regular\" size=\"14.0\" />\r\n                     </font>\r\n                  </TextField>\r\n                  <Text boundsType=\"VISUAL\" layoutX=\"35.0\" layoutY=\"325.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"UNIVERSITY\" textOrigin=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"20.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <TextField id=\"emailtf\" fx:id=\"instructorUniversityTF\" layoutX=\"35.0\" layoutY=\"336.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"40.0\" prefWidth=\"420.0\" promptText=\"Enter University e.g. Cebu Institute of Technology-University\" style=\"-fx-border-color: black;\">\r\n                     <font>\r\n                        <Font name=\"Inter 18pt Regular\" size=\"14.0\" />\r\n                     </font>\r\n                  </TextField>\r\n                  <Button id=\"proceedbtn\" fx:id=\"backBtnInstructor\" layoutX=\"35.0\" layoutY=\"441.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"180.0\" style=\"-fx-background-color: #007bff;\" text=\"Back\" textFill=\"WHITE\">\r\n                     <font>\r\n                        <Font name=\"Inter 24pt ExtraBold\" size=\"22.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </Button>\r\n               </children>\r\n            </AnchorPane>\r\n         </children>\r\n      </AnchorPane>\r\n      <AnchorPane id=\"mainScene\" fx:id=\"verifyEmailPane\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"720.0\" prefWidth=\"1080.0\" stylesheets=\"@styles.css\" visible=\"false\">\r\n         <children>\r\n            <AnchorPane id=\"formContainer\" fx:id=\"as2\" layoutX=\"282.0\" layoutY=\"130.0\" prefHeight=\"520.0\" prefWidth=\"500.0\" stylesheets=\"@styles.css\" AnchorPane.leftAnchor=\"282.0\" AnchorPane.rightAnchor=\"298.0\">\r\n               <children>\r\n                  <Button id=\"proceedbtn\" fx:id=\"submitbtn\" layoutX=\"272.0\" layoutY=\"320.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"150.0\" text=\"Submit\" textFill=\"WHITE\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"16.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </Button>\r\n                  <Text fill=\"#373643\" layoutX=\"126.0\" layoutY=\"96.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"VERIFY\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"40.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Text fill=\"DODGERBLUE\" layoutX=\"265.0\" layoutY=\"95.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"EMAIL\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"40.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Line endX=\"1372.166748046875\" layoutX=\"-1309.0\" layoutY=\"106.0\" startX=\"1746.666748046875\" stroke=\"DODGERBLUE\" AnchorPane.leftAnchor=\"62.0\" AnchorPane.rightAnchor=\"62.5\" />\r\n                  <Text layoutX=\"110.0\" layoutY=\"125.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"We've initiated the OTP Proces. Kindly navigate \">\r\n                     <font>\r\n                        <Font size=\"14.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Text layoutX=\"153.0\" layoutY=\"146.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"to your email inbox to retrieve the  \">\r\n                     <font>\r\n                        <Font size=\"14.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Text layoutX=\"183.0\" layoutY=\"168.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"unique verification code\">\r\n                     <font>\r\n                        <Font size=\"14.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Text fill=\"#373643\" layoutX=\"66.0\" layoutY=\"239.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Enter the OTP\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"24.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <TextField id=\"otptextfield\" fx:id=\"otptextfield\" layoutX=\"65.0\" layoutY=\"253.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"50.0\" prefWidth=\"380.0\" promptText=\"Enter 6-digit code\">\r\n                     <font>\r\n                        <Font size=\"18.0\" />\r\n                     </font>\r\n                  </TextField>\r\n                  <Text layoutX=\"140.0\" layoutY=\"420.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"You must complete the verification in\">\r\n                     <font>\r\n                        <Font size=\"14.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Text layoutX=\"162.0\" layoutY=\"440.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"order to register your account\">\r\n                     <font>\r\n                        <Font size=\"14.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Button fx:id=\"generateOTP\" layoutX=\"87.0\" layoutY=\"320.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"150.0\" text=\"Generate OTP\" textFill=\"WHITE\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"16.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </Button>\r\n               </children>\r\n               <opaqueInsets>\r\n                  <Insets />\r\n               </opaqueInsets>\r\n            </AnchorPane>\r\n            <Text fill=\"#373643\" layoutX=\"399.0\" layoutY=\"60.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Create\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"40.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"DODGERBLUE\" layoutX=\"530.0\" layoutY=\"60.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Account\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"40.0\" />\r\n               </font>\r\n            </Text>\r\n            <Circle fill=\"DODGERBLUE\" layoutX=\"377.0\" layoutY=\"95.0\" radius=\"20.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <Circle fill=\"DODGERBLUE\" layoutX=\"532.0\" layoutY=\"95.0\" radius=\"20.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <Circle fill=\"DODGERBLUE\" layoutX=\"687.0\" layoutY=\"96.0\" radius=\"20.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <Text fill=\"WHITE\" layoutX=\"372.0\" layoutY=\"102.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"1\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"WHITE\" layoutX=\"527.0\" layoutY=\"102.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"2\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"WHITE\" layoutX=\"682.0\" layoutY=\"103.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"3\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <Line endX=\"1372.166748046875\" layoutX=\"-820.0\" layoutY=\"95.0\" startX=\"1486.666748046875\" stroke=\"DODGERBLUE\" />\r\n            <Line endX=\"1372.166748046875\" layoutX=\"-975.0\" layoutY=\"95.0\" startX=\"1486.666748046875\" stroke=\"DODGERBLUE\" />\r\n            <Button fx:id=\"backLogin\" layoutX=\"620.0\" layoutY=\"665.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"162.0\" text=\"Back to Login Page\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"12.0\" />\r\n               </font>\r\n               <cursor>\r\n                  <Cursor fx:constant=\"HAND\" />\r\n               </cursor>\r\n            </Button>\r\n         </children>\r\n      </AnchorPane>\r\n   </children>\r\n</StackPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml b/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml
+--- a/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml	(revision 5ae3262032344e9818fa69658a8f0cf094af278c)
++++ b/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml	(date 1733150566729)
+@@ -17,7 +17,7 @@
+ 
+ <StackPane fx:id="signUpPageStackPane" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Login_SignUp.SignUpPageController">
+    <children>
+-      <AnchorPane fx:id="signUpPageOnePane" prefHeight="720.0" prefWidth="1080.0">
++      <AnchorPane fx:id="signUpPageOnePane" prefHeight="720.0" prefWidth="1080.0" visible="false">
+          <children>
+             <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+@@ -357,8 +357,13 @@
+             </AnchorPane>
+          </children>
+       </AnchorPane>
+-      <AnchorPane id="mainScene" fx:id="verifyEmailPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css" visible="false">
++      <AnchorPane id="mainScene" fx:id="verifyEmailPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css">
+          <children>
++            <ImageView fitHeight="722.0" fitWidth="1082.0" pickOnBounds="true" preserveRatio="true">
++               <image>
++                  <Image url="@../../../images/registerbg.png" />
++               </image>
++            </ImageView>
+             <AnchorPane id="formContainer" fx:id="as2" layoutX="282.0" layoutY="130.0" prefHeight="520.0" prefWidth="500.0" stylesheets="@styles.css" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="298.0">
+                <children>
+                   <Button id="proceedbtn" fx:id="submitbtn" layoutX="272.0" layoutY="320.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Submit" textFill="WHITE">

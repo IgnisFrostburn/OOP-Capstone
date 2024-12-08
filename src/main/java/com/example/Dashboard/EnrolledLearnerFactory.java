@@ -25,8 +25,7 @@ public class EnrolledLearnerFactory extends ListCell<EnrolledLearner> {
                 AnchorPane cellLayout = loader.load();
 
                 EnrolledLearnerCell controller = loader.getController();
-                Learner learner = item.getLearner();
-                LocalDateTime enrollmentDate = item.getEnrollmentDate();
+                String enrollmentDate = item.getEnrollmentDate();
                 controller.setInfo(item, enrollmentDate);
 
                 setGraphic(cellLayout);

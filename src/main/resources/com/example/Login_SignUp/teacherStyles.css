@@ -1,0 +1,13 @@
+.list-view {
+    -fx-padding: 0;
+    -fx-background-color: #8FC7FF;
+
+}
+.list-cell {
+    -fx-padding: 0; /* Remove padding inside each cell */
+    -fx-border-width: 0;
+    -fx-pref-height: 100px;
+    -fx-pref-width: 512px;
+    -fx-background-color: #8FC7FF;
+}
+

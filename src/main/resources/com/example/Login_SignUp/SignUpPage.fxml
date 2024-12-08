@@ -17,7 +17,7 @@
 
 <StackPane fx:id="signUpPageStackPane" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Login_SignUp.SignUpPageController">
    <children>
-      <AnchorPane fx:id="signUpPageOnePane" prefHeight="720.0" prefWidth="1080.0" visible="false">
+      <AnchorPane fx:id="signUpPageOnePane" prefHeight="720.0" prefWidth="1080.0">
          <children>
             <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -89,7 +89,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <Button fx:id="learnerBtn" layoutX="39.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff; -fx-font-style: bold;" text="LEARNER" textFill="WHITE">
+                  <Button fx:id="learnerBtn" layoutX="39.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #007bff;" text="LEARNER" textFill="WHITE">
                      <font>
                         <Font name="Inter 24pt ExtraBold" size="22.0" />
                      </font>
@@ -357,14 +357,14 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane id="mainScene" fx:id="verifyEmailPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css">
+      <AnchorPane id="mainScene" fx:id="verifyEmailPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@styles.css" visible="false">
          <children>
             <ImageView fitHeight="722.0" fitWidth="1082.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/registerbg.png" />
                </image>
             </ImageView>
-            <AnchorPane id="formContainer" fx:id="as2" layoutX="282.0" layoutY="130.0" prefHeight="520.0" prefWidth="500.0" stylesheets="@styles.css" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="298.0">
+            <AnchorPane fx:id="as2" layoutX="282.0" layoutY="130.0" prefHeight="520.0" prefWidth="500.0" style="-fx-background-color: rgba(255, 255, 255, 0.54); -fx-border-color: rgba(255, 255, 255, 0.3); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 30, 0.0, 0.0, 4.0);" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="298.0">
                <children>
                   <Button id="proceedbtn" fx:id="submitbtn" layoutX="272.0" layoutY="320.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Submit" textFill="WHITE">
                      <font>
@@ -385,7 +385,7 @@
                      </font>
                   </Text>
                   <Line endX="1372.166748046875" layoutX="-1309.0" layoutY="106.0" startX="1746.666748046875" stroke="DODGERBLUE" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="62.5" />
-                  <Text layoutX="110.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We've initiated the OTP Proces. Kindly navigate ">
+                  <Text layoutX="110.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We've initiated the OTP Process. Kindly navigate ">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -405,7 +405,7 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Text>
-                  <TextField id="otptextfield" fx:id="otptextfield" layoutX="65.0" layoutY="253.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="380.0" promptText="Enter 6-digit code">
+                  <TextField fx:id="otptextfield" layoutX="65.0" layoutY="253.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="380.0" promptText="Enter 6-digit code" style="-fx-border-color: black;">
                      <font>
                         <Font size="18.0" />
                      </font>

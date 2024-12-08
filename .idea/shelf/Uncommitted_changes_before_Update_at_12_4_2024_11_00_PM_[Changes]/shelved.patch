@@ -1,0 +1,215 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM__Changes_.xml	(revision 8e59923ba6ee47687bf387967c8cb44fcf1bd202)
++++ /dev/null	(revision 8e59923ba6ee47687bf387967c8cb44fcf1bd202)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM_[Changes]" date="1732684592047" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/27/2024 1:15 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM_[Changes]/shelved.patch	(revision 8e59923ba6ee47687bf387967c8cb44fcf1bd202)
++++ /dev/null	(revision 8e59923ba6ee47687bf387967c8cb44fcf1bd202)
+@@ -1,71 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8bc4bd21-e2bf-499e-a356-7195176f21f6\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;kevyelly&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/IgnisFrostburn/OOP-Capstone.git&quot;,\r\n    &quot;accountId&quot;: &quot;0d04d356-f879-440a-9c2b-b4a203bebd0f&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 8\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pPku3QPKse24weMhNRjcNrgW7x\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.LoginPageApplication.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/Mcxine and Mckyla/IdeaProjects/MASTEROOP/src/main/java/modules/activation.jar\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.2\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8bc4bd21-e2bf-499e-a356-7195176f21f6\" name=\"Changes\" comment=\"\" />\r\n      <created>1732675317367</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732675317367</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision e6cff0ed2c5f6aa1eab15aa18673afa48e0560fe)
+-+++ b/.idea/workspace.xml	(date 1732684243158)
+-@@ -4,9 +4,7 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="8bc4bd21-e2bf-499e-a356-7195176f21f6" name="Changes" comment="">
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--    </list>
+-+    <list default="true" id="8bc4bd21-e2bf-499e-a356-7195176f21f6" name="Changes" comment="FOr email  changes" />
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-@@ -65,6 +63,15 @@
+-       <option name="presentableId" value="Default" />
+-       <updated>1732675317367</updated>
+-     </task>
+-+    <task id="LOCAL-00001" summary="FOr email  changes">
+-+      <option name="closed" value="true" />
+-+      <created>1732684240707</created>
+-+      <option name="number" value="00001" />
+-+      <option name="presentableId" value="LOCAL-00001" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1732684240707</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="2" />
+-     <servers />
+-   </component>
+-   <component name="Vcs.Log.Tabs.Properties">
+-@@ -79,6 +86,7 @@
+-     </option>
+-   </component>
+-   <component name="VcsManagerConfiguration">
+--    <option name="LAST_COMMIT_MESSAGE" value="" />
+-+    <MESSAGE value="FOr email  changes" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="FOr email  changes" />
+-   </component>
+- </project>
+-\ No newline at end of file
+-Index: src/main/resources/com/example/javafxdemo/Main/VideoCall.fxml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/resources/com/example/javafxdemo/Main/VideoCall.fxml b/src/main/resources/com/example/javafxdemo/Main/VideoCall.fxml
+-new file mode 100644
+---- /dev/null	(date 1732684415669)
+-+++ b/src/main/resources/com/example/javafxdemo/Main/VideoCall.fxml	(date 1732684415669)
+-@@ -0,0 +1,14 @@
+-+<?xml version="1.0" encoding="UTF-8"?>
+-+
+-+<?import java.lang.*?>
+-+<?import java.util.*?>
+-+<?import javafx.scene.*?>
+-+<?import javafx.scene.control.*?>
+-+<?import javafx.scene.layout.*?>
+-+
+-+<AnchorPane xmlns="http://javafx.com/javafx"
+-+            xmlns:fx="http://javafx.com/fxml"
+-+            fx:controller="com.example.javafxdemo.Main.VideoCall"
+-+            prefHeight="400.0" prefWidth="600.0">
+-+
+-+</AnchorPane>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"693a45ab-ecd4-4656-a3e1-77bf69e3a98c\" name=\"Changes\" comment=\"added navigation button and enrollment functionalities\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourseController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourseController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n      &quot;keyToString&quot;: {\r\n        &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,\r\n        &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,\r\n        &quot;Application.MeetingDatabase.executor&quot;: &quot;Run&quot;,\r\n        &quot;git-widget-placeholder&quot;: &quot;master&quot;\r\n      }\r\n    }</component>\r\n  <component name=\"RunManager\" selected=\"Application.StudentDashboard\">\r\n    <configuration name=\"LoginPageApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.Login_SignUp.LoginPageApplication\" />\r\n      <module name=\"JavaFXDemo\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.Login_SignUp.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"StudentDashboard\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.Dashboard.StudentDashboard\" />\r\n      <module name=\"JavaFXDemo\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.Dashboard.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.LoginPageApplication\" />\r\n      <item itemvalue=\"Application.StudentDashboard\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.StudentDashboard\" />\r\n        <item itemvalue=\"Application.LoginPageApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Browse courses layout update - added course image\" />\r\n    <MESSAGE value=\"Course info image view fix and update\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Browse courses layout update - added course image\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8e59923ba6ee47687bf387967c8cb44fcf1bd202)
++++ b/.idea/workspace.xml	(date 1733321715180)
+@@ -4,17 +4,39 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="added navigation button and enrollment functionalities">
++    <list default="true" id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="pushed tuesday night">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_27_2024_1_15_PM__Changes_.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/AddCourseController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/SignUpPage.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
++  "lastFilter": {
++    "state": "OPEN",
++    "assignee": "kevyelly"
++  }
++}]]></component>
++  <component name="GithubPullRequestsUISettings"><![CDATA[{
++  "selectedUrlAndAccountId": {
++    "url": "https://github.com/IgnisFrostburn/OOP-Capstone.git",
++    "accountId": "0d04d356-f879-440a-9c2b-b4a203bebd0f"
++  }
++}]]></component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="CurrentFile" />
++  </component>
++  <component name="ProjectColorInfo"><![CDATA[{
++  "customColor": "",
++  "associatedIndex": 7
++}]]></component>
++  <component name="ProjectId" id="2pksQTpjGr5AKcw8iQPJzMW4liQ" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <ConfirmationsSetting value="2" id="Add" />
+   </component>
+@@ -22,15 +44,20 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-      &quot;keyToString&quot;: {
+-        &quot;Application.LoginPageApplication.executor&quot;: &quot;Run&quot;,
+-        &quot;Application.StudentDashboard.executor&quot;: &quot;Run&quot;,
+-        &quot;Application.MeetingDatabase.executor&quot;: &quot;Run&quot;,
+-        &quot;git-widget-placeholder&quot;: &quot;master&quot;
+-      }
+-    }</component>
+-  <component name="RunManager" selected="Application.StudentDashboard">
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.LoginPageApplication.executor": "Run",
++    "Application.MeetingDatabase.executor": "Run",
++    "Application.SignUpPage.executor": "Run",
++    "Application.StudentDashboard.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "git-widget-placeholder": "master",
++    "ignore.virus.scanning.warn.message": "true",
++    "kotlin-language-version-configured": "true"
++  }
++}]]></component>
++  <component name="RunManager" selected="Application.LoginPageApplication">
+     <configuration name="LoginPageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="com.example.Login_SignUp.LoginPageApplication" />
+       <module name="JavaFXDemo" />
+@@ -63,13 +90,29 @@
+     </list>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.StudentDashboard" />
+         <item itemvalue="Application.LoginPageApplication" />
++        <item itemvalue="Application.StudentDashboard" />
+       </list>
+     </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
++    <task id="LOCAL-00001" summary="pushed tuesday night">
++      <option name="closed" value="true" />
++      <created>1733229888840</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1733229888840</updated>
++    </task>
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="pushed tuesday night" />
++      <created>1733321396299</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1733321396299</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -86,6 +129,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Browse courses layout update - added course image" />
+     <MESSAGE value="Course info image view fix and update" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Browse courses layout update - added course image" />
++    <MESSAGE value="pushed tuesday night" />
++    <option name="LAST_COMMIT_MESSAGE" value="pushed tuesday night" />
+   </component>
+ </project>
+\ No newline at end of file

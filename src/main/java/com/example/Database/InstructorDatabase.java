@@ -102,17 +102,16 @@ public class InstructorDatabase extends UserDatabase    {
     }
 
     public static String getInstructorID(String email) throws SQLException {
+        String selectQuery = "SELECT ID FROM instructors WHERE Email = ?";
         try {
-            String selectQuery = "SELECT ID, Email FROM instructors";
-            try (Statement selectStmt = connection.createStatement();
-                 ResultSet resultSet = selectStmt.executeQuery(selectQuery)) {
-
-                while (resultSet.next()) {
-                    if(resultSet.getString("Email").equals(email)) return resultSet.getString("ID");
-                }
+            PreparedStatement preparedStatement = connection.prepareStatement(selectQuery);
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()) {
+                return String.valueOf(resultSet.getInt("ID"));
             }
         } catch (SQLException e) {
-            e.getMessage();
+            throw new RuntimeException(e);
         }
         return "1";
     }
