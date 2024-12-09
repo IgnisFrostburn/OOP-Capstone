@@ -134,7 +134,7 @@ public class TeacherDashboardController {
     MeetingDatabase meetingDatabase = new MeetingDatabase();
     EnrollmentDatabase enrollmentDatabase = new EnrollmentDatabase();
     Course openedCourse = null;
-    private String ip = "https://192.168.1.14:8181/";
+    private String ip = "https://192.168.221.77:8181/";
 
     //set VISIBLE sa mga panel
     public void setScheduleModalVisible(boolean visible) {
@@ -354,8 +354,12 @@ public class TeacherDashboardController {
     }
     public void setMeetings(int teacherID) {
         MeetingDatabase meetingDatabase = new MeetingDatabase();
-        List<Meeting> meetings = meetingDatabase.getUpcomingMeetings(teacherID);
+        List<Meeting> meetings = meetingDatabase.getUpcomingMeetingsforInstructor(teacherID);
         ObservableList<Meeting> todayMeetings = FXCollections.observableArrayList(meetings);
+
+        for(Meeting m : meetings) {
+            System.out.println(m);
+        }
 
         meetingsListView.setCellFactory(param -> new MeetingCellFactory());
 
@@ -535,6 +539,7 @@ public class TeacherDashboardController {
             setMyMeetingsVisible();
             setMeetings(loggedInUser.getID());
             videoCallBtn.setDisable(true);
+            System.out.println("meetig");
             meetingDatabase.deleteExpiredMeetings();
         });
         myCoursesBtn.setOnAction(actionEvent -> {
@@ -587,10 +592,10 @@ public class TeacherDashboardController {
         });
         videoCallBtn.setOnAction(event -> openWebPage());
 
-        meetingsBtn.setOnAction(actionEvent -> {
-            setMeetingsPanelVisible();
-            videoCallBtn.setDisable(true);
-            meetingDatabase.deleteExpiredMeetings();
-        });
+//        meetingsBtn.setOnAction(actionEvent -> {
+//            setMeetingsPanelVisible();
+//            videoCallBtn.setDisable(true);
+//            meetingDatabase.deleteExpiredMeetings();
+//        });
     }
 }

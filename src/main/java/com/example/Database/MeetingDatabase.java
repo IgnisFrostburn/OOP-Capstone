@@ -55,6 +55,7 @@ public class MeetingDatabase extends UtilityDatabase{
         return null;
     }
     public List<Meeting> getUpcomingMeetings(int learnerId) {
+        System.out.println("learner id " + learnerId);
         List<Meeting> meetings = new ArrayList<>();
         String query = "SELECT c.course_title, CONCAT(i.FirstName, ' ', i.LastName) AS instructor_name, " +
                 "m.StartTime, m.EndTime " +
@@ -79,6 +80,7 @@ public class MeetingDatabase extends UtilityDatabase{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(meetings);
         return meetings;
     }
     public List<Meeting> getUpcomingMeetingsforInstructor(int InstructorID) {

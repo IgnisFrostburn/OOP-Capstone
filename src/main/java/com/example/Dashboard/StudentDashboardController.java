@@ -385,7 +385,7 @@ public class StudentDashboardController {
     private void toggleVideoCallButton() {
         videoCallBtn.setDisable(meetingsListView.getItems().isEmpty());
     }
-    private String ip = "https://192.168.1.14:8181/";
+    private String ip = "https://192.168.221.77:8181/";
 
     private String getIP(){
         return this.ip;

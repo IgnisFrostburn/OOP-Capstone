@@ -87,7 +87,8 @@ public class Course_Info_Controller {
         try{
             //temporary
 //            enrollmentDB.enrollLearner(loggedInUser.getID(), courseDB.getCID(title));
-            if(initiatePayment()) enrollmentDB.enrollLearner(loggedInUser.getID(), courseDB.getCID(title));;
+            initiatePayment();
+            enrollmentDB.enrollLearner(loggedInUser.getID(), courseDB.getCID(title));;
 
         }catch(Exception e){
             System.out.println("Error with enrollment" + e.getMessage());
