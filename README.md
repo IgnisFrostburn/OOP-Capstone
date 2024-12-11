@@ -51,6 +51,8 @@ This project applied the concepts of OOP as part of the requirements. Here are a
 ![image](https://github.com/user-attachments/assets/40fa819a-a051-4554-8a48-a3361ba3e80c)
 
 2. Abstraction 
+The process of scheduling a meeting involves several steps: querying the database for available time slots, checking conflicts, and then confirming the schedule. This method hides all those unnecessary details.
+ ![image](https://github.com/user-attachments/assets/683aa3cd-b01d-4a78-9924-084fef73369a)
 
 
 3. Inheritance
@@ -61,6 +63,8 @@ This project applied the concepts of OOP as part of the requirements. Here are a
 ![image](https://github.com/user-attachments/assets/f990c94c-3725-45b6-80eb-cae2e603e31d)
 
 5. Polymorphism
+![image](https://github.com/user-attachments/assets/6fbbb453-c91f-4aad-ab99-e78150f979b3)
+
 
 
 
