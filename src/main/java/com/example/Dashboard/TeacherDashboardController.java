@@ -41,7 +41,7 @@ import java.util.Optional;
 import java.util.List;
 
 
-public class TeacherDashboardController {
+public class TeacherDashboardController implements GoToLogin {
     @FXML
     private Button addCoursesBtn;
     @FXML
@@ -462,7 +462,7 @@ public class TeacherDashboardController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-    private void goToLogin() {
+    public void goToLogin() {
         Stage addCredentialsStage = new Stage();
         LoginPageApplication loginPageApplication = new LoginPageApplication();
         try {

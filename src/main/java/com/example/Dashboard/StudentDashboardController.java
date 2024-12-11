@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-public class StudentDashboardController {
+public class StudentDashboardController implements GoToLogin {
     @FXML
     private StackPane studentDashBoardStackPane;
     @FXML
@@ -89,6 +89,17 @@ public class StudentDashboardController {
     private String filter;
     int[] courses;
 
+    public void goToLogin() {
+        Stage courseInfoStage = new Stage();
+        LoginPageApplication loginPageApplication = new LoginPageApplication();
+        try {
+            loginPageApplication.start(courseInfoStage);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        courseInfoStage = (Stage) studentDashBoardStackPane.getScene().getWindow();
+        courseInfoStage.close();
+    }
     private ObservableList<String> filterObservableList;
     private void initializeArrayList() {
         filterObservableList = FXCollections.observableArrayList(
@@ -458,17 +469,5 @@ public class StudentDashboardController {
             videoCallBtn.setDisable(true);
             meetingDatabase.deleteExpiredMeetings();
         });
-    }
-
-    private void goToLogin() {
-        Stage courseInfoStage = new Stage();
-        LoginPageApplication loginPageApplication = new LoginPageApplication();
-        try {
-            loginPageApplication.start(courseInfoStage);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        courseInfoStage = (Stage) studentDashBoardStackPane.getScene().getWindow();
-        courseInfoStage.close();
     }
 }
