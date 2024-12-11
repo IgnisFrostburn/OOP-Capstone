@@ -5,16 +5,15 @@
 - [Overview](#overview)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [OOP Concepts](#concepts)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Future Improvements](#future-improvements)
-- [Contributing](#contributing)
-- [License](#license)
+- [OOP Concepts](#oop-concepts)
+- [Prerequisites](#prerequisites)
+
 
 ---
 
 ## Overview
+![Your paragraph text (1080 x 500 px)](https://github.com/user-attachments/assets/c2c27546-a6b9-46f5-939f-8a2619662e74)
+
 
 ExcelOne is an innovative learning platform designed to foster personalized education by connecting students with expert instructors for 1-on-1 sessions. Whether it's mastering a challenging topic or diving deep into a specific subject, ExcelOne provides a streamlined and interactive environment where learners can:
 
