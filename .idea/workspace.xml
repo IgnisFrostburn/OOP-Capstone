@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="693a45ab-ecd4-4656-a3e1-77bf69e3a98c" name="Changes" comment="added navigation button and enrollment functionalities">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PayMongoIntegration/PayMongoIntegration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modules/jackson-annotations-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modules/jackson-core-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modules/jackson-databind-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modules/kotlin-stdlib-1.8.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modules/okhttp-4.11.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modules/okio-2.10.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_11_39_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_11_44_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_9_53_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_3_2024_8_31_PM_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Course_content/Course_Info_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/StudentDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Login_SignUp/StudentDashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -71,11 +68,15 @@
     &quot;Maven.JavaFXDemo [clean].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;hey&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/Mcxine and Mckyla/IdeaProjects/MASTEROOP/src/main/java/com/example/Login_SignUp&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Josh/IdeaProjects/OOP-Capstone/src/main/java/modules/mysql-connector-j-9.1.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -133,6 +134,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733321396299</updated>
+      <workItem from="1733699499430" duration="312000" />
     </task>
     <task id="LOCAL-00001" summary="pushed tuesday night">
       <option name="closed" value="true" />
@@ -142,8 +144,27 @@
       <option name="project" value="LOCAL" />
       <updated>1733229888840</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added navigation button and enrollment functionalities">
+      <option name="closed" value="true" />
+      <created>1733699571678</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733699571679</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added navigation button and enrollment functionalities">
+      <option name="closed" value="true" />
+      <created>1733699605595</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733699605595</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -161,7 +182,8 @@
     <MESSAGE value="Course info image view fix and update" />
     <MESSAGE value="pushed tuesday night" />
     <MESSAGE value="&quot;Meetings&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushed tuesday night" />
+    <MESSAGE value="added navigation button and enrollment functionalities" />
+    <option name="LAST_COMMIT_MESSAGE" value="added navigation button and enrollment functionalities" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -173,7 +195,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/Dashboard/StudentDashboardController.java</url>
-          <line>306</line>
+          <line>312</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
